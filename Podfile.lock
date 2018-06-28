@@ -1,0 +1,84 @@
+PODS:
+  - Crashlytics (3.10.1):
+    - Fabric (~> 1.7.5)
+  - DateToolsSwift (4.0.0)
+  - Fabric (1.7.6)
+  - FontAwesomeKit (2.2.1):
+    - FontAwesomeKit/Core (= 2.2.1)
+    - FontAwesomeKit/FontAwesome (= 2.2.1)
+    - FontAwesomeKit/FoundationIcons (= 2.2.1)
+    - FontAwesomeKit/IonIcons (= 2.2.1)
+    - FontAwesomeKit/Material (= 2.2.1)
+    - FontAwesomeKit/Octicons (= 2.2.1)
+    - FontAwesomeKit/Zocial (= 2.2.1)
+  - FontAwesomeKit/Core (2.2.1)
+  - FontAwesomeKit/FontAwesome (2.2.1):
+    - FontAwesomeKit/Core
+  - FontAwesomeKit/FoundationIcons (2.2.1):
+    - FontAwesomeKit/Core
+  - FontAwesomeKit/IonIcons (2.2.1):
+    - FontAwesomeKit/Core
+  - FontAwesomeKit/Material (2.2.1):
+    - FontAwesomeKit/Core
+  - FontAwesomeKit/Octicons (2.2.1):
+    - FontAwesomeKit/Core
+  - FontAwesomeKit/Zocial (2.2.1):
+    - FontAwesomeKit/Core
+  - PromiseKit (6.2.5):
+    - PromiseKit/CorePromise (= 6.2.5)
+    - PromiseKit/Foundation (= 6.2.5)
+    - PromiseKit/UIKit (= 6.2.5)
+  - PromiseKit/CorePromise (6.2.5)
+  - PromiseKit/Foundation (6.2.5):
+    - PromiseKit/CorePromise
+  - PromiseKit/UIKit (6.2.5):
+    - PromiseKit/CorePromise
+  - SKComponents (0.1.0)
+  - SKSwiftLib (0.1.0):
+    - PromiseKit
+  - SnapKit (4.0.0)
+
+DEPENDENCIES:
+  - Crashlytics
+  - DateToolsSwift
+  - Fabric
+  - FontAwesomeKit (from `https://github.com/PrideChung/FontAwesomeKit`)
+  - PromiseKit
+  - SKComponents (from `~/dev/ios/SKLibs/SKComponents`)
+  - SKSwiftLib (from `~/dev/ios/SKLibs/SKSwiftLib`)
+  - SnapKit
+
+SPEC REPOS:
+  https://github.com/CocoaPods/Specs.git:
+    - Crashlytics
+    - DateToolsSwift
+    - Fabric
+    - PromiseKit
+    - SnapKit
+
+EXTERNAL SOURCES:
+  FontAwesomeKit:
+    :git: https://github.com/PrideChung/FontAwesomeKit
+  SKComponents:
+    :path: "~/dev/ios/SKLibs/SKComponents"
+  SKSwiftLib:
+    :path: "~/dev/ios/SKLibs/SKSwiftLib"
+
+CHECKOUT OPTIONS:
+  FontAwesomeKit:
+    :commit: ed5eb02f4bcf76e218bb1c966c551a7b5240b6b4
+    :git: https://github.com/PrideChung/FontAwesomeKit
+
+SPEC CHECKSUMS:
+  Crashlytics: aee1a064cbbf99b32efa3f056a5f458d846bc8ff
+  DateToolsSwift: 875d97ff9e3a5d54abdd67a269b3f51c757b71ab
+  Fabric: f8d42c893bb187326a7968b62abe55c36a987a46
+  FontAwesomeKit: 3614979b3dbb0ec3f7fac1bd760b91f66c31db67
+  PromiseKit: a26828b0a8d5874960dfdb575b57a70790ec36f1
+  SKComponents: 6e9b9f396c378d8cdc9a8217bb2ac027979e0fce
+  SKSwiftLib: bb2558a2748e1dd617c250fb11233283af8aed61
+  SnapKit: a42d492c16e80209130a3379f73596c3454b7694
+
+PODFILE CHECKSUM: 1700c6e294070216018ef06a92806ad94dc247ac
+
+COCOAPODS: 1.5.0
