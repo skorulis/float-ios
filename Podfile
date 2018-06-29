@@ -11,6 +11,7 @@ def shared_pods
     pod "DateToolsSwift"
     pod 'SKSwiftLib', :path => '~/dev/ios/SKLibs/SKSwiftLib'
     pod 'SKComponents',:path => '~/dev/ios/SKLibs/SKComponents'
+    pod 'SKCollectionView',:path => '~/dev/ios/SKLibs/SKCollectionView'
 end
 
 target 'floatios' do

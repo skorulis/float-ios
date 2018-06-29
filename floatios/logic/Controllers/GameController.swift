@@ -8,6 +8,9 @@
 
 class GameController {
 
+    static let instance = GameController()
+    
     let action:ActionController = ActionController()
+    let player:PlayerCharacterController = PlayerCharacterController()
     
 }

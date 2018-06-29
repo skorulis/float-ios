@@ -33,6 +33,7 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (6.2.5):
     - PromiseKit/CorePromise
+  - SKCollectionView (0.1.0)
   - SKComponents (0.1.0)
   - SKSwiftLib (0.1.0):
     - PromiseKit
@@ -44,6 +45,7 @@ DEPENDENCIES:
   - Fabric
   - FontAwesomeKit (from `https://github.com/PrideChung/FontAwesomeKit`)
   - PromiseKit
+  - SKCollectionView (from `~/dev/ios/SKLibs/SKCollectionView`)
   - SKComponents (from `~/dev/ios/SKLibs/SKComponents`)
   - SKSwiftLib (from `~/dev/ios/SKLibs/SKSwiftLib`)
   - SnapKit
@@ -59,6 +61,8 @@ SPEC REPOS:
 EXTERNAL SOURCES:
   FontAwesomeKit:
     :git: https://github.com/PrideChung/FontAwesomeKit
+  SKCollectionView:
+    :path: "~/dev/ios/SKLibs/SKCollectionView"
   SKComponents:
     :path: "~/dev/ios/SKLibs/SKComponents"
   SKSwiftLib:
@@ -75,10 +79,11 @@ SPEC CHECKSUMS:
   Fabric: f8d42c893bb187326a7968b62abe55c36a987a46
   FontAwesomeKit: 3614979b3dbb0ec3f7fac1bd760b91f66c31db67
   PromiseKit: a26828b0a8d5874960dfdb575b57a70790ec36f1
+  SKCollectionView: 11a22345ddb20efa172e61a1ba352c347b3a2035
   SKComponents: 6e9b9f396c378d8cdc9a8217bb2ac027979e0fce
   SKSwiftLib: bb2558a2748e1dd617c250fb11233283af8aed61
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
 
-PODFILE CHECKSUM: 1700c6e294070216018ef06a92806ad94dc247ac
+PODFILE CHECKSUM: 7d3e67dc34f1c678a95a42d2271e86c1a82b70d5
 
 COCOAPODS: 1.5.0
