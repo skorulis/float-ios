@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FAKFontAwesome.iconFont(withSize: 1)
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        window?.rootViewController = PlayerViewController()
+        window?.rootViewController = CityViewController()
         
         window?.backgroundColor = UIColor.white
         window?.makeKeyAndVisible()

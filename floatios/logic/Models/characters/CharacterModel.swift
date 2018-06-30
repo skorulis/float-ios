@@ -5,7 +5,7 @@
 //  Created by Alexander Skorulis on 26/6/18.
 //
 
-final class CharacterModel: Codable {
+final public class CharacterModel: Codable {
 
     let name:String = "Fred"
     let satiation:MaxValueField

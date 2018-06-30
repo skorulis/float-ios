@@ -11,11 +11,17 @@ import SKCollectionView
 
 private let reuseIdentifier = "Cell"
 
-class CityViewController: UICollectionViewController {
+class CityViewController: SKCVFlowLayoutCollectionViewController {
 
+    let game = GameController.instance
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
+        let city = game.city.city
+        let detailSection = CityDetailsCell.defaultSection(object: city, collectionView: collectionView!)
+        
+        self.sections.add(section: detailSection)
         
     }
 

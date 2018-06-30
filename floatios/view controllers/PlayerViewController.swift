@@ -18,10 +18,8 @@ class PlayerViewController: SKCVFlowLayoutCollectionViewController {
         super.viewDidLoad()
         
         collectionView?.register(clazz: ActionCell.self)
-        collectionView?.register(clazz: PlayerDetailsCell.self)
         
         let char = game.player.player.base
-        
         let charSection = PlayerDetailsCell.defaultSection(object: char, collectionView: collectionView!)
         
         let itemSection = SKCVSectionController()

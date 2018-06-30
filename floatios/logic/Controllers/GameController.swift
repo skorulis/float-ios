@@ -12,10 +12,12 @@ class GameController {
     
     let action:ActionController;
     let player:PlayerCharacterController;
+    let city:CityController;
     
     init() {
         action = ActionController()
         player = PlayerCharacterController(actions: action)
+        city = CityController()
     }
     
 }
