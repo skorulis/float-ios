@@ -1,22 +1,21 @@
 //
-//  CityDetailsCell.swift
+//  LandSquareCell.swift
 //  floatios
 //
 //  Created by Alexander Skorulis on 30/6/18.
 //  Copyright © 2018 Skorulis. All rights reserved.
 //
 
-import UIKit
 import SKCollectionView
 
-final class CityDetailsCell: UICollectionViewCell, AutoSizeModelCell {
-    var model: CityModel? {
+class LandSquareCell: UICollectionViewCell, AutoSizeModelCell {
+    var model: LandPlotModel? {
         didSet {
-            label.text = model?.name
+            label.text = "Unowned"
         }
     }
-    static var sizingCell: CityDetailsCell = CityDetailsCell(frame:.zero)
-    typealias ModelType = CityModel
+    static var sizingCell: LandSquareCell = LandSquareCell()
+    typealias ModelType = LandPlotModel
     
     let label = UILabel()
     
@@ -36,5 +35,5 @@ final class CityDetailsCell: UICollectionViewCell, AutoSizeModelCell {
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
-    
+
 }

@@ -10,7 +10,7 @@ import UIKit
 
 class NameGenerator {
 
-    let syllables:[String] = ["ter","git","ogg","bin","tar","yel","har","ong","bik","fre","dar","car","nak","bat","bar","ber","grey","tol","nob","rat","yet","bong","kim","yal","fin"]
+    let syllables:[String] = ["ter","git","ogg","bin","tar","yel","har","ong","bik","fre","dar","car","nak","bat","bar","ber","grey","tol","nob","rat","yet","bong","kim","yal","fin","gro","stu","til","kon","dol"]
     
     func getName() -> String {
         let count = arc4random_uniform(1) + 2
@@ -19,7 +19,7 @@ class NameGenerator {
             let index = arc4random_uniform(UInt32(syllables.count))
             name += syllables[Int(index)]
         }
-        return name
+        return name.capitalized
     }
     
 }
