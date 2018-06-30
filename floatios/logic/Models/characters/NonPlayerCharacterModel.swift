@@ -12,8 +12,12 @@ final class NonPlayerCharacterModel: Codable {
     let base:CharacterModel
     let id:String
     
-    init() {
-        base = CharacterModel()
+    convenience init() {
+        self.init(base: CharacterModel())
+    }
+    
+    init(base:CharacterModel) {
+        self.base = base
         id = NSUUID().uuidString
     }
     

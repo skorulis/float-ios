@@ -12,10 +12,13 @@ class PlayerCharacterController {
 
     let player:PlayerCharacterModel
     let actionController:ActionController
+    let cityController:CityController
     
-    init(actions:ActionController) {
+    init(actions:ActionController,city:CityController) {
         self.actionController = actions
+        self.cityController = city;
         player = PlayerCharacterModel()
+        self.cityController.add(occupant:player.base)
     }
     
     func performCharacterAction(action:CharacterAction) {

@@ -13,11 +13,14 @@ class GameController {
     let action:ActionController;
     let player:PlayerCharacterController;
     let city:CityController;
+    let npc:NPCController
     
     init() {
         action = ActionController()
-        player = PlayerCharacterController(actions: action)
         city = CityController()
+        player = PlayerCharacterController(actions: action,city:city)
+        npc = NPCController(actions: action,city:city)
+        
     }
     
 }

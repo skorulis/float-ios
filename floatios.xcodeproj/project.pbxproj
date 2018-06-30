@@ -12,6 +12,7 @@
 		FA1071FF20E70DFC0046C756 /* PlayerDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1071FE20E70DFC0046C756 /* PlayerDetailsCell.swift */; };
 		FA10720220E725130046C756 /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10720120E725130046C756 /* CityViewController.swift */; };
 		FA10720420E7256B0046C756 /* CityDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10720320E7256B0046C756 /* CityDetailsCell.swift */; };
+		FA10720A20E73D1B0046C756 /* NameGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10720920E73D1B0046C756 /* NameGenerator.swift */; };
 		FA20AB1E20E62F5D00F0FFAF /* ActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20AB1D20E62F5D00F0FFAF /* ActionCell.swift */; };
 		FA569C6F20E589C40094807F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA569C6E20E589C40094807F /* AppDelegate.swift */; };
 		FA569C7620E589C70094807F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA569C7520E589C70094807F /* Assets.xcassets */; };
@@ -55,6 +56,7 @@
 		FA1071FE20E70DFC0046C756 /* PlayerDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerDetailsCell.swift; sourceTree = "<group>"; };
 		FA10720120E725130046C756 /* CityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
 		FA10720320E7256B0046C756 /* CityDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailsCell.swift; sourceTree = "<group>"; };
+		FA10720920E73D1B0046C756 /* NameGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameGenerator.swift; sourceTree = "<group>"; };
 		FA20AB1D20E62F5D00F0FFAF /* ActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCell.swift; sourceTree = "<group>"; };
 		FA569C6B20E589C40094807F /* floatios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = floatios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA569C6E20E589C40094807F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -138,6 +140,14 @@
 			path = base;
 			sourceTree = "<group>";
 		};
+		FA10720820E73D0B0046C756 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				FA10720920E73D1B0046C756 /* NameGenerator.swift */,
+			);
+			path = Util;
+			sourceTree = "<group>";
+		};
 		FA569C6220E589C40094807F = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +193,7 @@
 		FA569C9F20E58D960094807F /* logic */ = {
 			isa = PBXGroup;
 			children = (
+				FA10720820E73D0B0046C756 /* Util */,
 				FA569CA020E58D960094807F /* Models */,
 				FA569CAC20E58D960094807F /* Controllers */,
 			);
@@ -457,6 +468,7 @@
 				FAE12DFF20E6146A00F9FA77 /* PlayerViewController.swift in Sources */,
 				FA569CBD20E58F9E0094807F /* NPCController.swift in Sources */,
 				FA569CBB20E58D970094807F /* ActionController.swift in Sources */,
+				FA10720A20E73D1B0046C756 /* NameGenerator.swift in Sources */,
 				FA1071FF20E70DFC0046C756 /* PlayerDetailsCell.swift in Sources */,
 				FA569CB320E58D970094807F /* InventoryModel.swift in Sources */,
 				FA569CBF20E58FAE0094807F /* PlayerCharacterController.swift in Sources */,

@@ -14,6 +14,10 @@ public class CityController  {
         city = CityModel(name: "Obl", width: 10, height: 10)
     }
     
+    public func add(occupant:CharacterModel) {
+        occupants.append(occupant)
+    }
+    
     
     
 }

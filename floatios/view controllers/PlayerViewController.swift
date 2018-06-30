@@ -22,15 +22,14 @@ class PlayerViewController: SKCVFlowLayoutCollectionViewController {
         let char = game.player.player.base
         let charSection = PlayerDetailsCell.defaultSection(object: char, collectionView: collectionView!)
         
-        let itemSection = SKCVSectionController()
-        itemSection.simpleNumberOfItemsInSection = {[unowned self] in return self.actions.count}
-        
         let getModel:(IndexPath) -> (CharacterAction?) = { (indexPath) -> CharacterAction? in
             return self.actions[indexPath.row]
         }
+        let getCount:SectionCountBlock = { (UICollectionView,Int) -> Int in
+            return self.actions.count
+        }
         
-        itemSection.cellForItemAt = ActionCell.curriedDefaultCell(getModel: getModel)
-        itemSection.sizeForItemAt = ActionCell.curriedCalculateSize(getModel: getModel)
+        let itemSection = ActionCell.defaultSection(getModel: getModel,getCount:getCount, collectionView: collectionView!)
         itemSection.didSelectItemAt = {(collectionView,indexPath) in
             let action = self.actions[indexPath.row]
             self.game.player.performCharacterAction(action: action)

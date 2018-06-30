@@ -7,12 +7,13 @@
 
 final public class CharacterModel: Codable {
 
-    let name:String = "Fred"
+    let name:String;
     let satiation:MaxValueField
     let time:MaxValueField
     let inventory:InventoryModel
     
-    init() {
+    init(name:String="Fred") {
+        self.name = name
         satiation = MaxValueField(maxValue: 100)
         time = MaxValueField(maxValue: 100)
         inventory = InventoryModel()
