@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		93C000E06853CF176D6CCC95 /* Pods_floatios.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23589CF1D59E460A2BC273F1 /* Pods_floatios.framework */; };
 		D7ADF30D0522FA469DC67C80 /* Pods_floatiosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E85B4751AB4B1861E3EEC2E /* Pods_floatiosTests.framework */; };
+		FA20AB1E20E62F5D00F0FFAF /* ActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA20AB1D20E62F5D00F0FFAF /* ActionCell.swift */; };
 		FA569C6F20E589C40094807F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA569C6E20E589C40094807F /* AppDelegate.swift */; };
 		FA569C7620E589C70094807F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA569C7520E589C70094807F /* Assets.xcassets */; };
 		FA569C7920E589C70094807F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA569C7720E589C70094807F /* LaunchScreen.storyboard */; };
@@ -48,6 +49,7 @@
 		8C837A241FAA34ADC1F030C8 /* Pods-floatiosTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-floatiosTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-floatiosTests/Pods-floatiosTests.debug.xcconfig"; sourceTree = "<group>"; };
 		A784F48876FFCE1D59AFE78C /* Pods-floatiosTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-floatiosTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-floatiosTests/Pods-floatiosTests.release.xcconfig"; sourceTree = "<group>"; };
 		A8C261F0D0E00D7A1479A134 /* Pods-floatios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-floatios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-floatios/Pods-floatios.debug.xcconfig"; sourceTree = "<group>"; };
+		FA20AB1D20E62F5D00F0FFAF /* ActionCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCell.swift; sourceTree = "<group>"; };
 		FA569C6B20E589C40094807F /* floatios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = floatios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA569C6E20E589C40094807F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA569C7520E589C70094807F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -214,6 +216,7 @@
 			isa = PBXGroup;
 			children = (
 				FAE12DFE20E6146A00F9FA77 /* PlayerViewController.swift */,
+				FA20AB1D20E62F5D00F0FFAF /* ActionCell.swift */,
 			);
 			path = "view controllers";
 			sourceTree = "<group>";
@@ -436,6 +439,7 @@
 				FA569CB120E58D970094807F /* LandPlotModel.swift in Sources */,
 				FA569CB420E58D970094807F /* ItemModel.swift in Sources */,
 				FA569C6F20E589C40094807F /* AppDelegate.swift in Sources */,
+				FA20AB1E20E62F5D00F0FFAF /* ActionCell.swift in Sources */,
 				FA569CB620E58D970094807F /* NonPlayerCharacterModel.swift in Sources */,
 				FA569CB820E58D970094807F /* LoreModel.swift in Sources */,
 			);

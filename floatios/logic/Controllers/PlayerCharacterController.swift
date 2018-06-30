@@ -11,9 +11,15 @@ import UIKit
 class PlayerCharacterController {
 
     let player:PlayerCharacterModel
+    let actionController:ActionController
     
-    init() {
+    init(actions:ActionController) {
+        self.actionController = actions
         player = PlayerCharacterModel()
+    }
+    
+    func performCharacterAction(action:CharacterAction) {
+        self.actionController.performCharacterAction(character: player.base, action: action)
     }
     
 }
