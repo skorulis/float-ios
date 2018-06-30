@@ -30,15 +30,7 @@ class CityViewController: SKCVFlowLayoutCollectionViewController {
             self.navigationController?.pushViewController(vc, animated: true)
         }
         
-        let getOccupant:(IndexPath) -> (CharacterModel?) = { (indexPath) -> CharacterModel? in
-            return self.game.city.occupants[indexPath.row]
-        }
-        let occupantCount:SectionCountBlock = { (UICollectionView,Int) -> Int in
-            return self.game.city.occupants.count
-        }
-        
-        let occupantSection = PlayerDetailsCell.defaultSection(getModel: getOccupant,getCount:occupantCount, collectionView: collectionView!)
-        
+        let occupantSection = PlayerDetailsCell.defaultSection(getModel: self.game.city.occupants.getRow,getCount:self.game.city.occupants.sectionCount, collectionView: collectionView!)
         
         self.sections.add(section: detailSection)
         self.sections.add(section: landSection)

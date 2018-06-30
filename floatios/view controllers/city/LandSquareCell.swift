@@ -8,7 +8,7 @@
 
 import SKCollectionView
 
-class LandSquareCell: UICollectionViewCell, AutoSizeModelCell {
+final class LandSquareCell: UICollectionViewCell, AutoSizeModelCell {
     var model: LandPlotModel? {
         didSet {
             label.text = "Unowned"

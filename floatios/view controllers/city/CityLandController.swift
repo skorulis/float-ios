@@ -11,10 +11,18 @@ import SKCollectionView
 
 class CityLandController: SKCVFlowLayoutCollectionViewController {
 
+    let game = GameController.instance
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView?.backgroundColor = UIColor.white
         self.title = "Land"
+        
+        let city = self.game.city.city
+        
+        let landSection = LandSquareCell.defaultSection(getModel: city.squares.getRow,getCount:city.squares.sectionCount, collectionView: collectionView!)
+        
+        self.sections.add(section: landSection)
         
     }
     
