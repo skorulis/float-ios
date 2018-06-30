@@ -28,6 +28,15 @@ class PlayerViewController: UICollectionViewController {
         super.viewDidLoad()
         
         collectionView?.register(clazz: ActionCell.self)
+        collectionView?.register(clazz: PlayerDetailsCell.self)
+        
+        let char = game.player.player.base
+        
+        
+        let charSection = SKCVSectionController()
+        charSection.fixedCellCount = 1
+        charSection.cellForItemAt = PlayerDetailsCell.curriedDefaultCell(withModel: char)
+        charSection.sizeForItemAt = PlayerDetailsCell.curriedCalculateSize(withModel: char)
         
         let itemSection = SKCVSectionController()
         itemSection.simpleNumberOfItemsInSection = {[unowned self] in return self.actions.count}
@@ -44,6 +53,7 @@ class PlayerViewController: UICollectionViewController {
             self.collectionView?.reloadData()
         }
         
+        sections.add(section: charSection)
         sections.add(section: itemSection)
         
         self.collectionView?.delegate = sections

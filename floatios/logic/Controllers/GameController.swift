@@ -10,7 +10,12 @@ class GameController {
 
     static let instance = GameController()
     
-    let action:ActionController = ActionController()
-    let player:PlayerCharacterController = PlayerCharacterController()
+    let action:ActionController;
+    let player:PlayerCharacterController;
+    
+    init() {
+        action = ActionController()
+        player = PlayerCharacterController(actions: action)
+    }
     
 }

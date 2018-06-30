@@ -27,5 +27,9 @@ public final class MaxValueField: Codable {
         left.add(-right)
     }
     
+    var description:String {
+        return "\(value)/\(maxValue)"
+    }
+    
     
 }
