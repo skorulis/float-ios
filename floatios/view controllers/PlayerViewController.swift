@@ -9,20 +9,10 @@
 import UIKit
 import SKCollectionView
 
-class PlayerViewController: UICollectionViewController {
+class PlayerViewController: SKCVFlowLayoutCollectionViewController {
 
     let game = GameController.instance
-    let flowLayout = UICollectionViewFlowLayout();
-    let sections:SKCVSectionCoordinator = SKCVSectionCoordinator()
     let actions:[CharacterAction] = [.sleep,.eat,.forage]
-    
-    init() {
-        super.init(collectionViewLayout: flowLayout)
-    }
-    
-    required init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -32,11 +22,7 @@ class PlayerViewController: UICollectionViewController {
         
         let char = game.player.player.base
         
-        
-        let charSection = SKCVSectionController()
-        charSection.fixedCellCount = 1
-        charSection.cellForItemAt = PlayerDetailsCell.curriedDefaultCell(withModel: char)
-        charSection.sizeForItemAt = PlayerDetailsCell.curriedCalculateSize(withModel: char)
+        let charSection = PlayerDetailsCell.defaultSection(object: char, collectionView: collectionView!)
         
         let itemSection = SKCVSectionController()
         itemSection.simpleNumberOfItemsInSection = {[unowned self] in return self.actions.count}
@@ -55,9 +41,6 @@ class PlayerViewController: UICollectionViewController {
         
         sections.add(section: charSection)
         sections.add(section: itemSection)
-        
-        self.collectionView?.delegate = sections
-        self.collectionView?.dataSource = sections
         
     }
     
