@@ -19,6 +19,7 @@ class PlayerViewController: SKCVFlowLayoutCollectionViewController {
         self.collectionView?.backgroundColor = UIColor.white
         
         let char = game.player.player.base
+        self.title = char.name
         let charSection = PlayerDetailsCell.defaultSection(object: char, collectionView: collectionView!)
         
         let activeActions = SKCVSectionController()
@@ -42,9 +43,14 @@ class PlayerViewController: SKCVFlowLayoutCollectionViewController {
             ActionCell.updateSection(section: blockedActions, items: split.failing, collectionView: self.collectionView!)
         }
         
-        
+        let itemSection = ForwardNavigationCell.defaultSection(object: "Inventory", collectionView: collectionView!)
+        itemSection.didSelectItemAt = {(collectionView,indexPath) in
+            let vc = InventoryViewController(inventory: char.inventory)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
         
         sections.add(section: charSection)
+        sections.add(section: itemSection)
         sections.add(section: activeActions)
         sections.add(section: blockedActions)
         
