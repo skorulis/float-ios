@@ -17,7 +17,7 @@ final public class CharacterModel: Codable {
         self.name = name
         satiation = MaxValueField(maxValue: 100)
         time = MaxValueField(maxValue: 100)
-        ether = 10
+        ether = 100
         inventory = InventoryModel()
     }
     

@@ -16,8 +16,10 @@ class ReferenceController {
     init() {
         let food = ItemReferenceModel(name: "Food", description: "Something you can eat")
         let ether = ItemReferenceModel(name: "Ether", description: "Should link to lore article")
+        let minerals = ItemReferenceModel(name: "Minerals", description: "Generic minerals")
+        let wood = ItemReferenceModel(name: "Wood", description: "Generic wood")
         
-        let itemArray = [food,ether]
+        let itemArray = [food,ether,minerals,wood]
         items = itemArray.groupSingle { $0.name }
     }
     

@@ -12,7 +12,7 @@ import SKCollectionView
 class PlayerViewController: SKCVFlowLayoutCollectionViewController {
 
     let game = GameController.instance
-    let actions:[CharacterAction] = [.sleep,.forage,.eat]
+    let actions:[CharacterAction] = [.sleep,.forage,.mine,.lumberjack,.eat]
     
     override func viewDidLoad() {
         super.viewDidLoad()

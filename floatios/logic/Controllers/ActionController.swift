@@ -8,7 +8,9 @@
 import SKSwiftLib
 
 enum CharacterAction: String {
-    case forage
+    case forage //Find food
+    case mine //Find minerals
+    case lumberjack //Get wood
     case sleep
     case eat //Should really be use item and be under a separate case
 }
@@ -29,6 +31,10 @@ class ActionController {
         case .forage:
             let item = ItemModel(ref: ref.getItem(name: "Food"))
             character.inventory.add(item: item)
+        case .mine:
+            character.inventory.add(item: ItemModel(ref: ref.getItem(name: "Minerals")))
+        case .lumberjack:
+            character.inventory.add(item: ItemModel(ref: ref.getItem(name: "Wood")))
         case .eat:
             character.satiation += 20
         case .sleep:
@@ -40,6 +46,10 @@ class ActionController {
         switch(action) {
         case .forage:
             return RequirementList(requirements: [RequirementModel.time(value: 10),RequirementModel.satiation(value: 5)])
+        case .mine:
+            return RequirementList(requirements: [RequirementModel.time(value: 20),RequirementModel.satiation(value: 10)])
+        case .lumberjack:
+            return RequirementList(requirements: [RequirementModel.time(value: 20),RequirementModel.satiation(value: 10)])
         case .eat:
             return RequirementList(requirements: [RequirementModel.time(value: 5),RequirementModel.item(name: "Food", value: 1)])
         case .sleep:
@@ -83,7 +93,8 @@ class ActionController {
     
     func endDay(character:CharacterModel) {
         character.time.setToMax()
-        character.ether += 1
+        character.satiation.add(5) //Make sure you can't get stuck, may remove later
+        character.ether += 10
     }
     
 }
