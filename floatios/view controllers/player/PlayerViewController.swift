@@ -16,37 +16,39 @@ class PlayerViewController: SKCVFlowLayoutCollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        collectionView?.register(clazz: ActionCell.self)
+        self.collectionView?.backgroundColor = UIColor.white
         
         let char = game.player.player.base
         let charSection = PlayerDetailsCell.defaultSection(object: char, collectionView: collectionView!)
         
-        /*self.sections.preReloadBlock = { [unowned self] in
+        let activeActions = SKCVSectionController()
+        SectionHeaderView.updateSectionHeader(section: activeActions, model: "Actions", kind: UICollectionElementKindSectionHeader, collectionView: collectionView!)
+        
+        let blockedActions = SKCVSectionController()
+        SectionHeaderView.updateSectionHeader(section: blockedActions, model: "Unavailable", kind: UICollectionElementKindSectionHeader, collectionView: collectionView!)
+        
+        activeActions.didSelectItemAt = {(collectionView,indexPath) in
+            let cell = collectionView.cellForItem(at: indexPath) as! ActionCell
+            self.game.player.performCharacterAction(action: cell.model!)
+            self.sections.reloadData()
+        }
+        
+        self.sections.preReloadBlock = { [unowned self] in
             let split = self.actions.split(by: { (act) -> Bool in
                 return self.game.action.hasRequirements(character: char, action: act)
             })
             
-            split.passing.getRow
-            
-        }*/
-        
-        let getModel:(IndexPath) -> (CharacterAction?) = { (indexPath) -> CharacterAction? in
-            return self.actions[indexPath.row]
-        }
-        let getCount:SectionCountBlock = { (UICollectionView,Int) -> Int in
-            return self.actions.count
+            ActionCell.updateSection(section: activeActions, items: split.passing, collectionView: self.collectionView!)
+            ActionCell.updateSection(section: blockedActions, items: split.failing, collectionView: self.collectionView!)
         }
         
-        let actionSection = ActionCell.defaultSection(getModel: getModel,getCount:getCount, collectionView: collectionView!)
-        actionSection.didSelectItemAt = {(collectionView,indexPath) in
-            let action = self.actions[indexPath.row]
-            self.game.player.performCharacterAction(action: action)
-            self.collectionView?.reloadData()
-        }
+        
         
         sections.add(section: charSection)
-        sections.add(section: actionSection)
+        sections.add(section: activeActions)
+        sections.add(section: blockedActions)
+        
+        self.sections.reloadData()
         
     }
     
