@@ -24,4 +24,15 @@ class ActionController {
         }
     }
     
+    func getRequirements(action:CharacterAction) -> RequirementList {
+        switch(action) {
+        case .forage:
+            return RequirementList(requirements: [RequirementModel.time(value: 10),RequirementModel.satiation(value: 5)])
+        case .eat:
+            return RequirementList(requirements: [RequirementModel.time(value: 5)])
+        case .sleep:
+            return RequirementList.empty()
+        }
+    }
+    
 }

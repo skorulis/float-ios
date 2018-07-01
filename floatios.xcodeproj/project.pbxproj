@@ -19,6 +19,9 @@
 		FA10722120E75CC30046C756 /* ForwardNavigationCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10722020E75CC30046C756 /* ForwardNavigationCell.swift */; };
 		FA10722320E764E10046C756 /* LandSquareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10722220E764E10046C756 /* LandSquareCell.swift */; };
 		FA10722520E76A840046C756 /* ArrayExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10722420E76A840046C756 /* ArrayExtensions.swift */; };
+		FA10722820E849A30046C756 /* ReferenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10722720E849A30046C756 /* ReferenceController.swift */; };
+		FA10722B20E84D330046C756 /* ItemReferenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10722A20E84D330046C756 /* ItemReferenceModel.swift */; };
+		FA10722D20E855BE0046C756 /* RequirementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10722C20E855BE0046C756 /* RequirementModel.swift */; };
 		FA569C6F20E589C40094807F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA569C6E20E589C40094807F /* AppDelegate.swift */; };
 		FA569C7620E589C70094807F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA569C7520E589C70094807F /* Assets.xcassets */; };
 		FA569C7920E589C70094807F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA569C7720E589C70094807F /* LaunchScreen.storyboard */; };
@@ -67,6 +70,9 @@
 		FA10722020E75CC30046C756 /* ForwardNavigationCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ForwardNavigationCell.swift; sourceTree = "<group>"; };
 		FA10722220E764E10046C756 /* LandSquareCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandSquareCell.swift; sourceTree = "<group>"; };
 		FA10722420E76A840046C756 /* ArrayExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrayExtensions.swift; sourceTree = "<group>"; };
+		FA10722720E849A30046C756 /* ReferenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceController.swift; sourceTree = "<group>"; };
+		FA10722A20E84D330046C756 /* ItemReferenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemReferenceModel.swift; sourceTree = "<group>"; };
+		FA10722C20E855BE0046C756 /* RequirementModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequirementModel.swift; sourceTree = "<group>"; };
 		FA569C6B20E589C40094807F /* floatios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = floatios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA569C6E20E589C40094807F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA569C7520E589C70094807F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -170,6 +176,22 @@
 			path = player;
 			sourceTree = "<group>";
 		};
+		FA10722620E849800046C756 /* reference */ = {
+			isa = PBXGroup;
+			children = (
+				FA10722720E849A30046C756 /* ReferenceController.swift */,
+			);
+			path = reference;
+			sourceTree = "<group>";
+		};
+		FA10722920E84D280046C756 /* reference */ = {
+			isa = PBXGroup;
+			children = (
+				FA10722A20E84D330046C756 /* ItemReferenceModel.swift */,
+			);
+			path = reference;
+			sourceTree = "<group>";
+		};
 		FA569C6220E589C40094807F = {
 			isa = PBXGroup;
 			children = (
@@ -225,12 +247,14 @@
 		FA569CA020E58D960094807F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				FA10722920E84D280046C756 /* reference */,
+				FA569CA420E58D960094807F /* items */,
+				FA569CA720E58D960094807F /* characters */,
 				FA569CA120E58D960094807F /* MaxValueField.swift */,
 				FA569CA220E58D960094807F /* LandPlotModel.swift */,
 				FA569CA320E58D960094807F /* CityModel.swift */,
-				FA569CA420E58D960094807F /* items */,
-				FA569CA720E58D960094807F /* characters */,
 				FA569CAB20E58D960094807F /* LoreModel.swift */,
+				FA10722C20E855BE0046C756 /* RequirementModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -258,6 +282,7 @@
 		FA569CAC20E58D960094807F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FA10722620E849800046C756 /* reference */,
 				FA569CAD20E58D960094807F /* GameController.swift */,
 				FA569CAE20E58D960094807F /* CityController.swift */,
 				FA569CAF20E58D960094807F /* ActionController.swift */,
@@ -493,10 +518,13 @@
 				FA569CBF20E58FAE0094807F /* PlayerCharacterController.swift in Sources */,
 				FA10722120E75CC30046C756 /* ForwardNavigationCell.swift in Sources */,
 				FA10722320E764E10046C756 /* LandSquareCell.swift in Sources */,
+				FA10722820E849A30046C756 /* ReferenceController.swift in Sources */,
 				FA10722520E76A840046C756 /* ArrayExtensions.swift in Sources */,
 				FA10720220E725130046C756 /* CityViewController.swift in Sources */,
 				FA569CB520E58D970094807F /* SkillModel.swift in Sources */,
+				FA10722D20E855BE0046C756 /* RequirementModel.swift in Sources */,
 				FA569CC120E58FC40094807F /* PlayerCharacterModel.swift in Sources */,
+				FA10722B20E84D330046C756 /* ItemReferenceModel.swift in Sources */,
 				FA569CB120E58D970094807F /* LandPlotModel.swift in Sources */,
 				FA10720E20E75A040046C756 /* CityLandController.swift in Sources */,
 				FA10720420E7256B0046C756 /* CityDetailsCell.swift in Sources */,

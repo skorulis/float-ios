@@ -11,7 +11,7 @@ public class CityController  {
     public var occupants:[CharacterModel] = []
     
     public init() {
-        city = CityModel(name: "Obl", width: 10, height: 10)
+        city = CityModel(name: "Obl", squareCount:10)
     }
     
     public func add(occupant:CharacterModel) {

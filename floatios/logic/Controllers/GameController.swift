@@ -14,8 +14,10 @@ class GameController {
     let player:PlayerCharacterController;
     let city:CityController;
     let npc:NPCController
+    let reference:ReferenceController
     
     init() {
+        reference = ReferenceController()
         action = ActionController()
         city = CityController()
         player = PlayerCharacterController(actions: action,city:city)

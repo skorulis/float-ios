@@ -19,7 +19,7 @@ class CityViewController: SKCVFlowLayoutCollectionViewController {
         super.viewDidLoad()
         self.collectionView?.backgroundColor = UIColor.white
         
-        self.title = game.city.city.name
+        self.title = game.city.city.name + " village"
 
         let city = game.city.city
         let detailSection = CityDetailsCell.defaultSection(object: city, collectionView: collectionView!)
@@ -30,10 +30,17 @@ class CityViewController: SKCVFlowLayoutCollectionViewController {
             self.navigationController?.pushViewController(vc, animated: true)
         }
         
+        let actionsSection = ForwardNavigationCell.defaultSection(object: "Actions", collectionView: collectionView!)
+        actionsSection.didSelectItemAt = {[unowned self] (collectionView,indexPath) in
+            let vc = PlayerViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
         let occupantSection = PlayerDetailsCell.defaultSection(getModel: self.game.city.occupants.getRow,getCount:self.game.city.occupants.sectionCount, collectionView: collectionView!)
         
         self.sections.add(section: detailSection)
         self.sections.add(section: landSection)
+        self.sections.add(section: actionsSection)
         self.sections.add(section: occupantSection)
         
     }

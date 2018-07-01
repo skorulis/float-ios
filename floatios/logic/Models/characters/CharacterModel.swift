@@ -10,12 +10,14 @@ final public class CharacterModel: Codable {
     let name:String;
     let satiation:MaxValueField
     let time:MaxValueField
+    let ether:Int
     let inventory:InventoryModel
     
     init(name:String="Fred") {
         self.name = name
         satiation = MaxValueField(maxValue: 100)
         time = MaxValueField(maxValue: 100)
+        ether = 10
         inventory = InventoryModel()
     }
     
