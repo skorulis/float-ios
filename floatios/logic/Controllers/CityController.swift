@@ -18,6 +18,9 @@ public class CityController  {
         occupants.append(occupant)
     }
     
+    func dayFinished() {
+        
+    }
     
     
 }

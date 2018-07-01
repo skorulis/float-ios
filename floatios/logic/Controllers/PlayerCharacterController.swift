@@ -25,4 +25,8 @@ class PlayerCharacterController {
         self.actionController.performCharacterAction(character: player.base, action: action)
     }
     
+    func dayFinished() {
+        actionController.endDay(character: player.base)
+    }
+    
 }

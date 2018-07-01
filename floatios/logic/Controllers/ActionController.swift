@@ -5,6 +5,8 @@
 //  Created by Alexander Skorulis on 26/6/18.
 //
 
+import SKSwiftLib
+
 enum CharacterAction: String {
     case forage
     case sleep
@@ -14,6 +16,7 @@ enum CharacterAction: String {
 class ActionController {
 
     let ref:ReferenceController
+    let dayFinishObservers = ObserverSet<ActionController>()
     
     init(ref:ReferenceController) {
         self.ref = ref
@@ -29,7 +32,7 @@ class ActionController {
         case .eat:
             character.satiation += 20
         case .sleep:
-            character.time.setToMax()
+            dayFinishObservers.notify(parameters: self)
         }
     }
     
@@ -76,6 +79,11 @@ class ActionController {
                 break//Nothing to be done
             }
         }
+    }
+    
+    func endDay(character:CharacterModel) {
+        character.time.setToMax()
+        character.ether += 1
     }
     
 }

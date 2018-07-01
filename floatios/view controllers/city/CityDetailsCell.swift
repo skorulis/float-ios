@@ -22,7 +22,6 @@ final class CityDetailsCell: UICollectionViewCell, AutoSizeModelCell {
     
     override init(frame:CGRect) {
         super.init(frame:frame)
-        self.contentView.backgroundColor = UIColor.blue
         
         label.textAlignment = .center
         label.backgroundColor = UIColor.brown

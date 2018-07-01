@@ -33,4 +33,10 @@ class NPCController {
         let base = CharacterModel(name: name)
         return NonPlayerCharacterModel(base: base)
     }
+    
+    public func dayFinished() {
+        for npc in npcs {
+            actionController.endDay(character: npc.base)
+        }
+    }
 }

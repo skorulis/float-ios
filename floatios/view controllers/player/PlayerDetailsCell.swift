@@ -14,7 +14,7 @@ final class PlayerDetailsCell: UICollectionViewCell, SimpleModelCell, AutoSizeMo
     var model: CharacterModel? {
         didSet {
             if let m = model {
-                let text = "\(m.name)\nFullness: \(m.satiation.description), Time: \(m.time.description)"
+                let text = "\(m.name)\nFullness: \(m.satiation.description), Time: \(m.time.description)\nEther: \(m.ether)"
                 quickLabel.text = text;
             } else {
                 quickLabel.text = ""
@@ -29,7 +29,6 @@ final class PlayerDetailsCell: UICollectionViewCell, SimpleModelCell, AutoSizeMo
     
     override init(frame:CGRect) {
         super.init(frame:frame)
-        self.contentView.backgroundColor = UIColor.blue
         
         self.quickLabel.numberOfLines = 0
         self.contentView.addSubview(quickLabel)

@@ -23,6 +23,12 @@ class GameController {
         player = PlayerCharacterController(actions: action,city:city)
         npc = NPCController(actions: action,city:city)
         
+        action.dayFinishObservers.add(object:self) {[unowned self] (controller) in
+            self.city.dayFinished()
+            self.player.dayFinished()
+            self.npc.dayFinished()
+        }
+        
     }
     
 }
