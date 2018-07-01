@@ -22,6 +22,15 @@ class PlayerViewController: SKCVFlowLayoutCollectionViewController {
         let char = game.player.player.base
         let charSection = PlayerDetailsCell.defaultSection(object: char, collectionView: collectionView!)
         
+        /*self.sections.preReloadBlock = { [unowned self] in
+            let split = self.actions.split(by: { (act) -> Bool in
+                return self.game.action.hasRequirements(character: char, action: act)
+            })
+            
+            split.passing.getRow
+            
+        }*/
+        
         let getModel:(IndexPath) -> (CharacterAction?) = { (indexPath) -> CharacterAction? in
             return self.actions[indexPath.row]
         }
@@ -29,15 +38,15 @@ class PlayerViewController: SKCVFlowLayoutCollectionViewController {
             return self.actions.count
         }
         
-        let itemSection = ActionCell.defaultSection(getModel: getModel,getCount:getCount, collectionView: collectionView!)
-        itemSection.didSelectItemAt = {(collectionView,indexPath) in
+        let actionSection = ActionCell.defaultSection(getModel: getModel,getCount:getCount, collectionView: collectionView!)
+        actionSection.didSelectItemAt = {(collectionView,indexPath) in
             let action = self.actions[indexPath.row]
             self.game.player.performCharacterAction(action: action)
             self.collectionView?.reloadData()
         }
         
         sections.add(section: charSection)
-        sections.add(section: itemSection)
+        sections.add(section: actionSection)
         
     }
     

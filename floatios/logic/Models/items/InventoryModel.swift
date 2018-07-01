@@ -15,4 +15,13 @@ public class InventoryModel: Codable {
         capacity = 5
     }
     
+    func hasItem(name:String,quantity:Int) -> Bool {
+        guard let item = findItem(name: name) else { return false }
+        return item.quantity >= quantity
+    }
+    
+    func findItem(name:String) -> ItemModel? {
+        return items.filter { $0.ref.name == name}.first
+    }
+    
 }

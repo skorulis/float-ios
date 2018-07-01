@@ -35,4 +35,24 @@ class ActionController {
         }
     }
     
+    func hasRequirements(character:CharacterModel,action:CharacterAction) -> Bool {
+        let reqs = getRequirements(action: action)
+        return hasRequirements(character: character, requirements: reqs)
+    }
+    
+    func hasRequirements(character:CharacterModel,requirements:RequirementList) -> Bool {
+        for m in requirements.requirements {
+            switch(m.type) {
+            case .item:
+                return character.inventory.hasItem(name: m.identifier, quantity: m.value)
+            case .resource:
+                return character.hasResource(name: m.identifier, quantity: m.value)
+            case .skill:
+                return false //No one has skills yet
+            }
+        }
+        
+        return true
+    }
+    
 }

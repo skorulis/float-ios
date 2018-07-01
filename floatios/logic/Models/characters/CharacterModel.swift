@@ -21,4 +21,20 @@ final public class CharacterModel: Codable {
         inventory = InventoryModel()
     }
     
+    func hasResource(name:String,quantity:Int) -> Bool {
+        return self.resourceQuantity(name: name) >= quantity
+    }
+    
+    func resourceQuantity(name:String) -> Int {
+        if (name == "satiation") {
+            return satiation.value
+        } else if (name == "time") {
+            return time.value
+        } else if (name == "ether") {
+            return ether
+        }
+        
+        return 0 //Shouldn't happen
+    }
+    
 }
