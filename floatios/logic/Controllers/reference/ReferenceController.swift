@@ -21,4 +21,8 @@ class ReferenceController {
         items = itemArray.groupSingle { $0.name }
     }
     
+    func getItem(name:String) -> ItemReferenceModel {
+        return items[name]!
+    }
+    
 }

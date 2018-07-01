@@ -18,7 +18,7 @@ class GameController {
     
     init() {
         reference = ReferenceController()
-        action = ActionController()
+        action = ActionController(ref:reference)
         city = CityController()
         player = PlayerCharacterController(actions: action,city:city)
         npc = NPCController(actions: action,city:city)

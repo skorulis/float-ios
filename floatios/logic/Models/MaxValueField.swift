@@ -15,6 +15,10 @@ public final class MaxValueField: Codable {
         self.value = maxValue
     }
     
+    public func setToMax() {
+        value = maxValue
+    }
+    
     public func add(_ amount:Int) {
         self.value = min(self.value + amount,self.maxValue)
     }

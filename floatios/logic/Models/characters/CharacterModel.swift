@@ -10,7 +10,7 @@ final public class CharacterModel: Codable {
     let name:String;
     let satiation:MaxValueField
     let time:MaxValueField
-    let ether:Int
+    var ether:Int
     let inventory:InventoryModel
     
     init(name:String="Fred") {
@@ -33,8 +33,17 @@ final public class CharacterModel: Codable {
         } else if (name == "ether") {
             return ether
         }
-        
         return 0 //Shouldn't happen
+    }
+    
+    func takeResource(name:String,quantity:Int) {
+        if (name == "satiation") {
+            satiation -= quantity
+        } else if (name == "time") {
+            time -= quantity
+        } else if (name == "ether") {
+            ether -= quantity
+        }
     }
     
 }

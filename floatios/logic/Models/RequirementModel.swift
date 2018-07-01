@@ -28,6 +28,11 @@ struct RequirementModel: Codable {
         return RequirementModel(type: .resource, identifier: "satiation", value: value)
     }
     
+    static func item(name:String,value:Int) -> RequirementModel {
+        return RequirementModel(type: .item, identifier: name, value: value)
+    }
+    
+    
 }
 
 class RequirementList: Codable {

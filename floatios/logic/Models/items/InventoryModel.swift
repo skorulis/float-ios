@@ -24,4 +24,25 @@ public class InventoryModel: Codable {
         return items.filter { $0.ref.name == name}.first
     }
     
+    func consumeItem(name:String,quantity:Int)  {
+        for i in 0..<items.count {
+            let item = items[i]
+            if (item.ref.name == name) {
+                item.quantity -= quantity
+                if (item.quantity <= 0) {
+                    items.remove(at: i)
+                }
+                return
+            }
+        }
+    }
+    
+    func add(item:ItemModel) {
+        if let existing = findItem(name: item.ref.name) {
+            existing.quantity += item.quantity
+        } else {
+            items.append(item)
+        }
+    }
+    
 }
