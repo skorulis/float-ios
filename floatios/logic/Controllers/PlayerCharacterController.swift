@@ -23,6 +23,7 @@ class PlayerCharacterController {
     
     func performCharacterAction(action:CharacterAction) {
         self.actionController.performCharacterAction(character: player.base, action: action)
+        player.stats.didPerformAction(action: action)
     }
     
     func dayFinished() {

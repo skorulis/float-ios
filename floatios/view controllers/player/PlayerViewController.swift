@@ -49,8 +49,15 @@ class PlayerViewController: SKCVFlowLayoutCollectionViewController {
             self.navigationController?.pushViewController(vc, animated: true)
         }
         
+        let statSection = ForwardNavigationCell.defaultSection(object: "Stats", collectionView: collectionView!)
+        statSection.didSelectItemAt = {(collectionView,indexPath) in
+            let vc = PlayerStatsViewController(player:self.game.player.player)
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
         sections.add(section: charSection)
         sections.add(section: itemSection)
+        sections.add(section: statSection)
         sections.add(section: activeActions)
         sections.add(section: blockedActions)
         

@@ -8,12 +8,26 @@
 
 import UIKit
 
+class PlayerStatsModel {
+    
+    //How many times the player has performed each action
+    var actionTimeStats:[String:Int] = [:]
+    
+    func didPerformAction(action:CharacterAction) {
+        let count = actionTimeStats[action.rawValue] ?? 0
+        actionTimeStats[action.rawValue] = count + 1
+    }
+    
+}
+
 class PlayerCharacterModel {
 
     let base:CharacterModel
+    let stats:PlayerStatsModel
     
     init() {
         base = CharacterModel()
+        stats = PlayerStatsModel()
     }
     
 }
