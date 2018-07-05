@@ -9,6 +9,8 @@ def shared_pods
     pod 'Crashlytics'
     pod "PromiseKit"
     pod "DateToolsSwift"
+    pod "TextFieldEffects"
+    pod "CCTextFieldEffects"
     pod 'SKSwiftLib', :path => '~/dev/ios/SKLibs/SKSwiftLib'
     pod 'SKComponents',:path => '~/dev/ios/SKLibs/SKComponents'
     pod 'SKCollectionView',:path => '~/dev/ios/SKLibs/SKCollectionView'

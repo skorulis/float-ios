@@ -20,7 +20,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FAKFontAwesome.iconFont(withSize: 1)
         
         window = UIWindow(frame: UIScreen.main.bounds)
-        let vc = CityViewController()
+        let vc = CreatePlayerViewController()
         let nav = UINavigationController(rootViewController: vc)
         window?.rootViewController = nav
         
