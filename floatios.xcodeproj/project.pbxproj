@@ -26,6 +26,7 @@
 		FA3691F520EDFB7E003988D4 /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3691F420EDFB7E003988D4 /* TextFieldCell.swift */; };
 		FA3691F820EDFCEF003988D4 /* CreatePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3691F720EDFCEF003988D4 /* CreatePlayerViewController.swift */; };
 		FA3691FA20EEC1FE003988D4 /* CTAButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3691F920EEC1FE003988D4 /* CTAButtonCell.swift */; };
+		FA36928F20F083AB003988D4 /* FloatTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA36928E20F083AB003988D4 /* FloatTheme.swift */; };
 		FA569C6F20E589C40094807F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA569C6E20E589C40094807F /* AppDelegate.swift */; };
 		FA569C7620E589C70094807F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA569C7520E589C70094807F /* Assets.xcassets */; };
 		FA569C7920E589C70094807F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA569C7720E589C70094807F /* LaunchScreen.storyboard */; };
@@ -84,6 +85,7 @@
 		FA3691F420EDFB7E003988D4 /* TextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCell.swift; sourceTree = "<group>"; };
 		FA3691F720EDFCEF003988D4 /* CreatePlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlayerViewController.swift; sourceTree = "<group>"; };
 		FA3691F920EEC1FE003988D4 /* CTAButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTAButtonCell.swift; sourceTree = "<group>"; };
+		FA36928E20F083AB003988D4 /* FloatTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatTheme.swift; sourceTree = "<group>"; };
 		FA569C6B20E589C40094807F /* floatios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = floatios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA569C6E20E589C40094807F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA569C7520E589C70094807F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				FA10723020E88AF70046C756 /* SectionHeaderView.swift */,
 				FA3691F420EDFB7E003988D4 /* TextFieldCell.swift */,
 				FA3691F920EEC1FE003988D4 /* CTAButtonCell.swift */,
+				FA36928E20F083AB003988D4 /* FloatTheme.swift */,
 			);
 			path = base;
 			sourceTree = "<group>";
@@ -563,6 +566,7 @@
 				FA569CBB20E58D970094807F /* ActionController.swift in Sources */,
 				FA10720A20E73D1B0046C756 /* NameGenerator.swift in Sources */,
 				FA569CB320E58D970094807F /* InventoryModel.swift in Sources */,
+				FA36928F20F083AB003988D4 /* FloatTheme.swift in Sources */,
 				FA3691F820EDFCEF003988D4 /* CreatePlayerViewController.swift in Sources */,
 				FA569CBF20E58FAE0094807F /* PlayerCharacterController.swift in Sources */,
 				FA10722120E75CC30046C756 /* ForwardNavigationCell.swift in Sources */,
