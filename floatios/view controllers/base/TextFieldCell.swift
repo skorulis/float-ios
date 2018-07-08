@@ -20,10 +20,9 @@ class TextFieldCellModel {
     }
 }
 
-final class TextFieldCell: UICollectionViewCell, AutoSizeModelCell {
+final class TextFieldCell: UICollectionViewCell, AutoSizeModelCell, ModelChangeFeedbackCell {
     
-    let textfield:YokoTextField = YokoTextField(frame: CGRect(x: 0, y: 0, width: 320, height: 70))
-    
+    var modelDidChangeBlock: ((TextFieldCellModel) -> ())?
     static var sizingCell: TextFieldCell = TextFieldCell()
     typealias ModelType = TextFieldCellModel
     var model: TextFieldCellModel? {
@@ -33,6 +32,8 @@ final class TextFieldCell: UICollectionViewCell, AutoSizeModelCell {
             self.textfield.text = model?.text
         }
     }
+    
+    let textfield:YokoTextField = YokoTextField(frame: CGRect(x: 0, y: 0, width: 320, height: 70))
     
     override init(frame:CGRect) {
         super.init(frame:frame)
@@ -47,6 +48,7 @@ final class TextFieldCell: UICollectionViewCell, AutoSizeModelCell {
     func buildView() {
         self.contentView.addSubview(textfield)
         textfield.foregroundColor = UIColor.brown
+        textfield.addTarget(self, action: #selector(textChanged(sender:)), for: .editingChanged)
     }
     
     func buildLayout() {
@@ -54,5 +56,12 @@ final class TextFieldCell: UICollectionViewCell, AutoSizeModelCell {
             make.edges.equalToSuperview().inset(UIEdgeInsets(top: 20, left: 20, bottom: 10, right: 20))
             make.height.equalTo(70)
         }
+    }
+    
+    @objc func textChanged(sender:Any) {
+        print("TEst")
+        guard let m = model else {return}
+        m.text = textfield.text
+        modelDidChangeBlock?(m)
     }
 }

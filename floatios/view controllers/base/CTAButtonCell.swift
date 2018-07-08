@@ -29,7 +29,7 @@ final class CTAButtonCell: UICollectionViewCell, AutoSizeModelCell {
     var model: CTAButtonModel? {
         didSet {
             self.label.text = model?.text
-            self.contentView.backgroundColor = currentBackgroundColor()
+            updateState()
         }
     }
     
@@ -44,7 +44,7 @@ final class CTAButtonCell: UICollectionViewCell, AutoSizeModelCell {
             make.edges.equalToSuperview()
             make.height.equalTo(50)
         }
-        self.contentView.backgroundColor = currentBackgroundColor()
+        updateState()
     }
     
     required init?(coder aDecoder: NSCoder) {
@@ -53,7 +53,7 @@ final class CTAButtonCell: UICollectionViewCell, AutoSizeModelCell {
     
     override var isHighlighted: Bool {
         didSet {
-            self.contentView.backgroundColor = currentBackgroundColor()
+            updateState()
         }
     }
     
@@ -65,8 +65,15 @@ final class CTAButtonCell: UICollectionViewCell, AutoSizeModelCell {
         return isHighlighted ? highlightColor : enabledColor
     }
     
+    private func updateState() {
+        let color = currentBackgroundColor()
+        if (color != self.contentView.backgroundColor) {
+            self.contentView.backgroundColor = color
+        }
+    }
+    
     var disabledColor:UIColor {
-        return SKTheme.theme.color.alizarin
+        return UIColor.lightGray
     }
     
     var enabledColor:UIColor {

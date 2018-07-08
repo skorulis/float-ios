@@ -7,7 +7,7 @@
 
 final public class CharacterModel: Codable {
 
-    let name:String;
+    var name:String;
     let satiation:MaxValueField
     let time:MaxValueField
     var ether:Int
