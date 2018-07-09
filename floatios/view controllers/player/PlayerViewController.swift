@@ -12,11 +12,13 @@ import SKCollectionView
 class PlayerViewController: SKCVFlowLayoutCollectionViewController {
 
     let game = GameController.instance
-    let actions:[CharacterAction] = [.sleep,.forage,.mine,.lumberjack,.eat]
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView?.backgroundColor = UIColor.white
+        
+        let actions:[ActionType] = [.sleep,.forage,.mine,.lumberjack,.eat]
+        let actionRefs = actions.map { game.reference.getAction(type: $0)}
         
         let char = game.player.player.base
         self.title = char.name
@@ -30,12 +32,12 @@ class PlayerViewController: SKCVFlowLayoutCollectionViewController {
         
         activeActions.didSelectItemAt = {(collectionView,indexPath) in
             let cell = collectionView.cellForItem(at: indexPath) as! ActionCell
-            self.game.player.performCharacterAction(action: cell.model!)
+            self.game.player.performAction(action: cell.model!)
             self.sections.reloadData()
         }
         
         self.sections.preReloadBlock = { [unowned self] in
-            let split = self.actions.split(by: { (act) -> Bool in
+            let split = actionRefs.split(by: { (act) -> Bool in
                 return self.game.action.hasRequirements(character: char, action: act)
             })
             

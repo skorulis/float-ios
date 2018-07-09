@@ -8,33 +8,6 @@
 
 import UIKit
 
-enum RequirementType: String, Codable {
-    case item
-    case resource
-    case skill
-}
-
-struct RequirementModel: Codable {
-    
-    let type:RequirementType
-    let identifier:String
-    let value:Int
-    
-    static func time(value:Int) -> RequirementModel {
-        return RequirementModel(type: .resource, identifier: "time", value: value)
-    }
-    
-    static func satiation(value:Int) -> RequirementModel {
-        return RequirementModel(type: .resource, identifier: "satiation", value: value)
-    }
-    
-    static func item(name:String,value:Int) -> RequirementModel {
-        return RequirementModel(type: .item, identifier: name, value: value)
-    }
-    
-    
-}
-
 class RequirementList: Codable {
     let requirements:[RequirementModel]
     

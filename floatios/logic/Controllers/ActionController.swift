@@ -7,14 +7,6 @@
 
 import SKSwiftLib
 
-enum CharacterAction: String {
-    case forage //Find food
-    case mine //Find minerals
-    case lumberjack //Get wood
-    case sleep
-    case eat //Should really be use item and be under a separate case
-}
-
 class ActionController {
 
     let ref:ReferenceController
@@ -24,10 +16,10 @@ class ActionController {
         self.ref = ref
     }
     
-    func performCharacterAction(character:CharacterModel,action:CharacterAction) {
+    func performAction(character:CharacterModel,action:ActionReferenceModel) {
         let reqs = getRequirements(action: action);
         takeRequirements(reqs: reqs, character: character)
-        switch(action) {
+        switch(action.type) {
         case .forage:
             let item = ItemModel(ref: ref.getItem(name: "Food"))
             character.inventory.add(item: item)
@@ -42,22 +34,11 @@ class ActionController {
         }
     }
     
-    func getRequirements(action:CharacterAction) -> RequirementList {
-        switch(action) {
-        case .forage:
-            return RequirementList(requirements: [RequirementModel.time(value: 10),RequirementModel.satiation(value: 5)])
-        case .mine:
-            return RequirementList(requirements: [RequirementModel.time(value: 20),RequirementModel.satiation(value: 10)])
-        case .lumberjack:
-            return RequirementList(requirements: [RequirementModel.time(value: 20),RequirementModel.satiation(value: 10)])
-        case .eat:
-            return RequirementList(requirements: [RequirementModel.time(value: 5),RequirementModel.item(name: "Food", value: 1)])
-        case .sleep:
-            return RequirementList.empty()
-        }
+    func getRequirements(action:ActionReferenceModel) -> RequirementList {
+        return RequirementList(requirements: action.requirements)
     }
     
-    func hasRequirements(character:CharacterModel,action:CharacterAction) -> Bool {
+    func hasRequirements(character:CharacterModel,action:ActionReferenceModel) -> Bool {
         let reqs = getRequirements(action: action)
         return hasRequirements(character: character, requirements: reqs)
     }

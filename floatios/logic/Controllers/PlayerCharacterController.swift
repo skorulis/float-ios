@@ -21,9 +21,9 @@ class PlayerCharacterController {
         self.cityController.add(occupant:player.base)
     }
     
-    func performCharacterAction(action:CharacterAction) {
-        self.actionController.performCharacterAction(character: player.base, action: action)
-        player.stats.didPerformAction(action: action)
+    func performAction(action:ActionReferenceModel) {
+        self.actionController.performAction(character: player.base, action: action)
+        player.stats.didPerformAction(action: action.type)
     }
     
     func dayFinished() {

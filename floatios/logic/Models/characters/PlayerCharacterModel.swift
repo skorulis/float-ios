@@ -13,7 +13,7 @@ class PlayerStatsModel {
     //How many times the player has performed each action
     var actionTimeStats:[String:Int] = [:]
     
-    func didPerformAction(action:CharacterAction) {
+    func didPerformAction(action:ActionType) {
         let count = actionTimeStats[action.rawValue] ?? 0
         actionTimeStats[action.rawValue] = count + 1
     }

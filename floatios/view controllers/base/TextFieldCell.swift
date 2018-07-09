@@ -59,7 +59,6 @@ final class TextFieldCell: UICollectionViewCell, AutoSizeModelCell, ModelChangeF
     }
     
     @objc func textChanged(sender:Any) {
-        print("TEst")
         guard let m = model else {return}
         m.text = textfield.text
         modelDidChangeBlock?(m)

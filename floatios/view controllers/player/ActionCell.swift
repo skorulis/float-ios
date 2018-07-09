@@ -11,13 +11,13 @@ import SKCollectionView
 import SnapKit
 
 final class ActionCell: UICollectionViewCell, AutoSizeModelCell {
-    var model: CharacterAction? {
+    var model: ActionReferenceModel? {
         didSet {
-            self.label.text = model?.rawValue
+            self.label.text = model?.type.rawValue
         }
     }
     static var sizingCell: ActionCell = ActionCell()
-    typealias ModelType = CharacterAction
+    typealias ModelType = ActionReferenceModel
     
     let label = UILabel()
     

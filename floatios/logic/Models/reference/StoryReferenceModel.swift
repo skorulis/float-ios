@@ -8,9 +8,9 @@
 
 import UIKit
 
-struct StoryReferenceModel: Codable {
+public struct StoryReferenceModel: Codable {
 
-    let key:String
-    let story:String
+    public let key:String
+    public let story:String
     
 }

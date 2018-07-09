@@ -55,6 +55,8 @@
 		FA9A5CCB20E97BE100C36110 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9A5CCA20E97BE100C36110 /* ItemCell.swift */; };
 		FAB7B7F520EA0956002B2C0B /* PlayerStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7B7F420EA0956002B2C0B /* PlayerStatsViewController.swift */; };
 		FAB7B7F720EA09C4002B2C0B /* StatProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7B7F620EA09C4002B2C0B /* StatProgressCell.swift */; };
+		FAC4170F20F2B80000C4E3B5 /* SkillReferenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC4170E20F2B80000C4E3B5 /* SkillReferenceModel.swift */; };
+		FAC4171120F2BAD300C4E3B5 /* ActionReferenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC4171020F2BAD300C4E3B5 /* ActionReferenceModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -124,6 +126,8 @@
 		FA9A5CCA20E97BE100C36110 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		FAB7B7F420EA0956002B2C0B /* PlayerStatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStatsViewController.swift; sourceTree = "<group>"; };
 		FAB7B7F620EA09C4002B2C0B /* StatProgressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatProgressCell.swift; sourceTree = "<group>"; };
+		FAC4170E20F2B80000C4E3B5 /* SkillReferenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillReferenceModel.swift; sourceTree = "<group>"; };
+		FAC4171020F2BAD300C4E3B5 /* ActionReferenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionReferenceModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,6 +226,8 @@
 			children = (
 				FA36929C20F1AAB0003988D4 /* StoryReferenceModel.swift */,
 				FA10722A20E84D330046C756 /* ItemReferenceModel.swift */,
+				FAC4170E20F2B80000C4E3B5 /* SkillReferenceModel.swift */,
+				FAC4171020F2BAD300C4E3B5 /* ActionReferenceModel.swift */,
 			);
 			path = reference;
 			sourceTree = "<group>";
@@ -618,6 +624,7 @@
 				FA569CC120E58FC40094807F /* PlayerCharacterModel.swift in Sources */,
 				FA10722B20E84D330046C756 /* ItemReferenceModel.swift in Sources */,
 				FAB7B7F520EA0956002B2C0B /* PlayerStatsViewController.swift in Sources */,
+				FAC4171120F2BAD300C4E3B5 /* ActionReferenceModel.swift in Sources */,
 				FA569CB120E58D970094807F /* LandPlotModel.swift in Sources */,
 				FA10720E20E75A040046C756 /* CityLandController.swift in Sources */,
 				FA10720420E7256B0046C756 /* CityDetailsCell.swift in Sources */,
@@ -626,6 +633,7 @@
 				FA10721D20E75CBB0046C756 /* PlayerViewController.swift in Sources */,
 				FA36929520F19D5E003988D4 /* StoryViewController.swift in Sources */,
 				FA3691F520EDFB7E003988D4 /* TextFieldCell.swift in Sources */,
+				FAC4170F20F2B80000C4E3B5 /* SkillReferenceModel.swift in Sources */,
 				FA569C6F20E589C40094807F /* AppDelegate.swift in Sources */,
 				FA569CB620E58D970094807F /* NonPlayerCharacterModel.swift in Sources */,
 				FA10721F20E75CBB0046C756 /* PlayerDetailsCell.swift in Sources */,

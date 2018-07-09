@@ -13,11 +13,15 @@ class ReferenceController {
 
     let items:[String:ItemReferenceModel]
     let story:[String:StoryReferenceModel]
+    let skills:[SkillType:SkillReferenceModel]
+    let actions:[ActionType:ActionReferenceModel]
     
     init() {
         let itemArray = ReferenceController.makeItems()
         items = itemArray.groupSingle { $0.name }
         story = ReferenceController.makeStory().groupSingle { $0.key }
+        skills = ReferenceController.makeSkills().groupSingle { $0.name }
+        actions = ReferenceController.makeActions().groupSingle { $0.type }
     }
     
     static func makeStory() -> [StoryReferenceModel] {
@@ -35,12 +39,41 @@ class ReferenceController {
         return [food,ether,minerals,wood]
     }
     
+    static func makeSkills() -> [SkillReferenceModel] {
+        return [SkillReferenceModel(name: .foraging),SkillReferenceModel(name: .lumberjacking),SkillReferenceModel(name: .mining)]
+    }
+    
+    static func makeActions() -> [ActionReferenceModel] {
+        let sleep = ActionReferenceModel(type: .sleep)
+        let eat = ActionReferenceModel(type: .eat,reqs:[RequirementModel.time(value: 5),
+                                                        RequirementModel.item(name: "Food", value: 1)])
+        let forage = ActionReferenceModel(type: .forage, reqs: [RequirementModel.skill(type: .foraging),
+                                                                RequirementModel.time(value: 10),
+                                                                RequirementModel.satiation(value: 5)])
+        let mine = ActionReferenceModel(type: .mine, reqs: [RequirementModel.skill(type: .mining),
+                                                              RequirementModel.time(value: 20),
+                                                              RequirementModel.satiation(value: 10)])
+        let lumberjack = ActionReferenceModel(type: .lumberjack,reqs:[RequirementModel.skill(type: .lumberjacking),
+                                                                      RequirementModel.time(value: 20),
+                                                                      RequirementModel.satiation(value: 10)])
+        
+        return [sleep,eat,forage,mine,lumberjack]
+    }
+    
     func getItem(name:String) -> ItemReferenceModel {
         return items[name]!
     }
     
     func getStory(key:String) -> StoryReferenceModel {
         return story[key]!
+    }
+    
+    func getSkill(type:SkillType) -> SkillReferenceModel {
+        return skills[type]!
+    }
+    
+    func getAction(type:ActionType) -> ActionReferenceModel {
+        return actions[type]!
     }
     
 }
