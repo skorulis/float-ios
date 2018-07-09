@@ -29,7 +29,6 @@ class CreatePlayerViewController: SKCVFlowLayoutCollectionViewController {
             self.game.majorState.fireStateChange()
         }
         
-        
         let section = TextFieldCell.defaultSection(object: textFieldModel, collectionView: self.collectionView!)
         section.willDisplayCell = TextFieldCell.willDisplayCellBlock(change: { (model) in
             buttonModel.enabled = (model.text?.count ?? 0) > 0
@@ -37,10 +36,18 @@ class CreatePlayerViewController: SKCVFlowLayoutCollectionViewController {
         })
         sections.add(section: section)
         
+        let avatarSection = AvatarEmojiCellCollectionViewCell.defaultSection(object: "?", collectionView: collectionView!)
+        avatarSection.didSelectItemAt = {[unowned self] (collectionview,indexPath) in
+            let vc = AvatarSelectionViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
         let testModel = TextFieldCellModel(placeholder: "Experimental thingo")
         let section2 = TextFieldCell.defaultSection(object: testModel, collectionView: self.collectionView!)
-        sections.add(section: section2)
         
+        
+        sections.add(section: section2)
+        sections.add(section: avatarSection)
         sections.add(section: cta)
         
     }

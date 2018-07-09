@@ -20,11 +20,13 @@ final class StoryPieceCell: UICollectionViewCell, AutoSizeModelCell {
     }
     
     let label = UILabel()
+    let avatar = AvatarImageView()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         self.contentView.addSubview(label)
+        self.contentView.addSubview(avatar)
         label.numberOfLines = 0
         label.snp.makeConstraints { (make) in
             make.edges.equalToSuperview().inset(10)

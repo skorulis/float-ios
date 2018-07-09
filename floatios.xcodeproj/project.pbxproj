@@ -52,6 +52,9 @@
 		FA569CBD20E58F9E0094807F /* NPCController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA569CBC20E58F9E0094807F /* NPCController.swift */; };
 		FA569CBF20E58FAE0094807F /* PlayerCharacterController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA569CBE20E58FAE0094807F /* PlayerCharacterController.swift */; };
 		FA569CC120E58FC40094807F /* PlayerCharacterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA569CC020E58FC40094807F /* PlayerCharacterModel.swift */; };
+		FA73C6FA20F35152006AEF0E /* AvatarSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73C6F920F35152006AEF0E /* AvatarSelectionViewController.swift */; };
+		FA73C6FE20F353E4006AEF0E /* AvatarEmojiCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73C6FD20F353E4006AEF0E /* AvatarEmojiCellCollectionViewCell.swift */; };
+		FA73C70020F4027A006AEF0E /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73C6FF20F40279006AEF0E /* AvatarImageView.swift */; };
 		FA9A5CCB20E97BE100C36110 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9A5CCA20E97BE100C36110 /* ItemCell.swift */; };
 		FAB7B7F520EA0956002B2C0B /* PlayerStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7B7F420EA0956002B2C0B /* PlayerStatsViewController.swift */; };
 		FAB7B7F720EA09C4002B2C0B /* StatProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7B7F620EA09C4002B2C0B /* StatProgressCell.swift */; };
@@ -123,6 +126,9 @@
 		FA569CBC20E58F9E0094807F /* NPCController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NPCController.swift; sourceTree = "<group>"; };
 		FA569CBE20E58FAE0094807F /* PlayerCharacterController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCharacterController.swift; sourceTree = "<group>"; };
 		FA569CC020E58FC40094807F /* PlayerCharacterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerCharacterModel.swift; sourceTree = "<group>"; };
+		FA73C6F920F35152006AEF0E /* AvatarSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSelectionViewController.swift; sourceTree = "<group>"; };
+		FA73C6FD20F353E4006AEF0E /* AvatarEmojiCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarEmojiCellCollectionViewCell.swift; sourceTree = "<group>"; };
+		FA73C6FF20F40279006AEF0E /* AvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImageView.swift; sourceTree = "<group>"; };
 		FA9A5CCA20E97BE100C36110 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		FAB7B7F420EA0956002B2C0B /* PlayerStatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStatsViewController.swift; sourceTree = "<group>"; };
 		FAB7B7F620EA09C4002B2C0B /* StatProgressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatProgressCell.swift; sourceTree = "<group>"; };
@@ -368,9 +374,20 @@
 			path = Controllers;
 			sourceTree = "<group>";
 		};
+		FA73C6F820F3513B006AEF0E /* avatar */ = {
+			isa = PBXGroup;
+			children = (
+				FA73C6F920F35152006AEF0E /* AvatarSelectionViewController.swift */,
+				FA73C6FD20F353E4006AEF0E /* AvatarEmojiCellCollectionViewCell.swift */,
+				FA73C6FF20F40279006AEF0E /* AvatarImageView.swift */,
+			);
+			path = avatar;
+			sourceTree = "<group>";
+		};
 		FAE12DFD20E6143A00F9FA77 /* view controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FA73C6F820F3513B006AEF0E /* avatar */,
 				FA36929320F19D53003988D4 /* story */,
 				FA36929020F18A3B003988D4 /* main */,
 				FA3691F620EDFC99003988D4 /* onboarding */,
@@ -624,6 +641,7 @@
 				FA569CC120E58FC40094807F /* PlayerCharacterModel.swift in Sources */,
 				FA10722B20E84D330046C756 /* ItemReferenceModel.swift in Sources */,
 				FAB7B7F520EA0956002B2C0B /* PlayerStatsViewController.swift in Sources */,
+				FA73C6FE20F353E4006AEF0E /* AvatarEmojiCellCollectionViewCell.swift in Sources */,
 				FAC4171120F2BAD300C4E3B5 /* ActionReferenceModel.swift in Sources */,
 				FA569CB120E58D970094807F /* LandPlotModel.swift in Sources */,
 				FA10720E20E75A040046C756 /* CityLandController.swift in Sources */,
@@ -637,6 +655,8 @@
 				FA569C6F20E589C40094807F /* AppDelegate.swift in Sources */,
 				FA569CB620E58D970094807F /* NonPlayerCharacterModel.swift in Sources */,
 				FA10721F20E75CBB0046C756 /* PlayerDetailsCell.swift in Sources */,
+				FA73C70020F4027A006AEF0E /* AvatarImageView.swift in Sources */,
+				FA73C6FA20F35152006AEF0E /* AvatarSelectionViewController.swift in Sources */,
 				FA569CB820E58D970094807F /* LoreModel.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
