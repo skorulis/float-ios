@@ -9,7 +9,11 @@
 import UIKit
 import SKCollectionView
 
-final class AvatarEmojiCellCollectionViewCell: UICollectionViewCell, AutoSizeModelCell {
+final class AvatarEmojiCellCollectionViewCell: UICollectionViewCell, SimpleModelCell {
+    
+    static func calculateSize(model: String?, collectionView: UICollectionView) -> CGSize {
+        return CGSize(width: 40, height: 40)
+    }
     
     static var sizingCell: AvatarEmojiCellCollectionViewCell = AvatarEmojiCellCollectionViewCell(frame: .zero)
     typealias ModelType = String

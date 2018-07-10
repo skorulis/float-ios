@@ -8,6 +8,7 @@
 final public class CharacterModel: Codable {
 
     var name:String;
+    var avatarIcon = "👤"
     let satiation:MaxValueField
     let time:MaxValueField
     var ether:Int

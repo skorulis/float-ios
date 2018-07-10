@@ -20,12 +20,13 @@ class CreatePlayerViewController: SKCVFlowLayoutCollectionViewController {
         
         let buttonModel = CTAButtonModel(text: "Create")
         let textFieldModel = TextFieldCellModel(placeholder: "Player name")
+        let baseCharacter:CharacterModel = self.game.player.player.base
         
         buttonModel.enabled = false
         let cta = CTAButtonCell.defaultSection(object: buttonModel, collectionView: self.collectionView!)
         cta.didSelectItemAt = {[unowned self] (collectionView,indexPath) in
             print("Selected ")
-            self.game.player.player.base.name = textFieldModel.text!
+            baseCharacter.name = textFieldModel.text!
             self.game.majorState.fireStateChange()
         }
         
@@ -36,9 +37,17 @@ class CreatePlayerViewController: SKCVFlowLayoutCollectionViewController {
         })
         sections.add(section: section)
         
-        let avatarSection = AvatarEmojiCellCollectionViewCell.defaultSection(object: "?", collectionView: collectionView!)
+        let getAvatarModel:() -> String? = {baseCharacter.avatarIcon}
+        
+        let avatarSection = AvatarEmojiCellCollectionViewCell.defaultSection(singleModel: getAvatarModel, collectionView: collectionView!)
+        let avatarSectionId = avatarSection.sectionId
         avatarSection.didSelectItemAt = {[unowned self] (collectionview,indexPath) in
             let vc = AvatarSelectionViewController()
+            vc.didSelectItem = {(controller,avatar) in
+                baseCharacter.avatarIcon = avatar
+                self.sections.reload(sectionId:avatarSectionId)
+                controller.navigationController?.popViewController(animated: true)
+            }
             self.navigationController?.pushViewController(vc, animated: true)
         }
         
