@@ -27,8 +27,10 @@ class ReferenceController {
     
     static func makeStory() -> [StoryReferenceModel] {
         let start = StoryReferenceModel(key: "start", story: "You open your eyes to unfamiliar surroundings with no memory of how you came to be here. You sit up and rub your head to try to remember, all you can think of is your name")
+        let needSleep = StoryReferenceModel(key: "start_sleep", story: "At least you can remember that much, by the time you senses return a litt the sun is alread going down, you decide to sleep and see what you can find in the morning")
         
-        return [start]
+        
+        return [start,needSleep]
     }
     
     static func makeItems() -> [ItemReferenceModel] {

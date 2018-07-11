@@ -9,14 +9,19 @@
 import UIKit
 import SKCollectionView
 
+enum StoryNextAction {
+    case showVC(() -> (UIViewController))
+    case dismiss
+}
+
 class StoryPieceViewController: SKCVFlowLayoutCollectionViewController {
 
     let story:JournalEntry
-    let nextVC:() -> (UIViewController)
+    let nextAction:StoryNextAction
     
-    init(story:JournalEntry,nextVC:@escaping () -> (UIViewController)) {
+    init(story:JournalEntry,next:StoryNextAction) {
         self.story = story
-        self.nextVC = nextVC
+        self.nextAction = next
         super.init()
     }
     
@@ -32,8 +37,13 @@ class StoryPieceViewController: SKCVFlowLayoutCollectionViewController {
         
         let next = CTAButtonCell.defaultSection(object: CTAButtonModel(text: "Next"), collectionView: self.collectionView!)
         next.didSelectItemAt = {[unowned self] (collectionView,indexPath) in
-            let next = self.nextVC()
-            self.navigationController?.pushViewController(next, animated: true)
+            switch self.nextAction {
+            case .showVC(let block):
+                let nextVC = block()
+                self.navigationController?.pushViewController(nextVC, animated: true)
+            case .dismiss:
+                self.presentingViewController?.dismiss(animated: true, completion: nil)
+            }
         }
         
         self.sections.add(section: section)

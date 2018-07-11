@@ -18,6 +18,7 @@ class PlayerCharacterController {
         self.actionController = actions
         self.cityController = city;
         player = PlayerCharacterModel()
+        player.base.time.set(value: 0)
         self.cityController.add(occupant:player.base)
     }
     

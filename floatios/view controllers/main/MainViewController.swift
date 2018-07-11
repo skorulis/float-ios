@@ -38,18 +38,16 @@ class MainViewController: UIViewController {
         
         let story = game.reference.getStory(key: "start")
         let journal = game.player.addJournalEntry(story: story)
-        let storyStart = StoryPieceViewController(story: journal) { () -> (UIViewController) in
-            return CreatePlayerViewController()
-        }
+        let nextAction = StoryNextAction.showVC { CreatePlayerViewController() }
+        
+        let storyStart = StoryPieceViewController(story: journal, next:nextAction)
         
         let nav = UINavigationController(rootViewController: storyStart)
         self.present(nav, animated: false, completion: nil)
     }
     
     private func gameStateChanged(state:MajorStateController) {
-        if let _ = self.presentedViewController {
-            self.dismiss(animated: true, completion: nil)
-        }
+        
     }
 
 }

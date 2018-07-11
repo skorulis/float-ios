@@ -22,12 +22,14 @@ class CreatePlayerViewController: SKCVFlowLayoutCollectionViewController {
         let textFieldModel = TextFieldCellModel(placeholder: "Player name")
         let baseCharacter:CharacterModel = self.game.player.player.base
         
+        
+        
         buttonModel.enabled = false
         let cta = CTAButtonCell.defaultSection(object: buttonModel, collectionView: self.collectionView!)
         cta.didSelectItemAt = {[unowned self] (collectionView,indexPath) in
-            print("Selected ")
             baseCharacter.name = textFieldModel.text!
             self.game.majorState.fireStateChange()
+            self.showStory()
         }
         
         let section = TextFieldCell.defaultSection(object: textFieldModel, collectionView: self.collectionView!)
@@ -59,5 +61,13 @@ class CreatePlayerViewController: SKCVFlowLayoutCollectionViewController {
         sections.add(section: avatarSection)
         sections.add(section: cta)
         
+    }
+    
+    func showStory() {
+        let story = game.reference.getStory(key: "start_sleep")
+        let journal = game.player.addJournalEntry(story: story)
+        
+        let storyVC = StoryPieceViewController(story: journal, next: .dismiss)
+        self.navigationController?.pushViewController(storyVC, animated: true)
     }
 }
