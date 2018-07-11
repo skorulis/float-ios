@@ -17,7 +17,7 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
 
         
-        let vc = CityViewController()
+        let vc = PlayerViewController()
         let nav = UINavigationController(rootViewController: vc)
         self.view.addSubview(nav.view)
         nav.view.snp.makeConstraints { (make) in

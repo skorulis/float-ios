@@ -17,6 +17,10 @@ class PlayerViewController: SKCVFlowLayoutCollectionViewController {
         super.viewDidLoad()
         self.collectionView?.backgroundColor = UIColor.white
         
+        game.majorState.observers.add(object: self) { [unowned self] _ in
+            self.sections.reloadData()
+        }
+        
         let actions:[ActionType] = [.sleep,.forage,.mine,.lumberjack,.eat]
         let actionRefs = actions.map { game.reference.getAction(type: $0)}
         
