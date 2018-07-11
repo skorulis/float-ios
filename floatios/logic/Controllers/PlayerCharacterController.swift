@@ -30,4 +30,15 @@ class PlayerCharacterController {
         actionController.endDay(character: player.base)
     }
     
+    func addJournalEntry(story:StoryReferenceModel) -> JournalEntry {
+        return addJournalEntry(story: story, character: player.base)
+    }
+    
+    func addJournalEntry(story:StoryReferenceModel,character:CharacterModel) -> JournalEntry {
+        let entry = JournalEntry(character: character, story: story)
+        player.journal.append(entry)
+        return entry
+    }
+    
+    
 }

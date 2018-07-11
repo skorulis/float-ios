@@ -24,10 +24,12 @@ class PlayerCharacterModel {
 
     let base:CharacterModel
     let stats:PlayerStatsModel
+    var journal:[JournalEntry]
     
     init() {
         base = CharacterModel()
         stats = PlayerStatsModel()
+        journal = []
     }
     
 }

@@ -12,10 +12,13 @@ import SKCollectionView
 final class StoryPieceCell: UICollectionViewCell, AutoSizeModelCell {
     
     static var sizingCell: StoryPieceCell = StoryPieceCell(frame: .zero)
-    typealias ModelType = StoryReferenceModel
-    var model: StoryReferenceModel? {
+    typealias ModelType = JournalEntry
+    var model: JournalEntry? {
         didSet {
-            self.label.text = model?.story
+            if let m = model {
+                self.label.text = model?.story.story
+                self.avatar.showAvatar(avatar: m.avatar, size: 40)
+            }
         }
     }
     
@@ -27,9 +30,16 @@ final class StoryPieceCell: UICollectionViewCell, AutoSizeModelCell {
         
         self.contentView.addSubview(label)
         self.contentView.addSubview(avatar)
+        
+        avatar.snp.makeConstraints { (make) in
+            make.top.left.equalToSuperview().inset(8)
+            make.width.equalTo(40)
+        }
+        
         label.numberOfLines = 0
         label.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview().inset(10)
+            make.left.equalTo(avatar.snp.right).offset(8)
+            make.right.top.bottom.equalToSuperview().inset(8)
         }
         
     }

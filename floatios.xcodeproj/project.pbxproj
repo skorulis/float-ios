@@ -60,6 +60,8 @@
 		FAB7B7F720EA09C4002B2C0B /* StatProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7B7F620EA09C4002B2C0B /* StatProgressCell.swift */; };
 		FAC4170F20F2B80000C4E3B5 /* SkillReferenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC4170E20F2B80000C4E3B5 /* SkillReferenceModel.swift */; };
 		FAC4171120F2BAD300C4E3B5 /* ActionReferenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC4171020F2BAD300C4E3B5 /* ActionReferenceModel.swift */; };
+		FAD8518820F4985C00227AF2 /* SelectAvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD8518720F4985C00227AF2 /* SelectAvatarCell.swift */; };
+		FAD8518A20F4C39700227AF2 /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD8518920F4C39700227AF2 /* JournalEntry.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -134,6 +136,8 @@
 		FAB7B7F620EA09C4002B2C0B /* StatProgressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatProgressCell.swift; sourceTree = "<group>"; };
 		FAC4170E20F2B80000C4E3B5 /* SkillReferenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillReferenceModel.swift; sourceTree = "<group>"; };
 		FAC4171020F2BAD300C4E3B5 /* ActionReferenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionReferenceModel.swift; sourceTree = "<group>"; };
+		FAD8518720F4985C00227AF2 /* SelectAvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAvatarCell.swift; sourceTree = "<group>"; };
+		FAD8518920F4C39700227AF2 /* JournalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -251,6 +255,7 @@
 			isa = PBXGroup;
 			children = (
 				FA3691F720EDFCEF003988D4 /* CreatePlayerViewController.swift */,
+				FAD8518720F4985C00227AF2 /* SelectAvatarCell.swift */,
 			);
 			path = onboarding;
 			sourceTree = "<group>";
@@ -356,6 +361,7 @@
 				FA569CA920E58D960094807F /* NonPlayerCharacterModel.swift */,
 				FA569CAA20E58D960094807F /* CharacterModel.swift */,
 				FA569CC020E58FC40094807F /* PlayerCharacterModel.swift */,
+				FAD8518920F4C39700227AF2 /* JournalEntry.swift */,
 			);
 			path = characters;
 			sourceTree = "<group>";
@@ -616,11 +622,13 @@
 				FA36929D20F1AAB0003988D4 /* StoryReferenceModel.swift in Sources */,
 				FA569CB720E58D970094807F /* CharacterModel.swift in Sources */,
 				FAB7B7F720EA09C4002B2C0B /* StatProgressCell.swift in Sources */,
+				FAD8518820F4985C00227AF2 /* SelectAvatarCell.swift in Sources */,
 				FA36929220F18A4B003988D4 /* MainViewController.swift in Sources */,
 				FA569CB020E58D970094807F /* MaxValueField.swift in Sources */,
 				FA3691FA20EEC1FE003988D4 /* CTAButtonCell.swift in Sources */,
 				FA10721E20E75CBB0046C756 /* ActionCell.swift in Sources */,
 				FA569CBD20E58F9E0094807F /* NPCController.swift in Sources */,
+				FAD8518A20F4C39700227AF2 /* JournalEntry.swift in Sources */,
 				FA10723420E8ACBE0046C756 /* InventoryViewController.swift in Sources */,
 				FA569CBB20E58D970094807F /* ActionController.swift in Sources */,
 				FA10720A20E73D1B0046C756 /* NameGenerator.swift in Sources */,

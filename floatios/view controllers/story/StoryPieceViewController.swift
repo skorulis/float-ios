@@ -11,10 +11,10 @@ import SKCollectionView
 
 class StoryPieceViewController: SKCVFlowLayoutCollectionViewController {
 
-    let story:StoryReferenceModel
+    let story:JournalEntry
     let nextVC:() -> (UIViewController)
     
-    init(story:StoryReferenceModel,nextVC:@escaping () -> (UIViewController)) {
+    init(story:JournalEntry,nextVC:@escaping () -> (UIViewController)) {
         self.story = story
         self.nextVC = nextVC
         super.init()

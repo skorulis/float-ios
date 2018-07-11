@@ -36,8 +36,9 @@ class MainViewController: UIViewController {
             return
         }
         
-        let story = GameController.instance.reference.getStory(key: "start")
-        let storyStart = StoryPieceViewController(story: story) { () -> (UIViewController) in
+        let story = game.reference.getStory(key: "start")
+        let journal = game.player.addJournalEntry(story: story)
+        let storyStart = StoryPieceViewController(story: journal) { () -> (UIViewController) in
             return CreatePlayerViewController()
         }
         

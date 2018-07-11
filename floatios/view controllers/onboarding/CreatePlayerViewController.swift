@@ -39,7 +39,7 @@ class CreatePlayerViewController: SKCVFlowLayoutCollectionViewController {
         
         let getAvatarModel:() -> String? = {baseCharacter.avatarIcon}
         
-        let avatarSection = AvatarEmojiCellCollectionViewCell.defaultSection(singleModel: getAvatarModel, collectionView: collectionView!)
+        let avatarSection = SelectAvatarCell.defaultSection(singleModel: getAvatarModel, collectionView: collectionView!)
         let avatarSectionId = avatarSection.sectionId
         avatarSection.didSelectItemAt = {[unowned self] (collectionview,indexPath) in
             let vc = AvatarSelectionViewController()
