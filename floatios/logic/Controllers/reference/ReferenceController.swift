@@ -8,6 +8,7 @@
 
 import UIKit
 import SKSwiftLib
+import FontAwesomeKit
 
 class ReferenceController {
 
@@ -44,20 +45,32 @@ class ReferenceController {
     }
     
     static func makeActions() -> [ActionReferenceModel] {
-        let sleep = ActionReferenceModel(type: .sleep)
-        let eat = ActionReferenceModel(type: .eat,reqs:[RequirementModel.time(value: 5),
-                                                        RequirementModel.item(name: "Food", value: 1)])
-        let forage = ActionReferenceModel(type: .forage, reqs: [RequirementModel.skill(type: .foraging),
-                                                                RequirementModel.time(value: 10),
-                                                                RequirementModel.satiation(value: 5)])
-        let mine = ActionReferenceModel(type: .mine, reqs: [RequirementModel.skill(type: .mining),
-                                                              RequirementModel.time(value: 20),
-                                                              RequirementModel.satiation(value: 10)])
-        let lumberjack = ActionReferenceModel(type: .lumberjack,reqs:[RequirementModel.skill(type: .lumberjacking),
-                                                                      RequirementModel.time(value: 20),
-                                                                      RequirementModel.satiation(value: 10)])
+        let iconSize = CGFloat(30)
+        let sleep = ActionReferenceModel(type: .sleep, icon: FAKFontAwesome.moonOIcon(withSize: iconSize))
+        let eat = ActionReferenceModel(type: .eat,icon: FAKFontAwesome.appleIcon(withSize: iconSize),
+                                       reqs:[RequirementModel.time(value: 5),
+                                            RequirementModel.item(name: "Food", value: 1)])
         
-        return [sleep,eat,forage,mine,lumberjack]
+        let explore = ActionReferenceModel(type: .explore, icon: FAKFontAwesome.binocularsIcon(withSize: iconSize),
+                                           reqs:[RequirementModel.time(value: 30),
+                                                 RequirementModel.satiation(value: 10)])
+        
+        let forage = ActionReferenceModel(type: .forage, icon: FAKFontAwesome.pawIcon(withSize: iconSize),
+                                          reqs: [RequirementModel.skill(type: .foraging),
+                                                 RequirementModel.time(value: 10),
+                                                 RequirementModel.satiation(value: 5)])
+        
+        let mine = ActionReferenceModel(type: .mine, icon: FAKFontAwesome.wrenchIcon(withSize: iconSize),
+                                        reqs: [RequirementModel.skill(type: .mining),
+                                               RequirementModel.time(value: 20),
+                                               RequirementModel.satiation(value: 10)])
+        
+        let lumberjack = ActionReferenceModel(type: .lumberjack, icon: FAKFontAwesome.treeIcon(withSize: iconSize),
+                                              reqs:[RequirementModel.skill(type: .lumberjacking),
+                                                    RequirementModel.time(value: 20),
+                                                    RequirementModel.satiation(value: 10)])
+        
+        return [sleep,eat,forage,mine,lumberjack,explore]
     }
     
     func getItem(name:String) -> ItemReferenceModel {
@@ -74,6 +87,10 @@ class ReferenceController {
     
     func getAction(type:ActionType) -> ActionReferenceModel {
         return actions[type]!
+    }
+    
+    func allActions() -> [ActionReferenceModel] {
+        return actions.values.map { $0 }
     }
     
 }

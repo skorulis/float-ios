@@ -17,7 +17,7 @@ class ActionController {
     }
     
     func performAction(character:CharacterModel,action:ActionReferenceModel) {
-        let reqs = getRequirements(action: action);
+        let reqs = action.requirements
         takeRequirements(reqs: reqs, character: character)
         switch(action.type) {
         case .forage:
@@ -31,21 +31,19 @@ class ActionController {
             character.satiation += 20
         case .sleep:
             dayFinishObservers.notify(parameters: self)
+        case .explore:
+            break; //Explore does nothing right now
         }
     }
     
-    func getRequirements(action:ActionReferenceModel) -> RequirementList {
-        return RequirementList(requirements: action.requirements)
-    }
-    
     func hasRequirements(character:CharacterModel,action:ActionReferenceModel) -> Bool {
-        let reqs = getRequirements(action: action)
+        let reqs = action.requirements
         return hasRequirements(character: character, requirements: reqs)
     }
     
-    func hasRequirements(character:CharacterModel,requirements:RequirementList) -> Bool {
+    func hasRequirements(character:CharacterModel,requirements:[RequirementModel]) -> Bool {
         var result = true
-        for m in requirements.requirements {
+        for m in requirements {
             switch(m.type) {
             case .item:
                 result = result && character.inventory.hasItem(name: m.identifier, quantity: m.value)
@@ -59,8 +57,8 @@ class ActionController {
         return result
     }
     
-    func takeRequirements(reqs:RequirementList,character:CharacterModel) {
-        for m in reqs.requirements {
+    func takeRequirements(reqs:[RequirementModel],character:CharacterModel) {
+        for m in reqs {
             switch(m.type) {
             case .item:
                 character.inventory.consumeItem(name: m.identifier, quantity: m.value)
@@ -76,6 +74,11 @@ class ActionController {
         character.time.setToMax()
         character.satiation.add(5) //Make sure you can't get stuck, may remove later
         character.ether += 10
+    }
+    
+    func shouldShow(action:ActionReferenceModel,character:CharacterModel) -> Bool {
+        let skillReqs = action.requirements.filter { $0.type == .skill}
+        return self.hasRequirements(character: character, requirements: skillReqs)
     }
     
 }

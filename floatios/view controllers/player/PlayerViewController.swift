@@ -11,18 +11,18 @@ import SKCollectionView
 
 class PlayerViewController: SKCVFlowLayoutCollectionViewController {
 
-    let game = GameController.instance
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.collectionView?.backgroundColor = UIColor.white
+        let game = GameController.instance
         
         game.majorState.observers.add(object: self) { [unowned self] _ in
             self.sections.reloadData()
         }
         
-        let actions:[ActionType] = [.sleep,.forage,.mine,.lumberjack,.eat]
-        let actionRefs = actions.map { game.reference.getAction(type: $0)}
+        let actionRefs:[ActionReferenceModel] = game.reference.allActions()
         
         let char = game.player.player.base
         self.title = char.name
@@ -36,17 +36,19 @@ class PlayerViewController: SKCVFlowLayoutCollectionViewController {
         
         activeActions.didSelectItemAt = {(collectionView,indexPath) in
             let cell = collectionView.cellForItem(at: indexPath) as! ActionCell
-            self.game.player.performAction(action: cell.model!)
+            game.player.performAction(action: cell.model!)
             self.sections.reloadData()
         }
         
         self.sections.preReloadBlock = { [unowned self] in
             let split = actionRefs.split(by: { (act) -> Bool in
-                return self.game.action.hasRequirements(character: char, action: act)
+                return game.action.hasRequirements(character: char, action: act)
             })
             
+            let blocked = split.failing.filter { game.action.shouldShow(action: $0, character: char)}
+            
             ActionCell.updateSection(section: activeActions, items: split.passing, collectionView: self.collectionView!)
-            ActionCell.updateSection(section: blockedActions, items: split.failing, collectionView: self.collectionView!)
+            ActionCell.updateSection(section: blockedActions, items: blocked, collectionView: self.collectionView!)
         }
         
         let itemSection = ForwardNavigationCell.defaultSection(object: "Inventory", collectionView: collectionView!)
@@ -57,7 +59,7 @@ class PlayerViewController: SKCVFlowLayoutCollectionViewController {
         
         let statSection = ForwardNavigationCell.defaultSection(object: "Stats", collectionView: collectionView!)
         statSection.didSelectItemAt = {(collectionView,indexPath) in
-            let vc = PlayerStatsViewController(player:self.game.player.player)
+            let vc = PlayerStatsViewController(player:game.player.player)
             self.navigationController?.pushViewController(vc, animated: true)
         }
         

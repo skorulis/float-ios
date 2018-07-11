@@ -10,13 +10,26 @@ import UIKit
 import SKCollectionView
 import SnapKit
 
-final class ActionCell: UICollectionViewCell, AutoSizeModelCell {
+final class ActionCell: UICollectionViewCell, SimpleModelCell {
+    
+    static func calculateSize(model: ActionReferenceModel?, collectionView: UICollectionView) -> CGSize {
+        let spacing = CGFloat(10)
+        let size = (collectionView.frame.size.width - 4 * spacing) / 3
+        
+        return CGSize(width: size, height: size)
+    }
+    
     var model: ActionReferenceModel? {
         didSet {
-            self.label.text = model?.type.rawValue
+            if let m = model {
+                let att:NSMutableAttributedString = m.icon.attributedString().mutableCopy() as! NSMutableAttributedString
+                let a2 = NSAttributedString(string: "\n\(m.type.rawValue)")
+                att.append(a2)
+                self.label.attributedText = att
+            }
+            
         }
     }
-    static var sizingCell: ActionCell = ActionCell()
     typealias ModelType = ActionReferenceModel
     
     let label = UILabel()
@@ -26,6 +39,7 @@ final class ActionCell: UICollectionViewCell, AutoSizeModelCell {
         
         label.textAlignment = .center
         label.backgroundColor = UIColor.brown
+        label.numberOfLines = 0
         
         self.contentView.addSubview(label)
         label.snp.makeConstraints { (make) in

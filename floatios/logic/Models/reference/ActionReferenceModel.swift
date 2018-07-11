@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import FontAwesomeKit
 
 public enum ActionType: String, Codable {
     case forage //Find food
@@ -14,6 +15,7 @@ public enum ActionType: String, Codable {
     case lumberjack //Get wood
     case sleep
     case eat //Should really be use item and be under a separate case
+    case explore //Look around and find things
 }
 
 public enum RequirementType: String, Codable {
@@ -27,6 +29,7 @@ public struct RequirementModel: Codable {
     public let type:RequirementType
     public let identifier:String
     public let value:Int
+    //public let 
     
     public static func time(value:Int) -> RequirementModel {
         return RequirementModel(type: .resource, identifier: "time", value: value)
@@ -46,14 +49,17 @@ public struct RequirementModel: Codable {
     
 }
 
-public struct ActionReferenceModel: Codable {
+//Should be codable, but getting around that for now
+public struct ActionReferenceModel {
 
     public let type:ActionType
     public let requirements:[RequirementModel]
+    public let icon:FAKIcon
     
-    public init(type:ActionType,reqs:[RequirementModel] = []) {
+    public init(type:ActionType, icon:FAKIcon, reqs:[RequirementModel] = []) {
         self.type = type
         self.requirements = reqs
+        self.icon = icon
     }
     
 }
