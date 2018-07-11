@@ -28,7 +28,7 @@
 		FA3691FA20EEC1FE003988D4 /* CTAButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3691F920EEC1FE003988D4 /* CTAButtonCell.swift */; };
 		FA36928F20F083AB003988D4 /* FloatTheme.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA36928E20F083AB003988D4 /* FloatTheme.swift */; };
 		FA36929220F18A4B003988D4 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA36929120F18A4B003988D4 /* MainViewController.swift */; };
-		FA36929520F19D5E003988D4 /* StoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA36929420F19D5E003988D4 /* StoryViewController.swift */; };
+		FA36929520F19D5E003988D4 /* JournalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA36929420F19D5E003988D4 /* JournalViewController.swift */; };
 		FA36929720F19E7D003988D4 /* StoryPieceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA36929620F19E7D003988D4 /* StoryPieceViewController.swift */; };
 		FA36929920F19ED2003988D4 /* StoryPieceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA36929820F19ED2003988D4 /* StoryPieceCell.swift */; };
 		FA36929D20F1AAB0003988D4 /* StoryReferenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA36929C20F1AAB0003988D4 /* StoryReferenceModel.swift */; };
@@ -100,7 +100,7 @@
 		FA3691F920EEC1FE003988D4 /* CTAButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTAButtonCell.swift; sourceTree = "<group>"; };
 		FA36928E20F083AB003988D4 /* FloatTheme.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FloatTheme.swift; sourceTree = "<group>"; };
 		FA36929120F18A4B003988D4 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
-		FA36929420F19D5E003988D4 /* StoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryViewController.swift; sourceTree = "<group>"; };
+		FA36929420F19D5E003988D4 /* JournalViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalViewController.swift; sourceTree = "<group>"; };
 		FA36929620F19E7D003988D4 /* StoryPieceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryPieceViewController.swift; sourceTree = "<group>"; };
 		FA36929820F19ED2003988D4 /* StoryPieceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryPieceCell.swift; sourceTree = "<group>"; };
 		FA36929C20F1AAB0003988D4 /* StoryReferenceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryReferenceModel.swift; sourceTree = "<group>"; };
@@ -271,7 +271,7 @@
 		FA36929320F19D53003988D4 /* story */ = {
 			isa = PBXGroup;
 			children = (
-				FA36929420F19D5E003988D4 /* StoryViewController.swift */,
+				FA36929420F19D5E003988D4 /* JournalViewController.swift */,
 				FA36929620F19E7D003988D4 /* StoryPieceViewController.swift */,
 				FA36929820F19ED2003988D4 /* StoryPieceCell.swift */,
 			);
@@ -657,7 +657,7 @@
 				FA9A5CCB20E97BE100C36110 /* ItemCell.swift in Sources */,
 				FA569CB420E58D970094807F /* ItemModel.swift in Sources */,
 				FA10721D20E75CBB0046C756 /* PlayerViewController.swift in Sources */,
-				FA36929520F19D5E003988D4 /* StoryViewController.swift in Sources */,
+				FA36929520F19D5E003988D4 /* JournalViewController.swift in Sources */,
 				FA3691F520EDFB7E003988D4 /* TextFieldCell.swift in Sources */,
 				FAC4170F20F2B80000C4E3B5 /* SkillReferenceModel.swift in Sources */,
 				FA569C6F20E589C40094807F /* AppDelegate.swift in Sources */,

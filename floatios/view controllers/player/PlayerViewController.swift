@@ -63,8 +63,15 @@ class PlayerViewController: SKCVFlowLayoutCollectionViewController {
             self.navigationController?.pushViewController(vc, animated: true)
         }
         
+        let journalSection = ForwardNavigationCell.defaultSection(object: "Journal", collectionView: collectionView!)
+        journalSection.didSelectItemAt = {(collectionView,indexPath) in
+            let vc = JournalViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
         sections.add(section: charSection)
         sections.add(section: itemSection)
+        sections.add(section: journalSection)
         sections.add(section: statSection)
         sections.add(section: activeActions)
         sections.add(section: blockedActions)
