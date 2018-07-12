@@ -41,7 +41,7 @@ class PlayerViewController: SKCVFlowLayoutCollectionViewController {
         }
         
         self.sections.preReloadBlock = { [unowned self] in
-            let split = actionRefs.split(by: { (act) -> Bool in
+            let split = actionRefs.splitArray(by: { (act) -> Bool in
                 return game.action.hasRequirements(character: char, action: act)
             })
             
@@ -69,9 +69,16 @@ class PlayerViewController: SKCVFlowLayoutCollectionViewController {
             self.navigationController?.pushViewController(vc, animated: true)
         }
         
+        let skillsSection = ForwardNavigationCell.defaultSection(object: "Skills", collectionView: collectionView!)
+        skillsSection.didSelectItemAt = {(collectionView,indexPath) in
+            let vc = SkillListViewController()
+            self.navigationController?.pushViewController(vc, animated: true)
+        }
+        
         sections.add(section: charSection)
         sections.add(section: itemSection)
         sections.add(section: journalSection)
+        sections.add(section: skillsSection)
         sections.add(section: statSection)
         sections.add(section: activeActions)
         sections.add(section: blockedActions)

@@ -7,6 +7,13 @@
 
 import SKSwiftLib
 
+public enum ResultType {
+    case item(ItemModel)
+    case resource(String,Int)
+    case xp(String,Int)
+}
+
+
 class ActionController {
 
     let ref:ReferenceController
@@ -19,21 +26,23 @@ class ActionController {
     func performAction(character:CharacterModel,action:ActionReferenceModel) {
         let reqs = action.requirements
         takeRequirements(reqs: reqs, character: character)
-        switch(action.type) {
-        case .forage:
-            let item = ItemModel(ref: ref.getItem(name: "Food"))
-            character.inventory.add(item: item)
-        case .mine:
-            character.inventory.add(item: ItemModel(ref: ref.getItem(name: "Minerals")))
-        case .lumberjack:
-            character.inventory.add(item: ItemModel(ref: ref.getItem(name: "Wood")))
-        case .eat:
-            character.satiation += 20
-        case .sleep:
-            dayFinishObservers.notify(parameters: self)
-        case .explore:
-            break; //Explore does nothing right now
+        let results = getResults(character: character, action: action)
+        
+        for res in results {
+            switch(res) {
+            case .item(let item):
+                character.inventory.add(item: item)
+            case .resource(let name, let quantity):
+                character.addResource(name: name, quantity: quantity)
+            case .xp(let skill, let quantity):
+                character.addXP(skill: skill, quantity: quantity)
+            }
         }
+        
+        if action.type == .sleep {
+            dayFinishObservers.notify(parameters: self)
+        }
+        
     }
     
     func hasRequirements(character:CharacterModel,action:ActionReferenceModel) -> Bool {
@@ -50,7 +59,7 @@ class ActionController {
             case .resource:
                 result = result && character.hasResource(name: m.identifier, quantity: m.value)
             case .skill:
-                return false //No one has skills yet
+                return false //TODO: No one has skills yet
             }
         }
         
@@ -67,6 +76,22 @@ class ActionController {
             case .skill:
                 break//Nothing to be done
             }
+        }
+    }
+    
+    func getResults(character:CharacterModel,action:ActionReferenceModel) -> [ResultType] {
+        switch(action.type) {
+        case .forage:
+            let item = ItemModel(ref: ref.getItem(name: "Food"))
+            return [ResultType.item(item)]
+        case .mine:
+            return [ResultType.item(ItemModel(ref: ref.getItem(name: "Minerals")))]
+        case .lumberjack:
+            return [ResultType.item(ItemModel(ref: ref.getItem(name: "Wood")))]
+        case .eat:
+            return [ResultType.resource("satiation",20)]
+        default:
+            return []
         }
     }
     

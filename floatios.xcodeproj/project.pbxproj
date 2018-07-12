@@ -20,9 +20,9 @@
 		FA10722320E764E10046C756 /* LandSquareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10722220E764E10046C756 /* LandSquareCell.swift */; };
 		FA10722820E849A30046C756 /* ReferenceController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10722720E849A30046C756 /* ReferenceController.swift */; };
 		FA10722B20E84D330046C756 /* ItemReferenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10722A20E84D330046C756 /* ItemReferenceModel.swift */; };
-		FA10722D20E855BE0046C756 /* RequirementModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10722C20E855BE0046C756 /* RequirementModel.swift */; };
 		FA10723120E88AF70046C756 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10723020E88AF70046C756 /* SectionHeaderView.swift */; };
 		FA10723420E8ACBE0046C756 /* InventoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10723320E8ACBE0046C756 /* InventoryViewController.swift */; };
+		FA29DB7120F6B1EB00D46BFE /* SearchResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA29DB7020F6B1EB00D46BFE /* SearchResultModel.swift */; };
 		FA3691F520EDFB7E003988D4 /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3691F420EDFB7E003988D4 /* TextFieldCell.swift */; };
 		FA3691F820EDFCEF003988D4 /* CreatePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3691F720EDFCEF003988D4 /* CreatePlayerViewController.swift */; };
 		FA3691FA20EEC1FE003988D4 /* CTAButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3691F920EEC1FE003988D4 /* CTAButtonCell.swift */; };
@@ -62,6 +62,9 @@
 		FAC4171120F2BAD300C4E3B5 /* ActionReferenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC4171020F2BAD300C4E3B5 /* ActionReferenceModel.swift */; };
 		FAD8518820F4985C00227AF2 /* SelectAvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD8518720F4985C00227AF2 /* SelectAvatarCell.swift */; };
 		FAD8518A20F4C39700227AF2 /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD8518920F4C39700227AF2 /* JournalEntry.swift */; };
+		FAF78E9D20F7350E005F7E88 /* ActionResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF78E9C20F7350E005F7E88 /* ActionResultModel.swift */; };
+		FAF78EA020F73A59005F7E88 /* SkillListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF78E9F20F73A59005F7E88 /* SkillListViewController.swift */; };
+		FAF78EA220F73A97005F7E88 /* SkillProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF78EA120F73A97005F7E88 /* SkillProgressCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -92,9 +95,9 @@
 		FA10722220E764E10046C756 /* LandSquareCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandSquareCell.swift; sourceTree = "<group>"; };
 		FA10722720E849A30046C756 /* ReferenceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReferenceController.swift; sourceTree = "<group>"; };
 		FA10722A20E84D330046C756 /* ItemReferenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemReferenceModel.swift; sourceTree = "<group>"; };
-		FA10722C20E855BE0046C756 /* RequirementModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequirementModel.swift; sourceTree = "<group>"; };
 		FA10723020E88AF70046C756 /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		FA10723320E8ACBE0046C756 /* InventoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryViewController.swift; sourceTree = "<group>"; };
+		FA29DB7020F6B1EB00D46BFE /* SearchResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultModel.swift; sourceTree = "<group>"; };
 		FA3691F420EDFB7E003988D4 /* TextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCell.swift; sourceTree = "<group>"; };
 		FA3691F720EDFCEF003988D4 /* CreatePlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlayerViewController.swift; sourceTree = "<group>"; };
 		FA3691F920EEC1FE003988D4 /* CTAButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTAButtonCell.swift; sourceTree = "<group>"; };
@@ -138,6 +141,9 @@
 		FAC4171020F2BAD300C4E3B5 /* ActionReferenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionReferenceModel.swift; sourceTree = "<group>"; };
 		FAD8518720F4985C00227AF2 /* SelectAvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAvatarCell.swift; sourceTree = "<group>"; };
 		FAD8518920F4C39700227AF2 /* JournalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
+		FAF78E9C20F7350E005F7E88 /* ActionResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionResultModel.swift; sourceTree = "<group>"; };
+		FAF78E9F20F73A59005F7E88 /* SkillListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillListViewController.swift; sourceTree = "<group>"; };
+		FAF78EA120F73A97005F7E88 /* SkillProgressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillProgressCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -340,7 +346,8 @@
 				FA569CA220E58D960094807F /* LandPlotModel.swift */,
 				FA569CA320E58D960094807F /* CityModel.swift */,
 				FA569CAB20E58D960094807F /* LoreModel.swift */,
-				FA10722C20E855BE0046C756 /* RequirementModel.swift */,
+				FA29DB7020F6B1EB00D46BFE /* SearchResultModel.swift */,
+				FAF78E9C20F7350E005F7E88 /* ActionResultModel.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -393,6 +400,7 @@
 		FAE12DFD20E6143A00F9FA77 /* view controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FAF78E9E20F73A42005F7E88 /* skills */,
 				FA73C6F820F3513B006AEF0E /* avatar */,
 				FA36929320F19D53003988D4 /* story */,
 				FA36929020F18A3B003988D4 /* main */,
@@ -403,6 +411,15 @@
 				FA10720020E725030046C756 /* city */,
 			);
 			path = "view controllers";
+			sourceTree = "<group>";
+		};
+		FAF78E9E20F73A42005F7E88 /* skills */ = {
+			isa = PBXGroup;
+			children = (
+				FAF78E9F20F73A59005F7E88 /* SkillListViewController.swift */,
+				FAF78EA120F73A97005F7E88 /* SkillProgressCell.swift */,
+			);
+			path = skills;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -627,6 +644,7 @@
 				FA569CB020E58D970094807F /* MaxValueField.swift in Sources */,
 				FA3691FA20EEC1FE003988D4 /* CTAButtonCell.swift in Sources */,
 				FA10721E20E75CBB0046C756 /* ActionCell.swift in Sources */,
+				FA29DB7120F6B1EB00D46BFE /* SearchResultModel.swift in Sources */,
 				FA569CBD20E58F9E0094807F /* NPCController.swift in Sources */,
 				FAD8518A20F4C39700227AF2 /* JournalEntry.swift in Sources */,
 				FA10723420E8ACBE0046C756 /* InventoryViewController.swift in Sources */,
@@ -645,17 +663,19 @@
 				FA10720220E725130046C756 /* CityViewController.swift in Sources */,
 				FA10723120E88AF70046C756 /* SectionHeaderView.swift in Sources */,
 				FA569CB520E58D970094807F /* SkillModel.swift in Sources */,
-				FA10722D20E855BE0046C756 /* RequirementModel.swift in Sources */,
+				FAF78EA020F73A59005F7E88 /* SkillListViewController.swift in Sources */,
 				FA569CC120E58FC40094807F /* PlayerCharacterModel.swift in Sources */,
 				FA10722B20E84D330046C756 /* ItemReferenceModel.swift in Sources */,
 				FAB7B7F520EA0956002B2C0B /* PlayerStatsViewController.swift in Sources */,
 				FA73C6FE20F353E4006AEF0E /* AvatarEmojiCellCollectionViewCell.swift in Sources */,
+				FAF78EA220F73A97005F7E88 /* SkillProgressCell.swift in Sources */,
 				FAC4171120F2BAD300C4E3B5 /* ActionReferenceModel.swift in Sources */,
 				FA569CB120E58D970094807F /* LandPlotModel.swift in Sources */,
 				FA10720E20E75A040046C756 /* CityLandController.swift in Sources */,
 				FA10720420E7256B0046C756 /* CityDetailsCell.swift in Sources */,
 				FA9A5CCB20E97BE100C36110 /* ItemCell.swift in Sources */,
 				FA569CB420E58D970094807F /* ItemModel.swift in Sources */,
+				FAF78E9D20F7350E005F7E88 /* ActionResultModel.swift in Sources */,
 				FA10721D20E75CBB0046C756 /* PlayerViewController.swift in Sources */,
 				FA36929520F19D5E003988D4 /* JournalViewController.swift in Sources */,
 				FA3691F520EDFB7E003988D4 /* TextFieldCell.swift in Sources */,

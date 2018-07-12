@@ -13,6 +13,7 @@ final public class CharacterModel: Codable {
     let time:MaxValueField
     var ether:Int
     let inventory:InventoryModel
+    let skills:SkillListModel
     
     init(name:String="") {
         self.name = name
@@ -20,6 +21,7 @@ final public class CharacterModel: Codable {
         time = MaxValueField(maxValue: 100)
         ether = 100
         inventory = InventoryModel()
+        skills = SkillListModel()
     }
     
     func hasResource(name:String,quantity:Int) -> Bool {
@@ -45,6 +47,24 @@ final public class CharacterModel: Codable {
         } else if (name == "ether") {
             ether -= quantity
         }
+    }
+    
+    func addResource(name:String,quantity:Int) {
+        if (name == "satiation") {
+            satiation += quantity
+        } else if (name == "time") {
+            time += quantity
+        } else if (name == "ether") {
+            ether += quantity
+        }
+    }
+    
+    func addXP(skill:String,quantity:Int) {
+        //TODO: Add skills
+    }
+    
+    func hasSkill(skill:SkillType) -> Bool {
+        return self.skills.skillLevel(type: skill) > 0
     }
     
 }
