@@ -22,7 +22,7 @@ class GameController {
         action = ActionController(ref:reference)
         city = CityController()
         player = PlayerCharacterController(actions: action,city:city)
-        npc = NPCController(actions: action,city:city)
+        npc = NPCController(actions: action,city:city,ref:reference)
         
         majorState = MajorStateController(player:player)
         

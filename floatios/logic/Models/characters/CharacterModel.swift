@@ -59,6 +59,10 @@ final public class CharacterModel: Codable {
         }
     }
     
+    func addSkill(skill:SkillModel) {
+        self.skills.add(skill: skill)
+    }
+    
     func addXP(skill:String,quantity:Int) {
         //TODO: Add skills
     }

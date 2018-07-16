@@ -95,4 +95,10 @@ class ReferenceController {
         return actions.values.map { $0 }
     }
     
+    func randomSkill() -> SkillReferenceModel {
+        let all = Array(skills.values)
+        let index = arc4random_uniform(UInt32(all.count))
+        return all[Int(index)]
+    }
+    
 }

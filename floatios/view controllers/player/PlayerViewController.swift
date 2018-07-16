@@ -11,10 +11,18 @@ import SKCollectionView
 
 class PlayerViewController: SKCVFlowLayoutCollectionViewController {
 
+    override init() {
+        super.init()
+        self.title = "Player"
+    }
     
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
         self.collectionView?.backgroundColor = UIColor.white
         let game = GameController.instance
         
@@ -25,7 +33,6 @@ class PlayerViewController: SKCVFlowLayoutCollectionViewController {
         let actionRefs:[ActionReferenceModel] = game.reference.allActions()
         
         let char = game.player.player.base
-        self.title = char.name
         let charSection = PlayerDetailsCell.defaultSection(object: char, collectionView: collectionView!)
         
         let activeActions = SKCVSectionController()

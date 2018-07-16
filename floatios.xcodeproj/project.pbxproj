@@ -60,6 +60,7 @@
 		FAB7B7F720EA09C4002B2C0B /* StatProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7B7F620EA09C4002B2C0B /* StatProgressCell.swift */; };
 		FAC4170F20F2B80000C4E3B5 /* SkillReferenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC4170E20F2B80000C4E3B5 /* SkillReferenceModel.swift */; };
 		FAC4171120F2BAD300C4E3B5 /* ActionReferenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC4171020F2BAD300C4E3B5 /* ActionReferenceModel.swift */; };
+		FAD07A3D20FAD21F007C20D1 /* NPCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD07A3C20FAD21F007C20D1 /* NPCViewController.swift */; };
 		FAD8518820F4985C00227AF2 /* SelectAvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD8518720F4985C00227AF2 /* SelectAvatarCell.swift */; };
 		FAD8518A20F4C39700227AF2 /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD8518920F4C39700227AF2 /* JournalEntry.swift */; };
 		FAF78E9D20F7350E005F7E88 /* ActionResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF78E9C20F7350E005F7E88 /* ActionResultModel.swift */; };
@@ -139,6 +140,7 @@
 		FAB7B7F620EA09C4002B2C0B /* StatProgressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatProgressCell.swift; sourceTree = "<group>"; };
 		FAC4170E20F2B80000C4E3B5 /* SkillReferenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillReferenceModel.swift; sourceTree = "<group>"; };
 		FAC4171020F2BAD300C4E3B5 /* ActionReferenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionReferenceModel.swift; sourceTree = "<group>"; };
+		FAD07A3C20FAD21F007C20D1 /* NPCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NPCViewController.swift; sourceTree = "<group>"; };
 		FAD8518720F4985C00227AF2 /* SelectAvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAvatarCell.swift; sourceTree = "<group>"; };
 		FAD8518920F4C39700227AF2 /* JournalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
 		FAF78E9C20F7350E005F7E88 /* ActionResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionResultModel.swift; sourceTree = "<group>"; };
@@ -397,9 +399,18 @@
 			path = avatar;
 			sourceTree = "<group>";
 		};
+		FAD07A3B20FAD1F5007C20D1 /* npc */ = {
+			isa = PBXGroup;
+			children = (
+				FAD07A3C20FAD21F007C20D1 /* NPCViewController.swift */,
+			);
+			path = npc;
+			sourceTree = "<group>";
+		};
 		FAE12DFD20E6143A00F9FA77 /* view controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FAD07A3B20FAD1F5007C20D1 /* npc */,
 				FAF78E9E20F73A42005F7E88 /* skills */,
 				FA73C6F820F3513B006AEF0E /* avatar */,
 				FA36929320F19D53003988D4 /* story */,
@@ -683,6 +694,7 @@
 				FA569C6F20E589C40094807F /* AppDelegate.swift in Sources */,
 				FA569CB620E58D970094807F /* NonPlayerCharacterModel.swift in Sources */,
 				FA10721F20E75CBB0046C756 /* PlayerDetailsCell.swift in Sources */,
+				FAD07A3D20FAD21F007C20D1 /* NPCViewController.swift in Sources */,
 				FA73C70020F4027A006AEF0E /* AvatarImageView.swift in Sources */,
 				FA73C6FA20F35152006AEF0E /* AvatarSelectionViewController.swift in Sources */,
 				FA569CB820E58D970094807F /* LoreModel.swift in Sources */,

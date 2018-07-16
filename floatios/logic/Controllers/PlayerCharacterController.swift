@@ -41,5 +41,8 @@ class PlayerCharacterController {
         return entry
     }
     
+    func character() -> CharacterModel {
+        return self.player.base
+    }
     
 }

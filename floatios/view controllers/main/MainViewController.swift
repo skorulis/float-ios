@@ -17,13 +17,19 @@ class MainViewController: UIViewController {
         super.viewDidLoad()
 
         
-        let vc = PlayerViewController()
-        let nav = UINavigationController(rootViewController: vc)
-        self.view.addSubview(nav.view)
-        nav.view.snp.makeConstraints { (make) in
+        
+        
+        let playerVC = PlayerViewController()
+        let cityVC = CityViewController()
+        
+        let tab = UITabBarController()
+        tab.viewControllers = [playerVC,cityVC].map { UINavigationController(rootViewController: $0) }
+        
+        self.view.addSubview(tab.view)
+        tab.view.snp.makeConstraints { (make) in
             make.edges.equalToSuperview()
         }
-        self.addChildViewController(nav)
+        self.addChildViewController(tab)
         
         GameController.instance.majorState.observers.add(object: self, self.gameStateChanged)
         
@@ -31,6 +37,8 @@ class MainViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
+        
+        self.game.player.player.base.name = "Alex"
         
         if self.game.majorState.playerHasName() {
             return
