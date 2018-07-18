@@ -56,6 +56,8 @@
 		FA73C6FE20F353E4006AEF0E /* AvatarEmojiCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73C6FD20F353E4006AEF0E /* AvatarEmojiCellCollectionViewCell.swift */; };
 		FA73C70020F4027A006AEF0E /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73C6FF20F40279006AEF0E /* AvatarImageView.swift */; };
 		FA9A5CCB20E97BE100C36110 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9A5CCA20E97BE100C36110 /* ItemCell.swift */; };
+		FAB4BD5120FF3D0C0081B5A6 /* Overland.sks in Resources */ = {isa = PBXBuildFile; fileRef = FAB4BD4F20FF3D0C0081B5A6 /* Overland.sks */; };
+		FAB4BD5420FF46180081B5A6 /* CityScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FAB4BD5320FF46180081B5A6 /* CityScene.sks */; };
 		FAB7B7F520EA0956002B2C0B /* PlayerStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7B7F420EA0956002B2C0B /* PlayerStatsViewController.swift */; };
 		FAB7B7F720EA09C4002B2C0B /* StatProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7B7F620EA09C4002B2C0B /* StatProgressCell.swift */; };
 		FAC4170F20F2B80000C4E3B5 /* SkillReferenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC4170E20F2B80000C4E3B5 /* SkillReferenceModel.swift */; };
@@ -137,6 +139,8 @@
 		FA73C6FD20F353E4006AEF0E /* AvatarEmojiCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarEmojiCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		FA73C6FF20F40279006AEF0E /* AvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImageView.swift; sourceTree = "<group>"; };
 		FA9A5CCA20E97BE100C36110 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		FAB4BD4F20FF3D0C0081B5A6 /* Overland.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Overland.sks; sourceTree = "<group>"; };
+		FAB4BD5320FF46180081B5A6 /* CityScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CityScene.sks; sourceTree = "<group>"; };
 		FAB7B7F420EA0956002B2C0B /* PlayerStatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStatsViewController.swift; sourceTree = "<group>"; };
 		FAB7B7F620EA09C4002B2C0B /* StatProgressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatProgressCell.swift; sourceTree = "<group>"; };
 		FAC4170E20F2B80000C4E3B5 /* SkillReferenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillReferenceModel.swift; sourceTree = "<group>"; };
@@ -312,6 +316,7 @@
 		FA569C6D20E589C40094807F /* floatios */ = {
 			isa = PBXGroup;
 			children = (
+				FAB4BD4E20FF3CE00081B5A6 /* resources */,
 				FAE12DFD20E6143A00F9FA77 /* view controllers */,
 				FA569C9F20E58D960094807F /* logic */,
 				FA569C6E20E589C40094807F /* AppDelegate.swift */,
@@ -400,6 +405,15 @@
 				FA73C6FF20F40279006AEF0E /* AvatarImageView.swift */,
 			);
 			path = avatar;
+			sourceTree = "<group>";
+		};
+		FAB4BD4E20FF3CE00081B5A6 /* resources */ = {
+			isa = PBXGroup;
+			children = (
+				FAB4BD4F20FF3D0C0081B5A6 /* Overland.sks */,
+				FAB4BD5320FF46180081B5A6 /* CityScene.sks */,
+			);
+			path = resources;
 			sourceTree = "<group>";
 		};
 		FAD07A3B20FAD1F5007C20D1 /* npc */ = {
@@ -521,7 +535,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FAB4BD5120FF3D0C0081B5A6 /* Overland.sks in Resources */,
 				FA569C7920E589C70094807F /* LaunchScreen.storyboard in Resources */,
+				FAB4BD5420FF46180081B5A6 /* CityScene.sks in Resources */,
 				FA569C7620E589C70094807F /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
