@@ -45,7 +45,7 @@ public class SkillListModel:Codable {
         if let existing = findSkill(type: skill.type.name) {
             existing.level += 1
         } else {
-            let modelNew = SkillModel(type: skill.type)
+            let modelNew = SkillModel(type: skill.type,level: 1)
             add(skill: modelNew)
         }
     }

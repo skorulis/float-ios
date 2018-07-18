@@ -63,6 +63,7 @@
 		FAD07A3D20FAD21F007C20D1 /* NPCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD07A3C20FAD21F007C20D1 /* NPCViewController.swift */; };
 		FAD8518820F4985C00227AF2 /* SelectAvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD8518720F4985C00227AF2 /* SelectAvatarCell.swift */; };
 		FAD8518A20F4C39700227AF2 /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD8518920F4C39700227AF2 /* JournalEntry.swift */; };
+		FAF5263A20FC7B550062BC7C /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5263920FC7B550062BC7C /* ProgressBar.swift */; };
 		FAF78E9D20F7350E005F7E88 /* ActionResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF78E9C20F7350E005F7E88 /* ActionResultModel.swift */; };
 		FAF78EA020F73A59005F7E88 /* SkillListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF78E9F20F73A59005F7E88 /* SkillListViewController.swift */; };
 		FAF78EA220F73A97005F7E88 /* SkillProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF78EA120F73A97005F7E88 /* SkillProgressCell.swift */; };
@@ -143,6 +144,7 @@
 		FAD07A3C20FAD21F007C20D1 /* NPCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NPCViewController.swift; sourceTree = "<group>"; };
 		FAD8518720F4985C00227AF2 /* SelectAvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAvatarCell.swift; sourceTree = "<group>"; };
 		FAD8518920F4C39700227AF2 /* JournalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
+		FAF5263920FC7B550062BC7C /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		FAF78E9C20F7350E005F7E88 /* ActionResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionResultModel.swift; sourceTree = "<group>"; };
 		FAF78E9F20F73A59005F7E88 /* SkillListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillListViewController.swift; sourceTree = "<group>"; };
 		FAF78EA120F73A97005F7E88 /* SkillProgressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillProgressCell.swift; sourceTree = "<group>"; };
@@ -207,6 +209,7 @@
 				FA3691F420EDFB7E003988D4 /* TextFieldCell.swift */,
 				FA3691F920EEC1FE003988D4 /* CTAButtonCell.swift */,
 				FA36928E20F083AB003988D4 /* FloatTheme.swift */,
+				FAF5263920FC7B550062BC7C /* ProgressBar.swift */,
 			);
 			path = base;
 			sourceTree = "<group>";
@@ -667,6 +670,7 @@
 				FA36929920F19ED2003988D4 /* StoryPieceCell.swift in Sources */,
 				FA3691F820EDFCEF003988D4 /* CreatePlayerViewController.swift in Sources */,
 				FA569CBF20E58FAE0094807F /* PlayerCharacterController.swift in Sources */,
+				FAF5263A20FC7B550062BC7C /* ProgressBar.swift in Sources */,
 				FA10722120E75CC30046C756 /* ForwardNavigationCell.swift in Sources */,
 				FA10722320E764E10046C756 /* LandSquareCell.swift in Sources */,
 				FA36929F20F1C729003988D4 /* MajorStateController.swift in Sources */,

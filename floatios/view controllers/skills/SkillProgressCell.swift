@@ -15,20 +15,41 @@ final class SkillProgressCell: UICollectionViewCell, AutoSizeModelCell {
     typealias ModelType = SkillModel
     var model: SkillModel? {
         didSet {
-            label.text = model?.type.name.rawValue
+            if let m = model {
+                label.text = m.type.name.rawValue
+                level.text = "\(m.level)"
+            }
+            
         }
     }
     
-    let label = UILabel()
+    private let label = UILabel()
+    private let level = UILabel()
+    private let progressBar = ProgressBar()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
         contentView.addSubview(label)
+        contentView.addSubview(self.progressBar)
+        contentView.addSubview(level)
+        
+        self.progressBar.snp.makeConstraints { (make) in
+            make.left.right.bottom.equalToSuperview().inset(UIEdgeInsets(top: 0, left: 10, bottom: 10, right: 10))
+            make.height.equalTo(14)
+        }
+        
+        level.snp.makeConstraints { (make) in
+            make.right.top.equalToSuperview().inset(10)
+            
+        }
         
         label.snp.makeConstraints { (make) in
-            make.edges.equalToSuperview().inset(10)
+            make.left.right.top.equalToSuperview().inset(10)
+            make.bottom.equalTo(self.progressBar.snp.top).offset(-4)
         }
+        
+        
         
     }
     
