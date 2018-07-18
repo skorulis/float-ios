@@ -16,14 +16,12 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        
-        
-        
         let playerVC = PlayerViewController()
         let cityVC = CityViewController()
+        let dungeonVC = DungeonViewController()
         
         let tab = UITabBarController()
-        tab.viewControllers = [playerVC,cityVC].map { UINavigationController(rootViewController: $0) }
+        tab.viewControllers = [playerVC,cityVC,dungeonVC].map { UINavigationController(rootViewController: $0) }
         
         self.view.addSubview(tab.view)
         tab.view.snp.makeConstraints { (make) in
