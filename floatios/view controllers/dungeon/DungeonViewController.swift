@@ -15,6 +15,7 @@ class DungeonViewController: UIViewController {
     var tank:SKSpriteNode!
     var sceneView:SKView!
     var scene:SKScene!
+    let camera = SKCameraNode()
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -35,10 +36,16 @@ class DungeonViewController: UIViewController {
         self.scene = SKScene(fileNamed: "CityScene")
         self.sceneView = self.view as! SKView
         
+        self.camera.xScale = 2
+        self.camera.yScale = 2
+        
+        self.scene.camera = self.camera
+        self.scene.addChild(self.camera)
+        
         sceneView.presentScene(scene)
         
         tank = SKSpriteNode(imageNamed: "tank")
-        scene?.addChild(tank)
+        scene!.addChild(tank)
         
         map =  scene?.childNode(withName: "map") as! SKTileMapNode
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapped(recognizer:)))
@@ -57,10 +64,19 @@ class DungeonViewController: UIViewController {
         let column = map.tileColumnIndex(fromPosition: mapLoc)
         let row = map.tileRowIndex(fromPosition: mapLoc)
         
+        guard let _ = map.tileDefinition(atColumn: column, row: row) else {
+            return //Can't go off the edget of the map
+        }
+        
+        
         let centrePos = map.centerOfTile(atColumn: column, row: row)
         let action = SKAction.move(to: centrePos, duration: 0.25)
         action.timingMode = .easeInEaseOut
         self.tank.run(action)
+        
+        let camAction = SKAction.move(to: centrePos, duration: 0.25)
+        camAction.timingMode = .easeInEaseOut
+        self.camera.run(camAction)
         
     }
 
