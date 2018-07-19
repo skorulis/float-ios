@@ -59,6 +59,8 @@
 		FAB4BD5420FF46180081B5A6 /* CityScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FAB4BD5320FF46180081B5A6 /* CityScene.sks */; };
 		FAB4BD5720FF4CB80081B5A6 /* DungeonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB4BD5620FF4CB80081B5A6 /* DungeonViewController.swift */; };
 		FAB4BD5920FFE5BA0081B5A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAB4BD5820FFE5BA0081B5A6 /* Assets.xcassets */; };
+		FAB4BDEE2100745C0081B5A6 /* DungeonGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB4BDED2100745C0081B5A6 /* DungeonGenerator.swift */; };
+		FAB4BDF1210139360081B5A6 /* TilesGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB4BDF0210139360081B5A6 /* TilesGenerator.swift */; };
 		FAB7B7F520EA0956002B2C0B /* PlayerStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7B7F420EA0956002B2C0B /* PlayerStatsViewController.swift */; };
 		FAB7B7F720EA09C4002B2C0B /* StatProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7B7F620EA09C4002B2C0B /* StatProgressCell.swift */; };
 		FAC4170F20F2B80000C4E3B5 /* SkillReferenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAC4170E20F2B80000C4E3B5 /* SkillReferenceModel.swift */; };
@@ -143,6 +145,8 @@
 		FAB4BD5320FF46180081B5A6 /* CityScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CityScene.sks; sourceTree = "<group>"; };
 		FAB4BD5620FF4CB80081B5A6 /* DungeonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonViewController.swift; sourceTree = "<group>"; };
 		FAB4BD5820FFE5BA0081B5A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FAB4BDED2100745C0081B5A6 /* DungeonGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonGenerator.swift; sourceTree = "<group>"; };
+		FAB4BDF0210139360081B5A6 /* TilesGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TilesGenerator.swift; sourceTree = "<group>"; };
 		FAB7B7F420EA0956002B2C0B /* PlayerStatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStatsViewController.swift; sourceTree = "<group>"; };
 		FAB7B7F620EA09C4002B2C0B /* StatProgressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatProgressCell.swift; sourceTree = "<group>"; };
 		FAC4170E20F2B80000C4E3B5 /* SkillReferenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillReferenceModel.swift; sourceTree = "<group>"; };
@@ -318,6 +322,7 @@
 		FA569C6D20E589C40094807F /* floatios */ = {
 			isa = PBXGroup;
 			children = (
+				FAB4BDEF210139200081B5A6 /* tiles */,
 				FAB4BD4E20FF3CE00081B5A6 /* resources */,
 				FAE12DFD20E6143A00F9FA77 /* view controllers */,
 				FA569C9F20E58D960094807F /* logic */,
@@ -422,8 +427,17 @@
 			isa = PBXGroup;
 			children = (
 				FAB4BD5620FF4CB80081B5A6 /* DungeonViewController.swift */,
+				FAB4BDED2100745C0081B5A6 /* DungeonGenerator.swift */,
 			);
 			path = dungeon;
+			sourceTree = "<group>";
+		};
+		FAB4BDEF210139200081B5A6 /* tiles */ = {
+			isa = PBXGroup;
+			children = (
+				FAB4BDF0210139360081B5A6 /* TilesGenerator.swift */,
+			);
+			path = tiles;
 			sourceTree = "<group>";
 		};
 		FAD07A3B20FAD1F5007C20D1 /* npc */ = {
@@ -695,6 +709,7 @@
 				FA36928F20F083AB003988D4 /* FloatTheme.swift in Sources */,
 				FA36929720F19E7D003988D4 /* StoryPieceViewController.swift in Sources */,
 				FA36929920F19ED2003988D4 /* StoryPieceCell.swift in Sources */,
+				FAB4BDF1210139360081B5A6 /* TilesGenerator.swift in Sources */,
 				FA3691F820EDFCEF003988D4 /* CreatePlayerViewController.swift in Sources */,
 				FA569CBF20E58FAE0094807F /* PlayerCharacterController.swift in Sources */,
 				FAF5263A20FC7B550062BC7C /* ProgressBar.swift in Sources */,
@@ -712,6 +727,7 @@
 				FA73C6FE20F353E4006AEF0E /* AvatarEmojiCellCollectionViewCell.swift in Sources */,
 				FAF78EA220F73A97005F7E88 /* SkillProgressCell.swift in Sources */,
 				FAB4BD5720FF4CB80081B5A6 /* DungeonViewController.swift in Sources */,
+				FAB4BDEE2100745C0081B5A6 /* DungeonGenerator.swift in Sources */,
 				FAC4171120F2BAD300C4E3B5 /* ActionReferenceModel.swift in Sources */,
 				FA569CB120E58D970094807F /* LandPlotModel.swift in Sources */,
 				FA10720E20E75A040046C756 /* CityLandController.swift in Sources */,

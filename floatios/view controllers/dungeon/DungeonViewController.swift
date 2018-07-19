@@ -33,8 +33,16 @@ class DungeonViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        
         self.scene = SKScene(fileNamed: "CityScene")
         self.sceneView = self.view as! SKView
+        
+        map =  scene?.childNode(withName: "map") as! SKTileMapNode
+        map.removeFromParent()
+        
+        let generator = DungeonGenerator()
+        map = generator.generateDungeon(size: 10)
+        scene.addChild(map)
         
         self.camera.xScale = 2
         self.camera.yScale = 2
@@ -47,7 +55,8 @@ class DungeonViewController: UIViewController {
         tank = SKSpriteNode(imageNamed: "tank")
         scene!.addChild(tank)
         
-        map =  scene?.childNode(withName: "map") as! SKTileMapNode
+        
+        
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapped(recognizer:)))
         self.view.addGestureRecognizer(tap)
     }
