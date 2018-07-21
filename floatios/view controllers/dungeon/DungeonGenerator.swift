@@ -48,6 +48,12 @@ class DungeonGenerator {
         for _ in 0...10 {
             addRoom()
         }
+        for _ in 0...2 {
+            addStairs(up: true)
+        }
+        for _ in 0...2 {
+            addStairs(up: false)
+        }
         
         return dungeon
     }
@@ -73,7 +79,15 @@ class DungeonGenerator {
                 dungeon.terrain.setTileGroup(floorGroup, forColumn: Int(j), row: Int(i))
             }
         }
+    }
+    
+    func addStairs(up:Bool) {
+        let x = arc4random_uniform(UInt32(size - 2)) + 1
+        let y = arc4random_uniform(UInt32(size - 2)) + 1
         
+        let group = up ? dungeonGroups["stair-up"] : dungeonGroups["stair-down"]
+        
+        dungeon.walls.setTileGroup(group, forColumn: Int(x), row: Int(y))
     }
     
     func isEdge(x:Int,y:Int,size:Int) -> Bool {

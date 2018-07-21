@@ -86,8 +86,9 @@ class TilesGenerator: NSObject {
     
     func dungeonTileSet() -> SKTileSet {
         let stairUp = simpleGroup(context: TileGenContext(name: "stair-up", color: nil, icon: FAKFontAwesome.arrowCircleUpIcon(withSize: fontSize)))
+        let stairDown = simpleGroup(context: TileGenContext(name: "stair-down", color: nil, icon: FAKFontAwesome.arrowCircleDownIcon(withSize: fontSize)))
         
-        return SKTileSet(tileGroups: [generateWallGroup(),stairUp], tileSetType:.hexagonalPointy)
+        return SKTileSet(tileGroups: [generateWallGroup(),stairUp,stairDown], tileSetType:.hexagonalPointy)
     }
     
     func terrainTileSet() -> SKTileSet {

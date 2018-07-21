@@ -16,6 +16,7 @@ class ReferenceController {
     let story:[String:StoryReferenceModel]
     let skills:[SkillType:SkillReferenceModel]
     let actions:[ActionType:ActionReferenceModel]
+    let dungeonTiles:[DungeonTileType:DungeonTileReferenceModel]
     
     init() {
         let itemArray = ReferenceController.makeItems()
@@ -23,6 +24,7 @@ class ReferenceController {
         story = ReferenceController.makeStory().groupSingle { $0.key }
         skills = ReferenceController.makeSkills().groupSingle { $0.name }
         actions = ReferenceController.makeActions().groupSingle { $0.type }
+        dungeonTiles = ReferenceController.makeDungeonTiles().groupSingle { $0.type }
     }
     
     static func makeStory() -> [StoryReferenceModel] {
@@ -79,6 +81,13 @@ class ReferenceController {
         return [sleep,eat,forage,mine,lumberjack,explore,dungeon]
     }
     
+    private static func makeDungeonTiles() -> [DungeonTileReferenceModel] {
+        let wall = DungeonTileReferenceModel(type: .wall, canPass: false)
+        let stairUp = DungeonTileReferenceModel(type:.stairsUp,canPass: true)
+        let stairDown = DungeonTileReferenceModel(type:.stairsDown,canPass: true)
+        return [wall,stairUp,stairDown]
+    }
+    
     func getItem(name:String) -> ItemReferenceModel {
         return items[name]!
     }
@@ -93,6 +102,15 @@ class ReferenceController {
     
     func getAction(type:ActionType) -> ActionReferenceModel {
         return actions[type]!
+    }
+    
+    func getDungeonTile(type:DungeonTileType) -> DungeonTileReferenceModel {
+        return dungeonTiles[type]!
+    }
+    
+    func getDungeonTile(name:String) -> DungeonTileReferenceModel {
+        let type = DungeonTileType.init(rawValue: name)!
+        return getDungeonTile(type: type)
     }
     
     func allActions() -> [ActionReferenceModel] {

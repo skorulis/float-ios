@@ -16,6 +16,7 @@ class DungeonViewController: UIViewController {
     var scene:SKScene!
     var dungeon:DungeonModel
     let camera = SKCameraNode()
+    let game = GameController.instance
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         let generator = DungeonGenerator(size: 100)
@@ -79,9 +80,11 @@ class DungeonViewController: UIViewController {
             return //Can't go off the edge of the map
         }
         
-        let wall = dungeon.walls.tileDefinition(atColumn: column, row: row)
-        if wall != nil {
-            return //Can't go through walls
+        if let group = dungeon.walls.tileGroup(atColumn: column, row: row) {
+            let dungeonTile = game.reference.getDungeonTile(name: group.name!)
+            if (!dungeonTile.canPass) {
+                return //Can't go past this tile
+            }
         }
         
         

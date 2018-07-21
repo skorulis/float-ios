@@ -57,6 +57,7 @@
 		FA8344682101D10D005BCF1A /* DungeonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8344672101D10D005BCF1A /* DungeonModel.swift */; };
 		FA83446A2102F66E005BCF1A /* TileImageGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8344692102F66E005BCF1A /* TileImageGenerator.swift */; };
 		FA83446C2102F67F005BCF1A /* TileGenContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA83446B2102F67F005BCF1A /* TileGenContext.swift */; };
+		FA83446E210309C2005BCF1A /* DungeonTileReferenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA83446D210309C2005BCF1A /* DungeonTileReferenceModel.swift */; };
 		FA9A5CCB20E97BE100C36110 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9A5CCA20E97BE100C36110 /* ItemCell.swift */; };
 		FAB4BD5120FF3D0C0081B5A6 /* Tiles.sks in Resources */ = {isa = PBXBuildFile; fileRef = FAB4BD4F20FF3D0C0081B5A6 /* Tiles.sks */; };
 		FAB4BD5420FF46180081B5A6 /* CityScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FAB4BD5320FF46180081B5A6 /* CityScene.sks */; };
@@ -146,6 +147,7 @@
 		FA8344672101D10D005BCF1A /* DungeonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonModel.swift; sourceTree = "<group>"; };
 		FA8344692102F66E005BCF1A /* TileImageGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileImageGenerator.swift; sourceTree = "<group>"; };
 		FA83446B2102F67F005BCF1A /* TileGenContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileGenContext.swift; sourceTree = "<group>"; };
+		FA83446D210309C2005BCF1A /* DungeonTileReferenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonTileReferenceModel.swift; sourceTree = "<group>"; };
 		FA9A5CCA20E97BE100C36110 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		FAB4BD4F20FF3D0C0081B5A6 /* Tiles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Tiles.sks; sourceTree = "<group>"; };
 		FAB4BD5320FF46180081B5A6 /* CityScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CityScene.sks; sourceTree = "<group>"; };
@@ -265,6 +267,7 @@
 				FA10722A20E84D330046C756 /* ItemReferenceModel.swift */,
 				FAC4170E20F2B80000C4E3B5 /* SkillReferenceModel.swift */,
 				FAC4171020F2BAD300C4E3B5 /* ActionReferenceModel.swift */,
+				FA83446D210309C2005BCF1A /* DungeonTileReferenceModel.swift */,
 			);
 			path = reference;
 			sourceTree = "<group>";
@@ -755,6 +758,7 @@
 				FA569CB620E58D970094807F /* NonPlayerCharacterModel.swift in Sources */,
 				FA10721F20E75CBB0046C756 /* PlayerDetailsCell.swift in Sources */,
 				FAD07A3D20FAD21F007C20D1 /* NPCViewController.swift in Sources */,
+				FA83446E210309C2005BCF1A /* DungeonTileReferenceModel.swift in Sources */,
 				FA73C70020F4027A006AEF0E /* AvatarImageView.swift in Sources */,
 				FA73C6FA20F35152006AEF0E /* AvatarSelectionViewController.swift in Sources */,
 				FA569CB820E58D970094807F /* LoreModel.swift in Sources */,
