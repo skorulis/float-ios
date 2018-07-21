@@ -15,9 +15,12 @@ class DungeonViewController: UIViewController {
     var tank:SKSpriteNode!
     var sceneView:SKView!
     var scene:SKScene!
+    var dungeon:DungeonModel
     let camera = SKCameraNode()
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
+        let generator = DungeonGenerator()
+        self.dungeon = generator.generateDungeon(size: 5)
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.title = "Dungeon"
     }
@@ -40,12 +43,8 @@ class DungeonViewController: UIViewController {
         map =  scene?.childNode(withName: "map") as! SKTileMapNode
         map.removeFromParent()
         
-        let generator = DungeonGenerator()
-        map = generator.generateDungeon(size: 10)
-        scene.addChild(map)
-        
-        self.camera.xScale = 2
-        self.camera.yScale = 2
+        scene.addChild(dungeon.terrain)
+        scene.addChild(dungeon.walls)
         
         self.scene.camera = self.camera
         self.scene.addChild(self.camera)

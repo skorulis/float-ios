@@ -11,21 +11,32 @@ import SpriteKit
 
 class DungeonGenerator {
 
-    func generateDungeon(size:Int) -> SKTileMapNode {
-        let tileSet = SKTileSet(named: "Overland")!
+    func generateDungeon(size:Int) -> DungeonModel {
+        let tileSize = CGSize(width: 120, height: 140)
+        let gen = TilesGenerator(tileSize: tileSize)
+        let tileSet = gen.terrainTileSet()
+        let dungeonSet = gen.dungeonTileSet()
         
         let groups = tileSet.tileGroups.groupSingle { $0.name! }
+        let dungeonGroups = dungeonSet.tileGroups.groupSingle { $0.name! }
         
-        let tileMap = SKTileMapNode(tileSet: tileSet, columns: size, rows: size, tileSize: CGSize(width: 120, height: 140))
+        let terrainMap = SKTileMapNode(tileSet: tileSet, columns: size, rows: size, tileSize: tileSize)
+        let wallMap = SKTileMapNode(tileSet: dungeonSet, columns: size, rows: size, tileSize: tileSize)
+        
+        let dungeon = DungeonModel(terrain: terrainMap, walls: wallMap)
         
         for x in 0..<size {
             for y in 0..<size {
+                if (self.isEdge(x: x, y: y, size: size)) {
+                    let group = dungeonGroups["wall"]
+                    wallMap.setTileGroup(group, forColumn: x, row: y)
+                }
                 let group = isEdge(x: x, y: y, size: size) ? groups["dirt"] : groups["grass"]
-                tileMap.setTileGroup(group, forColumn: x, row: y)
+                terrainMap.setTileGroup(group, forColumn: x, row: y)
             }
         }
         
-        return tileMap
+        return dungeon
     }
     
     func isEdge(x:Int,y:Int,size:Int) -> Bool {
