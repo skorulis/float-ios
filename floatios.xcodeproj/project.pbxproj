@@ -55,6 +55,8 @@
 		FA73C6FE20F353E4006AEF0E /* AvatarEmojiCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73C6FD20F353E4006AEF0E /* AvatarEmojiCellCollectionViewCell.swift */; };
 		FA73C70020F4027A006AEF0E /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73C6FF20F40279006AEF0E /* AvatarImageView.swift */; };
 		FA8344682101D10D005BCF1A /* DungeonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8344672101D10D005BCF1A /* DungeonModel.swift */; };
+		FA83446A2102F66E005BCF1A /* TileImageGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8344692102F66E005BCF1A /* TileImageGenerator.swift */; };
+		FA83446C2102F67F005BCF1A /* TileGenContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA83446B2102F67F005BCF1A /* TileGenContext.swift */; };
 		FA9A5CCB20E97BE100C36110 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9A5CCA20E97BE100C36110 /* ItemCell.swift */; };
 		FAB4BD5120FF3D0C0081B5A6 /* Tiles.sks in Resources */ = {isa = PBXBuildFile; fileRef = FAB4BD4F20FF3D0C0081B5A6 /* Tiles.sks */; };
 		FAB4BD5420FF46180081B5A6 /* CityScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FAB4BD5320FF46180081B5A6 /* CityScene.sks */; };
@@ -142,6 +144,8 @@
 		FA73C6FD20F353E4006AEF0E /* AvatarEmojiCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarEmojiCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		FA73C6FF20F40279006AEF0E /* AvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImageView.swift; sourceTree = "<group>"; };
 		FA8344672101D10D005BCF1A /* DungeonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonModel.swift; sourceTree = "<group>"; };
+		FA8344692102F66E005BCF1A /* TileImageGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileImageGenerator.swift; sourceTree = "<group>"; };
+		FA83446B2102F67F005BCF1A /* TileGenContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileGenContext.swift; sourceTree = "<group>"; };
 		FA9A5CCA20E97BE100C36110 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		FAB4BD4F20FF3D0C0081B5A6 /* Tiles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Tiles.sks; sourceTree = "<group>"; };
 		FAB4BD5320FF46180081B5A6 /* CityScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CityScene.sks; sourceTree = "<group>"; };
@@ -439,6 +443,8 @@
 			isa = PBXGroup;
 			children = (
 				FAB4BDF0210139360081B5A6 /* TilesGenerator.swift */,
+				FA8344692102F66E005BCF1A /* TileImageGenerator.swift */,
+				FA83446B2102F67F005BCF1A /* TileGenContext.swift */,
 			);
 			path = tiles;
 			sourceTree = "<group>";
@@ -698,6 +704,7 @@
 				FA569CB720E58D970094807F /* CharacterModel.swift in Sources */,
 				FAB7B7F720EA09C4002B2C0B /* StatProgressCell.swift in Sources */,
 				FAD8518820F4985C00227AF2 /* SelectAvatarCell.swift in Sources */,
+				FA83446A2102F66E005BCF1A /* TileImageGenerator.swift in Sources */,
 				FA36929220F18A4B003988D4 /* MainViewController.swift in Sources */,
 				FA569CB020E58D970094807F /* MaxValueField.swift in Sources */,
 				FA3691FA20EEC1FE003988D4 /* CTAButtonCell.swift in Sources */,
@@ -725,6 +732,7 @@
 				FA569CB520E58D970094807F /* SkillModel.swift in Sources */,
 				FAF78EA020F73A59005F7E88 /* SkillListViewController.swift in Sources */,
 				FA569CC120E58FC40094807F /* PlayerCharacterModel.swift in Sources */,
+				FA83446C2102F67F005BCF1A /* TileGenContext.swift in Sources */,
 				FA10722B20E84D330046C756 /* ItemReferenceModel.swift in Sources */,
 				FAB7B7F520EA0956002B2C0B /* PlayerStatsViewController.swift in Sources */,
 				FA73C6FE20F353E4006AEF0E /* AvatarEmojiCellCollectionViewCell.swift in Sources */,

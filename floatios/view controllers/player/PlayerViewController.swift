@@ -41,10 +41,13 @@ class PlayerViewController: SKCVFlowLayoutCollectionViewController {
         let blockedActions = SKCVSectionController()
         SectionHeaderView.updateSectionHeader(section: blockedActions, model: "Unavailable", kind: UICollectionElementKindSectionHeader, collectionView: collectionView!)
         
-        activeActions.didSelectItemAt = {(collectionView,indexPath) in
+        activeActions.didSelectItemAt = {[unowned self] (collectionView,indexPath) in
             let cell = collectionView.cellForItem(at: indexPath) as! ActionCell
             game.player.performAction(action: cell.model!)
             self.sections.reloadData()
+            if (cell.model!.type == .dungeon) {
+                self.openDungeon()
+            }
         }
         
         self.sections.preReloadBlock = { [unowned self] in
@@ -92,6 +95,11 @@ class PlayerViewController: SKCVFlowLayoutCollectionViewController {
         
         self.sections.reloadData()
         
+    }
+    
+    func openDungeon() {
+        let vc = DungeonViewController()
+        self.present(vc, animated: true, completion: nil)
     }
     
 

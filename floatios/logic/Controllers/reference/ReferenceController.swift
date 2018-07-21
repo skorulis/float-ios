@@ -72,7 +72,11 @@ class ReferenceController {
                                                     RequirementModel.time(value: 20),
                                                     RequirementModel.satiation(value: 10)])
         
-        return [sleep,eat,forage,mine,lumberjack,explore]
+        let dungeon = ActionReferenceModel(type: .dungeon, icon: FAKFontAwesome.fortAwesomeIcon(withSize: iconSize),
+                                           reqs:[RequirementModel.time(value: 100),
+                                                 RequirementModel.satiation(value: 10)])
+        
+        return [sleep,eat,forage,mine,lumberjack,explore,dungeon]
     }
     
     func getItem(name:String) -> ItemReferenceModel {

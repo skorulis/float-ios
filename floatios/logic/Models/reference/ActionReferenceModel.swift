@@ -16,6 +16,7 @@ public enum ActionType: String, Codable {
     case sleep
     case eat //Should really be use item and be under a separate case
     case explore //Look around and find things
+    case dungeon //Go into the dungeon
 }
 
 public enum RequirementType: String, Codable {
