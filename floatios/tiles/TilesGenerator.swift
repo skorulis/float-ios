@@ -180,10 +180,12 @@ class TilesGenerator: NSObject {
     func terrainTileSet() -> SKTileSet {
         let dirt = generateTileDefinition(name: "dirt",color:UIColor.brown)
         let grass = generateTileDefinition(name: "grass",color:UIColor.green)
+        let floor = generateTileDefinition(name: "floor",color:UIColor.lightGray)
         let dirtGroup = group(def: dirt)
         let grassGroup = group(def: grass)
         
-        return SKTileSet(tileGroups: [dirtGroup,grassGroup], tileSetType: .hexagonalPointy)
+        
+        return SKTileSet(tileGroups: [dirtGroup,grassGroup,group(def:floor)], tileSetType: .hexagonalPointy)
     }
     
     static func generateAllTiles() {

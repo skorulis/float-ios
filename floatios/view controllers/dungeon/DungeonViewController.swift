@@ -18,8 +18,8 @@ class DungeonViewController: UIViewController {
     let camera = SKCameraNode()
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        let generator = DungeonGenerator()
-        self.dungeon = generator.generateDungeon(size: 100)
+        let generator = DungeonGenerator(size: 100)
+        self.dungeon = generator.generateDungeon()
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.title = "Dungeon"
     }
