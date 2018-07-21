@@ -12,7 +12,7 @@ import SpriteKit
 class DungeonGenerator {
 
     func generateDungeon(size:Int) -> DungeonModel {
-        let tileSize = CGSize(width: 120, height: 140)
+        let tileSize = CGSize(width: 60, height: 70)
         let gen = TilesGenerator(tileSize: tileSize)
         let tileSet = gen.terrainTileSet()
         let dungeonSet = gen.dungeonTileSet()

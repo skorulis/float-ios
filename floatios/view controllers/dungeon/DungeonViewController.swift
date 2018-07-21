@@ -11,7 +11,6 @@ import SpriteKit
 
 class DungeonViewController: UIViewController {
     
-    var map:SKTileMapNode!
     var tank:SKSpriteNode!
     var sceneView:SKView!
     var scene:SKScene!
@@ -20,7 +19,7 @@ class DungeonViewController: UIViewController {
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         let generator = DungeonGenerator()
-        self.dungeon = generator.generateDungeon(size: 5)
+        self.dungeon = generator.generateDungeon(size: 100)
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.title = "Dungeon"
     }
@@ -40,7 +39,7 @@ class DungeonViewController: UIViewController {
         self.scene = SKScene(fileNamed: "CityScene")
         self.sceneView = self.view as! SKView
         
-        map =  scene?.childNode(withName: "map") as! SKTileMapNode
+        let map = scene?.childNode(withName: "map") as! SKTileMapNode
         map.removeFromParent()
         
         scene.addChild(dungeon.terrain)
@@ -65,15 +64,24 @@ class DungeonViewController: UIViewController {
             return
         }
         
+        let map = self.dungeon.terrain
+        
         let viewLoc = recognizer.location(in: recognizer.view)
         let location = self.scene.convertPoint(fromView: viewLoc)
-        let mapLoc = self.map.convert(location, from: self.scene)
+        let mapLoc = map.convert(location, from: self.scene)
         
         let column = map.tileColumnIndex(fromPosition: mapLoc)
         let row = map.tileRowIndex(fromPosition: mapLoc)
         
+        print("click on \(row) \(column)")
+        
         guard let _ = map.tileDefinition(atColumn: column, row: row) else {
-            return //Can't go off the edget of the map
+            return //Can't go off the edge of the map
+        }
+        
+        let wall = dungeon.walls.tileDefinition(atColumn: column, row: row)
+        if wall != nil {
+            return //Can't go through walls
         }
         
         
