@@ -19,4 +19,15 @@ class DungeonModel: NSObject {
         self.walls = walls
     }
     
+    func isInMap(point:CGPoint) -> Bool {
+        return terrain.tileGroup(at: point) != nil
+    }
+    
+    func fixture(at:CGPoint) -> DungeonTileType? {
+        if let group = walls.tileGroup(at:at) {
+            return DungeonTileType(rawValue: group.name!)
+        }
+        return nil
+    }
+    
 }
