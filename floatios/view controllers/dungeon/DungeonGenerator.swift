@@ -13,36 +13,24 @@ class DungeonGenerator {
 
     let dungeon:DungeonModel
     let size:Int
-    let terrainGroups:[String:SKTileGroup]
-    let dungeonGroups:[String:SKTileGroup]
+    let ref:ReferenceController
     
-    init(size:Int) {
-        let tileSize = CGSize(width: 60, height: 70)
-        let gen = TilesGenerator(tileSize: tileSize)
-        let tileSet = gen.terrainTileSet()
-        let dungeonSet = gen.dungeonTileSet()
+    init(size:Int,ref:ReferenceController) {
+        self.ref = ref
+        let baseTerrain = ref.getTerrain(type: .grass)
         
-        let terrainMap = SKTileMapNode(tileSet: tileSet, columns: size, rows: size, tileSize: tileSize)
-        let wallMap = SKTileMapNode(tileSet: dungeonSet, columns: size, rows: size, tileSize: tileSize)
-        
-        dungeon = DungeonModel(terrain: terrainMap, walls: wallMap)
-        terrainGroups = dungeon.terrain.tileSet.tileGroups.groupSingle { $0.name! }
-        dungeonGroups = dungeon.walls.tileSet.tileGroups.groupSingle { $0.name! }
+        dungeon = DungeonModel(width: size, height: size, baseTerrain: baseTerrain)
         self.size = size
     }
     
     func generateDungeon() -> DungeonModel {
-        let wallMap = dungeon.walls
-        let terrainMap = dungeon.terrain
-        
         for x in 0..<size {
             for y in 0..<size {
+                let node = dungeon.nodeAt(x: x, y: y)
                 if (self.isEdge(x: x, y: y, size: size)) {
-                    let group = dungeonGroups["wall"]
-                    wallMap.setTileGroup(group, forColumn: x, row: y)
+                    node?.fixture = ref.getDungeonTile(type: .wall)
+                    node?.terrain = ref.getTerrain(type: .dirt)
                 }
-                let group = isEdge(x: x, y: y, size: size) ? terrainGroups["dirt"] : terrainGroups["grass"]
-                terrainMap.setTileGroup(group, forColumn: x, row: y)
             }
         }
         for _ in 0...10 {
@@ -65,18 +53,16 @@ class DungeonGenerator {
         let width = arc4random_uniform(6) + 3
         let height = arc4random_uniform(6) + 3
         
-        let wallGroup = dungeonGroups["wall"]
-        let floorGroup = terrainGroups["floor"]
-        
         let endX = x+width
         let endY = y+height
         
         for i in x...endX {
             for j in y...endY {
+                guard let node = dungeon.nodeAt(x: Int(i), y: Int(j)) else { continue }
                 if (i == x || j == y || i == endX || j == endY) {
-                    dungeon.walls.setTileGroup(wallGroup, forColumn: Int(j), row: Int(i))
+                    node.fixture = ref.getDungeonTile(type: .wall)
                 }
-                dungeon.terrain.setTileGroup(floorGroup, forColumn: Int(j), row: Int(i))
+                node.terrain = ref.getTerrain(type: .floor)
             }
         }
     }
@@ -85,9 +71,8 @@ class DungeonGenerator {
         let x = arc4random_uniform(UInt32(size - 2)) + 1
         let y = arc4random_uniform(UInt32(size - 2)) + 1
         
-        let group = up ? dungeonGroups["stair-up"] : dungeonGroups["stair-down"]
-        
-        dungeon.walls.setTileGroup(group, forColumn: Int(x), row: Int(y))
+        let node = dungeon.nodeAt(x: Int(x), y: Int(y))
+        node?.fixture = up ? ref.getDungeonTile(type: .stairsUp) : ref.getDungeonTile(type: .stairsDown)
     }
     
     func isEdge(x:Int,y:Int,size:Int) -> Bool {

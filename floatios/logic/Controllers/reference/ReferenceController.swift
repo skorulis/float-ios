@@ -17,6 +17,7 @@ class ReferenceController {
     let skills:[SkillType:SkillReferenceModel]
     let actions:[ActionType:ActionReferenceModel]
     let dungeonTiles:[DungeonTileType:DungeonTileReferenceModel]
+    let terrain:[TerrainType:TerrainReferenceModel]
     
     init() {
         let itemArray = ReferenceController.makeItems()
@@ -25,6 +26,7 @@ class ReferenceController {
         skills = ReferenceController.makeSkills().groupSingle { $0.name }
         actions = ReferenceController.makeActions().groupSingle { $0.type }
         dungeonTiles = ReferenceController.makeDungeonTiles().groupSingle { $0.type }
+        terrain = ReferenceController.makeTerrainTiles().groupSingle { $0.type }
     }
     
     static func makeStory() -> [StoryReferenceModel] {
@@ -83,9 +85,16 @@ class ReferenceController {
     
     private static func makeDungeonTiles() -> [DungeonTileReferenceModel] {
         let wall = DungeonTileReferenceModel(type: .wall, canPass: false)
-        let stairUp = DungeonTileReferenceModel(type:.stairsUp,canPass: true)
-        let stairDown = DungeonTileReferenceModel(type:.stairsDown,canPass: true)
+        let stairUp = DungeonTileReferenceModel(type:.stairsUp,canPass: true,actions:[.goUp])
+        let stairDown = DungeonTileReferenceModel(type:.stairsDown,canPass: true,actions:[.goDown])
         return [wall,stairUp,stairDown]
+    }
+    
+    private static func makeTerrainTiles() -> [TerrainReferenceModel] {
+        let grass = TerrainReferenceModel(type: .grass)
+        let dirt = TerrainReferenceModel(type: .dirt)
+        let floor = TerrainReferenceModel(type: .floor)
+        return [grass,dirt,floor]
     }
     
     func getItem(name:String) -> ItemReferenceModel {
@@ -111,6 +120,10 @@ class ReferenceController {
     func getDungeonTile(name:String) -> DungeonTileReferenceModel {
         let type = DungeonTileType.init(rawValue: name)!
         return getDungeonTile(type: type)
+    }
+    
+    func getTerrain(type:TerrainType) -> TerrainReferenceModel {
+        return terrain[type]!
     }
     
     func allActions() -> [ActionReferenceModel] {

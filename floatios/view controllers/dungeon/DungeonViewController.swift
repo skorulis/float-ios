@@ -8,6 +8,7 @@
 
 import UIKit
 import SpriteKit
+import SnapKit
 
 class DungeonViewController: UIViewController {
     
@@ -15,13 +16,17 @@ class DungeonViewController: UIViewController {
     var sceneView:SKView!
     var scene:SKScene!
     let dungeon:DungeonModel
+    let dungeonNode:SKDungeonNode
+    let header = DungeonHeaderView()
     let logic:DungeonLogicController
     let camera = SKCameraNode()
     let game = GameController.instance
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        let generator = DungeonGenerator(size: 100)
+        let generator = DungeonGenerator(size: 50,ref:game.reference)
         self.dungeon = generator.generateDungeon()
+        self.dungeon.player = game.player.player
+        dungeonNode = SKDungeonNode(dungeon: self.dungeon)
         self.logic = DungeonLogicController(dungeon: dungeon,ref:game.reference)
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.title = "Dungeon"
@@ -31,22 +36,28 @@ class DungeonViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func loadView() {
-        self.view = SKView()
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        
         self.scene = SKScene(fileNamed: "CityScene")
-        self.sceneView = self.view as! SKView
+        self.sceneView = SKView()
+        self.view.addSubview(self.sceneView)
+        self.view.addSubview(self.header)
+        self.header.snp.makeConstraints { (make) in
+            make.left.right.equalToSuperview()
+            make.top.equalTo(self.view.safeAreaLayoutGuide.snp.topMargin)
+            
+        }
+        
+        sceneView.snp.makeConstraints { (make) in
+            make.top.equalTo(header.snp.bottom)
+            make.left.right.bottom.equalToSuperview()
+        }
         
         let map = scene?.childNode(withName: "map") as! SKTileMapNode
         map.removeFromParent()
         
-        scene.addChild(dungeon.terrain)
-        scene.addChild(dungeon.walls)
+        scene.addChild(dungeonNode)
         
         self.scene.camera = self.camera
         self.scene.addChild(self.camera)
@@ -57,10 +68,26 @@ class DungeonViewController: UIViewController {
         scene!.addChild(tank)
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapped(recognizer:)))
-        self.view.addGestureRecognizer(tap)
+        self.sceneView.addGestureRecognizer(tap)
         
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPressed(recognizer:)))
-        self.view.addGestureRecognizer(longPress)
+        self.sceneView.addGestureRecognizer(longPress)
+        
+        self.header.update(player: dungeon.player)
+    }
+    
+    func showActionAlert(actions:[DungeonAction]) {
+        let alert = UIAlertController(title: "Choose action", message: nil, preferredStyle: .actionSheet)
+        
+        for a in actions {
+            let button = UIAlertAction(title: a.rawValue, style: .default) { (aa) in
+                
+            }
+            alert.addAction(button)
+        }
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
     }
     
     @objc func longPressed(recognizer:UITapGestureRecognizer) {
@@ -70,8 +97,9 @@ class DungeonViewController: UIViewController {
         let mapPoint = getMapPoint(recognizer: recognizer)
         let actions = logic.getActions(at: mapPoint)
         
-        print("TEST \(actions)")
-        
+        if actions.count > 0 {
+            showActionAlert(actions: actions)
+        }
     }
     
     @objc func tapped(recognizer:UITapGestureRecognizer) {
@@ -83,7 +111,7 @@ class DungeonViewController: UIViewController {
             return
         }
         
-        let map = self.dungeon.terrain
+        let map = self.dungeonNode.terrain
         
         if let type = dungeon.fixture(at: mapPoint) {
             let dungeonTile = game.reference.getDungeonTile(type:type)
@@ -104,7 +132,7 @@ class DungeonViewController: UIViewController {
     }
     
     private func getMapPoint(recognizer:UIGestureRecognizer) -> CGPoint {
-        let map = self.dungeon.terrain
+        let map = self.dungeonNode.terrain
         
         let viewLoc = recognizer.location(in: recognizer.view)
         let location = self.scene.convertPoint(fromView: viewLoc)

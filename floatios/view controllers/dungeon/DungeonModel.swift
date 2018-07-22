@@ -11,23 +11,48 @@ import SpriteKit
 
 class DungeonModel: NSObject {
 
-    let terrain:SKTileMapNode
-    let walls:SKTileMapNode
+    //let terrain:SKTileMapNode
+    //let walls:SKTileMapNode
     
-    init(terrain:SKTileMapNode,walls:SKTileMapNode) {
-        self.terrain = terrain
-        self.walls = walls
+    var player:PlayerCharacterModel!
+    
+    var nodes:[GKHexMapNode] = []
+    var width:Int
+    var height:Int
+    
+    init(width:Int,height:Int,baseTerrain:TerrainReferenceModel) {
+        self.width = width
+        self.height = height
+        
+        for _ in 0..<width*height {
+            nodes.append(GKHexMapNode(terrain: baseTerrain))
+        }
+        
+    }
+    
+    func nodeAt(point:CGPoint) -> GKHexMapNode? {
+        return nodeAt(x: Int(point.x), y: Int(point.y))
+    }
+    
+    func nodeAt(x:Int,y:Int) -> GKHexMapNode? {
+        if (!isInMap(x: x, y: y)) {
+            return nil
+        }
+        let index = y * width + x
+        return nodes[index]
     }
     
     func isInMap(point:CGPoint) -> Bool {
-        return terrain.tileGroup(at: point) != nil
+        return isInMap(x: Int(point.x), y: Int(point.y))
+    }
+    
+    func isInMap(x:Int,y:Int) -> Bool {
+        return x >= 0 && y >= 0 && x < width && y < height
     }
     
     func fixture(at:CGPoint) -> DungeonTileType? {
-        if let group = walls.tileGroup(at:at) {
-            return DungeonTileType(rawValue: group.name!)
-        }
-        return nil
+        let node = self.nodeAt(point: at)
+        return node?.fixture?.type
     }
     
 }

@@ -92,9 +92,9 @@ class TilesGenerator: NSObject {
     }
     
     func terrainTileSet() -> SKTileSet {
-        let dirt = generateTileDefinition(name: "dirt",color:UIColor.brown)
-        let grass = generateTileDefinition(name: "grass",color:UIColor.green)
-        let floor = generateTileDefinition(name: "floor",color:UIColor.darkGray)
+        let dirt = generateTileDefinition(name: TerrainType.dirt.rawValue,color:UIColor.brown)
+        let grass = generateTileDefinition(name: TerrainType.grass.rawValue,color:UIColor.green)
+        let floor = generateTileDefinition(name: TerrainType.floor.rawValue,color:UIColor.darkGray)
         let dirtGroup = group(def: dirt)
         let grassGroup = group(def: grass)
         

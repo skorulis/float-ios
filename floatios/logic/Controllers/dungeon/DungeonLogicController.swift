@@ -18,17 +18,11 @@ class DungeonLogicController: NSObject {
         self.ref = ref
     }
     
-    func getActions(at point:CGPoint) -> [String] {
+    func getActions(at point:CGPoint) -> [DungeonAction] {
         guard let type = dungeon.fixture(at: point) else {
             return []
         }
-        //let fixture = ref.getDungeonTile(type: type)
-        if (type == .stairsUp) {
-            return ["Go up"]
-        } else if (type == .stairsDown) {
-            return ["Go down"]
-        }
-        
-        return []
+        let fixture = ref.getDungeonTile(type: type)
+        return fixture.actions
     }
 }

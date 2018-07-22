@@ -14,27 +14,31 @@ final class PlayerDetailsCell: UICollectionViewCell, SimpleModelCell, AutoSizeMo
     var model: CharacterModel? {
         didSet {
             if let m = model {
-                let text = "\(m.name)\nFullness: \(m.satiation.description), Time: \(m.time.description)\nEther: \(m.ether)"
-                quickLabel.text = text;
+                nameLabel.text = "\(m.name) \(m.ether) Ether"
+                timeProgress.set(field: m.time)
+                fullnessProgress.set(field: m.satiation)
                 avatar.showAvatar(avatar: m.avatarIcon, size: 40)
-            } else {
-                quickLabel.text = ""
             }
-            
         }
     }
     static var sizingCell: PlayerDetailsCell = PlayerDetailsCell(frame:.zero)
     typealias ModelType = CharacterModel
     
-    let quickLabel = UILabel()
+    let nameLabel = UILabel()
+    let timeProgress = ProgressBar()
+    let fullnessProgress = ProgressBar()
     let avatar = AvatarImageView()
     
     override init(frame:CGRect) {
         super.init(frame:frame)
         
-        self.quickLabel.numberOfLines = 0
         self.contentView.addSubview(avatar)
-        self.contentView.addSubview(quickLabel)
+        self.contentView.addSubview(nameLabel)
+        self.contentView.addSubview(timeProgress)
+        self.contentView.addSubview(fullnessProgress)
+        
+        timeProgress.showLabel(title:"time")
+        fullnessProgress.showLabel(title:"fullness")
         
         avatar.snp.makeConstraints { (make) in
             make.left.equalToSuperview().inset(8)
@@ -42,9 +46,18 @@ final class PlayerDetailsCell: UICollectionViewCell, SimpleModelCell, AutoSizeMo
             make.height.width.equalTo(40)
         }
         
-        quickLabel.snp.makeConstraints { (make) in
+        nameLabel.snp.makeConstraints { (make) in
             make.left.equalTo(avatar.snp.right).offset(8)
-            make.top.bottom.right.equalToSuperview().inset(10)
+            make.top.right.equalToSuperview().inset(10)
+        }
+        timeProgress.snp.makeConstraints { (make) in
+            make.left.right.equalTo(nameLabel)
+            make.top.equalTo(nameLabel.snp.bottom).offset(4)
+        }
+        fullnessProgress.snp.makeConstraints { (make) in
+            make.left.right.equalTo(nameLabel)
+            make.top.equalTo(timeProgress.snp.bottom).offset(4)
+            make.bottom.equalToSuperview().inset(4)
         }
         
     }
