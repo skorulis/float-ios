@@ -9,16 +9,16 @@
 import UIKit
 import GameplayKit
 
-class GKHexMapNode: GKGraphNode {
+class GKHexMapNode: GKGridGraphNode {
 
     var terrain:TerrainReferenceModel
     var fixture:DungeonTileReferenceModel?
     //var items:[ItemModel]
     //var monster:CharacterModel?
     
-    init(terrain:TerrainReferenceModel) {
+    init(terrain:TerrainReferenceModel,position:vector_int2) {
         self.terrain = terrain
-        super.init()
+        super.init(gridPosition:position)
     }
     
     required init?(coder aDecoder: NSCoder) {

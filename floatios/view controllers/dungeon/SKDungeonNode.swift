@@ -29,8 +29,8 @@ class SKDungeonNode: SKNode {
         terrainGroups = terrainSet.tileGroups.groupSingle { $0.name! }
         fixtureGroups = fixtureSet.tileGroups.groupSingle { $0.name! }
         
-        terrain = SKTileMapNode(tileSet: terrainSet, columns: dungeon.height, rows: dungeon.width, tileSize: tileSize)
-        walls = SKTileMapNode(tileSet: fixtureSet, columns: dungeon.height, rows: dungeon.width, tileSize: tileSize)
+        terrain = SKTileMapNode(tileSet: terrainSet, columns: dungeon.width, rows: dungeon.height, tileSize: tileSize)
+        walls = SKTileMapNode(tileSet: fixtureSet, columns: dungeon.width, rows: dungeon.height, tileSize: tileSize)
         
         super.init()
         
@@ -40,7 +40,7 @@ class SKDungeonNode: SKNode {
         self.rebuildMaps()
         
         tank = SKSpriteNode(imageNamed: "tank")
-        let centrePos = terrain.centerOfTile(atColumn: Int(dungeon.playerNode.position.y), row: Int(dungeon.playerNode.position.x))
+        let centrePos = terrain.centerOfTile(atColumn: Int(dungeon.playerNode.position.x), row: Int(dungeon.playerNode.position.y))
         tank.position = centrePos
         self.addChild(tank)
     }
@@ -49,9 +49,9 @@ class SKDungeonNode: SKNode {
         for y in 0..<dungeon.height {
             for x in 0..<dungeon.width {
                 guard let node = dungeon.nodeAt(x: x, y: y) else { continue }
-                terrain.setTileGroup(terrainGroup(terrain: node.terrain), forColumn: y, row: x)
+                terrain.setTileGroup(terrainGroup(terrain: node.terrain), forColumn: x, row: y)
                 if let f = node.fixture {
-                    walls.setTileGroup(fixtureGroup(fixture: f), forColumn: y, row: x)
+                    walls.setTileGroup(fixtureGroup(fixture: f), forColumn: x, row: y)
                 }
             }
         }

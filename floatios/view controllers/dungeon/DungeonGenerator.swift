@@ -78,7 +78,7 @@ class DungeonGenerator {
         return vector_int2(Int32(x),Int32(y))
     }
     
-    func isEdge(x:Int,y:Int,size:Int) -> Bool {
+    func isEdge(x:Int,y:Int,size:Int) -> Bool { 
         return x == 0 || y == 0 || x == size - 1 || y == size - 1
     }
     

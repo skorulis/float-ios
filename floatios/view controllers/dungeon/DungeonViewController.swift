@@ -109,6 +109,8 @@ class DungeonViewController: UIViewController {
             return
         }
         
+        print("click point \(mapPoint)" )
+        
         let map = self.dungeonNode.terrain
         
         if let type = dungeon.fixture(at: mapPoint) {
@@ -117,8 +119,20 @@ class DungeonViewController: UIViewController {
                 return //Can't go past this tile
             }
         }
+        let fromPoint = dungeon.playerNode.position.point
+        let path = dungeon.path(to: mapPoint, from: fromPoint)
+        if path.count < 2 {
+            return
+        }
+        for p in path {
+            print(p.gridPosition)
+        }
         
-        let centrePos = map.centerOfTile(at:mapPoint)
+        let first = path[1]
+        
+        dungeon.playerNode.position = first.gridPosition
+        
+        let centrePos = map.centreOfTile(at: first.gridPosition)
         let action = SKAction.move(to: centrePos, duration: 0.25)
         action.timingMode = .easeInEaseOut
         self.dungeonNode.tank.run(action)
@@ -139,7 +153,7 @@ class DungeonViewController: UIViewController {
         let column = map.tileColumnIndex(fromPosition: mapLoc)
         let row = map.tileRowIndex(fromPosition: mapLoc)
         
-        return CGPoint(x: row, y: column)
+        return CGPoint(x: column, y: row)
     }
 
 }

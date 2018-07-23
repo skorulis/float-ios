@@ -12,19 +12,23 @@ import SpriteKit
 extension SKTileMapNode {
 
     func tileDefinition(at:CGPoint) -> SKTileDefinition? {
-        let column = Int(at.y)
-        let row = Int(at.x)
+        let column = Int(at.x)
+        let row = Int(at.y)
         return tileDefinition(atColumn: column, row: row)
     }
     
     func tileGroup(at:CGPoint) -> SKTileGroup? {
-        let column = Int(at.y)
-        let row = Int(at.x)
+        let column = Int(at.x)
+        let row = Int(at.y)
         return tileGroup(atColumn: column, row: row)
     }
     
     func centerOfTile(at:CGPoint) -> CGPoint {
-        return centerOfTile(atColumn: Int(at.y), row: Int(at.x))
+        return centerOfTile(atColumn: Int(at.x), row: Int(at.y))
+    }
+    
+    func centreOfTile(at:vector_int2) -> CGPoint {
+        return centerOfTile(atColumn: Int(at.x), row: Int(at.y))
     }
     
     

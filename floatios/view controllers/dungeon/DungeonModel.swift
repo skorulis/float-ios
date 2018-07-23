@@ -24,12 +24,17 @@ class DungeonModel: NSObject {
         self.width = width
         self.height = height
         
-        for _ in 0..<width*height {
-            nodes.append(GKHexMapNode(terrain: baseTerrain))
+        for y in 0..<height {
+            for x in 0..<width {
+                nodes.append(GKHexMapNode(terrain: baseTerrain,position:vector_int2(Int32(x),Int32(y))))
+            }
         }
         
-        graph = GKGraph(nodes)
+        for n in nodes {
+            print("pos \(n.gridPosition)")
+        }
         
+        graph = GKGraph(nodes)   
     }
     
     func updateConnectionGraph() {
@@ -42,7 +47,7 @@ class DungeonModel: NSObject {
                 let node = self.nodeAt(x: x, y: y)!
                 tryConnect(node: node, x: x-1, y: y)
                 tryConnect(node: node, x: x+1, y: y)
-                if y % 2 == 0 {
+                if y % 2 == 1 {
                     tryConnect(node: node, x: x, y: y+1)
                     tryConnect(node: node, x: x+1, y: y+1)
                 } else {
@@ -82,6 +87,13 @@ class DungeonModel: NSObject {
     func fixture(at:CGPoint) -> DungeonTileType? {
         let node = self.nodeAt(point: at)
         return node?.fixture?.type
+    }
+    
+    func path(to:CGPoint,from:CGPoint) -> [GKHexMapNode] {
+        guard let node = self.nodeAt(point: to) else { return [] }
+        guard let fromNode = self.nodeAt(point: from) else { return [] }
+        
+        return graph.findPath(from: fromNode, to: node) as! [GKHexMapNode]
     }
     
 }

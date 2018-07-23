@@ -83,6 +83,7 @@
 		FAF78EA020F73A59005F7E88 /* SkillListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF78E9F20F73A59005F7E88 /* SkillListViewController.swift */; };
 		FAF78EA220F73A97005F7E88 /* SkillProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF78EA120F73A97005F7E88 /* SkillProgressCell.swift */; };
 		FAF986AD2105BB78009C8F92 /* DungeonCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF986AC2105BB78009C8F92 /* DungeonCharacter.swift */; };
+		FAF986AF2105CFAB009C8F92 /* TypeConversions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF986AE2105CFAB009C8F92 /* TypeConversions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -180,6 +181,7 @@
 		FAF78E9F20F73A59005F7E88 /* SkillListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillListViewController.swift; sourceTree = "<group>"; };
 		FAF78EA120F73A97005F7E88 /* SkillProgressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillProgressCell.swift; sourceTree = "<group>"; };
 		FAF986AC2105BB78009C8F92 /* DungeonCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonCharacter.swift; sourceTree = "<group>"; };
+		FAF986AE2105CFAB009C8F92 /* TypeConversions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TypeConversions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -443,6 +445,7 @@
 			isa = PBXGroup;
 			children = (
 				FA8344702103150C005BCF1A /* SKTileMapNode+Additions.swift */,
+				FAF986AE2105CFAB009C8F92 /* TypeConversions.swift */,
 			);
 			path = util;
 			sourceTree = "<group>";
@@ -756,6 +759,7 @@
 				FA10723420E8ACBE0046C756 /* InventoryViewController.swift in Sources */,
 				FA569CBB20E58D970094807F /* ActionController.swift in Sources */,
 				FA10720A20E73D1B0046C756 /* NameGenerator.swift in Sources */,
+				FAF986AF2105CFAB009C8F92 /* TypeConversions.swift in Sources */,
 				FA569CB320E58D970094807F /* InventoryModel.swift in Sources */,
 				FA36928F20F083AB003988D4 /* FloatTheme.swift in Sources */,
 				FA83447821042BDA005BCF1A /* SKDungeonNode.swift in Sources */,
