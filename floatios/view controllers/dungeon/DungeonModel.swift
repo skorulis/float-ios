@@ -45,6 +45,9 @@ class DungeonModel: NSObject {
         for y in 0..<height {
             for x in 0..<width {
                 let node = self.nodeAt(x: x, y: y)!
+                if !node.canPass() {
+                    continue //Don't connect
+                }
                 tryConnect(node: node, x: x-1, y: y)
                 tryConnect(node: node, x: x+1, y: y)
                 if y % 2 == 1 {
@@ -60,6 +63,9 @@ class DungeonModel: NSObject {
     
     func tryConnect(node:GKHexMapNode,x:Int,y:Int) {
         if let other = self.nodeAt(x: x, y: y) {
+            if (!other.canPass()) {
+                return //Don't connect
+            }
             node.addConnections(to: [other], bidirectional: true)
         }
     }

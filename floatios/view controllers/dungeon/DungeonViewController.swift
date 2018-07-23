@@ -113,19 +113,10 @@ class DungeonViewController: UIViewController {
         
         let map = self.dungeonNode.terrain
         
-        if let type = dungeon.fixture(at: mapPoint) {
-            let dungeonTile = game.reference.getDungeonTile(type:type)
-            if (!dungeonTile.canPass) {
-                return //Can't go past this tile
-            }
-        }
         let fromPoint = dungeon.playerNode.position.point
         let path = dungeon.path(to: mapPoint, from: fromPoint)
         if path.count < 2 {
             return
-        }
-        for p in path {
-            print(p.gridPosition)
         }
         
         let first = path[1]

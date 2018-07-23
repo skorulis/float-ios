@@ -61,7 +61,8 @@ class DungeonGenerator {
         for i in x...endX {
             for j in y...endY {
                 guard let node = dungeon.nodeAt(x: Int(i), y: Int(j)) else { continue }
-                if (i == x || j == y || i == endX || j == endY) {
+                let isDoor = (i - x) != (j - y)
+                if ( (i == x || j == y || i == endX || j == endY) && isDoor) {
                     node.fixture = ref.getDungeonTile(type: .wall)
                 }
                 node.terrain = ref.getTerrain(type: .floor)

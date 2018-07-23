@@ -29,4 +29,11 @@ class GKHexMapNode: GKGridGraphNode {
         self.removeConnections(to: self.connectedNodes, bidirectional: true)
     }
     
+    func canPass() -> Bool {
+        if let f = fixture {
+            return f.canPass
+        }
+        return true
+    }
+    
 }
