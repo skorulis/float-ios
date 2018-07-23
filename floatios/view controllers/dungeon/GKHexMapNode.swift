@@ -13,6 +13,8 @@ class GKHexMapNode: GKGraphNode {
 
     var terrain:TerrainReferenceModel
     var fixture:DungeonTileReferenceModel?
+    //var items:[ItemModel]
+    //var monster:CharacterModel?
     
     init(terrain:TerrainReferenceModel) {
         self.terrain = terrain
@@ -21,6 +23,10 @@ class GKHexMapNode: GKGraphNode {
     
     required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    func removeAllConnections() {
+        self.removeConnections(to: self.connectedNodes, bidirectional: true)
     }
     
 }

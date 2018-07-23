@@ -8,17 +8,16 @@
 
 import UIKit
 import SpriteKit
+import GameplayKit
 
 class DungeonModel: NSObject {
-
-    //let terrain:SKTileMapNode
-    //let walls:SKTileMapNode
     
     var player:PlayerCharacterModel!
     
     var nodes:[GKHexMapNode] = []
     var width:Int
     var height:Int
+    var graph:GKGraph
     
     init(width:Int,height:Int,baseTerrain:TerrainReferenceModel) {
         self.width = width
@@ -28,6 +27,35 @@ class DungeonModel: NSObject {
             nodes.append(GKHexMapNode(terrain: baseTerrain))
         }
         
+        graph = GKGraph(nodes)
+        
+    }
+    
+    func updateConnectionGraph() {
+        for node in nodes {
+            node.removeAllConnections()
+        }
+        
+        for y in 0..<height {
+            for x in 0..<width {
+                let node = self.nodeAt(x: x, y: y)!
+                tryConnect(node: node, x: x-1, y: y)
+                tryConnect(node: node, x: x+1, y: y)
+                if y % 2 == 0 {
+                    tryConnect(node: node, x: x, y: y+1)
+                    tryConnect(node: node, x: x+1, y: y+1)
+                } else {
+                    tryConnect(node: node, x: x-1, y: y+1)
+                    tryConnect(node: node, x: x, y: y+1)
+                }
+            }
+        }
+    }
+    
+    func tryConnect(node:GKHexMapNode,x:Int,y:Int) {
+        if let other = self.nodeAt(x: x, y: y) {
+            node.addConnections(to: [other], bidirectional: true)
+        }
     }
     
     func nodeAt(point:CGPoint) -> GKHexMapNode? {

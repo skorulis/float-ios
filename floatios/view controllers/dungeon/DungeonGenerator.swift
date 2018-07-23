@@ -43,6 +43,8 @@ class DungeonGenerator {
             addStairs(up: false)
         }
         
+        dungeon.updateConnectionGraph()
+        
         return dungeon
     }
     
