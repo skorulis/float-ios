@@ -20,9 +20,11 @@ class DungeonLogicController: NSObject {
     
     func getActions(at point:CGPoint) -> [DungeonAction] {
         guard let type = dungeon.fixture(at: point) else {
-            return []
+            return [.examine]
         }
         let fixture = ref.getDungeonTile(type: type)
-        return fixture.actions
+        var actions = fixture.actions
+        actions.append(.examine)
+        return actions
     }
 }

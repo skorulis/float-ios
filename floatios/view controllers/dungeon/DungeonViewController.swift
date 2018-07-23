@@ -93,7 +93,14 @@ class DungeonViewController: UIViewController {
             return
         }
         let mapPoint = getMapPoint(recognizer: recognizer)
-        let actions = logic.getActions(at: mapPoint)
+        let fromPoint = dungeon.playerNode.position.point
+        let path = dungeon.path(to: mapPoint, from: fromPoint)
+        var actions = [DungeonAction.examine]
+        
+        //TODO: Come up with a better way to deal with this later
+        if path.count <= 2 {
+            actions = logic.getActions(at: mapPoint)
+        }
         
         if actions.count > 0 {
             showActionAlert(actions: actions)

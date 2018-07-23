@@ -17,6 +17,7 @@ public enum DungeonTileType:String {
 enum DungeonAction: String {
     case goUp
     case goDown
+    case examine
 }
 
 struct DungeonTileReferenceModel {
