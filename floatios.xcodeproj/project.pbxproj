@@ -82,6 +82,7 @@
 		FAF78E9D20F7350E005F7E88 /* ActionResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF78E9C20F7350E005F7E88 /* ActionResultModel.swift */; };
 		FAF78EA020F73A59005F7E88 /* SkillListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF78E9F20F73A59005F7E88 /* SkillListViewController.swift */; };
 		FAF78EA220F73A97005F7E88 /* SkillProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF78EA120F73A97005F7E88 /* SkillProgressCell.swift */; };
+		FAF986AD2105BB78009C8F92 /* DungeonCharacter.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF986AC2105BB78009C8F92 /* DungeonCharacter.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -178,6 +179,7 @@
 		FAF78E9C20F7350E005F7E88 /* ActionResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionResultModel.swift; sourceTree = "<group>"; };
 		FAF78E9F20F73A59005F7E88 /* SkillListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillListViewController.swift; sourceTree = "<group>"; };
 		FAF78EA120F73A97005F7E88 /* SkillProgressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillProgressCell.swift; sourceTree = "<group>"; };
+		FAF986AC2105BB78009C8F92 /* DungeonCharacter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonCharacter.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -472,6 +474,7 @@
 				FA83447521034B5D005BCF1A /* DungeonHeaderView.swift */,
 				FA83447721042BDA005BCF1A /* SKDungeonNode.swift */,
 				FA834479210490C8005BCF1A /* GKHexMapNode.swift */,
+				FAF986AC2105BB78009C8F92 /* DungeonCharacter.swift */,
 			);
 			path = dungeon;
 			sourceTree = "<group>";
@@ -786,6 +789,7 @@
 				FA10720E20E75A040046C756 /* CityLandController.swift in Sources */,
 				FA8344682101D10D005BCF1A /* DungeonModel.swift in Sources */,
 				FA10720420E7256B0046C756 /* CityDetailsCell.swift in Sources */,
+				FAF986AD2105BB78009C8F92 /* DungeonCharacter.swift in Sources */,
 				FA9A5CCB20E97BE100C36110 /* ItemCell.swift in Sources */,
 				FA569CB420E58D970094807F /* ItemModel.swift in Sources */,
 				FAF78E9D20F7350E005F7E88 /* ActionResultModel.swift in Sources */,

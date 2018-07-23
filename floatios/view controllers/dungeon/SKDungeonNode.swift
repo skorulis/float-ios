@@ -17,6 +17,8 @@ class SKDungeonNode: SKNode {
     let terrainGroups:[String:SKTileGroup]
     let fixtureGroups:[String:SKTileGroup]
     
+    var tank:SKSpriteNode!
+    
     init(dungeon:DungeonModel) {
         self.dungeon = dungeon
         let tileSize = CGSize(width: 60, height: 70)
@@ -36,6 +38,11 @@ class SKDungeonNode: SKNode {
         self.addChild(walls)
         
         self.rebuildMaps()
+        
+        tank = SKSpriteNode(imageNamed: "tank")
+        let centrePos = terrain.centerOfTile(atColumn: Int(dungeon.playerNode.position.y), row: Int(dungeon.playerNode.position.x))
+        tank.position = centrePos
+        self.addChild(tank)
     }
     
     func rebuildMaps() {

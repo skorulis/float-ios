@@ -12,7 +12,6 @@ import SnapKit
 
 class DungeonViewController: UIViewController {
     
-    var tank:SKSpriteNode!
     var sceneView:SKView!
     var scene:SKScene!
     let dungeon:DungeonModel
@@ -62,10 +61,9 @@ class DungeonViewController: UIViewController {
         self.scene.camera = self.camera
         self.scene.addChild(self.camera)
         
-        sceneView.presentScene(scene)
+        self.camera.position = self.dungeonNode.tank.position
         
-        tank = SKSpriteNode(imageNamed: "tank")
-        scene!.addChild(tank)
+        sceneView.presentScene(scene)
         
         let tap = UITapGestureRecognizer(target: self, action: #selector(tapped(recognizer:)))
         self.sceneView.addGestureRecognizer(tap)
@@ -123,7 +121,7 @@ class DungeonViewController: UIViewController {
         let centrePos = map.centerOfTile(at:mapPoint)
         let action = SKAction.move(to: centrePos, duration: 0.25)
         action.timingMode = .easeInEaseOut
-        self.tank.run(action)
+        self.dungeonNode.tank.run(action)
         
         let camAction = SKAction.move(to: centrePos, duration: 0.25)
         camAction.timingMode = .easeInEaseOut

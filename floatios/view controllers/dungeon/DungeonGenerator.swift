@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import SpriteKit
+import GameplayKit
 
 class DungeonGenerator {
 
@@ -37,10 +37,10 @@ class DungeonGenerator {
             addRoom()
         }
         for _ in 0...2 {
-            addStairs(up: true)
+            dungeon.playerNode.position = addStairs(up: true)
         }
         for _ in 0...2 {
-            addStairs(up: false)
+            _ = addStairs(up: false)
         }
         
         dungeon.updateConnectionGraph()
@@ -69,12 +69,13 @@ class DungeonGenerator {
         }
     }
     
-    func addStairs(up:Bool) {
+    func addStairs(up:Bool) -> vector_int2 {
         let x = arc4random_uniform(UInt32(size - 2)) + 1
         let y = arc4random_uniform(UInt32(size - 2)) + 1
         
         let node = dungeon.nodeAt(x: Int(x), y: Int(y))
         node?.fixture = up ? ref.getDungeonTile(type: .stairsUp) : ref.getDungeonTile(type: .stairsDown)
+        return vector_int2(Int32(x),Int32(y))
     }
     
     func isEdge(x:Int,y:Int,size:Int) -> Bool {

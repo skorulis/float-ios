@@ -13,6 +13,7 @@ import GameplayKit
 class DungeonModel: NSObject {
     
     var player:PlayerCharacterModel!
+    var playerNode:DungeonCharacter = DungeonCharacter()
     
     var nodes:[GKHexMapNode] = []
     var width:Int
