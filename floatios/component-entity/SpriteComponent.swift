@@ -11,8 +11,32 @@ import GameplayKit
 
 class SpriteComponent: GKComponent {
 
+    var sprite:ASSpriteNode
+    
+    init(sprite:ASSpriteNode) {
+        self.sprite = sprite
+        super.init()
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    func gridEntity() -> GridEntity {
+        return self.entity! as! GridEntity
+    }
+    
     func moveTo(position:vector_int2) {
-        //let action = SKAction.move(to: <#T##CGPoint#>, duration: <#T##TimeInterval#>)
+        let point = self.sprite.dungeonScene().pointFor(position: position)
+        let action = SKAction.move(to: point, duration: 0.25)
+        let update = SKAction.run { self.gridEntity().gridPosition = position }
+        self.sprite.run(SKAction.sequence([action,update]), withKey: "move")
+    }
+    
+    func placeAt(position:vector_int2) {
+        let point = self.sprite.dungeonScene().pointFor(position: position)
+        self.sprite.position = point
+        self.gridEntity().gridPosition = position
     }
     
 }

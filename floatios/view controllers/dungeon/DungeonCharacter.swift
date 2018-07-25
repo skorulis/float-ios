@@ -10,7 +10,7 @@ import UIKit
 import GameplayKit
 
 //Represents a character that can move around the dungeon
-class DungeonCharacter: NSObject {
+class DungeonCharacter: GridEntity {
 
     let ident:String
     let character:CharacterModel
@@ -18,10 +18,13 @@ class DungeonCharacter: NSObject {
     init(char:CharacterModel) {
         ident = UUID().uuidString
         self.character = char
+        super.init()
     }
     
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
-    var position:vector_int2 = vector_int2(0, 0)
     
     weak var node:GKHexMapNode?
     

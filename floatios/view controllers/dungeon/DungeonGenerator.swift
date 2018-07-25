@@ -37,7 +37,7 @@ class DungeonGenerator {
             addRoom()
         }
         for _ in 0...2 {
-            dungeon.playerNode.position = addStairs(up: true)
+            dungeon.playerNode.gridPosition = addStairs(up: true)
         }
         for _ in 0...2 {
             _ = addStairs(up: false)

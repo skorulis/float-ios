@@ -86,7 +86,7 @@ class DungeonViewController: UIViewController {
             return
         }
         let mapPoint = getMapPoint(recognizer: recognizer)
-        let fromPoint = dungeon.playerNode.position.point
+        let fromPoint = dungeon.playerNode.gridPosition.point
         let path = dungeon.path(to: mapPoint, from: fromPoint)
         var actions = [DungeonAction.examine]
         
@@ -113,7 +113,7 @@ class DungeonViewController: UIViewController {
         
         let map = self.scene.terrain
         
-        let fromPoint = dungeon.playerNode.position.point
+        let fromPoint = dungeon.playerNode.gridPosition.point
         let path = dungeon.path(to: mapPoint, from: fromPoint)
         if path.count < 2 {
             return
@@ -121,7 +121,7 @@ class DungeonViewController: UIViewController {
         
         let first = path[1]
         
-        dungeon.playerNode.position = first.gridPosition
+        dungeon.playerNode.gridPosition = first.gridPosition
         
         let centrePos = map.centreOfTile(at: first.gridPosition)
         let action = SKAction.move(to: centrePos, duration: 0.25)

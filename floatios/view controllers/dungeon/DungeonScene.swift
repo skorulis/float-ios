@@ -40,10 +40,16 @@ class DungeonScene: SKScene {
         
         self.rebuildMaps()
         
-        tank = SKSpriteNode(imageNamed: "tank")
-        let centrePos = terrain.centerOfTile(atColumn: Int(dungeon.playerNode.position.x), row: Int(dungeon.playerNode.position.y))
-        tank.position = centrePos
-        self.addChild(tank)
+        tank = addSprite(entity: dungeon.playerNode)
+    }
+    
+    func addSprite(entity:GridEntity) -> ASSpriteNode {
+        let node = ASSpriteNode(imageNamed: "tank")
+        let spriteComponent = SpriteComponent(sprite: node)
+        entity.addComponent(spriteComponent)
+        self.addChild(node)
+        spriteComponent.placeAt(position: entity.gridPosition)
+        return node
     }
     
     func rebuildMaps() {
@@ -66,6 +72,10 @@ class DungeonScene: SKScene {
     func fixtureGroup(fixture:DungeonTileReferenceModel) -> SKTileGroup {
         let name = fixture.type.rawValue
         return fixtureGroups[name]!
+    }
+    
+    func pointFor(position:vector_int2) -> CGPoint {
+        return self.terrain.centreOfTile(at: position)
     }
     
     required init?(coder aDecoder: NSCoder) {

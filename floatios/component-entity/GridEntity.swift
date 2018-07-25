@@ -11,6 +11,6 @@ import GameplayKit
 
 class GridEntity: GKEntity {
 
-    var position:vector_int2 = vector_int2(x: 0, y: 0)
+    var gridPosition:vector_int2 = vector_int2(x: 0, y: 0)
     
 }
