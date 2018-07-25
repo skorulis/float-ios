@@ -15,11 +15,11 @@ class DungeonGenerator {
     let size:Int
     let ref:ReferenceController
     
-    init(size:Int,ref:ReferenceController) {
+    init(size:Int,ref:ReferenceController,player:PlayerCharacterModel) {
         self.ref = ref
         let baseTerrain = ref.getTerrain(type: .grass)
         
-        dungeon = DungeonModel(width: size, height: size, baseTerrain: baseTerrain)
+        dungeon = DungeonModel(width: size, height: size, baseTerrain: baseTerrain,player:player)
         self.size = size
     }
     

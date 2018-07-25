@@ -13,8 +13,11 @@ class GKHexMapNode: GKGridGraphNode {
 
     var terrain:TerrainReferenceModel
     var fixture:DungeonTileReferenceModel?
+    
+    //Things that can move around from node to node, allows for multiple as battles can happen when they are in the same node
+    var beings:[DungeonCharacter] = []
     //var items:[ItemModel]
-    //var monster:CharacterModel?
+    
     
     init(terrain:TerrainReferenceModel,position:vector_int2) {
         self.terrain = terrain
@@ -34,6 +37,16 @@ class GKHexMapNode: GKGridGraphNode {
             return f.canPass
         }
         return true
+    }
+    
+    func place(being:DungeonCharacter) {
+        if let node = being.node {
+            node.beings = node.beings.filter { $0 != being }
+        }
+        var tmp = self.beings
+        tmp.append(being)
+        self.beings = tmp
+        being.node = self
     }
     
 }
