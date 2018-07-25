@@ -1,15 +1,14 @@
 //
-//  SKDungeonNode.swift
+//  DungeonScene.swift
 //  floatios
 //
 //  Created by Alexander Skorulis on 22/7/18.
 //  Copyright © 2018 Skorulis. All rights reserved.
 //
 
-import UIKit
 import SpriteKit
 
-class SKDungeonNode: SKNode {
+class DungeonScene: SKScene {
 
     let terrain:SKTileMapNode
     let walls:SKTileMapNode
@@ -22,6 +21,7 @@ class SKDungeonNode: SKNode {
     init(dungeon:DungeonModel) {
         self.dungeon = dungeon
         let tileSize = CGSize(width: 60, height: 70)
+        
         let gen = TilesGenerator(tileSize: tileSize)
         let terrainSet = gen.terrainTileSet()
         let fixtureSet = gen.dungeonTileSet()
@@ -32,8 +32,9 @@ class SKDungeonNode: SKNode {
         terrain = SKTileMapNode(tileSet: terrainSet, columns: dungeon.width, rows: dungeon.height, tileSize: tileSize)
         walls = SKTileMapNode(tileSet: fixtureSet, columns: dungeon.width, rows: dungeon.height, tileSize: tileSize)
         
-        super.init()
+        super.init(size: .zero)
         
+        self.scaleMode = .resizeFill
         self.addChild(terrain)
         self.addChild(walls)
         

@@ -61,7 +61,7 @@
 		FA8344712103150C005BCF1A /* SKTileMapNode+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8344702103150C005BCF1A /* SKTileMapNode+Additions.swift */; };
 		FA83447421031BAE005BCF1A /* DungeonLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA83447321031BAE005BCF1A /* DungeonLogicController.swift */; };
 		FA83447621034B5D005BCF1A /* DungeonHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA83447521034B5D005BCF1A /* DungeonHeaderView.swift */; };
-		FA83447821042BDA005BCF1A /* SKDungeonNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA83447721042BDA005BCF1A /* SKDungeonNode.swift */; };
+		FA83447821042BDA005BCF1A /* DungeonScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA83447721042BDA005BCF1A /* DungeonScene.swift */; };
 		FA83447A210490C8005BCF1A /* GKHexMapNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA834479210490C8005BCF1A /* GKHexMapNode.swift */; };
 		FA83447C21049226005BCF1A /* TerrainReferenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA83447B21049226005BCF1A /* TerrainReferenceModel.swift */; };
 		FA9A5CCB20E97BE100C36110 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9A5CCA20E97BE100C36110 /* ItemCell.swift */; };
@@ -80,7 +80,6 @@
 		FAE6290E2108598D0031FE10 /* MonsterReferenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6290D2108598D0031FE10 /* MonsterReferenceModel.swift */; };
 		FAE62910210859F00031FE10 /* monsters.json in Resources */ = {isa = PBXBuildFile; fileRef = FAE6290F210859F00031FE10 /* monsters.json */; };
 		FAE6291221085B660031FE10 /* MonsterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6291121085B660031FE10 /* MonsterModel.swift */; };
-		FAE6291421085E520031FE10 /* CityScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FAE6291321085E520031FE10 /* CityScene.sks */; };
 		FAE629172108852E0031FE10 /* GridEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE629162108852E0031FE10 /* GridEntity.swift */; };
 		FAE62919210887D50031FE10 /* SpriteComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE62918210887D50031FE10 /* SpriteComponent.swift */; };
 		FAE6291B210889220031FE10 /* ASSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6291A210889220031FE10 /* ASSpriteNode.swift */; };
@@ -165,7 +164,7 @@
 		FA8344702103150C005BCF1A /* SKTileMapNode+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKTileMapNode+Additions.swift"; sourceTree = "<group>"; };
 		FA83447321031BAE005BCF1A /* DungeonLogicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonLogicController.swift; sourceTree = "<group>"; };
 		FA83447521034B5D005BCF1A /* DungeonHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonHeaderView.swift; sourceTree = "<group>"; };
-		FA83447721042BDA005BCF1A /* SKDungeonNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SKDungeonNode.swift; sourceTree = "<group>"; };
+		FA83447721042BDA005BCF1A /* DungeonScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonScene.swift; sourceTree = "<group>"; };
 		FA834479210490C8005BCF1A /* GKHexMapNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GKHexMapNode.swift; sourceTree = "<group>"; };
 		FA83447B21049226005BCF1A /* TerrainReferenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerrainReferenceModel.swift; sourceTree = "<group>"; };
 		FA9A5CCA20E97BE100C36110 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
@@ -184,7 +183,6 @@
 		FAE6290D2108598D0031FE10 /* MonsterReferenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsterReferenceModel.swift; sourceTree = "<group>"; };
 		FAE6290F210859F00031FE10 /* monsters.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = monsters.json; sourceTree = "<group>"; };
 		FAE6291121085B660031FE10 /* MonsterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsterModel.swift; sourceTree = "<group>"; };
-		FAE6291321085E520031FE10 /* CityScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CityScene.sks; sourceTree = "<group>"; };
 		FAE629162108852E0031FE10 /* GridEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridEntity.swift; sourceTree = "<group>"; };
 		FAE62918210887D50031FE10 /* SpriteComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteComponent.swift; sourceTree = "<group>"; };
 		FAE6291A210889220031FE10 /* ASSpriteNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASSpriteNode.swift; sourceTree = "<group>"; };
@@ -476,7 +474,6 @@
 		FAB4BD4E20FF3CE00081B5A6 /* resources */ = {
 			isa = PBXGroup;
 			children = (
-				FAE6291321085E520031FE10 /* CityScene.sks */,
 				FAB4BD5820FFE5BA0081B5A6 /* Assets.xcassets */,
 				FAB4BD4F20FF3D0C0081B5A6 /* Tiles.sks */,
 				FAE6290F210859F00031FE10 /* monsters.json */,
@@ -491,7 +488,7 @@
 				FAB4BDED2100745C0081B5A6 /* DungeonGenerator.swift */,
 				FA8344672101D10D005BCF1A /* DungeonModel.swift */,
 				FA83447521034B5D005BCF1A /* DungeonHeaderView.swift */,
-				FA83447721042BDA005BCF1A /* SKDungeonNode.swift */,
+				FA83447721042BDA005BCF1A /* DungeonScene.swift */,
 				FA834479210490C8005BCF1A /* GKHexMapNode.swift */,
 				FAF986AC2105BB78009C8F92 /* DungeonCharacter.swift */,
 			);
@@ -641,7 +638,6 @@
 				FAB4BD5120FF3D0C0081B5A6 /* Tiles.sks in Resources */,
 				FA569C7920E589C70094807F /* LaunchScreen.storyboard in Resources */,
 				FAB4BD5920FFE5BA0081B5A6 /* Assets.xcassets in Resources */,
-				FAE6291421085E520031FE10 /* CityScene.sks in Resources */,
 				FAE62910210859F00031FE10 /* monsters.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -791,7 +787,7 @@
 				FAF986AF2105CFAB009C8F92 /* TypeConversions.swift in Sources */,
 				FA569CB320E58D970094807F /* InventoryModel.swift in Sources */,
 				FA36928F20F083AB003988D4 /* FloatTheme.swift in Sources */,
-				FA83447821042BDA005BCF1A /* SKDungeonNode.swift in Sources */,
+				FA83447821042BDA005BCF1A /* DungeonScene.swift in Sources */,
 				FA36929720F19E7D003988D4 /* StoryPieceViewController.swift in Sources */,
 				FA36929920F19ED2003988D4 /* StoryPieceCell.swift in Sources */,
 				FAB4BDF1210139360081B5A6 /* TilesGenerator.swift in Sources */,

@@ -13,9 +13,8 @@ import SnapKit
 class DungeonViewController: UIViewController {
     
     var sceneView:SKView!
-    var scene:SKScene!
+    var scene:DungeonScene
     let dungeon:DungeonModel
-    let dungeonNode:SKDungeonNode
     let header = DungeonHeaderView()
     let logic:DungeonLogicController
     let camera = SKCameraNode()
@@ -24,7 +23,7 @@ class DungeonViewController: UIViewController {
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         let generator = DungeonGenerator(size: 50,ref:game.reference,player:game.player.player)
         self.dungeon = generator.generateDungeon()
-        dungeonNode = SKDungeonNode(dungeon: self.dungeon)
+        self.scene = DungeonScene(dungeon: self.dungeon)
         self.logic = DungeonLogicController(dungeon: dungeon,ref:game.reference)
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.title = "Dungeon"
@@ -37,7 +36,7 @@ class DungeonViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.scene = SKScene(fileNamed: "CityScene")
+        self.scene.size = self.view.frame.size
         self.sceneView = SKView()
         self.view.addSubview(self.sceneView)
         self.view.addSubview(self.header)
@@ -52,13 +51,10 @@ class DungeonViewController: UIViewController {
             make.left.right.bottom.equalToSuperview()
         }
         
-        
-        scene.addChild(dungeonNode)
-        
         self.scene.camera = self.camera
         self.scene.addChild(self.camera)
         
-        self.camera.position = self.dungeonNode.tank.position
+        self.camera.position = self.scene.tank.position
         
         sceneView.presentScene(scene)
         
@@ -115,7 +111,7 @@ class DungeonViewController: UIViewController {
         
         print("click point \(mapPoint)" )
         
-        let map = self.dungeonNode.terrain
+        let map = self.scene.terrain
         
         let fromPoint = dungeon.playerNode.position.point
         let path = dungeon.path(to: mapPoint, from: fromPoint)
@@ -130,7 +126,7 @@ class DungeonViewController: UIViewController {
         let centrePos = map.centreOfTile(at: first.gridPosition)
         let action = SKAction.move(to: centrePos, duration: 0.25)
         action.timingMode = .easeInEaseOut
-        self.dungeonNode.tank.run(action)
+        self.scene.tank.run(action)
         
         let camAction = SKAction.move(to: centrePos, duration: 0.25)
         camAction.timingMode = .easeInEaseOut
@@ -139,7 +135,7 @@ class DungeonViewController: UIViewController {
     }
     
     private func getMapPoint(recognizer:UIGestureRecognizer) -> CGPoint {
-        let map = self.dungeonNode.terrain
+        let map = self.scene.terrain
         
         let viewLoc = recognizer.location(in: recognizer.view)
         let location = self.scene.convertPoint(fromView: viewLoc)
