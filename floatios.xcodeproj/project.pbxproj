@@ -81,6 +81,9 @@
 		FAE62910210859F00031FE10 /* monsters.json in Resources */ = {isa = PBXBuildFile; fileRef = FAE6290F210859F00031FE10 /* monsters.json */; };
 		FAE6291221085B660031FE10 /* MonsterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6291121085B660031FE10 /* MonsterModel.swift */; };
 		FAE6291421085E520031FE10 /* CityScene.sks in Resources */ = {isa = PBXBuildFile; fileRef = FAE6291321085E520031FE10 /* CityScene.sks */; };
+		FAE629172108852E0031FE10 /* GridEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE629162108852E0031FE10 /* GridEntity.swift */; };
+		FAE62919210887D50031FE10 /* SpriteComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE62918210887D50031FE10 /* SpriteComponent.swift */; };
+		FAE6291B210889220031FE10 /* ASSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6291A210889220031FE10 /* ASSpriteNode.swift */; };
 		FAF5263A20FC7B550062BC7C /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5263920FC7B550062BC7C /* ProgressBar.swift */; };
 		FAF78E9D20F7350E005F7E88 /* ActionResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF78E9C20F7350E005F7E88 /* ActionResultModel.swift */; };
 		FAF78EA020F73A59005F7E88 /* SkillListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF78E9F20F73A59005F7E88 /* SkillListViewController.swift */; };
@@ -182,6 +185,9 @@
 		FAE6290F210859F00031FE10 /* monsters.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = monsters.json; sourceTree = "<group>"; };
 		FAE6291121085B660031FE10 /* MonsterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsterModel.swift; sourceTree = "<group>"; };
 		FAE6291321085E520031FE10 /* CityScene.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = CityScene.sks; sourceTree = "<group>"; };
+		FAE629162108852E0031FE10 /* GridEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridEntity.swift; sourceTree = "<group>"; };
+		FAE62918210887D50031FE10 /* SpriteComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteComponent.swift; sourceTree = "<group>"; };
+		FAE6291A210889220031FE10 /* ASSpriteNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASSpriteNode.swift; sourceTree = "<group>"; };
 		FAF5263920FC7B550062BC7C /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		FAF78E9C20F7350E005F7E88 /* ActionResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionResultModel.swift; sourceTree = "<group>"; };
 		FAF78E9F20F73A59005F7E88 /* SkillListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillListViewController.swift; sourceTree = "<group>"; };
@@ -355,6 +361,7 @@
 		FA569C6D20E589C40094807F /* floatios */ = {
 			isa = PBXGroup;
 			children = (
+				FAE62915210885140031FE10 /* component-entity */,
 				FA83446F210314A9005BCF1A /* util */,
 				FAB4BD4E20FF3CE00081B5A6 /* resources */,
 				FAB4BDEF210139200081B5A6 /* tiles */,
@@ -525,6 +532,16 @@
 				FA10720020E725030046C756 /* city */,
 			);
 			path = "view controllers";
+			sourceTree = "<group>";
+		};
+		FAE62915210885140031FE10 /* component-entity */ = {
+			isa = PBXGroup;
+			children = (
+				FAE629162108852E0031FE10 /* GridEntity.swift */,
+				FAE62918210887D50031FE10 /* SpriteComponent.swift */,
+				FAE6291A210889220031FE10 /* ASSpriteNode.swift */,
+			);
+			path = "component-entity";
 			sourceTree = "<group>";
 		};
 		FAF78E9E20F73A42005F7E88 /* skills */ = {
@@ -754,6 +771,7 @@
 				FA569CBA20E58D970094807F /* CityController.swift in Sources */,
 				FA569CB920E58D970094807F /* GameController.swift in Sources */,
 				FA36929D20F1AAB0003988D4 /* StoryReferenceModel.swift in Sources */,
+				FAE62919210887D50031FE10 /* SpriteComponent.swift in Sources */,
 				FA569CB720E58D970094807F /* CharacterModel.swift in Sources */,
 				FAB7B7F720EA09C4002B2C0B /* StatProgressCell.swift in Sources */,
 				FAE6291221085B660031FE10 /* MonsterModel.swift in Sources */,
@@ -802,6 +820,7 @@
 				FA8344712103150C005BCF1A /* SKTileMapNode+Additions.swift in Sources */,
 				FA569CB120E58D970094807F /* LandPlotModel.swift in Sources */,
 				FA10720E20E75A040046C756 /* CityLandController.swift in Sources */,
+				FAE629172108852E0031FE10 /* GridEntity.swift in Sources */,
 				FA8344682101D10D005BCF1A /* DungeonModel.swift in Sources */,
 				FA10720420E7256B0046C756 /* CityDetailsCell.swift in Sources */,
 				FAF986AD2105BB78009C8F92 /* DungeonCharacter.swift in Sources */,
@@ -820,6 +839,7 @@
 				FA83446E210309C2005BCF1A /* DungeonTileReferenceModel.swift in Sources */,
 				FA73C70020F4027A006AEF0E /* AvatarImageView.swift in Sources */,
 				FA73C6FA20F35152006AEF0E /* AvatarSelectionViewController.swift in Sources */,
+				FAE6291B210889220031FE10 /* ASSpriteNode.swift in Sources */,
 				FA569CB820E58D970094807F /* LoreModel.swift in Sources */,
 				FA83447621034B5D005BCF1A /* DungeonHeaderView.swift in Sources */,
 			);
