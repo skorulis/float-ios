@@ -52,8 +52,6 @@ class DungeonViewController: UIViewController {
             make.left.right.bottom.equalToSuperview()
         }
         
-        let map = scene?.childNode(withName: "map") as! SKTileMapNode
-        map.removeFromParent()
         
         scene.addChild(dungeonNode)
         

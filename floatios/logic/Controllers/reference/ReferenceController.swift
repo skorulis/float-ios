@@ -18,6 +18,7 @@ class ReferenceController {
     let actions:[ActionType:ActionReferenceModel]
     let dungeonTiles:[DungeonTileType:DungeonTileReferenceModel]
     let terrain:[TerrainType:TerrainReferenceModel]
+    let monsters:[String:MonsterReferenceModel]
     
     init() {
         let itemArray = ReferenceController.makeItems()
@@ -27,6 +28,7 @@ class ReferenceController {
         actions = ReferenceController.makeActions().groupSingle { $0.type }
         dungeonTiles = ReferenceController.makeDungeonTiles().groupSingle { $0.type }
         terrain = ReferenceController.makeTerrainTiles().groupSingle { $0.type }
+        monsters = ReferenceController.readReferenceObjects(filename: "monsters").groupSingle { $0.name}
     }
     
     static func makeStory() -> [StoryReferenceModel] {
@@ -134,6 +136,19 @@ class ReferenceController {
         let all = Array(skills.values)
         let index = arc4random_uniform(UInt32(all.count))
         return all[Int(index)]
+    }
+    
+    class func readReferenceObjects(filename:String) -> [MonsterReferenceModel] {
+        do {
+            let path = Bundle.main.path(forResource: filename, ofType: "json")!
+            let data = try Data(contentsOf: URL(fileURLWithPath: path))
+            let decoder = JSONDecoder()
+            let objects = try decoder.decode([MonsterReferenceModel].self, from: data)
+            return objects
+        } catch {
+            
+        }
+        return []
     }
     
 }
