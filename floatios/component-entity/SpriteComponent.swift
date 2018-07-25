@@ -29,8 +29,12 @@ class SpriteComponent: GKComponent {
     func moveTo(position:vector_int2) {
         let point = self.sprite.dungeonScene().pointFor(position: position)
         let action = SKAction.move(to: point, duration: 0.25)
-        let update = SKAction.run { self.gridEntity().gridPosition = position }
-        self.sprite.run(SKAction.sequence([action,update]), withKey: "move")
+        action.timingMode = .easeInEaseOut
+        
+        self.gridEntity().gridPosition = position
+        
+        self.sprite.run(action)
+        
     }
     
     func placeAt(position:vector_int2) {

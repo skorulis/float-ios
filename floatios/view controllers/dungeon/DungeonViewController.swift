@@ -121,13 +121,10 @@ class DungeonViewController: UIViewController {
         
         let first = path[1]
         
-        dungeon.playerNode.gridPosition = first.gridPosition
+        let spriteComponent = dungeon.playerNode .component(ofType: SpriteComponent.self)!
+        spriteComponent.moveTo(position: first.gridPosition)
         
         let centrePos = map.centreOfTile(at: first.gridPosition)
-        let action = SKAction.move(to: centrePos, duration: 0.25)
-        action.timingMode = .easeInEaseOut
-        self.scene.tank.run(action)
-        
         let camAction = SKAction.move(to: centrePos, duration: 0.25)
         camAction.timingMode = .easeInEaseOut
         self.camera.run(camAction)

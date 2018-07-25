@@ -13,7 +13,7 @@ import GameplayKit
 class DungeonModel: NSObject {
     
     var player:PlayerCharacterModel
-    var playerNode:DungeonCharacter
+    var playerNode:DungeonCharacterEntity
     
     var nodes:[GKHexMapNode] = []
     var width:Int
@@ -24,7 +24,7 @@ class DungeonModel: NSObject {
         self.width = width
         self.height = height
         self.player = player
-        self.playerNode = DungeonCharacter(char:self.player.base)
+        self.playerNode = DungeonCharacterEntity(char:self.player.base)
         
         for y in 0..<height {
             for x in 0..<width {
@@ -104,7 +104,7 @@ class DungeonModel: NSObject {
         return graph.findPath(from: fromNode, to: node) as! [GKHexMapNode]
     }
     
-    func placeBeing(char:DungeonCharacter,inNode:GKHexMapNode) {
+    func placeBeing(char:DungeonCharacterEntity,inNode:GKHexMapNode) {
         inNode.place(being: char)
     }
     

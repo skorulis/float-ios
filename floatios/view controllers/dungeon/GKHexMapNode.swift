@@ -15,7 +15,7 @@ class GKHexMapNode: GKGridGraphNode {
     var fixture:DungeonTileReferenceModel?
     
     //Things that can move around from node to node, allows for multiple as battles can happen when they are in the same node
-    var beings:[DungeonCharacter] = []
+    var beings:[DungeonCharacterEntity] = []
     //var items:[ItemModel]
     
     
@@ -39,7 +39,7 @@ class GKHexMapNode: GKGridGraphNode {
         return true
     }
     
-    func place(being:DungeonCharacter) {
+    func place(being:DungeonCharacterEntity) {
         if let node = being.node {
             node.beings = node.beings.filter { $0 != being }
         }

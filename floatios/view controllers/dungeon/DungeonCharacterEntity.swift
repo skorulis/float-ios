@@ -10,7 +10,7 @@ import UIKit
 import GameplayKit
 
 //Represents a character that can move around the dungeon
-class DungeonCharacter: GridEntity {
+class DungeonCharacterEntity: GridEntity {
 
     let ident:String
     let character:CharacterModel
@@ -29,7 +29,7 @@ class DungeonCharacter: GridEntity {
     weak var node:GKHexMapNode?
     
     override func isEqual(_ object: Any?) -> Bool {
-        if let dc = object as? DungeonCharacter {
+        if let dc = object as? DungeonCharacterEntity {
             return dc.ident == self.ident
         }
         return false
