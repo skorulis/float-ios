@@ -9,6 +9,7 @@
 import UIKit
 import SpriteKit
 import SnapKit
+import SpriteKit_Spring
 
 class DungeonViewController: UIViewController {
     
@@ -19,6 +20,7 @@ class DungeonViewController: UIViewController {
     let logic:DungeonLogicController
     let camera = SKCameraNode()
     let game = GameController.instance
+    var battleMode:Bool = false
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         let generator = DungeonGenerator(size: 50,ref:game.reference,player:game.player.player)
@@ -104,6 +106,7 @@ class DungeonViewController: UIViewController {
         if recognizer.state != .ended {
             return
         }
+        self.zoom(battle: !self.battleMode)
         let mapPoint = getMapPoint(recognizer: recognizer)
         if (!self.dungeon.isInMap(point: mapPoint)) {
             return
@@ -143,5 +146,18 @@ class DungeonViewController: UIViewController {
         
         return CGPoint(x: column, y: row)
     }
+    
+    private func zoom(battle:Bool) {
+        var scale:CGFloat = 1
+        if battle {
+            scale = self.scene.tileSize.width * 3 / self.view.frame.size.width
+        }
+        self.battleMode = battle
+        
+        let action = SKAction.scale(to: scale, duration: 0.25, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1)
+        
+        self.camera.run(action)
+    }
+    
 
 }

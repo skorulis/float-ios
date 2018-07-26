@@ -15,12 +15,13 @@ class DungeonScene: SKScene {
     let dungeon:DungeonModel
     let terrainGroups:[String:SKTileGroup]
     let fixtureGroups:[String:SKTileGroup]
+    let tileSize:CGSize
     
     var tank:SKSpriteNode!
     
     init(dungeon:DungeonModel) {
         self.dungeon = dungeon
-        let tileSize = CGSize(width: 60, height: 70)
+        tileSize = CGSize(width: 60, height: 70)
         
         let gen = TilesGenerator(tileSize: tileSize)
         let terrainSet = gen.terrainTileSet()

@@ -11,6 +11,7 @@ def shared_pods
     pod "DateToolsSwift"
     pod "TextFieldEffects"
     pod "CCTextFieldEffects"
+    pod 'SpriteKit-Spring', :git => 'https://github.com/ataugeron/SpriteKit-Spring/'
     pod 'SKSwiftLib', :path => '~/dev/ios/SKLibs/SKSwiftLib'
     pod 'SKComponents',:path => '~/dev/ios/SKLibs/SKComponents'
     pod 'SKCollectionView',:path => '~/dev/ios/SKLibs/SKCollectionView'

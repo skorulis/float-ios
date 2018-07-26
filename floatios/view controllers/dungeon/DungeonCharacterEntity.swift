@@ -25,9 +25,6 @@ class DungeonCharacterEntity: GridEntity {
         fatalError("init(coder:) has not been implemented")
     }
     
-    
-    weak var node:GKHexMapNode?
-    
     override func isEqual(_ object: Any?) -> Bool {
         if let dc = object as? DungeonCharacterEntity {
             return dc.ident == self.ident

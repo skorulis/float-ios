@@ -104,8 +104,4 @@ class DungeonModel: NSObject {
         return graph.findPath(from: fromNode, to: node) as! [GKHexMapNode]
     }
     
-    func placeBeing(char:DungeonCharacterEntity,inNode:GKHexMapNode) {
-        inNode.place(being: char)
-    }
-    
 }

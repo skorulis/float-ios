@@ -39,14 +39,4 @@ class GKHexMapNode: GKGridGraphNode {
         return true
     }
     
-    func place(being:DungeonCharacterEntity) {
-        if let node = being.node {
-            node.beings = node.beings.filter { $0 != being }
-        }
-        var tmp = self.beings
-        tmp.append(being)
-        self.beings = tmp
-        being.node = self
-    }
-    
 }
