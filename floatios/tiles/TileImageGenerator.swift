@@ -117,6 +117,31 @@ class TileImageGenerator: NSObject {
         return finishContext()
     }
     
+    func generateBattleDivider() -> UIImage {
+        let ctx = newContext()
+        
+        let points = [topRight,top,topLeft,bottomLeft,bottom,bottomRight]
+        
+        ctx.setStrokeColor(UIColor.black.cgColor)
+        ctx.setLineWidth(1)
+        
+        ctx.move(to: points[0])
+        
+        
+        for p in points {
+            let halfway = avg(p1: centre, p2: p)
+            ctx.addLine(to: halfway)
+            ctx.addLine(to: p)
+            ctx.move(to: halfway)
+        }
+        let final = avg(p1: centre, p2: topRight)
+        ctx.addLine(to: final)
+        
+        ctx.strokePath()
+        
+        return finishContext()
+    }
+    
     //MARK: Helpers
     
     private func finishContext() -> UIImage {

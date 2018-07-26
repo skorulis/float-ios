@@ -32,10 +32,6 @@ class DungeonModel: NSObject {
             }
         }
         
-        for n in nodes {
-            print("pos \(n.gridPosition)")
-        }
-        
         graph = GKGraph(nodes)   
     }
     

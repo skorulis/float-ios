@@ -37,13 +37,16 @@ class TilesGenerator: NSObject {
     
     func saveTile(def:SKTileDefinition) {
         let cgImage = def.textures.first!.cgImage()
-        let data = UIImagePNGRepresentation(UIImage(cgImage: cgImage))
-        let fileName = def.name! + ".png"
+        saveImage(name: def.name!, image: UIImage(cgImage: cgImage))
+    }
+    
+    func saveImage(name:String,image:UIImage) {
+        let data = UIImagePNGRepresentation(image)
+        let fileName = name + ".png"
         let fileURL = PathHelper.documentsDirectory().appendingPathComponent(rootDir).appendingPathComponent(fileName)
         do {
             try data?.write(to: fileURL)
         } catch {}
-        
     }
     
     func simpleGroup(context:TileGenContext) -> SKTileGroup {
@@ -109,6 +112,9 @@ class TilesGenerator: NSObject {
         
         gen.dumpTileSet(set: dungeonSet)
         gen.dumpTileSet(set: terrainSet)
+        
+        let divider = gen.imageGen.generateBattleDivider()
+        gen.saveImage(name: "divider", image: divider)
         
     }
     
