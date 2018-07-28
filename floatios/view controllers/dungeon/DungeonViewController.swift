@@ -56,7 +56,7 @@ class DungeonViewController: UIViewController {
         self.scene.camera = self.camera
         self.scene.addChild(self.camera)
         
-        self.camera.position = self.scene.tank.position
+        self.camera.position = self.scene.playerCentre()
         
         sceneView.presentScene(scene)
         

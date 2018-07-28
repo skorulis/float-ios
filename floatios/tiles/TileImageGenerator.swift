@@ -12,48 +12,22 @@ import SpriteKit
 class TileImageGenerator: NSObject {
     
     let tileSize:CGSize
-    
-    var centre:CGPoint {
-        return CGPoint(x: tileSize.width/2, y: tileSize.height/2)
-    }
-    var right:CGPoint {
-        return CGPoint(x: tileSize.width, y: tileSize.height/2)
-    }
-    var left:CGPoint {
-        return CGPoint(x: 0, y: tileSize.height/2)
-    }
-    var top:CGPoint {
-        return CGPoint(x: tileSize.width/2, y: 0)
-    }
-    var bottom:CGPoint {
-        return CGPoint(x: tileSize.width/2, y: tileSize.height)
-    }
-    var topLeft:CGPoint {
-        return CGPoint(x: 0, y: tileSize.height/4)
-    }
-    var topRight:CGPoint {
-        return CGPoint(x: tileSize.width, y: tileSize.height/4)
-    }
-    var bottomLeft:CGPoint {
-        return CGPoint(x: 0, y: tileSize.height*0.75)
-    }
-    var bottomRight:CGPoint {
-        return CGPoint(x: tileSize.width, y: tileSize.height*0.75)
-    }
+    let math:HexGridMath
     
     init(tileSize:CGSize) {
         self.tileSize = tileSize
+        self.math = HexGridMath(tileSize: tileSize)
     }
 
     func generatePointyEmptyTile(color:UIColor) -> UIImage {
         let ctx = newContext()
         
-        ctx.move(to: top)
-        ctx.addLine(to: topRight)
-        ctx.addLine(to: bottomRight)
-        ctx.addLine(to: bottom)
-        ctx.addLine(to: bottomLeft)
-        ctx.addLine(to: topLeft)
+        ctx.move(to: math.top)
+        ctx.addLine(to: math.topRight)
+        ctx.addLine(to: math.bottomRight)
+        ctx.addLine(to: math.bottom)
+        ctx.addLine(to: math.bottomLeft)
+        ctx.addLine(to: math.topLeft)
         
         ctx.setFillColor(color.cgColor)
         ctx.fillPath()
@@ -88,28 +62,28 @@ class TileImageGenerator: NSObject {
         ctx.setLineWidth(30)
         
         if (adj.contains(.hexPointyAdjacencyUpperLeft)) {
-            ctx.move(to: centre)
-            ctx.addLine(to: avg(p1: top, p2: topLeft))
+            ctx.move(to: math.centre)
+            ctx.addLine(to: avg(p1: math.top, p2: math.topLeft))
         }
         if (adj.contains(.hexPointyAdjacencyUpperRight)) {
-            ctx.move(to: centre)
-            ctx.addLine(to: avg(p1: top, p2: topRight))
+            ctx.move(to: math.centre)
+            ctx.addLine(to: avg(p1: math.top, p2: math.topRight))
         }
         if (adj.contains(.hexPointyAdjacencyLowerRight)) {
-            ctx.move(to: centre)
-            ctx.addLine(to: avg(p1: bottom, p2: bottomRight))
+            ctx.move(to: math.centre)
+            ctx.addLine(to: avg(p1: math.bottom, p2: math.bottomRight))
         }
         if (adj.contains(.hexPointyAdjacencyLowerLeft)) {
-            ctx.move(to: centre)
-            ctx.addLine(to: avg(p1: bottom, p2: bottomLeft))
+            ctx.move(to: math.centre)
+            ctx.addLine(to: avg(p1: math.bottom, p2: math.bottomLeft))
         }
         if (adj.contains(.hexPointyAdjacencyRight)) {
-            ctx.move(to: centre)
-            ctx.addLine(to: right)
+            ctx.move(to: math.centre)
+            ctx.addLine(to: math.right)
         }
         if (adj.contains(.hexPointyAdjacencyLeft)) {
-            ctx.move(to: centre)
-            ctx.addLine(to: left)
+            ctx.move(to: math.centre)
+            ctx.addLine(to: math.left)
         }
         
         ctx.strokePath()
@@ -120,7 +94,7 @@ class TileImageGenerator: NSObject {
     func generateBattleDivider() -> UIImage {
         let ctx = newContext()
         
-        let points = [topRight,top,topLeft,bottomLeft,bottom,bottomRight]
+        let points = [math.topRight,math.top,math.topLeft,math.bottomLeft,math.bottom,math.bottomRight]
         
         ctx.setStrokeColor(UIColor.black.cgColor)
         ctx.setLineWidth(1)
@@ -129,12 +103,12 @@ class TileImageGenerator: NSObject {
         
         
         for p in points {
-            let halfway = avg(p1: centre, p2: p)
+            let halfway = avg(p1: math.centre, p2: p)
             ctx.addLine(to: halfway)
             ctx.addLine(to: p)
             ctx.move(to: halfway)
         }
-        let final = avg(p1: centre, p2: topRight)
+        let final = avg(p1: math.centre, p2: math.topRight)
         ctx.addLine(to: final)
         
         ctx.strokePath()

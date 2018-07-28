@@ -17,8 +17,6 @@ class DungeonScene: SKScene {
     let fixtureGroups:[String:SKTileGroup]
     let tileSize:CGSize
     
-    var tank:SKSpriteNode!
-    
     init(dungeon:DungeonModel) {
         self.dungeon = dungeon
         tileSize = CGSize(width: 60, height: 70)
@@ -41,16 +39,23 @@ class DungeonScene: SKScene {
         
         self.rebuildMaps()
         
-        tank = addSprite(entity: dungeon.playerNode)
+        _ = addSprite(entity: dungeon.playerNode,imageNamed:"tank")
     }
     
-    func addSprite(entity:GridEntity) -> ASSpriteNode {
-        let node = ASSpriteNode(imageNamed: "tank")
+    func addSprite(entity:GridEntity,imageNamed:String) -> ASSpriteNode {
+        let node = ASSpriteNode(imageNamed: imageNamed)
+        node.setScale(0.5)
         let spriteComponent = SpriteComponent(sprite: node)
         entity.addComponent(spriteComponent)
         self.addChild(node)
         spriteComponent.placeAt(position: entity.gridPosition)
         return node
+    }
+    
+    func removeSprite(entity:GridEntity) {
+        if let component = entity.component(ofType: SpriteComponent.self) {
+            component.sprite.removeFromParent()
+        }
     }
     
     func rebuildMaps() {
@@ -77,6 +82,10 @@ class DungeonScene: SKScene {
     
     func pointFor(position:vector_int2) -> CGPoint {
         return self.terrain.centreOfTile(at: position)
+    }
+    
+    func playerCentre() -> CGPoint {
+        return self.dungeon.playerNode.component(ofType: SpriteComponent.self)!.sprite.position
     }
     
     required init?(coder aDecoder: NSCoder) {
