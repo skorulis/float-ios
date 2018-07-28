@@ -116,6 +116,24 @@ class TileImageGenerator: NSObject {
         return finishContext()
     }
     
+    func generateBorder(color:UIColor) -> UIImage {
+        let ctx = newContext()
+        
+        ctx.setStrokeColor(color.cgColor)
+        
+        ctx.move(to: math.top)
+        ctx.addLine(to: math.topRight)
+        ctx.addLine(to: math.bottomRight)
+        ctx.addLine(to: math.bottom)
+        ctx.addLine(to: math.bottomLeft)
+        ctx.addLine(to: math.topLeft)
+        ctx.addLine(to: math.top)
+        
+        ctx.strokePath()
+        
+        return finishContext()
+    }
+    
     //MARK: Helpers
     
     private func finishContext() -> UIImage {

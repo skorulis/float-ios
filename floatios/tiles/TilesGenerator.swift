@@ -16,6 +16,7 @@ class TilesGenerator: NSObject {
     let tileSize:CGSize
     let rootDir:String = "tiles"
     let imageGen:TileImageGenerator
+    let battleImageGen:TileImageGenerator
     
     var fontSize:CGFloat {
         return tileSize.height/2
@@ -24,6 +25,8 @@ class TilesGenerator: NSObject {
     init(tileSize:CGSize) {
         self.tileSize = tileSize
         self.imageGen = TileImageGenerator(tileSize: tileSize)
+        let halfSize = CGSize(width: tileSize.width/2, height: tileSize.height/2)
+        self.battleImageGen = TileImageGenerator(tileSize: halfSize)
         
         let path = PathHelper.documentsDirectoryPath() + rootDir
         do {
@@ -105,13 +108,23 @@ class TilesGenerator: NSObject {
         return SKTileSet(tileGroups: [dirtGroup,grassGroup,group(def:floor)], tileSetType: .hexagonalPointy)
     }
     
+    func battleTileSet() -> SKTileSet {
+        let border = battleImageGen.generateBorder(color: UIColor.black)
+        let def = SKTileDefinition(texture: SKTexture(image: border))
+        def.name = "battle-border"
+        let group = self.group(def:def)
+        return SKTileSet(tileGroups:[group],tileSetType: .hexagonalPointy)
+    }
+    
     static func generateAllTiles() {
         let gen = TilesGenerator(tileSize: CGSize(width: 120, height: 140))
         let dungeonSet = gen.dungeonTileSet()
         let terrainSet = gen.terrainTileSet()
+        let battleSet = gen.battleTileSet()
         
         gen.dumpTileSet(set: dungeonSet)
         gen.dumpTileSet(set: terrainSet)
+        gen.dumpTileSet(set: battleSet)
         
         let divider = gen.imageGen.generateBattleDivider()
         gen.saveImage(name: "divider", image: divider)
