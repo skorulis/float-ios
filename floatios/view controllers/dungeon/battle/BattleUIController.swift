@@ -14,10 +14,39 @@ class BattleUIController {
     let scene:DungeonScene
     
     var overlays:[GridEntity] = []
+    let overlayMap:SKTileMapNode
     
     init(dungeon:DungeonModel,scene:DungeonScene) {
         self.dungeon = dungeon
         self.scene = scene
+        
+        let tileSize = CGSize(width: 30, height: 35)
+        let gen = TilesGenerator(tileSize: tileSize)
+        let overlaySet = gen.battleTileSet()
+        let size = 7
+        let group = overlaySet.tileGroups.first!
+        
+        let rowGaps = [2,2,1,0,1,2,2]
+        
+        overlayMap = SKTileMapNode(tileSet: overlaySet, columns: size, rows: size, tileSize: tileSize)
+        for i in 0..<size {
+            let gap = rowGaps[i]
+            for j in 0..<size {
+                if j >= gap && j <= (size - gap) {
+                    overlayMap.setTileGroup(group, forColumn: j, row: i)
+                }
+            }
+        }
+        var pos = scene.playerCentre()
+        pos.x -= tileSize.width/4
+        pos.y -= tileSize.height * 0.75
+        
+        overlayMap.position = pos
+        //self.scene.addChild(overlayMap)
+    }
+    
+    func handleTap(recognizer:UITapGestureRecognizer) {
+        
     }
     
     func startBattle(frameWidth:CGFloat) {
@@ -45,8 +74,8 @@ class BattleUIController {
             }
             let sequence = SKAction.sequence([fade,remove])
             entity.component(ofType: SpriteComponent.self)?.sprite.run(sequence)
-            
         }
+        self.overlayMap.removeFromParent()
         
         let action = SKAction.scale(to: 1, duration: 0.25, delay: 0, usingSpringWithDamping: 1, initialSpringVelocity: 1)
         let finishAction = SKAction.run(completion)

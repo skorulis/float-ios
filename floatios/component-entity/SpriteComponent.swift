@@ -33,8 +33,7 @@ class SpriteComponent: GKComponent {
         
         self.gridEntity().gridPosition = position
         
-        self.sprite.run(action)
-        
+        self.sprite.run(action)    
     }
     
     func placeAt(position:vector_int2) {

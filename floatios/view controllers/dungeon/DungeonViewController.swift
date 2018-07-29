@@ -106,14 +106,6 @@ class DungeonViewController: UIViewController {
         if recognizer.state != .ended {
             return
         }
-        if let battle = battleController {
-            battle.finishBattle {
-                self.battleController = nil
-            }
-        } else {
-            battleController = BattleUIController(dungeon: dungeon, scene: scene)
-            battleController?.startBattle(frameWidth: self.view.frame.size.width)
-        }
 
         let mapPoint = getMapPoint(recognizer: recognizer)
         if (!self.dungeon.isInMap(point: mapPoint)) {

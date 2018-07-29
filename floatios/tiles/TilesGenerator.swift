@@ -26,7 +26,7 @@ class TilesGenerator: NSObject {
         self.tileSize = tileSize
         self.imageGen = TileImageGenerator(tileSize: tileSize)
         let halfSize = CGSize(width: tileSize.width/2, height: tileSize.height/2)
-        self.battleImageGen = TileImageGenerator(tileSize: halfSize)
+        self.battleImageGen = TileImageGenerator(tileSize: tileSize)
         
         let path = PathHelper.documentsDirectoryPath() + rootDir
         do {
