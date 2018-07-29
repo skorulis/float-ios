@@ -40,6 +40,11 @@ class DungeonScene: SKScene {
         self.rebuildMaps()
         
         _ = addSprite(entity: dungeon.playerNode,imageNamed:"tank")
+        
+        for m in dungeon.allMonsters() {
+            let entity = m as! MonsterEntity
+            _ = addSprite(entity: m, imageNamed: entity.ref.imageName)
+        }
     }
     
     func addSprite(entity:GridEntity,imageNamed:String) -> ASSpriteNode {

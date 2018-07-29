@@ -13,4 +13,12 @@ class GridEntity: GKEntity {
 
     var gridPosition:vector_int2 = vector_int2(x: 0, y: 0)
     
+    var x:Int {
+        return Int(gridPosition.x)
+    }
+    
+    var y:Int {
+        return Int(gridPosition.y)
+    }
+    
 }

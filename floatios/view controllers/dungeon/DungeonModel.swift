@@ -72,6 +72,10 @@ class DungeonModel: NSObject {
         return nodeAt(x: Int(point.x), y: Int(point.y))
     }
     
+    func nodeAt(vec:vector_int2) -> GKHexMapNode? {
+        return nodeAt(x: Int(vec.x), y: Int(vec.y))
+    }
+    
     func nodeAt(x:Int,y:Int) -> GKHexMapNode? {
         if (!isInMap(x: x, y: y)) {
             return nil
@@ -98,6 +102,19 @@ class DungeonModel: NSObject {
         guard let fromNode = self.nodeAt(point: from) else { return [] }
         
         return graph.findPath(from: fromNode, to: node) as! [GKHexMapNode]
+    }
+    
+    func addMonster(entity:GridEntity) {
+        let node = self.nodeAt(x: entity.x, y: entity.y)!
+        node.beings.append(entity)
+    }
+    
+    func allMonsters() -> [GridEntity] {
+        var all:[GridEntity] = []
+        for node in self.nodes {
+            all.append(contentsOf: node.beings)
+        }
+        return all
     }
     
 }

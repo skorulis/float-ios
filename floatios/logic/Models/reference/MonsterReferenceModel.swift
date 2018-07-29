@@ -11,5 +11,6 @@ import UIKit
 struct MonsterReferenceModel: Codable {
 
     let name:String
+    let imageName:String
     
 }

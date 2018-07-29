@@ -42,6 +42,9 @@ class DungeonGenerator {
         for _ in 0...2 {
             _ = addStairs(up: false)
         }
+        for _ in 0...size/4 {
+            addMonster()
+        }
         
         dungeon.updateConnectionGraph()
         
@@ -71,12 +74,32 @@ class DungeonGenerator {
     }
     
     func addStairs(up:Bool) -> vector_int2 {
+        let pos = randomEmptyPoint()
+        let node = dungeon.nodeAt(vec:pos)
+        node?.fixture = up ? ref.getDungeonTile(type: .stairsUp) : ref.getDungeonTile(type: .stairsDown)
+        return pos
+    }
+    
+    func randomEmptyPoint() -> vector_int2 {
         let x = arc4random_uniform(UInt32(size - 2)) + 1
         let y = arc4random_uniform(UInt32(size - 2)) + 1
         
-        let node = dungeon.nodeAt(x: Int(x), y: Int(y))
-        node?.fixture = up ? ref.getDungeonTile(type: .stairsUp) : ref.getDungeonTile(type: .stairsDown)
+        let node = dungeon.nodeAt(x: Int(x), y: Int(y))!
+        if node.fixture != nil {
+            return randomEmptyPoint()
+        }
+        if node.beings.count > 0 {
+            return randomEmptyPoint()
+        }
         return vector_int2(Int32(x),Int32(y))
+    }
+    
+    func addMonster() {
+        let index: Int = Int(arc4random_uniform(UInt32(ref.monsters.count)))
+        let monsterRef = Array(ref.monsters.values)[index]
+        let monster = MonsterEntity(ref: monsterRef)
+        monster.gridPosition = self.randomEmptyPoint()
+        dungeon.addMonster(entity: monster)
     }
     
     func isEdge(x:Int,y:Int,size:Int) -> Bool { 

@@ -15,7 +15,7 @@ class GKHexMapNode: GKGridGraphNode {
     var fixture:DungeonTileReferenceModel?
     
     //Things that can move around from node to node, allows for multiple as battles can happen when they are in the same node
-    var beings:[DungeonCharacterEntity] = []
+    var beings:[GridEntity] = []
     //var items:[ItemModel]
     
     
