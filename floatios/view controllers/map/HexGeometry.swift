@@ -14,29 +14,24 @@ class HexGeometry: NSObject {
     let math = HexGridMath(tileSize: CGSize(width: 3, height: 3))
     
     func getGeometry() -> SCNGeometry {
-        let t1 = topPosition(regularHexPoint(index:0))
-        let t2 = topPosition(regularHexPoint(index:1))
-        let t3 = topPosition(regularHexPoint(index:2))
-        let t4 = topPosition(regularHexPoint(index:3))
-        let t5 = topPosition(regularHexPoint(index:4))
-        let t6 = topPosition(regularHexPoint(index:5))
-        
-        let b1 = botPosition(regularHexPoint(index:0))
-        let b2 = botPosition(regularHexPoint(index:1))
-        let b3 = botPosition(regularHexPoint(index:2))
-        let b4 = botPosition(regularHexPoint(index:3))
-        let b5 = botPosition(regularHexPoint(index:4))
-        let b6 = botPosition(regularHexPoint(index:5))
-        
-        var meshVertices:[SCNVector3] = [t1,t2,t3,t4,t5,t6,
-                                         b1,b2,b3,b4,b5,b6]
         
         let normalUp = SCNVector3(0,1,0);
         let normalDown = SCNVector3(0,-1,0);
         
-        var meshNormals:[SCNVector3] =
-            [normalUp,normalUp,normalUp,normalUp,normalUp,normalUp,
-        normalDown,normalDown,normalDown,normalDown,normalDown,normalDown]
+        var meshVertices:[SCNVector3] = []
+        var uvPoints:[CGPoint] = []
+        var meshNormals:[SCNVector3] = []
+        
+        for i in 0..<6 {
+            meshVertices.insert(topPosition(regularHexPoint(index:i)), at: i)
+            meshVertices.insert(botPosition(regularHexPoint(index:i)), at: meshVertices.count)
+            
+            uvPoints.insert(regularHexUV(index: i), at: i)
+            uvPoints.insert(regularHexUV(index: i), at: uvPoints.count)
+            
+            meshNormals.insert(normalUp, at: i)
+            meshNormals.insert(normalDown, at: meshNormals.count)
+        }
         
         var indices:[UInt8] = [2,1,0,  5,2,0,  5,3,2,  4,3,5]
         let bottomHex = indices.reversed().map { $0 + 6}
@@ -56,18 +51,22 @@ class HexGeometry: NSObject {
             meshVertices.append(contentsOf: [v1,v2,v3,v4])
             meshNormals.append(contentsOf: [normal,normal,normal,normal])
             
+            uvPoints.append(contentsOf: [CGPoint(x: 0, y: 0),CGPoint(x: 1, y: 0),CGPoint(x: 1, y: 1),CGPoint(x: 0, y: 1)])
+            
             let faceIndices = [i1, i1+1, i1+3, i1+3, i1+2, i1]
             indices.append(contentsOf: faceIndices)
         }
         
         let vertexSource = SCNGeometrySource(vertices: meshVertices)
         let normalSource = SCNGeometrySource(normals: meshNormals)
+        let uvSource = SCNGeometrySource(textureCoordinates: uvPoints)
         
         let element = SCNGeometryElement(indices: indices, primitiveType: .triangles)
-        let geometry = SCNGeometry(sources: [vertexSource,normalSource], elements: [element])
+        let geometry = SCNGeometry(sources: [vertexSource,normalSource,uvSource], elements: [element])
         
         geometry.firstMaterial = SCNMaterial()
-        geometry.firstMaterial?.diffuse.contents = UIColor.red
+        //geometry.firstMaterial?.diffuse.contents = UIColor.red
+        geometry.firstMaterial?.diffuse.contents = UIImage(named: "grass1")
         
         return geometry
     }
@@ -75,6 +74,13 @@ class HexGeometry: NSObject {
     func regularHexPoint(index:Int) -> CGPoint {
         let angle = (CGFloat(index) * CGFloat.pi / 3) - CGFloat.pi/2
         return CGPoint(angle: angle, length: 1)
+    }
+    
+    func regularHexUV(index:Int) -> CGPoint {
+        var point = regularHexPoint(index: index)
+        point.x = (point.x + 1) / 2;
+        point.y = (point.y + 1) / 2;
+        return point
     }
     
     func topPosition(_ point:CGPoint) -> SCNVector3 {
