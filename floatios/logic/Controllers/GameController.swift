@@ -16,6 +16,7 @@ class GameController {
     let npc:NPCController
     let reference:ReferenceController
     let majorState:MajorStateController
+    let battle:BattleController
     
     init() {
         reference = ReferenceController()
@@ -25,6 +26,7 @@ class GameController {
         npc = NPCController(actions: action,city:city,ref:reference)
         
         majorState = MajorStateController(player:player)
+        battle = BattleController()
         
         action.dayFinishObservers.add(object:self) {[unowned self] (controller) in
             self.city.dayFinished()

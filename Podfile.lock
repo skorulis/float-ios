@@ -34,6 +34,7 @@ PODS:
     - PromiseKit/CorePromise
   - PromiseKit/UIKit (6.3.4):
     - PromiseKit/CorePromise
+  - SCNMathExtensions (1.2.0)
   - SKCollectionView (0.1.0)
   - SKComponents (0.1.0)
   - SKSwiftLib (0.1.0):
@@ -49,6 +50,7 @@ DEPENDENCIES:
   - Fabric
   - FontAwesomeKit (from `https://github.com/PrideChung/FontAwesomeKit`)
   - PromiseKit
+  - SCNMathExtensions
   - SKCollectionView (from `~/dev/ios/SKLibs/SKCollectionView`)
   - SKComponents (from `~/dev/ios/SKLibs/SKComponents`)
   - SKSwiftLib (from `~/dev/ios/SKLibs/SKSwiftLib`)
@@ -63,6 +65,7 @@ SPEC REPOS:
     - DateToolsSwift
     - Fabric
     - PromiseKit
+    - SCNMathExtensions
     - SnapKit
     - TextFieldEffects
 
@@ -93,6 +96,7 @@ SPEC CHECKSUMS:
   Fabric: a2917d3895e4c1569b9c3170de7320ea1b1e6661
   FontAwesomeKit: 3614979b3dbb0ec3f7fac1bd760b91f66c31db67
   PromiseKit: e1425568123ec844a944c93f2bcb29d511d39cf5
+  SCNMathExtensions: b0bcf87d7f715a3508c816af57a1322712526651
   SKCollectionView: 11a22345ddb20efa172e61a1ba352c347b3a2035
   SKComponents: 6e9b9f396c378d8cdc9a8217bb2ac027979e0fce
   SKSwiftLib: bb2558a2748e1dd617c250fb11233283af8aed61
@@ -100,6 +104,6 @@ SPEC CHECKSUMS:
   SpriteKit-Spring: 3586bde2cf5d41f5a6af023c4b5bb240eaa3d7b0
   TextFieldEffects: 4ee41b5216e674d55fb6ac25107bf1af7629176f
 
-PODFILE CHECKSUM: 4b6c42aeb35af70d1b28917d16f45dd0dd0d059b
+PODFILE CHECKSUM: 7dd084c80883171c406b6de8cd06e5a9e8695133
 
 COCOAPODS: 1.5.0

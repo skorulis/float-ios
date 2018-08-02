@@ -108,7 +108,11 @@ class DungeonViewController: UIViewController {
         }
 
         let mapPoint = getMapPoint(recognizer: recognizer)
-        if (!self.dungeon.isInMap(point: mapPoint)) {
+        guard let node = self.dungeon.nodeAt(point: mapPoint) else { return }
+        
+        if let monster = node.beings.first {
+            game.battle.performAttack(from: dungeon.player.base, to: monster as! MonsterEntity)
+            self.header.update(player: dungeon.player)
             return
         }
         

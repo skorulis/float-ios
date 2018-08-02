@@ -24,7 +24,7 @@ public final class MaxValueField: Codable {
     }
     
     public func add(_ amount:Int) {
-        self.value = min(self.value + amount,self.maxValue)
+        self.value = max(min(self.value + amount,self.maxValue),0)
     }
     
     static func +=(left:MaxValueField,right:Int) {

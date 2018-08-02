@@ -15,6 +15,7 @@ def shared_pods
     pod 'SKSwiftLib', :path => '~/dev/ios/SKLibs/SKSwiftLib'
     pod 'SKComponents',:path => '~/dev/ios/SKLibs/SKComponents'
     pod 'SKCollectionView',:path => '~/dev/ios/SKLibs/SKCollectionView'
+    pod 'SCNMathExtensions'
 end
 
 target 'floatios' do

@@ -33,10 +33,14 @@
 		FA36929920F19ED2003988D4 /* StoryPieceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA36929820F19ED2003988D4 /* StoryPieceCell.swift */; };
 		FA36929D20F1AAB0003988D4 /* StoryReferenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA36929C20F1AAB0003988D4 /* StoryReferenceModel.swift */; };
 		FA36929F20F1C729003988D4 /* MajorStateController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA36929E20F1C729003988D4 /* MajorStateController.swift */; };
+		FA3AACA22112F82600955109 /* Map3DViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3AACA12112F82600955109 /* Map3DViewController.swift */; };
+		FA3AACA42112FA8500955109 /* Map3DScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3AACA32112FA8500955109 /* Map3DScene.swift */; };
+		FA3AACA62112FE8700955109 /* HexGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3AACA52112FE8600955109 /* HexGeometry.swift */; };
 		FA4A5DF1210C367A001EE222 /* DungeonBattleNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4A5DF0210C367A001EE222 /* DungeonBattleNode.swift */; };
 		FA4A5DF3210C3702001EE222 /* BattleUIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4A5DF2210C3702001EE222 /* BattleUIController.swift */; };
 		FA4A5DF5210C4D9F001EE222 /* HexGridMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4A5DF4210C4D9F001EE222 /* HexGridMath.swift */; };
 		FA4A5DFB210D711F001EE222 /* MonsterEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4A5DFA210D711F001EE222 /* MonsterEntity.swift */; };
+		FA4A5DFE210D7D15001EE222 /* BattleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4A5DFD210D7D15001EE222 /* BattleController.swift */; };
 		FA569C6F20E589C40094807F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA569C6E20E589C40094807F /* AppDelegate.swift */; };
 		FA569C7920E589C70094807F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA569C7720E589C70094807F /* LaunchScreen.storyboard */; };
 		FA569C8420E589C70094807F /* floatiosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA569C8320E589C70094807F /* floatiosTests.swift */; };
@@ -135,10 +139,14 @@
 		FA36929820F19ED2003988D4 /* StoryPieceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryPieceCell.swift; sourceTree = "<group>"; };
 		FA36929C20F1AAB0003988D4 /* StoryReferenceModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StoryReferenceModel.swift; sourceTree = "<group>"; };
 		FA36929E20F1C729003988D4 /* MajorStateController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MajorStateController.swift; sourceTree = "<group>"; };
+		FA3AACA12112F82600955109 /* Map3DViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map3DViewController.swift; sourceTree = "<group>"; };
+		FA3AACA32112FA8500955109 /* Map3DScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map3DScene.swift; sourceTree = "<group>"; };
+		FA3AACA52112FE8600955109 /* HexGeometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexGeometry.swift; sourceTree = "<group>"; };
 		FA4A5DF0210C367A001EE222 /* DungeonBattleNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DungeonBattleNode.swift; sourceTree = "<group>"; };
 		FA4A5DF2210C3702001EE222 /* BattleUIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleUIController.swift; sourceTree = "<group>"; };
 		FA4A5DF4210C4D9F001EE222 /* HexGridMath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexGridMath.swift; sourceTree = "<group>"; };
 		FA4A5DFA210D711F001EE222 /* MonsterEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsterEntity.swift; sourceTree = "<group>"; };
+		FA4A5DFD210D7D15001EE222 /* BattleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleController.swift; sourceTree = "<group>"; };
 		FA569C6B20E589C40094807F /* floatios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = floatios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA569C6E20E589C40094807F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA569C7820E589C70094807F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -343,11 +351,29 @@
 			path = story;
 			sourceTree = "<group>";
 		};
+		FA3AAC9E2112F03500955109 /* map */ = {
+			isa = PBXGroup;
+			children = (
+				FA3AACA12112F82600955109 /* Map3DViewController.swift */,
+				FA3AACA52112FE8600955109 /* HexGeometry.swift */,
+				FA3AACA32112FA8500955109 /* Map3DScene.swift */,
+			);
+			path = map;
+			sourceTree = "<group>";
+		};
 		FA4A5DEF210C367A001EE222 /* battle */ = {
 			isa = PBXGroup;
 			children = (
 				FA4A5DF0210C367A001EE222 /* DungeonBattleNode.swift */,
 				FA4A5DF2210C3702001EE222 /* BattleUIController.swift */,
+			);
+			path = battle;
+			sourceTree = "<group>";
+		};
+		FA4A5DFC210D7C9C001EE222 /* battle */ = {
+			isa = PBXGroup;
+			children = (
+				FA4A5DFD210D7D15001EE222 /* BattleController.swift */,
 			);
 			path = battle;
 			sourceTree = "<group>";
@@ -447,6 +473,7 @@
 		FA569CAC20E58D960094807F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FA4A5DFC210D7C9C001EE222 /* battle */,
 				FA83447221031B63005BCF1A /* dungeon */,
 				FA10722620E849800046C756 /* reference */,
 				FA569CAD20E58D960094807F /* GameController.swift */,
@@ -532,6 +559,7 @@
 		FAE12DFD20E6143A00F9FA77 /* view controllers */ = {
 			isa = PBXGroup;
 			children = (
+				FA3AAC9E2112F03500955109 /* map */,
 				FAB4BD5520FF4CA90081B5A6 /* dungeon */,
 				FAD07A3B20FAD1F5007C20D1 /* npc */,
 				FAF78E9E20F73A42005F7E88 /* skills */,
@@ -698,6 +726,7 @@
 				"${BUILT_PRODUCTS_DIR}/DateToolsSwift/DateToolsSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/FontAwesomeKit/FontAwesomeKit.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SCNMathExtensions/SCNMathExtensions.framework",
 				"${BUILT_PRODUCTS_DIR}/SKCollectionView/SKCollectionView.framework",
 				"${BUILT_PRODUCTS_DIR}/SKComponents/SKComponents.framework",
 				"${BUILT_PRODUCTS_DIR}/SKSwiftLib/SKSwiftLib.framework",
@@ -711,6 +740,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DateToolsSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FontAwesomeKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCNMathExtensions.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKCollectionView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKComponents.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKSwiftLib.framework",
@@ -734,6 +764,7 @@
 				"${BUILT_PRODUCTS_DIR}/DateToolsSwift/DateToolsSwift.framework",
 				"${BUILT_PRODUCTS_DIR}/FontAwesomeKit/FontAwesomeKit.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
+				"${BUILT_PRODUCTS_DIR}/SCNMathExtensions/SCNMathExtensions.framework",
 				"${BUILT_PRODUCTS_DIR}/SKCollectionView/SKCollectionView.framework",
 				"${BUILT_PRODUCTS_DIR}/SKComponents/SKComponents.framework",
 				"${BUILT_PRODUCTS_DIR}/SKSwiftLib/SKSwiftLib.framework",
@@ -747,6 +778,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DateToolsSwift.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FontAwesomeKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCNMathExtensions.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKCollectionView.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKComponents.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKSwiftLib.framework",
@@ -831,6 +863,8 @@
 				FA10722B20E84D330046C756 /* ItemReferenceModel.swift in Sources */,
 				FAB7B7F520EA0956002B2C0B /* PlayerStatsViewController.swift in Sources */,
 				FA73C6FE20F353E4006AEF0E /* AvatarEmojiCellCollectionViewCell.swift in Sources */,
+				FA3AACA62112FE8700955109 /* HexGeometry.swift in Sources */,
+				FA3AACA42112FA8500955109 /* Map3DScene.swift in Sources */,
 				FAF78EA220F73A97005F7E88 /* SkillProgressCell.swift in Sources */,
 				FAB4BD5720FF4CB80081B5A6 /* DungeonViewController.swift in Sources */,
 				FAB4BDEE2100745C0081B5A6 /* DungeonGenerator.swift in Sources */,
@@ -852,9 +886,11 @@
 				FA36929520F19D5E003988D4 /* JournalViewController.swift in Sources */,
 				FA3691F520EDFB7E003988D4 /* TextFieldCell.swift in Sources */,
 				FAC4170F20F2B80000C4E3B5 /* SkillReferenceModel.swift in Sources */,
+				FA4A5DFE210D7D15001EE222 /* BattleController.swift in Sources */,
 				FA569C6F20E589C40094807F /* AppDelegate.swift in Sources */,
 				FA569CB620E58D970094807F /* NonPlayerCharacterModel.swift in Sources */,
 				FA10721F20E75CBB0046C756 /* PlayerDetailsCell.swift in Sources */,
+				FA3AACA22112F82600955109 /* Map3DViewController.swift in Sources */,
 				FAD07A3D20FAD21F007C20D1 /* NPCViewController.swift in Sources */,
 				FA83446E210309C2005BCF1A /* DungeonTileReferenceModel.swift in Sources */,
 				FA73C70020F4027A006AEF0E /* AvatarImageView.swift in Sources */,
