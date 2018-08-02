@@ -10,7 +10,10 @@ import SceneKit
 
 class Map3DScene: SCNScene {
 
+    //let mapGrid:Hex3DMapNode
+    
     override init() {
+        //mapGrid = Hex3DMapNode(size: vector_int2(2,2))
         super.init()
         self.buildScene()
     }
@@ -33,6 +36,10 @@ class Map3DScene: SCNScene {
         ambientLightNode.light!.type = .ambient
         ambientLightNode.light!.color = UIColor.darkGray
         rootNode.addChildNode(ambientLightNode)
+        
+        //let mapGrid = Hex3DMapNode(size: vector_int2(2,2))
+        //mapGrid.position = SCNVector3(0,0,15)
+        //rootNode.addChildNode(mapGrid)
     }
     
 }

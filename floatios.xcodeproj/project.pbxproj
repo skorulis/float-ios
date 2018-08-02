@@ -36,6 +36,7 @@
 		FA3AACA22112F82600955109 /* Map3DViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3AACA12112F82600955109 /* Map3DViewController.swift */; };
 		FA3AACA42112FA8500955109 /* Map3DScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3AACA32112FA8500955109 /* Map3DScene.swift */; };
 		FA3AACA62112FE8700955109 /* HexGeometry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3AACA52112FE8600955109 /* HexGeometry.swift */; };
+		FA3AACAA21130E6B00955109 /* Hex3DMapNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3AACA921130E6B00955109 /* Hex3DMapNode.swift */; };
 		FA4A5DF1210C367A001EE222 /* DungeonBattleNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4A5DF0210C367A001EE222 /* DungeonBattleNode.swift */; };
 		FA4A5DF3210C3702001EE222 /* BattleUIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4A5DF2210C3702001EE222 /* BattleUIController.swift */; };
 		FA4A5DF5210C4D9F001EE222 /* HexGridMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4A5DF4210C4D9F001EE222 /* HexGridMath.swift */; };
@@ -142,6 +143,7 @@
 		FA3AACA12112F82600955109 /* Map3DViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map3DViewController.swift; sourceTree = "<group>"; };
 		FA3AACA32112FA8500955109 /* Map3DScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Map3DScene.swift; sourceTree = "<group>"; };
 		FA3AACA52112FE8600955109 /* HexGeometry.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexGeometry.swift; sourceTree = "<group>"; };
+		FA3AACA921130E6B00955109 /* Hex3DMapNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hex3DMapNode.swift; sourceTree = "<group>"; };
 		FA4A5DF0210C367A001EE222 /* DungeonBattleNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DungeonBattleNode.swift; sourceTree = "<group>"; };
 		FA4A5DF2210C3702001EE222 /* BattleUIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleUIController.swift; sourceTree = "<group>"; };
 		FA4A5DF4210C4D9F001EE222 /* HexGridMath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexGridMath.swift; sourceTree = "<group>"; };
@@ -357,6 +359,7 @@
 				FA3AACA12112F82600955109 /* Map3DViewController.swift */,
 				FA3AACA52112FE8600955109 /* HexGeometry.swift */,
 				FA3AACA32112FA8500955109 /* Map3DScene.swift */,
+				FA3AACA921130E6B00955109 /* Hex3DMapNode.swift */,
 			);
 			path = map;
 			sourceTree = "<group>";
@@ -842,6 +845,7 @@
 				FA36928F20F083AB003988D4 /* FloatTheme.swift in Sources */,
 				FA83447821042BDA005BCF1A /* DungeonScene.swift in Sources */,
 				FA36929720F19E7D003988D4 /* StoryPieceViewController.swift in Sources */,
+				FA3AACAA21130E6B00955109 /* Hex3DMapNode.swift in Sources */,
 				FA4A5DFB210D711F001EE222 /* MonsterEntity.swift in Sources */,
 				FA36929920F19ED2003988D4 /* StoryPieceCell.swift in Sources */,
 				FAB4BDF1210139360081B5A6 /* TilesGenerator.swift in Sources */,
