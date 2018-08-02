@@ -51,7 +51,7 @@ class HexGeometry: NSObject {
             meshVertices.append(contentsOf: [v1,v2,v3,v4])
             meshNormals.append(contentsOf: [normal,normal,normal,normal])
             
-            uvPoints.append(contentsOf: [CGPoint(x: 0, y: 0),CGPoint(x: 1, y: 0),CGPoint(x: 1, y: 1),CGPoint(x: 0, y: 1)])
+            uvPoints.append(contentsOf: [CGPoint(x: 0, y: 0),CGPoint(x: 1, y: 0),CGPoint(x: 0, y: 1),CGPoint(x: 1, y: 1)])
             
             let faceIndices = [i1, i1+1, i1+3, i1+3, i1+2, i1]
             indices.append(contentsOf: faceIndices)
@@ -64,9 +64,14 @@ class HexGeometry: NSObject {
         let element = SCNGeometryElement(indices: indices, primitiveType: .triangles)
         let geometry = SCNGeometry(sources: [vertexSource,normalSource,uvSource], elements: [element])
         
-        geometry.firstMaterial = SCNMaterial()
-        //geometry.firstMaterial?.diffuse.contents = UIColor.red
-        geometry.firstMaterial?.diffuse.contents = UIImage(named: "grass1")
+        let material = SCNMaterial()
+        
+        material.lightingModel = .physicallyBased
+        material.diffuse.contents = UIImage(named: "mahogfloor_basecolor")
+        material.normal.contents = UIImage(named: "mahogfloor_normal")
+        material.roughness.contents = UIImage(named: "mahogfloor_roughness")
+        
+        geometry.firstMaterial = material
         
         return geometry
     }
