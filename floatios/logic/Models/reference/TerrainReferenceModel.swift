@@ -17,9 +17,11 @@ public enum TerrainType: String {
 class TerrainReferenceModel: NSObject {
 
     let type:TerrainType
+    let baseColor:UIColor
     
-    init(type:TerrainType) {
+    init(type:TerrainType,color:UIColor) {
         self.type = type
+        self.baseColor = color
     }
     
 }

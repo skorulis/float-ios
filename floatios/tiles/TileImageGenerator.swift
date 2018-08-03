@@ -9,7 +9,7 @@
 import UIKit
 import SpriteKit
 
-class TileImageGenerator: NSObject {
+class TileImageGenerator: ImageGen {
     
     let tileSize:CGSize
     let math:HexGridMath
@@ -17,6 +17,7 @@ class TileImageGenerator: NSObject {
     init(tileSize:CGSize) {
         self.tileSize = tileSize
         self.math = HexGridMath(tileSize: tileSize)
+        super.init(rootDir: "tiles")
     }
 
     func generatePointyEmptyTile(color:UIColor) -> UIImage {
@@ -136,19 +137,12 @@ class TileImageGenerator: NSObject {
     
     //MARK: Helpers
     
-    private func finishContext() -> UIImage {
-        let img = UIGraphicsGetImageFromCurrentImageContext();
-        UIGraphicsEndImageContext();
-        return img!
+    private func avg(p1:CGPoint,p2:CGPoint) -> CGPoint {
+        return CGPoint(x: (p1.x+p2.x)/2, y: (p1.y+p2.y)/2)
     }
     
     private func newContext() -> CGContext {
-        UIGraphicsBeginImageContext(tileSize)
-        return UIGraphicsGetCurrentContext()!
-    }
-    
-    private func avg(p1:CGPoint,p2:CGPoint) -> CGPoint {
-        return CGPoint(x: (p1.x+p2.x)/2, y: (p1.y+p2.y)/2)
+        return super.newContext(self.tileSize)
     }
     
 }

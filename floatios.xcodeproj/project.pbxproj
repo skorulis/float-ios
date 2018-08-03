@@ -22,6 +22,10 @@
 		FA10722B20E84D330046C756 /* ItemReferenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10722A20E84D330046C756 /* ItemReferenceModel.swift */; };
 		FA10723120E88AF70046C756 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10723020E88AF70046C756 /* SectionHeaderView.swift */; };
 		FA10723420E8ACBE0046C756 /* InventoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10723320E8ACBE0046C756 /* InventoryViewController.swift */; };
+		FA112F03211453DD00D49500 /* GeometryStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA112F02211453DD00D49500 /* GeometryStore.swift */; };
+		FA112F05211467CC00D49500 /* Hex3DMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA112F04211467CC00D49500 /* Hex3DMath.swift */; };
+		FA112F072114691300D49500 /* HexTextureGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA112F062114691300D49500 /* HexTextureGenerator.swift */; };
+		FA112F0921146DB700D49500 /* ImageGen.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA112F0821146DB700D49500 /* ImageGen.swift */; };
 		FA29DB7120F6B1EB00D46BFE /* SearchResultModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA29DB7020F6B1EB00D46BFE /* SearchResultModel.swift */; };
 		FA3691F520EDFB7E003988D4 /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3691F420EDFB7E003988D4 /* TextFieldCell.swift */; };
 		FA3691F820EDFCEF003988D4 /* CreatePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3691F720EDFCEF003988D4 /* CreatePlayerViewController.swift */; };
@@ -129,6 +133,10 @@
 		FA10722A20E84D330046C756 /* ItemReferenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemReferenceModel.swift; sourceTree = "<group>"; };
 		FA10723020E88AF70046C756 /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		FA10723320E8ACBE0046C756 /* InventoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryViewController.swift; sourceTree = "<group>"; };
+		FA112F02211453DD00D49500 /* GeometryStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GeometryStore.swift; sourceTree = "<group>"; };
+		FA112F04211467CC00D49500 /* Hex3DMath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hex3DMath.swift; sourceTree = "<group>"; };
+		FA112F062114691300D49500 /* HexTextureGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexTextureGenerator.swift; sourceTree = "<group>"; };
+		FA112F0821146DB700D49500 /* ImageGen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageGen.swift; sourceTree = "<group>"; };
 		FA29DB7020F6B1EB00D46BFE /* SearchResultModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultModel.swift; sourceTree = "<group>"; };
 		FA3691F420EDFB7E003988D4 /* TextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCell.swift; sourceTree = "<group>"; };
 		FA3691F720EDFCEF003988D4 /* CreatePlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlayerViewController.swift; sourceTree = "<group>"; };
@@ -360,6 +368,9 @@
 				FA3AACA52112FE8600955109 /* HexGeometry.swift */,
 				FA3AACA32112FA8500955109 /* Map3DScene.swift */,
 				FA3AACA921130E6B00955109 /* Hex3DMapNode.swift */,
+				FA112F02211453DD00D49500 /* GeometryStore.swift */,
+				FA112F04211467CC00D49500 /* Hex3DMath.swift */,
+				FA112F062114691300D49500 /* HexTextureGenerator.swift */,
 			);
 			path = map;
 			sourceTree = "<group>";
@@ -547,6 +558,7 @@
 				FAB4BDF0210139360081B5A6 /* TilesGenerator.swift */,
 				FA8344692102F66E005BCF1A /* TileImageGenerator.swift */,
 				FA83446B2102F67F005BCF1A /* TileGenContext.swift */,
+				FA112F0821146DB700D49500 /* ImageGen.swift */,
 			);
 			path = tiles;
 			sourceTree = "<group>";
@@ -819,6 +831,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA112F0921146DB700D49500 /* ImageGen.swift in Sources */,
 				FA569CB220E58D970094807F /* CityModel.swift in Sources */,
 				FA569CBA20E58D970094807F /* CityController.swift in Sources */,
 				FA569CB920E58D970094807F /* GameController.swift in Sources */,
@@ -834,14 +847,17 @@
 				FA3691FA20EEC1FE003988D4 /* CTAButtonCell.swift in Sources */,
 				FA83447C21049226005BCF1A /* TerrainReferenceModel.swift in Sources */,
 				FA10721E20E75CBB0046C756 /* ActionCell.swift in Sources */,
+				FA112F072114691300D49500 /* HexTextureGenerator.swift in Sources */,
 				FA29DB7120F6B1EB00D46BFE /* SearchResultModel.swift in Sources */,
 				FA569CBD20E58F9E0094807F /* NPCController.swift in Sources */,
 				FAD8518A20F4C39700227AF2 /* JournalEntry.swift in Sources */,
 				FA10723420E8ACBE0046C756 /* InventoryViewController.swift in Sources */,
 				FA569CBB20E58D970094807F /* ActionController.swift in Sources */,
+				FA112F05211467CC00D49500 /* Hex3DMath.swift in Sources */,
 				FA10720A20E73D1B0046C756 /* NameGenerator.swift in Sources */,
 				FAF986AF2105CFAB009C8F92 /* TypeConversions.swift in Sources */,
 				FA569CB320E58D970094807F /* InventoryModel.swift in Sources */,
+				FA112F03211453DD00D49500 /* GeometryStore.swift in Sources */,
 				FA36928F20F083AB003988D4 /* FloatTheme.swift in Sources */,
 				FA83447821042BDA005BCF1A /* DungeonScene.swift in Sources */,
 				FA36929720F19E7D003988D4 /* StoryPieceViewController.swift in Sources */,

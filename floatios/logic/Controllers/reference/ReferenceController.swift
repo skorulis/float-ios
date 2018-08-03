@@ -9,6 +9,7 @@
 import UIKit
 import SKSwiftLib
 import FontAwesomeKit
+import SKComponents
 
 class ReferenceController {
 
@@ -93,9 +94,9 @@ class ReferenceController {
     }
     
     private static func makeTerrainTiles() -> [TerrainReferenceModel] {
-        let grass = TerrainReferenceModel(type: .grass)
-        let dirt = TerrainReferenceModel(type: .dirt)
-        let floor = TerrainReferenceModel(type: .floor)
+        let grass = TerrainReferenceModel(type: .grass,color: SKTheme.theme.color.nephritis)
+        let dirt = TerrainReferenceModel(type: .dirt,color: SKTheme.theme.color.pumpkin)
+        let floor = TerrainReferenceModel(type: .floor,color: SKTheme.theme.color.concrete)
         return [grass,dirt,floor]
     }
     

@@ -14,7 +14,6 @@ import FontAwesomeKit
 class TilesGenerator: NSObject {
 
     let tileSize:CGSize
-    let rootDir:String = "tiles"
     let imageGen:TileImageGenerator
     let battleImageGen:TileImageGenerator
     
@@ -25,31 +24,12 @@ class TilesGenerator: NSObject {
     init(tileSize:CGSize) {
         self.tileSize = tileSize
         self.imageGen = TileImageGenerator(tileSize: tileSize)
-        let halfSize = CGSize(width: tileSize.width/2, height: tileSize.height/2)
         self.battleImageGen = TileImageGenerator(tileSize: tileSize)
-        
-        let path = PathHelper.documentsDirectoryPath() + rootDir
-        do {
-            try FileManager.default.createDirectory(atPath: path, withIntermediateDirectories: false, attributes: nil)
-        } catch {
-            
-        }
-        
-        print("Writing tiles to " + path)
     }
     
     func saveTile(def:SKTileDefinition) {
         let cgImage = def.textures.first!.cgImage()
-        saveImage(name: def.name!, image: UIImage(cgImage: cgImage))
-    }
-    
-    func saveImage(name:String,image:UIImage) {
-        let data = UIImagePNGRepresentation(image)
-        let fileName = name + ".png"
-        let fileURL = PathHelper.documentsDirectory().appendingPathComponent(rootDir).appendingPathComponent(fileName)
-        do {
-            try data?.write(to: fileURL)
-        } catch {}
+        imageGen.saveImage(name: def.name!, image: UIImage(cgImage: cgImage))
     }
     
     func simpleGroup(context:TileGenContext) -> SKTileGroup {
@@ -127,7 +107,7 @@ class TilesGenerator: NSObject {
         gen.dumpTileSet(set: battleSet)
         
         let divider = gen.imageGen.generateBattleDivider()
-        gen.saveImage(name: "divider", image: divider)
+        gen.imageGen.saveImage(name: "divider", image: divider)
         
     }
     

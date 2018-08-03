@@ -16,7 +16,10 @@ class Hex3DMapNode: SCNNode {
     
     init(size:vector_int2) {
         self.size = size
-        hexGeometry = HexGeometry().getGeometry()
+        let game = GameController.instance
+        let ref = game.reference.getTerrain(type: .grass)
+        
+        hexGeometry = HexGeometry(store:GameController.instance.geometry).getGeometry(ref: ref)
         super.init()
         
         for i in 0..<size.y {

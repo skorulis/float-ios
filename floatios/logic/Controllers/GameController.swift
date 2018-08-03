@@ -17,9 +17,11 @@ class GameController {
     let reference:ReferenceController
     let majorState:MajorStateController
     let battle:BattleController
+    let geometry:GeometryStore
     
     init() {
         reference = ReferenceController()
+        geometry = GeometryStore()
         action = ActionController(ref:reference)
         city = CityController()
         player = PlayerCharacterController(actions: action,city:city)

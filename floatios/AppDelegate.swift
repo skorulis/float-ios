@@ -26,6 +26,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.makeKeyAndVisible()
         
         TilesGenerator.generateAllTiles()
+        HexTextureGenerator.generateAllImages()
         
         return true
     }
