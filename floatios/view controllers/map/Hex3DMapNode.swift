@@ -11,7 +11,6 @@ import SceneKit
 class Hex3DMapNode: SCNNode {
 
     let size:vector_int2
-    let hexGeometry:SCNGeometry
     var terrain:[SCNNode] = []
     
     init(size:vector_int2) {
@@ -19,7 +18,10 @@ class Hex3DMapNode: SCNNode {
         let game = GameController.instance
         let ref = game.reference.getTerrain(type: .grass)
         
-        hexGeometry = HexGeometry(store:GameController.instance.geometry).getGeometry(ref: ref)
+        let gen = HexGeometry(store:GameController.instance.geometry)
+        
+        let hexGeometry = gen.hexGeometry(ref: ref)
+        let sides = gen.sideGeometry()
         super.init()
         
         for i in 0..<size.y {
@@ -27,9 +29,14 @@ class Hex3DMapNode: SCNNode {
             let offsetX:Float = isOdd ? 1.0 : 0
             let rowY = Float(i) * 1.8
             for j in 0..<size.x {
+                let parentNode = SCNNode()
+                parentNode.position = SCNVector3(Float(j*2) + offsetX,0,rowY)
                 let n1 = SCNNode(geometry: hexGeometry)
-                n1.position = SCNVector3(Float(j*2) + offsetX,0,rowY)
-                self.addChildNode(n1)
+                let n2 = SCNNode(geometry: sides)
+                parentNode.addChildNode(n1)
+                parentNode.addChildNode(n2)
+                
+                self.addChildNode(parentNode)
             }
         }
     }

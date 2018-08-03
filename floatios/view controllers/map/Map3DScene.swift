@@ -15,7 +15,6 @@ class Map3DScene: SCNScene {
     let dungeon:DungeonModel
     
     init(dungeon:DungeonModel) {
-        //mapGrid = Hex3DMapNode(size: vector_int2(2,2))
         self.dungeon = dungeon
         super.init()
         self.buildScene()
@@ -50,7 +49,7 @@ class Map3DScene: SCNScene {
     }
     
     func makeMap() -> Hex3DMapNode {
-        let mapGrid = Hex3DMapNode(size: vector_int2(3,3))
+        let mapGrid = Hex3DMapNode(size: vector_int2(Int32(dungeon.width),Int32(dungeon.height)))
         let sphere = mapGrid.boundingSphere
         mapGrid.position = SCNVector3(-sphere.center.x,0,-sphere.center.z)
         return mapGrid

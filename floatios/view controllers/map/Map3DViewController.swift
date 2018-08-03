@@ -16,7 +16,7 @@ class Map3DViewController: UIViewController {
     let game = GameController.instance
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        let generator = DungeonGenerator(size: 3,ref:game.reference,player:game.player.player)
+        let generator = DungeonGenerator(size: 4,ref:game.reference,player:game.player.player)
         let dungeon = generator.generateDungeon(type:.outdoors)
         self.scene = Map3DScene(dungeon: dungeon);
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
