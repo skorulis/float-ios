@@ -24,7 +24,7 @@ class DungeonViewController: UIViewController {
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         let generator = DungeonGenerator(size: 50,ref:game.reference,player:game.player.player)
-        self.dungeon = generator.generateDungeon()
+        self.dungeon = generator.generateDungeon(type:.dungeon)
         self.scene = DungeonScene(dungeon: self.dungeon)
         self.logic = DungeonLogicController(dungeon: dungeon,ref:game.reference)
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)

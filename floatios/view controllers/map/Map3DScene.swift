@@ -12,8 +12,11 @@ class Map3DScene: SCNScene {
 
     //let mapGrid:Hex3DMapNode
     
-    override init() {
+    let dungeon:DungeonModel
+    
+    init(dungeon:DungeonModel) {
         //mapGrid = Hex3DMapNode(size: vector_int2(2,2))
+        self.dungeon = dungeon
         super.init()
         self.buildScene()
     }
@@ -37,9 +40,20 @@ class Map3DScene: SCNScene {
         ambientLightNode.light!.color = UIColor.darkGray
         rootNode.addChildNode(ambientLightNode)
         
+        let imageNames = ["Daylight Box_Right","Daylight Box_Left","Daylight Box_Top","Daylight Box_Bottom","Daylight Box_Back","Daylight Box_Front"]
+        
+        self.background.contents = imageNames.map { UIImage(named: $0)}
+        
         //let mapGrid = Hex3DMapNode(size: vector_int2(2,2))
         //mapGrid.position = SCNVector3(0,0,15)
         //rootNode.addChildNode(mapGrid)
+    }
+    
+    func makeMap() -> Hex3DMapNode {
+        let mapGrid = Hex3DMapNode(size: vector_int2(3,3))
+        let sphere = mapGrid.boundingSphere
+        mapGrid.position = SCNVector3(-sphere.center.x,0,-sphere.center.z)
+        return mapGrid
     }
     
 }

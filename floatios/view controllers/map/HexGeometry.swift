@@ -67,9 +67,9 @@ class HexGeometry: NSObject {
         let material = SCNMaterial()
         
         material.lightingModel = .physicallyBased
-        material.diffuse.contents = UIImage(named: "mahogfloor_basecolor")
-        material.normal.contents = UIImage(named: "mahogfloor_normal")
-        material.roughness.contents = UIImage(named: "mahogfloor_roughness")
+        material.diffuse.contents = UIColor.purple
+        material.normal.contents = UIImage(named: "scuffed-plastic-normal")
+        material.metalness.contents = UIImage(named: "scuffed-plastic-metal")
         
         geometry.firstMaterial = material
         

@@ -11,6 +11,11 @@ import GameplayKit
 
 class DungeonGenerator {
 
+    enum GeneratorType {
+        case dungeon
+        case outdoors
+    }
+    
     let dungeon:DungeonModel
     let size:Int
     let ref:ReferenceController
@@ -23,7 +28,7 @@ class DungeonGenerator {
         self.size = size
     }
     
-    func generateDungeon() -> DungeonModel {
+    func generateDungeon(type:GeneratorType) -> DungeonModel {
         for x in 0..<size {
             for y in 0..<size {
                 let node = dungeon.nodeAt(x: x, y: y)
@@ -33,17 +38,27 @@ class DungeonGenerator {
                 }
             }
         }
-        for _ in 0...10 {
-            addRoom()
-        }
-        for _ in 0...2 {
-            dungeon.playerNode.gridPosition = addStairs(up: true)
-        }
-        for _ in 0...2 {
-            _ = addStairs(up: false)
-        }
-        for _ in 0...size/4 {
-            addMonster()
+        
+        if type == .dungeon {
+            for _ in 0...10 {
+                addRoom()
+            }
+            for _ in 0...2 {
+                dungeon.playerNode.gridPosition = addStairs(up: true)
+            }
+            for _ in 0...2 {
+                _ = addStairs(up: false)
+            }
+            for _ in 0...size/4 {
+                addMonster()
+            }
+        } else if (type == .outdoors) {
+            for y in 0..<dungeon.height {
+                for x in 0..<dungeon.width {
+                    let node = dungeon.nodeAt(x: x, y: y)
+                    node?.terrain = ref.getTerrain(type: .grass)
+                }
+            }
         }
         
         dungeon.updateConnectionGraph()

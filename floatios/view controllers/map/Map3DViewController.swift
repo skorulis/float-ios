@@ -13,9 +13,12 @@ import SnapKit
 class Map3DViewController: UIViewController {
 
     let scene:Map3DScene
+    let game = GameController.instance
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        self.scene = Map3DScene();
+        let generator = DungeonGenerator(size: 3,ref:game.reference,player:game.player.player)
+        let dungeon = generator.generateDungeon(type:.outdoors)
+        self.scene = Map3DScene(dungeon: dungeon);
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.title = "Map"
     }
@@ -43,15 +46,14 @@ class Map3DViewController: UIViewController {
         scene.rootNode.addChildNode(cameraNode)
         
         // place the camera
-        cameraNode.position = SCNVector3(x: 0, y: 0, z: 15)
+        cameraNode.position = SCNVector3(x: 0, y: 4, z: 15)
+        cameraNode.look(at: SCNVector3())
         
         //let spin = SCNAction.rotateBy(x: 0.4, y: 0, z: 0.1, duration: 0.25)
         //scene.mapGrid.runAction(SCNAction.repeatForever(spin))
         //scene.mapGrid.removeFromParentNode()
         
-        
-        let mapGrid = Hex3DMapNode(size: vector_int2(3,3))
-        mapGrid.position = SCNVector3(0,-6,0)
+        let mapGrid = scene.makeMap()
         scene.rootNode.addChildNode(mapGrid)
         
         /*let hexGeom = HexGeometry()
