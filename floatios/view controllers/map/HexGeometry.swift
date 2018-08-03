@@ -64,7 +64,7 @@ class HexGeometry: NSObject {
         
         material.lightingModel = .physicallyBased
         material.diffuse.contents = ref.baseColor
-        material.diffuse.contents = UIImage(named: "sand")
+        material.diffuse.contents = imageGen.topHex(UIColor.brown)
         material.normal.contents = UIImage(named: "scuffed-plastic-normal")
         material.metalness.contents = UIImage(named: "scuffed-plastic-metal")
         
@@ -109,7 +109,7 @@ class HexGeometry: NSObject {
         let material = SCNMaterial()
         
         material.lightingModel = .physicallyBased
-        material.diffuse.contents = imageGen.spikeySide()
+        material.diffuse.contents = imageGen.spikeySide(UIColor.brown)
         material.normal.contents = UIImage(named: "scuffed-plastic-normal")
         material.metalness.contents = UIImage(named: "scuffed-plastic-metal")
         

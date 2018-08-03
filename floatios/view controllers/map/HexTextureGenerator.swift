@@ -17,7 +17,7 @@ class HexTextureGenerator: ImageGen {
         super.init(rootDir: "3d")
     }
     
-    func topHex() -> UIImage {
+    func topHex(_ color:UIColor) -> UIImage {
         let ctx = newContext(textureSize)
         let points = (0..<6).map { math.regularHexUV(index: $0)}
         ctx.move(to: points[0])
@@ -25,13 +25,13 @@ class HexTextureGenerator: ImageGen {
             ctx.addLine(to: points[i])
         }
         ctx.closePath()
-        ctx.setFillColor(UIColor.brown.cgColor)
+        ctx.setFillColor(color.cgColor)
         ctx.fillPath()
         
         return finishContext()
     }
     
-    func spikeySide() -> UIImage {
+    func spikeySide(_ color:UIColor) -> UIImage {
         let ctx = newContext(textureSize)
         let spikeCount = 3
         let xMov = textureSize.width / CGFloat(spikeCount * 2)
@@ -52,7 +52,7 @@ class HexTextureGenerator: ImageGen {
         ctx.addLine(to: CGPoint(x: textureSize.width, y: 0))
         ctx.addLine(to: CGPoint(x: 0, y: 0))
         ctx.closePath()
-        ctx.setFillColor(UIColor.brown.cgColor)
+        ctx.setFillColor(color.cgColor)
         ctx.fillPath()
         
         return finishContext()
@@ -61,8 +61,8 @@ class HexTextureGenerator: ImageGen {
     class func generateAllImages() {
         let gen = HexTextureGenerator()
         
-        gen.saveImage(name: "hex1", image: gen.topHex())
-        gen.saveImage(name: "spike1", image: gen.spikeySide())
+        gen.saveImage(name: "hex1", image: gen.topHex(UIColor.brown))
+        gen.saveImage(name: "spike1", image: gen.spikeySide(UIColor.brown))
     }
     
     //MARK: Helpers
