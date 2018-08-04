@@ -25,17 +25,23 @@ public class Hex3DMapNode: SCNNode {
         let sides = gen.sideGeometry()
         super.init()
         
+        let gridMult:Float = 0.9
+        let yMult:Float = 1.75 * gridMult
+        let xMult:Float = 2.0 * gridMult
+        
         for y in 0..<size.y {
             let isOdd = y % 2 == 1
-            let offsetX:Float = isOdd ? 1.0 : 0
-            let rowY = Float(y) * 1.8
+            let offsetX:Float = isOdd ? gridMult : 0
+            let rowY = Float(y) * yMult
             for x in 0..<size.x {
                 let dungeonNode = dungeon.nodeAt(x: Int(x), y: Int(y))!
                 let terrain = dungeonNode.terrain
                 let hexGeometry = gen.hexGeometry(ref: terrain)
                 
                 let parentNode = SCNNode()
-                parentNode.position = SCNVector3(Float(x*2) + offsetX,0,rowY)
+                let yPos = Float(dungeonNode.yOffset) * 0.5
+                
+                parentNode.position = SCNVector3(Float(x)*xMult + offsetX,yPos,rowY)
                 let n1 = SCNNode(geometry: hexGeometry)
                 let n2 = SCNNode(geometry: sides)
                 parentNode.addChildNode(n1)

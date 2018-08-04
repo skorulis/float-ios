@@ -17,6 +17,7 @@ public class GKHexMapNode: GKGridGraphNode {
     public var beings:[GridEntity] = []
     //var items:[ItemModel]
     
+    public var yOffset:Int = 0
     
     public init(terrain:TerrainReferenceModel,position:vector_int2) {
         self.terrain = terrain

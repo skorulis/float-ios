@@ -46,6 +46,10 @@ public class Map3DScene: SCNScene {
         
         mapGrid = self.makeMap()
         self.rootNode.addChildNode(mapGrid)
+        
+        let act1 = SCNAction.moveBy(x: 0, y: -0.5, z: 0, duration: 5)
+        let act2 = SCNAction.moveBy(x: 0, y: 0.5, z: 0, duration: 5)
+        mapGrid.runAction(SCNAction.repeatForever(SCNAction.sequence([act1,act2])))
     }
     
     public func makeMap() -> Hex3DMapNode {

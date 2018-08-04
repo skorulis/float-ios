@@ -20,14 +20,14 @@ public class HexTextureGenerator: ImageGen {
     
     public func topHex(_ color:UIColor) -> UIImage {
         let ctx = newContext(textureSize)
-        let points = (0..<6).map { math.regularHexUV(index: $0)}
-        ctx.move(to: points[0])
-        for i in 1..<6 {
-            ctx.addLine(to: points[i])
-        }
-        ctx.closePath()
+        makeHexPath(ctx: ctx)
         ctx.setFillColor(color.cgColor)
         ctx.fillPath()
+        
+        makeHexPath(ctx: ctx)
+        ctx.setStrokeColor(UIColor.black.cgColor)
+        ctx.setLineWidth(lineWidth)
+        ctx.strokePath()
         
         return finishContext()
     }
@@ -39,9 +39,8 @@ public class HexTextureGenerator: ImageGen {
         ctx.setFillColor(UIColor.lightGray.cgColor)
         ctx.fill(CGRect(origin: .zero, size: textureSize))
         
-        
         let spikeTop = textureSize.height / 8
-        let spikeBottom = textureSize.height / 4
+        let spikeBottom = textureSize.height / 3
         
         ctx.move(to: CGPoint(x: 0, y: spikeBottom))
         for i in 0...spikeCount {
@@ -56,7 +55,22 @@ public class HexTextureGenerator: ImageGen {
         ctx.setFillColor(color.cgColor)
         ctx.fillPath()
         
+        ctx.move(to: .zero)
+        ctx.addLine(to: CGPoint(x: textureSize.width, y: 0))
+        ctx.setStrokeColor(UIColor.black.cgColor)
+        ctx.setLineWidth(lineWidth)
+        ctx.strokePath()
+        
         return finishContext()
+    }
+    
+    private func makeHexPath(ctx:CGContext) {
+        let points = (0..<6).map { math.regularHexUV(index: $0)}
+        ctx.move(to: points[0])
+        for i in 1..<6 {
+            ctx.addLine(to: points[i])
+        }
+        ctx.closePath()
     }
     
     public class func generateAllImages() {
@@ -70,6 +84,10 @@ public class HexTextureGenerator: ImageGen {
     
     public var textureSize: CGSize {
         return CGSize(width: math.baseSize, height: math.baseSize)
+    }
+    
+    private var lineWidth:CGFloat {
+        return 4
     }
     
     

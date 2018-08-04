@@ -39,32 +39,41 @@ public class DungeonGenerator {
         }
         
         if type == .dungeon {
-            for _ in 0...10 {
-                addRoom()
-            }
-            for _ in 0...2 {
-                dungeon.playerNode.gridPosition = addStairs(up: true)
-            }
-            for _ in 0...2 {
-                _ = addStairs(up: false)
-            }
-            for _ in 0...size/4 {
-                addMonster()
-            }
+            generateDungeon()
         } else if (type == .outdoors) {
-            let allTerrain:[TerrainType] = [.grass,.water,.dirt]
-            
-            for y in 0..<dungeon.height {
-                for x in 0..<dungeon.width {
-                    let node = dungeon.nodeAt(x: x, y: y)
-                    node?.terrain = ref.getTerrain(type: allTerrain.randomItem()!)
-                }
-            }
+            generateOutdoors()
         }
         
         dungeon.updateConnectionGraph()
         
         return dungeon
+    }
+    
+    private func generateDungeon() {
+        for _ in 0...10 {
+            addRoom()
+        }
+        for _ in 0...2 {
+            dungeon.playerNode.gridPosition = addStairs(up: true)
+        }
+        for _ in 0...2 {
+            _ = addStairs(up: false)
+        }
+        for _ in 0...size/4 {
+            addMonster()
+        }
+    }
+    
+    private func generateOutdoors() {
+        let allTerrain:[TerrainType] = [.grass,.water,.dirt]
+        
+        for y in 0..<dungeon.height {
+            for x in 0..<dungeon.width {
+                let node = dungeon.nodeAt(x: x, y: y)
+                node?.terrain = ref.getTerrain(type: allTerrain.randomItem()!)
+                node?.yOffset = Int(arc4random_uniform(2))
+            }
+        }
     }
     
     private func addRoom() {
