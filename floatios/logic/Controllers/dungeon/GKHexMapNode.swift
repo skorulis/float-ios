@@ -9,7 +9,7 @@
 import UIKit
 import GameplayKit
 
-class GKHexMapNode: GKGridGraphNode {
+public class GKHexMapNode: GKGridGraphNode {
 
     var terrain:TerrainReferenceModel
     var fixture:DungeonTileReferenceModel?
@@ -19,12 +19,12 @@ class GKHexMapNode: GKGridGraphNode {
     //var items:[ItemModel]
     
     
-    init(terrain:TerrainReferenceModel,position:vector_int2) {
+    public init(terrain:TerrainReferenceModel,position:vector_int2) {
         self.terrain = terrain
         super.init(gridPosition:position)
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     

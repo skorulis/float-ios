@@ -10,7 +10,7 @@ import UIKit
 import SpriteKit
 import GameplayKit
 
-class DungeonModel: NSObject {
+public class DungeonModel: NSObject {
     
     var player:PlayerCharacterModel
     var playerNode:DungeonCharacterEntity
@@ -24,7 +24,7 @@ class DungeonModel: NSObject {
         return vector_int2(Int32(width),Int32(height))
     }
     
-    init(width:Int,height:Int,baseTerrain:TerrainReferenceModel,player:PlayerCharacterModel) {
+    public init(width:Int,height:Int,baseTerrain:TerrainReferenceModel,player:PlayerCharacterModel) {
         self.width = width
         self.height = height
         self.player = player
@@ -72,15 +72,15 @@ class DungeonModel: NSObject {
         }
     }
     
-    func nodeAt(point:CGPoint) -> GKHexMapNode? {
+    public func nodeAt(point:CGPoint) -> GKHexMapNode? {
         return nodeAt(x: Int(point.x), y: Int(point.y))
     }
     
-    func nodeAt(vec:vector_int2) -> GKHexMapNode? {
+    public func nodeAt(vec:vector_int2) -> GKHexMapNode? {
         return nodeAt(x: Int(vec.x), y: Int(vec.y))
     }
     
-    func nodeAt(x:Int,y:Int) -> GKHexMapNode? {
+    public func nodeAt(x:Int,y:Int) -> GKHexMapNode? {
         if (!isInMap(x: x, y: y)) {
             return nil
         }
@@ -88,20 +88,20 @@ class DungeonModel: NSObject {
         return nodes[index]
     }
     
-    func isInMap(point:CGPoint) -> Bool {
+    public func isInMap(point:CGPoint) -> Bool {
         return isInMap(x: Int(point.x), y: Int(point.y))
     }
     
-    func isInMap(x:Int,y:Int) -> Bool {
+    public func isInMap(x:Int,y:Int) -> Bool {
         return x >= 0 && y >= 0 && x < width && y < height
     }
     
-    func fixture(at:CGPoint) -> DungeonTileType? {
+    public func fixture(at:CGPoint) -> DungeonTileType? {
         let node = self.nodeAt(point: at)
         return node?.fixture?.type
     }
     
-    func path(to:CGPoint,from:CGPoint) -> [GKHexMapNode] {
+    public func path(to:CGPoint,from:CGPoint) -> [GKHexMapNode] {
         guard let node = self.nodeAt(point: to) else { return [] }
         guard let fromNode = self.nodeAt(point: from) else { return [] }
         

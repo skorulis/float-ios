@@ -6,9 +6,9 @@
 //  Copyright © 2018 Skorulis. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class PlayerStatsModel {
+public class PlayerStatsModel {
     
     //How many times the player has performed each action
     var actionTimeStats:[String:Int] = [:]
@@ -20,7 +20,7 @@ class PlayerStatsModel {
     
 }
 
-class PlayerCharacterModel {
+public class PlayerCharacterModel {
 
     let base:CharacterModel
     let stats:PlayerStatsModel

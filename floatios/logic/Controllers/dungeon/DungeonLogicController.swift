@@ -6,19 +6,20 @@
 //  Copyright © 2018 Skorulis. All rights reserved.
 //
 
-import UIKit
+import Foundation
+import CoreGraphics
 
-class DungeonLogicController: NSObject {
+public class DungeonLogicController {
 
-    let dungeon:DungeonModel
-    let ref:ReferenceController
+    public let dungeon:DungeonModel
+    public let ref:ReferenceController
     
-    init(dungeon:DungeonModel,ref:ReferenceController) {
+    public init(dungeon:DungeonModel,ref:ReferenceController) {
         self.dungeon = dungeon
         self.ref = ref
     }
     
-    func getActions(at point:CGPoint) -> [DungeonAction] {
+    public func getActions(at point:CGPoint) -> [DungeonAction] {
         guard let type = dungeon.fixture(at: point) else {
             return [.examine]
         }

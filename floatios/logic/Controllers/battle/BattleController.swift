@@ -6,9 +6,7 @@
 //  Copyright © 2018 Skorulis. All rights reserved.
 //
 
-import UIKit
-
-class BattleController: NSObject {
+public class BattleController {
 
     func performAttack(from:CharacterModel,to:MonsterEntity) {
         from.health -= 10

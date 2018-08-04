@@ -14,16 +14,16 @@ public enum ResultType {
 }
 
 
-class ActionController {
+public class ActionController {
 
     let ref:ReferenceController
     let dayFinishObservers = ObserverSet<ActionController>()
     
-    init(ref:ReferenceController) {
+    public init(ref:ReferenceController) {
         self.ref = ref
     }
     
-    func performAction(character:CharacterModel,action:ActionReferenceModel) {
+    public func performAction(character:CharacterModel,action:ActionReferenceModel) {
         let reqs = action.requirements
         takeRequirements(reqs: reqs, character: character)
         let results = getResults(character: character, action: action)
@@ -45,12 +45,12 @@ class ActionController {
         
     }
     
-    func hasRequirements(character:CharacterModel,action:ActionReferenceModel) -> Bool {
+    public func hasRequirements(character:CharacterModel,action:ActionReferenceModel) -> Bool {
         let reqs = action.requirements
         return hasRequirements(character: character, requirements: reqs)
     }
     
-    func hasRequirements(character:CharacterModel,requirements:[RequirementModel]) -> Bool {
+    public func hasRequirements(character:CharacterModel,requirements:[RequirementModel]) -> Bool {
         var result = true
         for m in requirements {
             switch(m.type) {
@@ -66,7 +66,7 @@ class ActionController {
         return result
     }
     
-    func takeRequirements(reqs:[RequirementModel],character:CharacterModel) {
+    public func takeRequirements(reqs:[RequirementModel],character:CharacterModel) {
         for m in reqs {
             switch(m.type) {
             case .item:
@@ -79,7 +79,7 @@ class ActionController {
         }
     }
     
-    func getResults(character:CharacterModel,action:ActionReferenceModel) -> [ResultType] {
+    public func getResults(character:CharacterModel,action:ActionReferenceModel) -> [ResultType] {
         switch(action.type) {
         case .forage:
             let item = ItemModel(ref: ref.getItem(name: "Food"))
@@ -95,13 +95,13 @@ class ActionController {
         }
     }
     
-    func endDay(character:CharacterModel) {
+    public func endDay(character:CharacterModel) {
         character.time.setToMax()
         character.satiation.add(5) //Make sure you can't get stuck, may remove later
         character.ether += 10
     }
     
-    func shouldShow(action:ActionReferenceModel,character:CharacterModel) -> Bool {
+    public func shouldShow(action:ActionReferenceModel,character:CharacterModel) -> Bool {
         let skillReqs = action.requirements.filter { $0.type == .skill}
         return self.hasRequirements(character: character, requirements: skillReqs)
     }

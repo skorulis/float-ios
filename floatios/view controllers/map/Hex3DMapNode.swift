@@ -17,9 +17,9 @@ class Hex3DMapNode: SCNNode {
     init(dungeon:DungeonModel) {
         self.dungeon = dungeon
         self.size = dungeon.size
-        let game = GameController.instance
         
-        let gen = HexGeometry(store:GameController.instance.geometry)
+        let store = GeometryStore()
+        let gen = HexGeometry(store:store)
         
         let sides = gen.sideGeometry()
         super.init()

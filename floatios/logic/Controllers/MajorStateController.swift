@@ -6,10 +6,9 @@
 //  Copyright © 2018 Skorulis. All rights reserved.
 //
 
-import UIKit
 import SKSwiftLib
 
-class MajorStateController: NSObject {
+public class MajorStateController: NSObject {
 
     let player:PlayerCharacterController
     

@@ -6,13 +6,13 @@
 //  Copyright © 2018 Skorulis. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class NameGenerator {
+public class NameGenerator {
 
     let syllables:[String] = ["ter","git","ogg","bin","tar","yel","har","ong","bik","fre","dar","car","nak","bat","bar","ber","grey","tol","nob","rat","yet","bong","kim","yal","fin","gro","stu","til","kon","dol"]
     
-    func getName() -> String {
+    public func getName() -> String {
         let count = arc4random_uniform(1) + 2
         var name = ""
         for _ in 1...count {

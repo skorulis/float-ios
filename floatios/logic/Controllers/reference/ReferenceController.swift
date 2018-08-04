@@ -11,7 +11,7 @@ import SKSwiftLib
 import FontAwesomeKit
 import SKComponents
 
-class ReferenceController {
+public class ReferenceController {
 
     let items:[String:ItemReferenceModel]
     let story:[String:StoryReferenceModel]
@@ -102,46 +102,46 @@ class ReferenceController {
         return [grass,dirt,floor,water]
     }
     
-    func getItem(name:String) -> ItemReferenceModel {
+    public func getItem(name:String) -> ItemReferenceModel {
         return items[name]!
     }
     
-    func getStory(key:String) -> StoryReferenceModel {
+    public func getStory(key:String) -> StoryReferenceModel {
         return story[key]!
     }
     
-    func getSkill(type:SkillType) -> SkillReferenceModel {
+    public func getSkill(type:SkillType) -> SkillReferenceModel {
         return skills[type]!
     }
     
-    func getAction(type:ActionType) -> ActionReferenceModel {
+    public func getAction(type:ActionType) -> ActionReferenceModel {
         return actions[type]!
     }
     
-    func getDungeonTile(type:DungeonTileType) -> DungeonTileReferenceModel {
+    public func getDungeonTile(type:DungeonTileType) -> DungeonTileReferenceModel {
         return dungeonTiles[type]!
     }
     
-    func getDungeonTile(name:String) -> DungeonTileReferenceModel {
+    public func getDungeonTile(name:String) -> DungeonTileReferenceModel {
         let type = DungeonTileType.init(rawValue: name)!
         return getDungeonTile(type: type)
     }
     
-    func getTerrain(type:TerrainType) -> TerrainReferenceModel {
+    public func getTerrain(type:TerrainType) -> TerrainReferenceModel {
         return terrain[type]!
     }
     
-    func allActions() -> [ActionReferenceModel] {
+    public func allActions() -> [ActionReferenceModel] {
         return actions.values.map { $0 }
     }
     
-    func randomSkill() -> SkillReferenceModel {
+    public func randomSkill() -> SkillReferenceModel {
         let all = Array(skills.values)
         let index = arc4random_uniform(UInt32(all.count))
         return all[Int(index)]
     }
     
-    class func readReferenceObjects(filename:String) -> [MonsterReferenceModel] {
+    public class func readReferenceObjects(filename:String) -> [MonsterReferenceModel] {
         do {
             let path = Bundle.main.path(forResource: filename, ofType: "json")!
             let data = try Data(contentsOf: URL(fileURLWithPath: path))

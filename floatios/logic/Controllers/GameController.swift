@@ -6,22 +6,20 @@
 //
 
 
-class GameController {
+public class GameController {
 
-    static let instance = GameController()
+    public static let instance = GameController()
     
-    let action:ActionController;
-    let player:PlayerCharacterController;
-    let city:CityController;
-    let npc:NPCController
-    let reference:ReferenceController
-    let majorState:MajorStateController
-    let battle:BattleController
-    let geometry:GeometryStore
+    public let action:ActionController;
+    public let player:PlayerCharacterController;
+    public let city:CityController;
+    public let npc:NPCController
+    public let reference:ReferenceController
+    public let majorState:MajorStateController
+    public let battle:BattleController
     
-    init() {
+    public init() {
         reference = ReferenceController()
-        geometry = GeometryStore()
         action = ActionController(ref:reference)
         city = CityController()
         player = PlayerCharacterController(actions: action,city:city)

@@ -6,10 +6,8 @@
 //  Copyright © 2018 Skorulis. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-
-
-class SearchResultModel: Codable {
+public class SearchResultModel: Codable {
 
 }

@@ -15,13 +15,13 @@ public enum TerrainType: String {
     case water
 }
 
-class TerrainReferenceModel: NSObject {
+public class TerrainReferenceModel {
 
-    let type:TerrainType
-    let baseColor:UIColor
-    var normalTexture:UIImage?
+    public let type:TerrainType
+    public let baseColor:UIColor
+    public var normalTexture:UIImage?
     
-    init(type:TerrainType,color:UIColor) {
+    public init(type:TerrainType,color:UIColor) {
         self.type = type
         self.baseColor = color
     }

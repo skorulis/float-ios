@@ -6,9 +6,9 @@
 //  Copyright © 2018 Skorulis. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class PlayerCharacterController {
+public class PlayerCharacterController {
 
     let player:PlayerCharacterModel
     let actionController:ActionController

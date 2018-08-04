@@ -6,9 +6,9 @@
 //  Copyright © 2018 Skorulis. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-class NPCController {
+public class NPCController {
 
     let actionController:ActionController
     let cityController:CityController

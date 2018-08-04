@@ -6,11 +6,11 @@
 //  Copyright © 2018 Skorulis. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-struct MonsterReferenceModel: Codable {
+public struct MonsterReferenceModel: Codable {
 
-    let name:String
-    let imageName:String
+    public let name:String
+    public let imageName:String
     
 }

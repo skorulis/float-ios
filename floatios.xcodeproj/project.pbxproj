@@ -67,7 +67,6 @@
 		FA73C6FA20F35152006AEF0E /* AvatarSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73C6F920F35152006AEF0E /* AvatarSelectionViewController.swift */; };
 		FA73C6FE20F353E4006AEF0E /* AvatarEmojiCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73C6FD20F353E4006AEF0E /* AvatarEmojiCellCollectionViewCell.swift */; };
 		FA73C70020F4027A006AEF0E /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73C6FF20F40279006AEF0E /* AvatarImageView.swift */; };
-		FA8344682101D10D005BCF1A /* DungeonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8344672101D10D005BCF1A /* DungeonModel.swift */; };
 		FA83446A2102F66E005BCF1A /* TileImageGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8344692102F66E005BCF1A /* TileImageGenerator.swift */; };
 		FA83446C2102F67F005BCF1A /* TileGenContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA83446B2102F67F005BCF1A /* TileGenContext.swift */; };
 		FA83446E210309C2005BCF1A /* DungeonTileReferenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA83446D210309C2005BCF1A /* DungeonTileReferenceModel.swift */; };
@@ -75,9 +74,10 @@
 		FA83447421031BAE005BCF1A /* DungeonLogicController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA83447321031BAE005BCF1A /* DungeonLogicController.swift */; };
 		FA83447621034B5D005BCF1A /* DungeonHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA83447521034B5D005BCF1A /* DungeonHeaderView.swift */; };
 		FA83447821042BDA005BCF1A /* DungeonScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA83447721042BDA005BCF1A /* DungeonScene.swift */; };
-		FA83447A210490C8005BCF1A /* GKHexMapNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA834479210490C8005BCF1A /* GKHexMapNode.swift */; };
 		FA83447C21049226005BCF1A /* TerrainReferenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA83447B21049226005BCF1A /* TerrainReferenceModel.swift */; };
 		FA9A5CCB20E97BE100C36110 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9A5CCA20E97BE100C36110 /* ItemCell.swift */; };
+		FAA604AA21154D6D00612B69 /* DungeonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA604A921154D6D00612B69 /* DungeonModel.swift */; };
+		FAA604AC21154D7B00612B69 /* GKHexMapNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA604AB21154D7B00612B69 /* GKHexMapNode.swift */; };
 		FAB4BD5120FF3D0C0081B5A6 /* Tiles.sks in Resources */ = {isa = PBXBuildFile; fileRef = FAB4BD4F20FF3D0C0081B5A6 /* Tiles.sks */; };
 		FAB4BD5720FF4CB80081B5A6 /* DungeonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB4BD5620FF4CB80081B5A6 /* DungeonViewController.swift */; };
 		FAB4BD5920FFE5BA0081B5A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAB4BD5820FFE5BA0081B5A6 /* Assets.xcassets */; };
@@ -182,7 +182,6 @@
 		FA73C6F920F35152006AEF0E /* AvatarSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSelectionViewController.swift; sourceTree = "<group>"; };
 		FA73C6FD20F353E4006AEF0E /* AvatarEmojiCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarEmojiCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		FA73C6FF20F40279006AEF0E /* AvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImageView.swift; sourceTree = "<group>"; };
-		FA8344672101D10D005BCF1A /* DungeonModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonModel.swift; sourceTree = "<group>"; };
 		FA8344692102F66E005BCF1A /* TileImageGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileImageGenerator.swift; sourceTree = "<group>"; };
 		FA83446B2102F67F005BCF1A /* TileGenContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileGenContext.swift; sourceTree = "<group>"; };
 		FA83446D210309C2005BCF1A /* DungeonTileReferenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonTileReferenceModel.swift; sourceTree = "<group>"; };
@@ -190,9 +189,10 @@
 		FA83447321031BAE005BCF1A /* DungeonLogicController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonLogicController.swift; sourceTree = "<group>"; };
 		FA83447521034B5D005BCF1A /* DungeonHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonHeaderView.swift; sourceTree = "<group>"; };
 		FA83447721042BDA005BCF1A /* DungeonScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonScene.swift; sourceTree = "<group>"; };
-		FA834479210490C8005BCF1A /* GKHexMapNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GKHexMapNode.swift; sourceTree = "<group>"; };
 		FA83447B21049226005BCF1A /* TerrainReferenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TerrainReferenceModel.swift; sourceTree = "<group>"; };
 		FA9A5CCA20E97BE100C36110 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
+		FAA604A921154D6D00612B69 /* DungeonModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DungeonModel.swift; sourceTree = "<group>"; };
+		FAA604AB21154D7B00612B69 /* GKHexMapNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GKHexMapNode.swift; sourceTree = "<group>"; };
 		FAB4BD4F20FF3D0C0081B5A6 /* Tiles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Tiles.sks; sourceTree = "<group>"; };
 		FAB4BD5620FF4CB80081B5A6 /* DungeonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonViewController.swift; sourceTree = "<group>"; };
 		FAB4BD5820FFE5BA0081B5A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -530,7 +530,9 @@
 		FA83447221031B63005BCF1A /* dungeon */ = {
 			isa = PBXGroup;
 			children = (
+				FAA604AB21154D7B00612B69 /* GKHexMapNode.swift */,
 				FA83447321031BAE005BCF1A /* DungeonLogicController.swift */,
+				FAA604A921154D6D00612B69 /* DungeonModel.swift */,
 			);
 			path = dungeon;
 			sourceTree = "<group>";
@@ -551,10 +553,8 @@
 				FA4A5DEF210C367A001EE222 /* battle */,
 				FAB4BD5620FF4CB80081B5A6 /* DungeonViewController.swift */,
 				FAB4BDED2100745C0081B5A6 /* DungeonGenerator.swift */,
-				FA8344672101D10D005BCF1A /* DungeonModel.swift */,
 				FA83447521034B5D005BCF1A /* DungeonHeaderView.swift */,
 				FA83447721042BDA005BCF1A /* DungeonScene.swift */,
-				FA834479210490C8005BCF1A /* GKHexMapNode.swift */,
 				FAF986AC2105BB78009C8F92 /* DungeonCharacterEntity.swift */,
 			);
 			path = dungeon;
@@ -867,6 +867,7 @@
 				FA569CB320E58D970094807F /* InventoryModel.swift in Sources */,
 				FA112F03211453DD00D49500 /* GeometryStore.swift in Sources */,
 				FA36928F20F083AB003988D4 /* FloatTheme.swift in Sources */,
+				FAA604AA21154D6D00612B69 /* DungeonModel.swift in Sources */,
 				FA83447821042BDA005BCF1A /* DungeonScene.swift in Sources */,
 				FA36929720F19E7D003988D4 /* StoryPieceViewController.swift in Sources */,
 				FA3AACAA21130E6B00955109 /* Hex3DMapNode.swift in Sources */,
@@ -886,6 +887,7 @@
 				FA569CB520E58D970094807F /* SkillModel.swift in Sources */,
 				FAF78EA020F73A59005F7E88 /* SkillListViewController.swift in Sources */,
 				FA4A5DF5210C4D9F001EE222 /* HexGridMath.swift in Sources */,
+				FAA604AC21154D7B00612B69 /* GKHexMapNode.swift in Sources */,
 				FA569CC120E58FC40094807F /* PlayerCharacterModel.swift in Sources */,
 				FA83446C2102F67F005BCF1A /* TileGenContext.swift in Sources */,
 				FA10722B20E84D330046C756 /* ItemReferenceModel.swift in Sources */,
@@ -896,14 +898,12 @@
 				FAF78EA220F73A97005F7E88 /* SkillProgressCell.swift in Sources */,
 				FAB4BD5720FF4CB80081B5A6 /* DungeonViewController.swift in Sources */,
 				FAB4BDEE2100745C0081B5A6 /* DungeonGenerator.swift in Sources */,
-				FA83447A210490C8005BCF1A /* GKHexMapNode.swift in Sources */,
 				FAC4171120F2BAD300C4E3B5 /* ActionReferenceModel.swift in Sources */,
 				FA8344712103150C005BCF1A /* SKTileMapNode+Additions.swift in Sources */,
 				FA569CB120E58D970094807F /* LandPlotModel.swift in Sources */,
 				FA4A5DF1210C367A001EE222 /* DungeonBattleNode.swift in Sources */,
 				FA10720E20E75A040046C756 /* CityLandController.swift in Sources */,
 				FAE629172108852E0031FE10 /* GridEntity.swift in Sources */,
-				FA8344682101D10D005BCF1A /* DungeonModel.swift in Sources */,
 				FA10720420E7256B0046C756 /* CityDetailsCell.swift in Sources */,
 				FAF986AD2105BB78009C8F92 /* DungeonCharacterEntity.swift in Sources */,
 				FAE6290E2108598D0031FE10 /* MonsterReferenceModel.swift in Sources */,

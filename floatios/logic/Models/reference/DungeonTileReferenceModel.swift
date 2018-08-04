@@ -6,7 +6,7 @@
 //  Copyright © 2018 Skorulis. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 public enum DungeonTileType:String {
     case wall = "wall"
@@ -14,19 +14,19 @@ public enum DungeonTileType:String {
     case stairsDown = "stair-down"
 }
 
-enum DungeonAction: String {
+public enum DungeonAction: String {
     case goUp
     case goDown
     case examine
 }
 
-struct DungeonTileReferenceModel {
+public struct DungeonTileReferenceModel {
 
-    let type:DungeonTileType
-    let canPass:Bool
-    let actions:[DungeonAction]
+    public let type:DungeonTileType
+    public let canPass:Bool
+    public let actions:[DungeonAction]
     
-    init(type:DungeonTileType,canPass:Bool,actions:[DungeonAction] = []) {
+    public init(type:DungeonTileType,canPass:Bool,actions:[DungeonAction] = []) {
         self.type = type
         self.canPass = canPass
         self.actions = actions

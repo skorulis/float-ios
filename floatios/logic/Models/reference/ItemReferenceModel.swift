@@ -6,11 +6,11 @@
 //  Copyright © 2018 Skorulis. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-struct ItemReferenceModel: Codable {
+public struct ItemReferenceModel: Codable {
 
-    let name:String
-    let description:String
+    public let name:String
+    public let description:String
     
 }
