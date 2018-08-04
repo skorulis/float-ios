@@ -18,6 +18,10 @@ def shared_pods
     pod 'SCNMathExtensions'
 end
 
+target 'FLGame' do
+    shared_pods
+end
+
 target 'floatios' do
 	shared_pods
 end

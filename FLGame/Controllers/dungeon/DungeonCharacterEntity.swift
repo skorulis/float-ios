@@ -6,26 +6,25 @@
 //  Copyright © 2018 Skorulis. All rights reserved.
 //
 
-import UIKit
 import GameplayKit
 
 //Represents a character that can move around the dungeon
-class DungeonCharacterEntity: GridEntity {
+public class DungeonCharacterEntity: GridEntity {
 
-    let ident:String
-    let character:CharacterModel
+    public let ident:String
+    public let character:CharacterModel
     
-    init(char:CharacterModel) {
+    public init(char:CharacterModel) {
         ident = UUID().uuidString
         self.character = char
         super.init()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func isEqual(_ object: Any?) -> Bool {
+    public override func isEqual(_ object: Any?) -> Bool {
         if let dc = object as? DungeonCharacterEntity {
             return dc.ident == self.ident
         }

@@ -8,7 +8,7 @@
 public class ItemModel: Codable {
  
     public let ref:ItemReferenceModel
-    var quantity:Int
+    public var quantity:Int
     
     public init(ref:ItemReferenceModel,quantity:Int = 1) {
         self.ref = ref

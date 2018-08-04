@@ -12,15 +12,15 @@ import GameplayKit
 
 public class DungeonModel: NSObject {
     
-    var player:PlayerCharacterModel
-    var playerNode:DungeonCharacterEntity
+    public var player:PlayerCharacterModel
+    public var playerNode:DungeonCharacterEntity
     
-    var nodes:[GKHexMapNode] = []
-    var width:Int
-    var height:Int
-    var graph:GKGraph
+    public var nodes:[GKHexMapNode] = []
+    public var width:Int
+    public var height:Int
+    public var graph:GKGraph
     
-    var size:vector_int2 {
+    public var size:vector_int2 {
         return vector_int2(Int32(width),Int32(height))
     }
     
@@ -39,7 +39,7 @@ public class DungeonModel: NSObject {
         graph = GKGraph(nodes)   
     }
     
-    func updateConnectionGraph() {
+    public func updateConnectionGraph() {
         for node in nodes {
             node.removeAllConnections()
         }
@@ -108,12 +108,12 @@ public class DungeonModel: NSObject {
         return graph.findPath(from: fromNode, to: node) as! [GKHexMapNode]
     }
     
-    func addMonster(entity:GridEntity) {
+    public func addMonster(entity:GridEntity) {
         let node = self.nodeAt(x: entity.x, y: entity.y)!
         node.beings.append(entity)
     }
     
-    func allMonsters() -> [GridEntity] {
+    public func allMonsters() -> [GridEntity] {
         var all:[GridEntity] = []
         for node in self.nodes {
             all.append(contentsOf: node.beings)

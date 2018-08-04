@@ -8,6 +8,7 @@
 
 import UIKit
 import GameplayKit
+import FLGame
 
 class DungeonGenerator {
 

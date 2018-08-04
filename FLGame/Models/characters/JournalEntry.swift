@@ -6,12 +6,12 @@
 //  Copyright © 2018 Skorulis. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
-struct JournalEntry: Codable {
+public struct JournalEntry: Codable {
 
-    let avatar:String
-    let story:StoryReferenceModel
+    public let avatar:String
+    public let story:StoryReferenceModel
 
     init(character:CharacterModel,story:StoryReferenceModel) {
         self.avatar = character.avatarIcon

@@ -10,7 +10,7 @@ import Foundation
 
 public class PlayerCharacterController {
 
-    let player:PlayerCharacterModel
+    public let player:PlayerCharacterModel
     let actionController:ActionController
     let cityController:CityController
     
@@ -22,26 +22,26 @@ public class PlayerCharacterController {
         self.cityController.add(occupant:player.base)
     }
     
-    func performAction(action:ActionReferenceModel) {
+    public func performAction(action:ActionReferenceModel) {
         self.actionController.performAction(character: player.base, action: action)
         player.stats.didPerformAction(action: action.type)
     }
     
-    func dayFinished() {
+    public func dayFinished() {
         actionController.endDay(character: player.base)
     }
     
-    func addJournalEntry(story:StoryReferenceModel) -> JournalEntry {
+    public func addJournalEntry(story:StoryReferenceModel) -> JournalEntry {
         return addJournalEntry(story: story, character: player.base)
     }
     
-    func addJournalEntry(story:StoryReferenceModel,character:CharacterModel) -> JournalEntry {
+    public func addJournalEntry(story:StoryReferenceModel,character:CharacterModel) -> JournalEntry {
         let entry = JournalEntry(character: character, story: story)
         player.journal.append(entry)
         return entry
     }
     
-    func character() -> CharacterModel {
+    public func character() -> CharacterModel {
         return self.player.base
     }
     

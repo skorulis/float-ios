@@ -8,6 +8,7 @@
 
 import UIKit
 import SKCollectionView
+import FLGame
 
 private let reuseIdentifier = "Cell"
 

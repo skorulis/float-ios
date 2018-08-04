@@ -27,15 +27,15 @@ public final class MaxValueField: Codable {
         self.value = max(min(self.value + amount,self.maxValue),0)
     }
     
-    static func +=(left:MaxValueField,right:Int) {
+    public static func +=(left:MaxValueField,right:Int) {
         left.add(right)
     }
     
-    static func -=(left:MaxValueField,right:Int) {
+    public static func -=(left:MaxValueField,right:Int) {
         left.add(-right)
     }
     
-    var description:String {
+    public var description:String {
         return "\(value)/\(maxValue)"
     }
     

@@ -8,6 +8,7 @@
 
 import UIKit
 import SKCollectionView
+import FLGame
 
 final class StoryPieceCell: UICollectionViewCell, AutoSizeModelCell {
     

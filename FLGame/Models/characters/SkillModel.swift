@@ -7,9 +7,9 @@
 
 public class SkillModel:Codable {
 
-    let type:SkillReferenceModel
-    var level:Int
-    var xp:Float
+    public let type:SkillReferenceModel
+    public var level:Int
+    public var xp:Float
     
     public init(type:SkillReferenceModel,level:Int = 0) {
         self.type = type;
@@ -21,27 +21,27 @@ public class SkillModel:Codable {
 
 public class SkillListModel:Codable {
     
-    var skills:[SkillModel]
+    public var skills:[SkillModel]
     
     init(skills:[SkillModel] = []) {
         self.skills = skills
     }
     
-    func add(skill:SkillModel) {
+    public func add(skill:SkillModel) {
         if findSkill(type: skill.type.name) == nil {
             skills.append(skill)
         }
     }
     
-    func findSkill(type:SkillType) -> SkillModel? {
+    public func findSkill(type:SkillType) -> SkillModel? {
         return self.skills.filter { $0.type.name == type}.first
     }
     
-    func skillLevel(type:SkillType) -> Int {
+    public func skillLevel(type:SkillType) -> Int {
         return findSkill(type: type)?.level ?? 0
     }
     
-    func train(skill:SkillModel) {
+    public func train(skill:SkillModel) {
         if let existing = findSkill(type: skill.type.name) {
             existing.level += 1
         } else {
@@ -50,7 +50,7 @@ public class SkillListModel:Codable {
         }
     }
     
-    func trainable(into:SkillListModel) -> SkillListModel {
+    public func trainable(into:SkillListModel) -> SkillListModel {
         let skills = self.skills.filter { (skill) -> Bool in
             return into.skillLevel(type: skill.type.name) < skill.level
         }

@@ -8,7 +8,7 @@
 
 public class BattleController {
 
-    func performAttack(from:CharacterModel,to:MonsterEntity) {
+    public func performAttack(from:CharacterModel,to:MonsterEntity) {
         from.health -= 10
     }
     

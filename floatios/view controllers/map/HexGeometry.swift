@@ -8,6 +8,7 @@
 
 import SceneKit
 import SCNMathExtensions
+import FLGame
 
 class HexGeometry: NSObject {
 

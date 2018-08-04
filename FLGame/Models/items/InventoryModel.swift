@@ -7,24 +7,24 @@
 
 public class InventoryModel: Codable {
 
-    var capacity:Int
-    var items:[ItemModel]
+    public var capacity:Int
+    public var items:[ItemModel]
     
     public init() {
         items = []
         capacity = 5
     }
     
-    func hasItem(name:String,quantity:Int) -> Bool {
+    public func hasItem(name:String,quantity:Int) -> Bool {
         guard let item = findItem(name: name) else { return false }
         return item.quantity >= quantity
     }
     
-    func findItem(name:String) -> ItemModel? {
+    public func findItem(name:String) -> ItemModel? {
         return items.filter { $0.ref.name == name}.first
     }
     
-    func consumeItem(name:String,quantity:Int)  {
+    public func consumeItem(name:String,quantity:Int)  {
         for i in 0..<items.count {
             let item = items[i]
             if (item.ref.name == name) {
@@ -37,7 +37,7 @@ public class InventoryModel: Codable {
         }
     }
     
-    func add(item:ItemModel) {
+    public func add(item:ItemModel) {
         if let existing = findItem(name: item.ref.name) {
             existing.quantity += item.quantity
         } else {

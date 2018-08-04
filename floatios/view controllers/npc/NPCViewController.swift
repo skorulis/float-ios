@@ -8,6 +8,7 @@
 
 import UIKit
 import SKCollectionView
+import FLGame
 
 class NPCViewController: SKCVFlowLayoutCollectionViewController {
 

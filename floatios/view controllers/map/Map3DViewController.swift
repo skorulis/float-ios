@@ -9,6 +9,7 @@
 import UIKit
 import SceneKit
 import SnapKit
+import FLGame
 
 class Map3DViewController: UIViewController {
 

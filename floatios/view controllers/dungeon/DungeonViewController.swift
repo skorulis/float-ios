@@ -10,6 +10,7 @@ import UIKit
 import SpriteKit
 import SnapKit
 import SpriteKit_Spring
+import FLGame
 
 class DungeonViewController: UIViewController {
     

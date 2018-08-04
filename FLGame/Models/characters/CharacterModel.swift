@@ -7,15 +7,15 @@
 
 final public class CharacterModel: Codable {
 
-    var name:String;
-    var avatarIcon = "👤"
-    let satiation:MaxValueField
-    let time:MaxValueField
-    let health:MaxValueField
-    let mana:MaxValueField
-    var ether:Int
-    let inventory:InventoryModel
-    let skills:SkillListModel
+    public var name:String;
+    public var avatarIcon = "👤"
+    public let satiation:MaxValueField
+    public let time:MaxValueField
+    public let health:MaxValueField
+    public let mana:MaxValueField
+    public var ether:Int
+    public let inventory:InventoryModel
+    public let skills:SkillListModel
     
     init(name:String="") {
         self.name = name
@@ -28,11 +28,11 @@ final public class CharacterModel: Codable {
         skills = SkillListModel()
     }
     
-    func hasResource(name:String,quantity:Int) -> Bool {
+    public func hasResource(name:String,quantity:Int) -> Bool {
         return self.resourceQuantity(name: name) >= quantity
     }
     
-    func resourceQuantity(name:String) -> Int {
+    public func resourceQuantity(name:String) -> Int {
         if (name == "satiation") {
             return satiation.value
         } else if (name == "time") {
@@ -43,7 +43,7 @@ final public class CharacterModel: Codable {
         return 0 //Shouldn't happen
     }
     
-    func takeResource(name:String,quantity:Int) {
+    public func takeResource(name:String,quantity:Int) {
         if (name == "satiation") {
             satiation -= quantity
         } else if (name == "time") {
@@ -53,7 +53,7 @@ final public class CharacterModel: Codable {
         }
     }
     
-    func addResource(name:String,quantity:Int) {
+    public func addResource(name:String,quantity:Int) {
         if (name == "satiation") {
             satiation += quantity
         } else if (name == "time") {
@@ -63,15 +63,15 @@ final public class CharacterModel: Codable {
         }
     }
     
-    func addSkill(skill:SkillModel) {
+    public func addSkill(skill:SkillModel) {
         self.skills.add(skill: skill)
     }
     
-    func addXP(skill:String,quantity:Int) {
+    public func addXP(skill:String,quantity:Int) {
         //TODO: Add skills
     }
     
-    func hasSkill(skill:SkillType) -> Bool {
+    public func hasSkill(skill:SkillType) -> Bool {
         return self.skills.skillLevel(type: skill) > 0
     }
     

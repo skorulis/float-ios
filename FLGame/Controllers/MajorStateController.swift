@@ -10,19 +10,19 @@ import SKSwiftLib
 
 public class MajorStateController: NSObject {
 
-    let player:PlayerCharacterController
+    public let player:PlayerCharacterController
     
     init(player:PlayerCharacterController) {
         self.player = player
     }
     
-    let observers = ObserverSet<MajorStateController>()
+    public let observers = ObserverSet<MajorStateController>()
     
-    func playerHasName() -> Bool {
+    public func playerHasName() -> Bool {
         return self.player.player.base.name.count > 0
     }
     
-    func fireStateChange() {
+    public func fireStateChange() {
         observers.notify(parameters: self)
     }
     

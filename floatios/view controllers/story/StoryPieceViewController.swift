@@ -8,6 +8,7 @@
 
 import UIKit
 import SKCollectionView
+import FLGame
 
 enum StoryNextAction {
     case showVC(() -> (UIViewController))

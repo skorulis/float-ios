@@ -9,6 +9,7 @@
 import UIKit
 import SKCollectionView
 import SnapKit
+import FLGame
 
 final class ActionCell: UICollectionViewCell, SimpleModelCell {
     

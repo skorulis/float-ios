@@ -8,16 +8,16 @@
 
 import UIKit
 
-class MonsterEntity: GridEntity {
+public class MonsterEntity: GridEntity {
 
-    let ref:MonsterReferenceModel
+    public let ref:MonsterReferenceModel
     
-    init(ref:MonsterReferenceModel) {
+    public init(ref:MonsterReferenceModel) {
         self.ref = ref
         super.init()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     

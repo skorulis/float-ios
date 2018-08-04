@@ -11,9 +11,9 @@ import Foundation
 public class PlayerStatsModel {
     
     //How many times the player has performed each action
-    var actionTimeStats:[String:Int] = [:]
+    public var actionTimeStats:[String:Int] = [:]
     
-    func didPerformAction(action:ActionType) {
+    public func didPerformAction(action:ActionType) {
         let count = actionTimeStats[action.rawValue] ?? 0
         actionTimeStats[action.rawValue] = count + 1
     }
@@ -22,9 +22,9 @@ public class PlayerStatsModel {
 
 public class PlayerCharacterModel {
 
-    let base:CharacterModel
-    let stats:PlayerStatsModel
-    var journal:[JournalEntry]
+    public let base:CharacterModel
+    public let stats:PlayerStatsModel
+    public var journal:[JournalEntry]
     
     init() {
         base = CharacterModel()

@@ -10,6 +10,7 @@ import UIKit
 import SKSwiftLib
 import SpriteKit
 import FontAwesomeKit
+import FLGame
 
 class TilesGenerator: NSObject {
 

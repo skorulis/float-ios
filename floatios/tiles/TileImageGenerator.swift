@@ -8,6 +8,7 @@
 
 import UIKit
 import SpriteKit
+import FLGame
 
 class TileImageGenerator: ImageGen {
     

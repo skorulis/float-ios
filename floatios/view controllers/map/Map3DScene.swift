@@ -7,6 +7,7 @@
 //
 
 import SceneKit
+import FLGame
 
 class Map3DScene: SCNScene {
 

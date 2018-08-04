@@ -13,13 +13,13 @@ import SKComponents
 
 public class ReferenceController {
 
-    let items:[String:ItemReferenceModel]
-    let story:[String:StoryReferenceModel]
-    let skills:[SkillType:SkillReferenceModel]
-    let actions:[ActionType:ActionReferenceModel]
-    let dungeonTiles:[DungeonTileType:DungeonTileReferenceModel]
-    let terrain:[TerrainType:TerrainReferenceModel]
-    let monsters:[String:MonsterReferenceModel]
+    public let items:[String:ItemReferenceModel]
+    public let story:[String:StoryReferenceModel]
+    public let skills:[SkillType:SkillReferenceModel]
+    public let actions:[ActionType:ActionReferenceModel]
+    public let dungeonTiles:[DungeonTileType:DungeonTileReferenceModel]
+    public let terrain:[TerrainType:TerrainReferenceModel]
+    public let monsters:[String:MonsterReferenceModel]
     
     init() {
         let itemArray = ReferenceController.makeItems()

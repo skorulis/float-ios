@@ -8,6 +8,7 @@
 
 import UIKit
 import SKCollectionView
+import FLGame
 
 class PlayerViewController: SKCVFlowLayoutCollectionViewController {
 

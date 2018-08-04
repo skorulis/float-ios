@@ -7,6 +7,7 @@
 //
 
 import SceneKit
+import FLGame
 
 class Hex3DMapNode: SCNNode {
 
