@@ -58,7 +58,7 @@ class DungeonGenerator {
             for y in 0..<dungeon.height {
                 for x in 0..<dungeon.width {
                     let node = dungeon.nodeAt(x: x, y: y)
-                    node?.terrain = ref.getTerrain(type: allTerrain.randomElement()!)
+                    node?.terrain = ref.getTerrain(type: allTerrain.randomItem()!)
                 }
             }
         }

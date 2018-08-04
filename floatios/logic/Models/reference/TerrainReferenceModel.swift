@@ -19,6 +19,7 @@ class TerrainReferenceModel: NSObject {
 
     let type:TerrainType
     let baseColor:UIColor
+    var normalTexture:UIImage?
     
     init(type:TerrainType,color:UIColor) {
         self.type = type

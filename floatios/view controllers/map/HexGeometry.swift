@@ -64,7 +64,7 @@ class HexGeometry: NSObject {
         
         material.lightingModel = .physicallyBased
         material.diffuse.contents = imageGen.topHex(ref.baseColor)
-        material.normal.contents = UIImage(named: "scuffed-plastic-normal")
+        material.normal.contents = ref.normalTexture ?? UIImage(named: "scuffed-plastic-normal")
         material.metalness.contents = UIImage(named: "scuffed-plastic-metal")
         
         geometry.firstMaterial = material
