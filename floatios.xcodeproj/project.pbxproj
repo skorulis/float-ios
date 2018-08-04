@@ -78,6 +78,7 @@
 		FA9A5CCB20E97BE100C36110 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9A5CCA20E97BE100C36110 /* ItemCell.swift */; };
 		FAA604AA21154D6D00612B69 /* DungeonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA604A921154D6D00612B69 /* DungeonModel.swift */; };
 		FAA604AC21154D7B00612B69 /* GKHexMapNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA604AB21154D7B00612B69 /* GKHexMapNode.swift */; };
+		FAA604AE2115513600612B69 /* GridEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA604AD2115513500612B69 /* GridEntity.swift */; };
 		FAB4BD5120FF3D0C0081B5A6 /* Tiles.sks in Resources */ = {isa = PBXBuildFile; fileRef = FAB4BD4F20FF3D0C0081B5A6 /* Tiles.sks */; };
 		FAB4BD5720FF4CB80081B5A6 /* DungeonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB4BD5620FF4CB80081B5A6 /* DungeonViewController.swift */; };
 		FAB4BD5920FFE5BA0081B5A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAB4BD5820FFE5BA0081B5A6 /* Assets.xcassets */; };
@@ -92,7 +93,6 @@
 		FAD8518A20F4C39700227AF2 /* JournalEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD8518920F4C39700227AF2 /* JournalEntry.swift */; };
 		FAE6290E2108598D0031FE10 /* MonsterReferenceModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6290D2108598D0031FE10 /* MonsterReferenceModel.swift */; };
 		FAE62910210859F00031FE10 /* monsters.json in Resources */ = {isa = PBXBuildFile; fileRef = FAE6290F210859F00031FE10 /* monsters.json */; };
-		FAE629172108852E0031FE10 /* GridEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE629162108852E0031FE10 /* GridEntity.swift */; };
 		FAE62919210887D50031FE10 /* SpriteComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE62918210887D50031FE10 /* SpriteComponent.swift */; };
 		FAE6291B210889220031FE10 /* ASSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6291A210889220031FE10 /* ASSpriteNode.swift */; };
 		FAF5263A20FC7B550062BC7C /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5263920FC7B550062BC7C /* ProgressBar.swift */; };
@@ -193,6 +193,7 @@
 		FA9A5CCA20E97BE100C36110 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
 		FAA604A921154D6D00612B69 /* DungeonModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DungeonModel.swift; sourceTree = "<group>"; };
 		FAA604AB21154D7B00612B69 /* GKHexMapNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GKHexMapNode.swift; sourceTree = "<group>"; };
+		FAA604AD2115513500612B69 /* GridEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridEntity.swift; sourceTree = "<group>"; };
 		FAB4BD4F20FF3D0C0081B5A6 /* Tiles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Tiles.sks; sourceTree = "<group>"; };
 		FAB4BD5620FF4CB80081B5A6 /* DungeonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonViewController.swift; sourceTree = "<group>"; };
 		FAB4BD5820FFE5BA0081B5A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -207,7 +208,6 @@
 		FAD8518920F4C39700227AF2 /* JournalEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JournalEntry.swift; sourceTree = "<group>"; };
 		FAE6290D2108598D0031FE10 /* MonsterReferenceModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsterReferenceModel.swift; sourceTree = "<group>"; };
 		FAE6290F210859F00031FE10 /* monsters.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = monsters.json; sourceTree = "<group>"; };
-		FAE629162108852E0031FE10 /* GridEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridEntity.swift; sourceTree = "<group>"; };
 		FAE62918210887D50031FE10 /* SpriteComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteComponent.swift; sourceTree = "<group>"; };
 		FAE6291A210889220031FE10 /* ASSpriteNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASSpriteNode.swift; sourceTree = "<group>"; };
 		FAF5263920FC7B550062BC7C /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
@@ -531,6 +531,7 @@
 			isa = PBXGroup;
 			children = (
 				FAA604AB21154D7B00612B69 /* GKHexMapNode.swift */,
+				FAA604AD2115513500612B69 /* GridEntity.swift */,
 				FA83447321031BAE005BCF1A /* DungeonLogicController.swift */,
 				FAA604A921154D6D00612B69 /* DungeonModel.swift */,
 			);
@@ -601,7 +602,6 @@
 		FAE62915210885140031FE10 /* component-entity */ = {
 			isa = PBXGroup;
 			children = (
-				FAE629162108852E0031FE10 /* GridEntity.swift */,
 				FAE62918210887D50031FE10 /* SpriteComponent.swift */,
 				FAE6291A210889220031FE10 /* ASSpriteNode.swift */,
 				FA4A5DFA210D711F001EE222 /* MonsterEntity.swift */,
@@ -872,6 +872,7 @@
 				FA36929720F19E7D003988D4 /* StoryPieceViewController.swift in Sources */,
 				FA3AACAA21130E6B00955109 /* Hex3DMapNode.swift in Sources */,
 				FA4A5DFB210D711F001EE222 /* MonsterEntity.swift in Sources */,
+				FAA604AE2115513600612B69 /* GridEntity.swift in Sources */,
 				FA36929920F19ED2003988D4 /* StoryPieceCell.swift in Sources */,
 				FAB4BDF1210139360081B5A6 /* TilesGenerator.swift in Sources */,
 				FA3691F820EDFCEF003988D4 /* CreatePlayerViewController.swift in Sources */,
@@ -903,7 +904,6 @@
 				FA569CB120E58D970094807F /* LandPlotModel.swift in Sources */,
 				FA4A5DF1210C367A001EE222 /* DungeonBattleNode.swift in Sources */,
 				FA10720E20E75A040046C756 /* CityLandController.swift in Sources */,
-				FAE629172108852E0031FE10 /* GridEntity.swift in Sources */,
 				FA10720420E7256B0046C756 /* CityDetailsCell.swift in Sources */,
 				FAF986AD2105BB78009C8F92 /* DungeonCharacterEntity.swift in Sources */,
 				FAE6290E2108598D0031FE10 /* MonsterReferenceModel.swift in Sources */,
