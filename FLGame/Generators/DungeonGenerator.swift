@@ -28,6 +28,22 @@ public class DungeonGenerator {
     }
     
     public func generateDungeon(type:GeneratorType) -> DungeonModel {
+
+        if type == .dungeon {
+            generateDungeon()
+        } else if (type == .outdoors) {
+            generateOutdoors()
+        }
+        
+        dungeon.updateConnectionGraph()
+        if (type == .outdoors) {
+            makeCircular()
+        }
+        
+        return dungeon
+    }
+    
+    private func generateDungeon() {
         for x in 0..<size {
             for y in 0..<size {
                 let node = dungeon.nodeAt(x: x, y: y)
@@ -38,18 +54,6 @@ public class DungeonGenerator {
             }
         }
         
-        if type == .dungeon {
-            generateDungeon()
-        } else if (type == .outdoors) {
-            generateOutdoors()
-        }
-        
-        dungeon.updateConnectionGraph()
-        
-        return dungeon
-    }
-    
-    private func generateDungeon() {
         for _ in 0...10 {
             addRoom()
         }
@@ -72,6 +76,22 @@ public class DungeonGenerator {
                 let node = dungeon.nodeAt(x: x, y: y)
                 node?.terrain = ref.getTerrain(type: allTerrain.randomItem()!)
                 node?.yOffset = Int(arc4random_uniform(2))
+            }
+        }
+    }
+    
+    private func makeCircular() {
+        guard dungeon.height % 2 == 1 && dungeon.width % 2 == 1 else {return}
+        let maxPath = 1 + dungeon.height / 2
+        let centre = CGPoint(x:dungeon.width/2, y:dungeon.height/2)
+        for y in 0..<dungeon.height {
+            for x in 0..<dungeon.width {
+                let point = CGPoint(x: x, y: y)
+                let node = dungeon.nodeAt(x: x, y: y)
+                let path = dungeon.path(to: point, from: centre)
+                if (path.count > maxPath) {
+                    node?.terrain = ref.getTerrain(type: .void)
+                }
             }
         }
     }

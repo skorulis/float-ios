@@ -98,8 +98,9 @@ public class ReferenceController {
         let dirt = TerrainReferenceModel(type: .dirt,color: SKTheme.theme.color.pumpkin)
         let floor = TerrainReferenceModel(type: .floor,color: SKTheme.theme.color.concrete)
         let water = TerrainReferenceModel(type: .water,color: SKTheme.theme.color.belizeHole)
+        let void = TerrainReferenceModel(type: .void,color: UIColor.black)
         water.normalTexture = UIImage(named: "terrasses_water_normal")
-        return [grass,dirt,floor,water]
+        return [grass,dirt,floor,water,void]
     }
     
     public func getItem(name:String) -> ItemReferenceModel {

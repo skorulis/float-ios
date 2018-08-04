@@ -35,6 +35,9 @@ public class Hex3DMapNode: SCNNode {
             let rowY = Float(y) * yMult
             for x in 0..<size.x {
                 let dungeonNode = dungeon.nodeAt(x: Int(x), y: Int(y))!
+                if dungeonNode.terrain.type == .void {
+                    continue
+                }
                 let terrain = dungeonNode.terrain
                 let hexGeometry = gen.hexGeometry(ref: terrain)
                 

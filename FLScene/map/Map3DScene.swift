@@ -50,6 +50,24 @@ public class Map3DScene: SCNScene {
         let act1 = SCNAction.moveBy(x: 0, y: -0.5, z: 0, duration: 5)
         let act2 = SCNAction.moveBy(x: 0, y: 0.5, z: 0, duration: 5)
         mapGrid.runAction(SCNAction.repeatForever(SCNAction.sequence([act1,act2])))
+        
+        addSpike(at: SCNVector3(10,0,8))
+        addSpike(at: SCNVector3(-10,0,-8))
+    }
+    
+    private func addSpike(at:SCNVector3) {
+        let material = SCNMaterial()
+        
+        material.diffuse.contents = UIColor.brown
+        //material.normal.contents = UIImage(named: "sandstonecliff-normal")
+        material.lightingModel = .physicallyBased
+        
+        let geom = SCNPyramid(width: 2, height: 10, length: 2)
+        geom.firstMaterial = material
+        let node = SCNNode(geometry: geom)
+        self.rootNode.addChildNode(node)
+        node.position = at
+        node.position.y = -10
     }
     
     public func makeMap() -> Hex3DMapNode {
@@ -57,6 +75,22 @@ public class Map3DScene: SCNScene {
         let sphere = mapGrid.boundingSphere
         mapGrid.position = SCNVector3(-sphere.center.x,0,-sphere.center.z)
         return mapGrid
+    }
+    
+    class func collada2SCNNode(filepath:String) -> SCNNode {
+        
+        let node = SCNNode()
+        let scene = SCNScene(named: filepath)
+        let nodeArray = scene!.rootNode.childNodes
+        
+        for childNode in nodeArray {
+            
+            node.addChildNode(childNode as SCNNode)
+            
+        }
+        
+        return node
+        
     }
     
 }
