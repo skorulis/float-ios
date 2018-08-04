@@ -11,7 +11,6 @@
 		D7ADF30D0522FA469DC67C80 /* Pods_floatiosTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0E85B4751AB4B1861E3EEC2E /* Pods_floatiosTests.framework */; };
 		FA10720220E725130046C756 /* CityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10720120E725130046C756 /* CityViewController.swift */; };
 		FA10720420E7256B0046C756 /* CityDetailsCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10720320E7256B0046C756 /* CityDetailsCell.swift */; };
-		FA10720A20E73D1B0046C756 /* NameGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10720920E73D1B0046C756 /* NameGenerator.swift */; };
 		FA10720E20E75A040046C756 /* CityLandController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10720D20E75A040046C756 /* CityLandController.swift */; };
 		FA10721D20E75CBB0046C756 /* PlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10721A20E75CBB0046C756 /* PlayerViewController.swift */; };
 		FA10721E20E75CBB0046C756 /* ActionCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10721B20E75CBB0046C756 /* ActionCell.swift */; };
@@ -43,7 +42,6 @@
 		FA3AACAA21130E6B00955109 /* Hex3DMapNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3AACA921130E6B00955109 /* Hex3DMapNode.swift */; };
 		FA4A5DF1210C367A001EE222 /* DungeonBattleNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4A5DF0210C367A001EE222 /* DungeonBattleNode.swift */; };
 		FA4A5DF3210C3702001EE222 /* BattleUIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4A5DF2210C3702001EE222 /* BattleUIController.swift */; };
-		FA4A5DF5210C4D9F001EE222 /* HexGridMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4A5DF4210C4D9F001EE222 /* HexGridMath.swift */; };
 		FA4A5DFB210D711F001EE222 /* MonsterEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4A5DFA210D711F001EE222 /* MonsterEntity.swift */; };
 		FA4A5DFE210D7D15001EE222 /* BattleController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4A5DFD210D7D15001EE222 /* BattleController.swift */; };
 		FA569C6F20E589C40094807F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA569C6E20E589C40094807F /* AppDelegate.swift */; };
@@ -79,6 +77,8 @@
 		FAA604AA21154D6D00612B69 /* DungeonModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA604A921154D6D00612B69 /* DungeonModel.swift */; };
 		FAA604AC21154D7B00612B69 /* GKHexMapNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA604AB21154D7B00612B69 /* GKHexMapNode.swift */; };
 		FAA604AE2115513600612B69 /* GridEntity.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA604AD2115513500612B69 /* GridEntity.swift */; };
+		FAA604BF2115601000612B69 /* HexGridMath.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA604BD2115601000612B69 /* HexGridMath.swift */; };
+		FAA604C02115601000612B69 /* NameGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAA604BE2115601000612B69 /* NameGenerator.swift */; };
 		FAB4BD5120FF3D0C0081B5A6 /* Tiles.sks in Resources */ = {isa = PBXBuildFile; fileRef = FAB4BD4F20FF3D0C0081B5A6 /* Tiles.sks */; };
 		FAB4BD5720FF4CB80081B5A6 /* DungeonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB4BD5620FF4CB80081B5A6 /* DungeonViewController.swift */; };
 		FAB4BD5920FFE5BA0081B5A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAB4BD5820FFE5BA0081B5A6 /* Assets.xcassets */; };
@@ -122,7 +122,6 @@
 		A8C261F0D0E00D7A1479A134 /* Pods-floatios.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-floatios.debug.xcconfig"; path = "Pods/Target Support Files/Pods-floatios/Pods-floatios.debug.xcconfig"; sourceTree = "<group>"; };
 		FA10720120E725130046C756 /* CityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityViewController.swift; sourceTree = "<group>"; };
 		FA10720320E7256B0046C756 /* CityDetailsCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityDetailsCell.swift; sourceTree = "<group>"; };
-		FA10720920E73D1B0046C756 /* NameGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NameGenerator.swift; sourceTree = "<group>"; };
 		FA10720D20E75A040046C756 /* CityLandController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CityLandController.swift; sourceTree = "<group>"; };
 		FA10721A20E75CBB0046C756 /* PlayerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PlayerViewController.swift; sourceTree = "<group>"; };
 		FA10721B20E75CBB0046C756 /* ActionCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ActionCell.swift; sourceTree = "<group>"; };
@@ -154,7 +153,6 @@
 		FA3AACA921130E6B00955109 /* Hex3DMapNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Hex3DMapNode.swift; sourceTree = "<group>"; };
 		FA4A5DF0210C367A001EE222 /* DungeonBattleNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DungeonBattleNode.swift; sourceTree = "<group>"; };
 		FA4A5DF2210C3702001EE222 /* BattleUIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleUIController.swift; sourceTree = "<group>"; };
-		FA4A5DF4210C4D9F001EE222 /* HexGridMath.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HexGridMath.swift; sourceTree = "<group>"; };
 		FA4A5DFA210D711F001EE222 /* MonsterEntity.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MonsterEntity.swift; sourceTree = "<group>"; };
 		FA4A5DFD210D7D15001EE222 /* BattleController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleController.swift; sourceTree = "<group>"; };
 		FA569C6B20E589C40094807F /* floatios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = floatios.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -194,6 +192,8 @@
 		FAA604A921154D6D00612B69 /* DungeonModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DungeonModel.swift; sourceTree = "<group>"; };
 		FAA604AB21154D7B00612B69 /* GKHexMapNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GKHexMapNode.swift; sourceTree = "<group>"; };
 		FAA604AD2115513500612B69 /* GridEntity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GridEntity.swift; sourceTree = "<group>"; };
+		FAA604BD2115601000612B69 /* HexGridMath.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HexGridMath.swift; sourceTree = "<group>"; };
+		FAA604BE2115601000612B69 /* NameGenerator.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NameGenerator.swift; sourceTree = "<group>"; };
 		FAB4BD4F20FF3D0C0081B5A6 /* Tiles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Tiles.sks; sourceTree = "<group>"; };
 		FAB4BD5620FF4CB80081B5A6 /* DungeonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonViewController.swift; sourceTree = "<group>"; };
 		FAB4BD5820FFE5BA0081B5A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -280,15 +280,6 @@
 				FAF5263920FC7B550062BC7C /* ProgressBar.swift */,
 			);
 			path = base;
-			sourceTree = "<group>";
-		};
-		FA10720820E73D0B0046C756 /* Util */ = {
-			isa = PBXGroup;
-			children = (
-				FA10720920E73D1B0046C756 /* NameGenerator.swift */,
-				FA4A5DF4210C4D9F001EE222 /* HexGridMath.swift */,
-			);
-			path = Util;
 			sourceTree = "<group>";
 		};
 		FA10721920E75CBB0046C756 /* player */ = {
@@ -441,7 +432,7 @@
 		FA569C9F20E58D960094807F /* logic */ = {
 			isa = PBXGroup;
 			children = (
-				FA10720820E73D0B0046C756 /* Util */,
+				FAA604BC2115601000612B69 /* Util */,
 				FA569CA020E58D960094807F /* Models */,
 				FA569CAC20E58D960094807F /* Controllers */,
 			);
@@ -536,6 +527,15 @@
 				FAA604A921154D6D00612B69 /* DungeonModel.swift */,
 			);
 			path = dungeon;
+			sourceTree = "<group>";
+		};
+		FAA604BC2115601000612B69 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				FAA604BD2115601000612B69 /* HexGridMath.swift */,
+				FAA604BE2115601000612B69 /* NameGenerator.swift */,
+			);
+			path = Util;
 			sourceTree = "<group>";
 		};
 		FAB4BD4E20FF3CE00081B5A6 /* resources */ = {
@@ -842,6 +842,7 @@
 				FA112F0921146DB700D49500 /* ImageGen.swift in Sources */,
 				FA569CB220E58D970094807F /* CityModel.swift in Sources */,
 				FA569CBA20E58D970094807F /* CityController.swift in Sources */,
+				FAA604C02115601000612B69 /* NameGenerator.swift in Sources */,
 				FA569CB920E58D970094807F /* GameController.swift in Sources */,
 				FA36929D20F1AAB0003988D4 /* StoryReferenceModel.swift in Sources */,
 				FAE62919210887D50031FE10 /* SpriteComponent.swift in Sources */,
@@ -862,7 +863,6 @@
 				FA10723420E8ACBE0046C756 /* InventoryViewController.swift in Sources */,
 				FA569CBB20E58D970094807F /* ActionController.swift in Sources */,
 				FA112F05211467CC00D49500 /* Hex3DMath.swift in Sources */,
-				FA10720A20E73D1B0046C756 /* NameGenerator.swift in Sources */,
 				FAF986AF2105CFAB009C8F92 /* TypeConversions.swift in Sources */,
 				FA569CB320E58D970094807F /* InventoryModel.swift in Sources */,
 				FA112F03211453DD00D49500 /* GeometryStore.swift in Sources */,
@@ -873,6 +873,7 @@
 				FA3AACAA21130E6B00955109 /* Hex3DMapNode.swift in Sources */,
 				FA4A5DFB210D711F001EE222 /* MonsterEntity.swift in Sources */,
 				FAA604AE2115513600612B69 /* GridEntity.swift in Sources */,
+				FAA604BF2115601000612B69 /* HexGridMath.swift in Sources */,
 				FA36929920F19ED2003988D4 /* StoryPieceCell.swift in Sources */,
 				FAB4BDF1210139360081B5A6 /* TilesGenerator.swift in Sources */,
 				FA3691F820EDFCEF003988D4 /* CreatePlayerViewController.swift in Sources */,
@@ -887,7 +888,6 @@
 				FA10723120E88AF70046C756 /* SectionHeaderView.swift in Sources */,
 				FA569CB520E58D970094807F /* SkillModel.swift in Sources */,
 				FAF78EA020F73A59005F7E88 /* SkillListViewController.swift in Sources */,
-				FA4A5DF5210C4D9F001EE222 /* HexGridMath.swift in Sources */,
 				FAA604AC21154D7B00612B69 /* GKHexMapNode.swift in Sources */,
 				FA569CC120E58FC40094807F /* PlayerCharacterModel.swift in Sources */,
 				FA83446C2102F67F005BCF1A /* TileGenContext.swift in Sources */,
@@ -1081,10 +1081,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X4S6MUZL2D;
 				INFOPLIST_FILE = floatios/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.skorulis.floatios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1100,10 +1097,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X4S6MUZL2D;
 				INFOPLIST_FILE = floatios/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.skorulis.floatios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1120,11 +1114,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X4S6MUZL2D;
 				INFOPLIST_FILE = floatiosTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.skorulis.floatiosTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1142,11 +1132,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X4S6MUZL2D;
 				INFOPLIST_FILE = floatiosTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.skorulis.floatiosTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

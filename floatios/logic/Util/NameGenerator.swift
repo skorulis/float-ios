@@ -10,6 +10,10 @@ import Foundation
 
 public class NameGenerator {
 
+    public init() {
+        
+    }
+    
     let syllables:[String] = ["ter","git","ogg","bin","tar","yel","har","ong","bik","fre","dar","car","nak","bat","bar","ber","grey","tol","nob","rat","yet","bong","kim","yal","fin","gro","stu","til","kon","dol"]
     
     public func getName() -> String {
