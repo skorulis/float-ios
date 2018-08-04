@@ -6,7 +6,6 @@
 //  Copyright © 2018 Skorulis. All rights reserved.
 //
 
-import UIKit
 import GameplayKit
 
 public class GKHexMapNode: GKGridGraphNode {

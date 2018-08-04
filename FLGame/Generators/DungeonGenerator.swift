@@ -6,22 +6,20 @@
 //  Copyright © 2018 Skorulis. All rights reserved.
 //
 
-import UIKit
 import GameplayKit
-import FLGame
 
-class DungeonGenerator {
+public class DungeonGenerator {
 
-    enum GeneratorType {
+    public enum GeneratorType {
         case dungeon
         case outdoors
     }
     
-    let dungeon:DungeonModel
-    let size:Int
-    let ref:ReferenceController
+    public let dungeon:DungeonModel
+    public let size:Int
+    public let ref:ReferenceController
     
-    init(size:Int,ref:ReferenceController,player:PlayerCharacterModel) {
+    public init(size:Int,ref:ReferenceController,player:PlayerCharacterModel) {
         self.ref = ref
         let baseTerrain = ref.getTerrain(type: .grass)
         
@@ -29,7 +27,7 @@ class DungeonGenerator {
         self.size = size
     }
     
-    func generateDungeon(type:GeneratorType) -> DungeonModel {
+    public func generateDungeon(type:GeneratorType) -> DungeonModel {
         for x in 0..<size {
             for y in 0..<size {
                 let node = dungeon.nodeAt(x: x, y: y)
@@ -69,7 +67,7 @@ class DungeonGenerator {
         return dungeon
     }
     
-    func addRoom() {
+    private func addRoom() {
         let x = arc4random_uniform(UInt32(size - 10))
         let y = arc4random_uniform(UInt32(size - 10))
         
@@ -91,14 +89,14 @@ class DungeonGenerator {
         }
     }
     
-    func addStairs(up:Bool) -> vector_int2 {
+    private func addStairs(up:Bool) -> vector_int2 {
         let pos = randomEmptyPoint()
         let node = dungeon.nodeAt(vec:pos)
         node?.fixture = up ? ref.getDungeonTile(type: .stairsUp) : ref.getDungeonTile(type: .stairsDown)
         return pos
     }
     
-    func randomEmptyPoint() -> vector_int2 {
+    private func randomEmptyPoint() -> vector_int2 {
         let x = arc4random_uniform(UInt32(size - 2)) + 1
         let y = arc4random_uniform(UInt32(size - 2)) + 1
         
@@ -112,7 +110,7 @@ class DungeonGenerator {
         return vector_int2(Int32(x),Int32(y))
     }
     
-    func addMonster() {
+    private func addMonster() {
         let index: Int = Int(arc4random_uniform(UInt32(ref.monsters.count)))
         let monsterRef = Array(ref.monsters.values)[index]
         let monster = MonsterEntity(ref: monsterRef)
@@ -120,7 +118,7 @@ class DungeonGenerator {
         dungeon.addMonster(entity: monster)
     }
     
-    func isEdge(x:Int,y:Int,size:Int) -> Bool { 
+    private func isEdge(x:Int,y:Int,size:Int) -> Bool {
         return x == 0 || y == 0 || x == size - 1 || y == size - 1
     }
     
