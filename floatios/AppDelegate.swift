@@ -8,6 +8,7 @@
 
 import UIKit
 import FontAwesomeKit
+import FLScene
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {

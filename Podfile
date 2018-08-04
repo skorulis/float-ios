@@ -22,6 +22,10 @@ target 'FLGame' do
     shared_pods
 end
 
+target 'FLScene' do
+    shared_pods
+end
+
 target 'floatios' do
 	shared_pods
 end
