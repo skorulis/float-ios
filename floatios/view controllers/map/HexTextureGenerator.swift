@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SKSwiftLib
 
 public class HexTextureGenerator: ImageGen {
 

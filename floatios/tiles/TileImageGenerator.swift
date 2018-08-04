@@ -9,6 +9,7 @@
 import UIKit
 import SpriteKit
 import FLGame
+import SKSwiftLib
 
 class TileImageGenerator: ImageGen {
     
