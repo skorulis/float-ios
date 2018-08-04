@@ -53,10 +53,12 @@ class DungeonGenerator {
                 addMonster()
             }
         } else if (type == .outdoors) {
+            let allTerrain:[TerrainType] = [.grass,.water,.dirt]
+            
             for y in 0..<dungeon.height {
                 for x in 0..<dungeon.width {
                     let node = dungeon.nodeAt(x: x, y: y)
-                    node?.terrain = ref.getTerrain(type: .grass)
+                    node?.terrain = ref.getTerrain(type: allTerrain.randomElement()!)
                 }
             }
         }

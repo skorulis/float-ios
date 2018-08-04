@@ -10,7 +10,7 @@ import SceneKit
 
 class Map3DScene: SCNScene {
 
-    //let mapGrid:Hex3DMapNode
+    var mapGrid:Hex3DMapNode!
     
     let dungeon:DungeonModel
     
@@ -43,13 +43,12 @@ class Map3DScene: SCNScene {
         
         self.background.contents = imageNames.map { UIImage(named: $0)}
         
-        //let mapGrid = Hex3DMapNode(size: vector_int2(2,2))
-        //mapGrid.position = SCNVector3(0,0,15)
-        //rootNode.addChildNode(mapGrid)
+        mapGrid = self.makeMap()
+        self.rootNode.addChildNode(mapGrid)
     }
     
     func makeMap() -> Hex3DMapNode {
-        let mapGrid = Hex3DMapNode(size: vector_int2(Int32(dungeon.width),Int32(dungeon.height)))
+        let mapGrid = Hex3DMapNode(dungeon: dungeon)
         let sphere = mapGrid.boundingSphere
         mapGrid.position = SCNVector3(-sphere.center.x,0,-sphere.center.z)
         return mapGrid

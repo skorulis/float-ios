@@ -415,6 +415,7 @@
 		FA569C6D20E589C40094807F /* floatios */ = {
 			isa = PBXGroup;
 			children = (
+				FA772996211512F600792875 /* playgrounds */,
 				FAE62915210885140031FE10 /* component-entity */,
 				FA83446F210314A9005BCF1A /* util */,
 				FAB4BD4E20FF3CE00081B5A6 /* resources */,
@@ -508,6 +509,13 @@
 				FA73C6FF20F40279006AEF0E /* AvatarImageView.swift */,
 			);
 			path = avatar;
+			sourceTree = "<group>";
+		};
+		FA772996211512F600792875 /* playgrounds */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = playgrounds;
 			sourceTree = "<group>";
 		};
 		FA83446F210314A9005BCF1A /* util */ = {

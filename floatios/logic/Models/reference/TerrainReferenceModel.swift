@@ -12,6 +12,7 @@ public enum TerrainType: String {
     case grass
     case dirt
     case floor
+    case water
 }
 
 class TerrainReferenceModel: NSObject {

@@ -63,8 +63,7 @@ class HexGeometry: NSObject {
         let material = SCNMaterial()
         
         material.lightingModel = .physicallyBased
-        material.diffuse.contents = ref.baseColor
-        material.diffuse.contents = imageGen.topHex(UIColor.brown)
+        material.diffuse.contents = imageGen.topHex(ref.baseColor)
         material.normal.contents = UIImage(named: "scuffed-plastic-normal")
         material.metalness.contents = UIImage(named: "scuffed-plastic-metal")
         

@@ -20,6 +20,10 @@ class DungeonModel: NSObject {
     var height:Int
     var graph:GKGraph
     
+    var size:vector_int2 {
+        return vector_int2(Int32(width),Int32(height))
+    }
+    
     init(width:Int,height:Int,baseTerrain:TerrainReferenceModel,player:PlayerCharacterModel) {
         self.width = width
         self.height = height

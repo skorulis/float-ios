@@ -49,20 +49,7 @@ class Map3DViewController: UIViewController {
         cameraNode.position = SCNVector3(x: 0, y: 4, z: 15)
         cameraNode.look(at: SCNVector3())
         
-        //let spin = SCNAction.rotateBy(x: 0.4, y: 0, z: 0.1, duration: 0.25)
-        //scene.mapGrid.runAction(SCNAction.repeatForever(spin))
-        //scene.mapGrid.removeFromParentNode()
         
-        let mapGrid = scene.makeMap()
-        scene.rootNode.addChildNode(mapGrid)
-        
-        /*let hexGeom = HexGeometry()
-        let geom = hexGeom.getGeometry()
-        let node = SCNNode(geometry: geom)
-        scene.rootNode.addChildNode(node)
-        
-        let spin2 = SCNAction.rotateBy(x: 0.4, y: 0, z: 0.1, duration: 0.25)
-        node.runAction(SCNAction.repeatForever(spin2))*/
     }
 
 }

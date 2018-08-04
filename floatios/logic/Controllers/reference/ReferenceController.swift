@@ -97,7 +97,8 @@ class ReferenceController {
         let grass = TerrainReferenceModel(type: .grass,color: SKTheme.theme.color.nephritis)
         let dirt = TerrainReferenceModel(type: .dirt,color: SKTheme.theme.color.pumpkin)
         let floor = TerrainReferenceModel(type: .floor,color: SKTheme.theme.color.concrete)
-        return [grass,dirt,floor]
+        let water = TerrainReferenceModel(type: .water,color: SKTheme.theme.color.belizeHole)
+        return [grass,dirt,floor,water]
     }
     
     func getItem(name:String) -> ItemReferenceModel {
