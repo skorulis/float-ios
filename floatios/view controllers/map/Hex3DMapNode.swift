@@ -9,13 +9,13 @@
 import SceneKit
 import FLGame
 
-class Hex3DMapNode: SCNNode {
+public class Hex3DMapNode: SCNNode {
 
-    let dungeon:DungeonModel
-    let size:vector_int2
-    var terrain:[SCNNode] = []
+    public let dungeon:DungeonModel
+    public let size:vector_int2
+    public var terrain:[SCNNode] = []
     
-    init(dungeon:DungeonModel) {
+    public init(dungeon:DungeonModel) {
         self.dungeon = dungeon
         self.size = dungeon.size
         
@@ -46,11 +46,11 @@ class Hex3DMapNode: SCNNode {
         }
     }
     
-    func buildTerrain() {
+    public func buildTerrain() {
         
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     

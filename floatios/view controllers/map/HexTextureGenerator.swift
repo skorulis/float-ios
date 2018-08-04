@@ -8,16 +8,16 @@
 
 import UIKit
 
-class HexTextureGenerator: ImageGen {
+public class HexTextureGenerator: ImageGen {
 
-    let math:Hex3DMath
+    public let math:Hex3DMath
     
-    init() {
+    public init() {
         math = Hex3DMath(baseSize: 128)
         super.init(rootDir: "3d")
     }
     
-    func topHex(_ color:UIColor) -> UIImage {
+    public func topHex(_ color:UIColor) -> UIImage {
         let ctx = newContext(textureSize)
         let points = (0..<6).map { math.regularHexUV(index: $0)}
         ctx.move(to: points[0])
@@ -31,7 +31,7 @@ class HexTextureGenerator: ImageGen {
         return finishContext()
     }
     
-    func spikeySide(_ color:UIColor) -> UIImage {
+    public func spikeySide(_ color:UIColor) -> UIImage {
         let ctx = newContext(textureSize)
         let spikeCount = 3
         let xMov = textureSize.width / CGFloat(spikeCount * 2)
@@ -58,7 +58,7 @@ class HexTextureGenerator: ImageGen {
         return finishContext()
     }
     
-    class func generateAllImages() {
+    public class func generateAllImages() {
         let gen = HexTextureGenerator()
         
         gen.saveImage(name: "hex1", image: gen.topHex(UIColor.brown))
@@ -67,7 +67,7 @@ class HexTextureGenerator: ImageGen {
     
     //MARK: Helpers
     
-    var textureSize: CGSize {
+    public var textureSize: CGSize {
         return CGSize(width: math.baseSize, height: math.baseSize)
     }
     

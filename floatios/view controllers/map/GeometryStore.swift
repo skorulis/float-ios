@@ -9,12 +9,12 @@
 
 import SceneKit
 
-class GeometryStore: NSObject {
+public class GeometryStore: NSObject {
 
     private var geometries:[String:SCNGeometry] = [:]
     private var materials:[String:SCNMaterial] = [:]
     
-    func getGeometry(name:String,block:()->(SCNGeometry)) -> SCNGeometry {
+    public func getGeometry(name:String,block:()->(SCNGeometry)) -> SCNGeometry {
         if let existing = geometries[name] {
             return existing
         }
@@ -23,7 +23,7 @@ class GeometryStore: NSObject {
         return geom
     }
     
-    func getMaterial(name:String,block:() -> (SCNMaterial)) -> SCNMaterial {
+    public func getMaterial(name:String,block:() -> (SCNMaterial)) -> SCNMaterial {
         if let existing = materials[name] {
             return existing
         }

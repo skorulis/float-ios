@@ -10,23 +10,23 @@ import SceneKit
 import SCNMathExtensions
 import FLGame
 
-class HexGeometry: NSObject {
+public class HexGeometry: NSObject {
 
-    let math = Hex3DMath(baseSize: 1)
-    let store:GeometryStore
-    let imageGen:HexTextureGenerator
+    public let math = Hex3DMath(baseSize: 1)
+    public let store:GeometryStore
+    public let imageGen:HexTextureGenerator
     
-    init(store:GeometryStore) {
+    public init(store:GeometryStore) {
         self.store = store
         self.imageGen = HexTextureGenerator()
     }
     
-    func hexGeometry(ref:TerrainReferenceModel) -> SCNGeometry {
+    public func hexGeometry(ref:TerrainReferenceModel) -> SCNGeometry {
         let name = "hex-\(ref.type.rawValue)"
         return store.getGeometry(name: name, block: {return createGeometry(ref: ref)})
     }
     
-    func sideGeometry() -> SCNGeometry {
+    public func sideGeometry() -> SCNGeometry {
         let name = "hex-sides"
         return store.getGeometry(name: name, block: createSides)
     }
@@ -73,7 +73,7 @@ class HexGeometry: NSObject {
         return geometry
     }
     
-    func createSides() -> SCNGeometry {
+    public func createSides() -> SCNGeometry {
         var meshVertices:[SCNVector3] = []
         var uvPoints:[CGPoint] = []
         var meshNormals:[SCNVector3] = []
@@ -126,15 +126,15 @@ class HexGeometry: NSObject {
         return CGFloat((v2 - v1).magnitude())
     }
     
-    func topPosition(_ point:CGPoint) -> SCNVector3 {
+    private func topPosition(_ point:CGPoint) -> SCNVector3 {
         return SCNVector3(point.x,height()/2,point.y)
     }
     
-    func botPosition(_ point:CGPoint) -> SCNVector3 {
+    private func botPosition(_ point:CGPoint) -> SCNVector3 {
         return SCNVector3(point.x,-height()/2,point.y)
     }
     
-    func faceNormal(v1:SCNVector3,v2:SCNVector3) -> SCNVector3 {
+    private func faceNormal(v1:SCNVector3,v2:SCNVector3) -> SCNVector3 {
         var dir = (v1 + v2)/2 - SCNVector3()
         dir.y = 0
         return dir.normalized()

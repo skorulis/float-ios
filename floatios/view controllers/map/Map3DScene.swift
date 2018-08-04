@@ -9,23 +9,23 @@
 import SceneKit
 import FLGame
 
-class Map3DScene: SCNScene {
+public class Map3DScene: SCNScene {
 
-    var mapGrid:Hex3DMapNode!
+    public var mapGrid:Hex3DMapNode!
     
-    let dungeon:DungeonModel
+    public let dungeon:DungeonModel
     
-    init(dungeon:DungeonModel) {
+    public init(dungeon:DungeonModel) {
         self.dungeon = dungeon
         super.init()
         self.buildScene()
     }
     
-    required init?(coder aDecoder: NSCoder) {
+    public required init?(coder aDecoder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
     
-    func buildScene() {
+    public func buildScene() {
         // create and add a light to the scene
         let lightNode = SCNNode()
         lightNode.light = SCNLight()
@@ -48,7 +48,7 @@ class Map3DScene: SCNScene {
         self.rootNode.addChildNode(mapGrid)
     }
     
-    func makeMap() -> Hex3DMapNode {
+    public func makeMap() -> Hex3DMapNode {
         let mapGrid = Hex3DMapNode(dungeon: dungeon)
         let sphere = mapGrid.boundingSphere
         mapGrid.position = SCNVector3(-sphere.center.x,0,-sphere.center.z)

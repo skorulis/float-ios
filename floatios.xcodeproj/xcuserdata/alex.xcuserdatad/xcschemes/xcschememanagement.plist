@@ -9,6 +9,11 @@
 			<key>orderHint</key>
 			<integer>15</integer>
 		</dict>
+		<key>FLScene.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>16</integer>
+		</dict>
 		<key>floatios.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
