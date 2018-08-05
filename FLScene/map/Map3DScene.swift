@@ -40,9 +40,12 @@ public class Map3DScene: SCNScene {
         ambientLightNode.light!.color = UIColor.darkGray
         rootNode.addChildNode(ambientLightNode)
         
-        let imageNames = ["Daylight Box_Right","Daylight Box_Left","Daylight Box_Top","Daylight Box_Bottom","Daylight Box_Back","Daylight Box_Front"]
+        let skyBox = MDLSkyCubeTexture(name: nil, channelEncoding: MDLTextureChannelEncoding.uInt8,
+                                       textureDimensions: [Int32(160), Int32(160)], turbidity: 0.4, sunElevation: 0.7, upperAtmosphereScattering: 0.2, groundAlbedo: 2)
+        skyBox.groundColor = UIColor.brown.cgColor
         
-        self.background.contents = imageNames.map { UIImage(named: $0)}
+        self.background.contents = skyBox.imageFromTexture()?.takeUnretainedValue()
+
         
         mapGrid = self.makeMap()
         self.rootNode.addChildNode(mapGrid)
@@ -53,6 +56,17 @@ public class Map3DScene: SCNScene {
         
         addSpike(at: SCNVector3(10,0,8))
         addSpike(at: SCNVector3(-10,0,-8))
+        
+        let plane = SCNPlane(width: 1, height: 2)
+        plane.firstMaterial?.diffuse.contents = UIImage(named: "alienPink")
+        
+        let planeNode = SCNNode(geometry:plane)
+        planeNode.position = SCNVector3(0,2,0)
+        let constraint = SCNBillboardConstraint()
+        constraint.freeAxes = SCNBillboardAxis.Y
+        planeNode.constraints = [constraint]
+        
+        self.rootNode.addChildNode(planeNode)
     }
     
     private func addSpike(at:SCNVector3) {
