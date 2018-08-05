@@ -16,15 +16,13 @@ public class Hex3DMapNode: SCNNode {
     public var terrain:[SCNNode] = []
     public let blockHeight:Float
     
-    public init(dungeon:DungeonModel) {
+    public init(dungeon:DungeonModel,gen:HexGeometry) {
         self.dungeon = dungeon
         self.size = dungeon.size
         
-        let store = GeometryStore()
-        let gen = HexGeometry(store:store)
         blockHeight = Float(gen.height())
         
-        let sides = gen.sideGeometry()
+        let sides = gen.sideGeometry(height:gen.height())
         super.init()
         
         for y in 0..<size.y {

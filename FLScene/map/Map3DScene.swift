@@ -16,9 +16,14 @@ public class Map3DScene: SCNScene {
     public var mapGrid:Hex3DMapNode!
     
     public let dungeon:DungeonModel
+    public let hexGeometry:HexGeometry
+    
+    private let floorY:Float = -10
     
     public init(dungeon:DungeonModel) {
         self.dungeon = dungeon
+        let store = GeometryStore()
+        hexGeometry = HexGeometry(store:store)
         super.init()
         self.buildScene()
     }
@@ -56,9 +61,6 @@ public class Map3DScene: SCNScene {
         let act2 = SCNAction.moveBy(x: 0, y: 0.5, z: 0, duration: 5)
         mapGrid.runAction(SCNAction.repeatForever(SCNAction.sequence([act1,act2])))
         
-        addSpike(at: SCNVector3(10,0,8))
-        addSpike(at: SCNVector3(-10,0,-8))
-        
         let plane = SCNPlane(width: 1, height: 2)
         plane.firstMaterial?.diffuse.contents = UIImage(named: "alienPink")
         
@@ -71,6 +73,10 @@ public class Map3DScene: SCNScene {
         mapGrid.addChildNode(planeNode)
         
         buildWater()
+        
+        for _ in 0...15 {
+            addRock()
+        }
     }
     
     private func buildWater() {
@@ -81,47 +87,49 @@ public class Map3DScene: SCNScene {
         geom.firstMaterial?.diffuse.contentsTransform = SCNMatrix4MakeScale(256, 256, 0)
         
         let floor = SCNNode(geometry: geom)
-        floor.position = SCNVector3(0,-10,0)
+        floor.position = SCNVector3(0,floorY,0)
         
         self.rootNode.addChildNode(floor)
     }
     
-    private func addSpike(at:SCNVector3) {
-        let material = SCNMaterial()
+    private func addRock() {
+        let geometry = hexGeometry.bevelGeometry()
+        let sides = hexGeometry.sideGeometry(height: 4)
         
-        material.diffuse.contents = UIColor.brown
-        //material.normal.contents = UIImage(named: "sandstonecliff-normal")
+        let material = SCNMaterial()
+        material.diffuse.contents = UIImage(named:"montagne_albedo")
+        material.normal.contents = UIImage(named: "montagne_normal")
+        material.roughness.contents = UIImage(named:"montagne_roughness")
         material.lightingModel = .physicallyBased
         
-        let geom = SCNPyramid(width: 2, height: 10, length: 2)
-        geom.firstMaterial = material
-        let node = SCNNode(geometry: geom)
+        sides.firstMaterial = material
+        
+        let top = SCNNode(geometry: geometry)
+        let sidesNode = SCNNode(geometry: sides)
+        sidesNode.position = SCNVector3(0,-1.5,0)
+        
+        let node = SCNNode()
+        node.addChildNode(top)
+        node.addChildNode(sidesNode)
+        
+        let x = Float(arc4random_uniform(80)) - 40
+        let z = Float(arc4random_uniform(80)) - 40
+        let scale = Float(arc4random_uniform(50) + 50) / 100
+        
+        node.scale = SCNVector3(scale,scale,scale)
+        
+        let nodeY = floorY + (3.5 * scale) - 0.5
+        
+        node.position = SCNVector3(x,nodeY,z)
+        
         self.rootNode.addChildNode(node)
-        node.position = at
-        node.position.y = -10
     }
     
     public func makeMap() -> Hex3DMapNode {
-        let mapGrid = Hex3DMapNode(dungeon: dungeon)
+        let mapGrid = Hex3DMapNode(dungeon: dungeon,gen:hexGeometry)
         let sphere = mapGrid.boundingSphere
         mapGrid.position = SCNVector3(-sphere.center.x,0,-sphere.center.z)
         return mapGrid
-    }
-    
-    class func collada2SCNNode(filepath:String) -> SCNNode {
-        
-        let node = SCNNode()
-        let scene = SCNScene(named: filepath)
-        let nodeArray = scene!.rootNode.childNodes
-        
-        for childNode in nodeArray {
-            
-            node.addChildNode(childNode as SCNNode)
-            
-        }
-        
-        return node
-        
     }
     
 }
