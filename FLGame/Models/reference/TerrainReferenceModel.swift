@@ -13,6 +13,7 @@ public enum TerrainType: String {
     case dirt
     case floor
     case water
+    case redRock
     case void
 }
 

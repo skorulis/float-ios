@@ -104,6 +104,7 @@
 		FAB7B7F720EA09C4002B2C0B /* StatProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7B7F620EA09C4002B2C0B /* StatProgressCell.swift */; };
 		FAD07A3D20FAD21F007C20D1 /* NPCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD07A3C20FAD21F007C20D1 /* NPCViewController.swift */; };
 		FAD8518820F4985C00227AF2 /* SelectAvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD8518720F4985C00227AF2 /* SelectAvatarCell.swift */; };
+		FADAC1652116FE9400F23D30 /* MaterialProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = FADAC1642116FE9400F23D30 /* MaterialProvider.swift */; };
 		FAE62910210859F00031FE10 /* monsters.json in Resources */ = {isa = PBXBuildFile; fileRef = FAE6290F210859F00031FE10 /* monsters.json */; };
 		FAE62919210887D50031FE10 /* SpriteComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE62918210887D50031FE10 /* SpriteComponent.swift */; };
 		FAE6291B210889220031FE10 /* ASSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6291A210889220031FE10 /* ASSpriteNode.swift */; };
@@ -276,6 +277,7 @@
 		FAB7B7F620EA09C4002B2C0B /* StatProgressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatProgressCell.swift; sourceTree = "<group>"; };
 		FAD07A3C20FAD21F007C20D1 /* NPCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NPCViewController.swift; sourceTree = "<group>"; };
 		FAD8518720F4985C00227AF2 /* SelectAvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAvatarCell.swift; sourceTree = "<group>"; };
+		FADAC1642116FE9400F23D30 /* MaterialProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MaterialProvider.swift; sourceTree = "<group>"; };
 		FAE6290F210859F00031FE10 /* monsters.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = monsters.json; sourceTree = "<group>"; };
 		FAE62918210887D50031FE10 /* SpriteComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteComponent.swift; sourceTree = "<group>"; };
 		FAE6291A210889220031FE10 /* ASSpriteNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASSpriteNode.swift; sourceTree = "<group>"; };
@@ -670,6 +672,7 @@
 				FAACEDFE211582FB0013CBD3 /* Hex3DMath.swift */,
 				FAACEDFF211582FB0013CBD3 /* Hex3DMapNode.swift */,
 				FAACEE00211582FB0013CBD3 /* HexTextureGenerator.swift */,
+				FADAC1642116FE9400F23D30 /* MaterialProvider.swift */,
 			);
 			path = map;
 			sourceTree = "<group>";
@@ -1243,6 +1246,7 @@
 				FAACEE02211582FB0013CBD3 /* HexGeometry.swift in Sources */,
 				FAACEE03211582FB0013CBD3 /* GeometryStore.swift in Sources */,
 				FAACEE05211582FB0013CBD3 /* Hex3DMapNode.swift in Sources */,
+				FADAC1652116FE9400F23D30 /* MaterialProvider.swift in Sources */,
 				FAACEE06211582FB0013CBD3 /* HexTextureGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

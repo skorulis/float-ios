@@ -47,14 +47,14 @@ public class HexGeometry: NSObject {
         return store.getGeometry(name: name, block: {return createGeometry(ref: ref)})
     }
     
-    public func sideGeometry(height:CGFloat) -> SCNGeometry {
-        let name = "hex-sides-\(height)"
-        return store.getGeometry(name: name, block: {return createSides(height: height)})
+    public func sideGeometry(height:CGFloat,ref:TerrainReferenceModel) -> SCNGeometry {
+        let name = "hex-sides-\(height)-\(ref.type.rawValue)"
+        return store.getGeometry(name: name, block: {return createSides(height: height,ref: ref)})
     }
     
-    public func bevelGeometry() -> SCNGeometry {
-        let name = "rock"
-        return store.getGeometry(name: name, block: createBevelHex)
+    public func bevelHex(ref:TerrainReferenceModel) -> SCNGeometry {
+        let name = "hex-bevel-\(ref.type.rawValue)"
+        return store.getGeometry(name: name, block: {return createBevelHex(ref:ref)})
     }
     
     private func createGeometry(ref:TerrainReferenceModel) -> SCNGeometry {
@@ -79,20 +79,14 @@ public class HexGeometry: NSObject {
         setup.indices.append(contentsOf: bottomHex)
 
         let geometry = setup.toGeometry()
-        
-        let material = SCNMaterial()
-        
-        material.lightingModel = .physicallyBased
-        material.diffuse.contents = imageGen.topHex(ref.baseColor)
-        material.normal.contents = ref.normalTexture ?? UIImage(named: "scuffed-plastic-normal")
-        material.metalness.contents = UIImage(named: "scuffed-plastic-metal")
+        let material = MaterialProvider.topMaterial(ref: ref)
         
         geometry.firstMaterial = material
         
         return geometry
     }
     
-    private func createBevelHex() -> SCNGeometry {
+    private func createBevelHex(ref:TerrainReferenceModel) -> SCNGeometry {
         let normalUp = SCNVector3(0,1,0);
         
         let middlePoint = CGPoint(x:0,y:0)
@@ -109,8 +103,8 @@ public class HexGeometry: NSObject {
             let pOuter = self.math.regularHexPoint(index:i)
             let uvOuter = self.math.regularHexUV(index: i)
             
-            let pTop = pOuter.mix(other: middlePoint, amount: bevelAmount)
-            let uvTop = uvOuter.mix(other: middleUV, amount: bevelAmount)
+            let pTop = pOuter.mixed(with: middlePoint, ratio: bevelAmount)
+            let uvTop = uvOuter.mixed(with: middleUV, ratio: bevelAmount)
             
             setup.meshVertices.insert(self.topPosition(pTop) + SCNVector3(0,bevelAmount,0), at: i)
             setup.uvPoints.insert(uvTop, at: i)
@@ -149,19 +143,14 @@ public class HexGeometry: NSObject {
         
         let geometry = setup.toGeometry()
         
-        let material = SCNMaterial()
-        
-        material.lightingModel = .physicallyBased
-        material.diffuse.contents = UIImage(named: "montagne_top_albedo")
-        material.normal.contents = UIImage(named: "montagne_top_normal")
-        material.roughness.contents = UIImage(named: "montagne_top_roughness")
+        let material = MaterialProvider.topMaterial(ref: ref)
         
         geometry.firstMaterial = material
         
         return geometry
     }
     
-    private func createSides(height:CGFloat) -> SCNGeometry {
+    private func createSides(height:CGFloat,ref:TerrainReferenceModel) -> SCNGeometry {
         let setup = MeshSetup()
         
         for i in 0...6 {
@@ -186,12 +175,7 @@ public class HexGeometry: NSObject {
         
         let geometry = setup.toGeometry()
         
-        let material = SCNMaterial()
-        
-        material.lightingModel = .physicallyBased
-        material.diffuse.contents = imageGen.spikeySide(UIColor.brown)
-        material.normal.contents = UIImage(named: "scuffed-plastic-normal")
-        material.metalness.contents = UIImage(named: "scuffed-plastic-metal")
+        let material = MaterialProvider.sideMaterial(ref: ref)
         
         geometry.firstMaterial = material
         

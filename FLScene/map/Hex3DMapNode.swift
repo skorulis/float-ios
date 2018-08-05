@@ -22,7 +22,7 @@ public class Hex3DMapNode: SCNNode {
         
         blockHeight = Float(gen.height())
         
-        let sides = gen.sideGeometry(height:gen.height())
+        
         super.init()
         
         for y in 0..<size.y {
@@ -32,7 +32,8 @@ public class Hex3DMapNode: SCNNode {
                     continue
                 }
                 let terrain = dungeonNode.terrain
-                let hexGeometry = gen.hexGeometry(ref: terrain)
+                let hexGeometry = gen.bevelHex(ref: terrain)
+                let sides = gen.sideGeometry(height:gen.height(),ref:terrain)
                 
                 let parentNode = SCNNode()
                 

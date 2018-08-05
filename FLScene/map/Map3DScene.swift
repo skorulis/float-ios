@@ -93,16 +93,11 @@ public class Map3DScene: SCNScene {
     }
     
     private func addRock() {
-        let geometry = hexGeometry.bevelGeometry()
-        let sides = hexGeometry.sideGeometry(height: 4)
+        let terrain = GameController.instance.reference.getTerrain(type: .redRock)
+        let geometry = hexGeometry.bevelHex(ref:terrain)
+        let sides = hexGeometry.sideGeometry(height: 4,ref:terrain)
         
-        let material = SCNMaterial()
-        material.diffuse.contents = UIImage(named:"montagne_albedo")
-        material.normal.contents = UIImage(named: "montagne_normal")
-        material.roughness.contents = UIImage(named:"montagne_roughness")
-        material.lightingModel = .physicallyBased
-        
-        sides.firstMaterial = material
+        sides.firstMaterial = MaterialProvider.sideMaterial(ref: terrain)
         
         let top = SCNNode(geometry: geometry)
         let sidesNode = SCNNode(geometry: sides)
