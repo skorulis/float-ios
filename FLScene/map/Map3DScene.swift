@@ -8,6 +8,7 @@
 
 import SceneKit
 import FLGame
+import SCNMathExtensions
 
 public class Map3DScene: SCNScene {
 
@@ -61,12 +62,12 @@ public class Map3DScene: SCNScene {
         plane.firstMaterial?.diffuse.contents = UIImage(named: "alienPink")
         
         let planeNode = SCNNode(geometry:plane)
-        planeNode.position = SCNVector3(0,2,0)
         let constraint = SCNBillboardConstraint()
         constraint.freeAxes = SCNBillboardAxis.Y
         planeNode.constraints = [constraint]
         
-        self.rootNode.addChildNode(planeNode)
+        planeNode.position = mapGrid.topPosition(at: vector2(2,2)) + SCNVector3(0,1,0)
+        mapGrid.addChildNode(planeNode)
     }
     
     private func addSpike(at:SCNVector3) {

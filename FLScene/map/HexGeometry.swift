@@ -118,7 +118,7 @@ public class HexGeometry: NSObject {
         return geometry
     }
     
-    private func height() -> CGFloat {
+    public func height() -> CGFloat {
         let p1 = math.regularHexPoint(index: 0)
         let p2 = math.regularHexPoint(index: 1)
         let v1 = SCNVector3(p1.x,0,p1.y)
