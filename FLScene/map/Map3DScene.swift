@@ -9,6 +9,7 @@
 import SceneKit
 import FLGame
 import SCNMathExtensions
+import SKComponents
 
 public class Map3DScene: SCNScene {
 
@@ -68,6 +69,21 @@ public class Map3DScene: SCNScene {
         
         planeNode.position = mapGrid.topPosition(at: vector2(2,2)) + SCNVector3(0,1,0)
         mapGrid.addChildNode(planeNode)
+        
+        buildWater()
+    }
+    
+    private func buildWater() {
+        let geom = SCNFloor()
+        geom.firstMaterial?.diffuse.contents = SKTheme.theme.color.belizeHole
+        geom.firstMaterial?.normal.contents = UIImage(named: "terrasses_water_normal")
+        geom.firstMaterial?.lightingModel = .physicallyBased
+        geom.firstMaterial?.diffuse.contentsTransform = SCNMatrix4MakeScale(256, 256, 0)
+        
+        let floor = SCNNode(geometry: geom)
+        floor.position = SCNVector3(0,-10,0)
+        
+        self.rootNode.addChildNode(floor)
     }
     
     private func addSpike(at:SCNVector3) {
