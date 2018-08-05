@@ -5,11 +5,8 @@ def shared_pods
     use_frameworks!
     pod "FontAwesomeKit", :git => 'https://github.com/PrideChung/FontAwesomeKit'
     pod 'SnapKit'
-    pod 'Fabric'
-    pod 'Crashlytics'
+    pod 'Down'
     pod "PromiseKit"
-    pod "DateToolsSwift"
-    pod "TextFieldEffects"
     pod "CCTextFieldEffects"
     pod 'SpriteKit-Spring', :git => 'https://github.com/ataugeron/SpriteKit-Spring/'
     pod 'SKSwiftLib', :path => '~/dev/ios/SKLibs/SKSwiftLib'

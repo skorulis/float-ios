@@ -21,6 +21,8 @@
 		FA10722320E764E10046C756 /* LandSquareCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10722220E764E10046C756 /* LandSquareCell.swift */; };
 		FA10723120E88AF70046C756 /* SectionHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10723020E88AF70046C756 /* SectionHeaderView.swift */; };
 		FA10723420E8ACBE0046C756 /* InventoryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA10723320E8ACBE0046C756 /* InventoryViewController.swift */; };
+		FA1C3E5121170F5D0062FC05 /* LoreListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1C3E5021170F5D0062FC05 /* LoreListViewController.swift */; };
+		FA1C3E53211710DA0062FC05 /* lore.json in Resources */ = {isa = PBXBuildFile; fileRef = FA1C3E52211710DA0062FC05 /* lore.json */; };
 		FA3691F520EDFB7E003988D4 /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3691F420EDFB7E003988D4 /* TextFieldCell.swift */; };
 		FA3691F820EDFCEF003988D4 /* CreatePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3691F720EDFCEF003988D4 /* CreatePlayerViewController.swift */; };
 		FA3691FA20EEC1FE003988D4 /* CTAButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3691F920EEC1FE003988D4 /* CTAButtonCell.swift */; };
@@ -190,6 +192,8 @@
 		FA10722220E764E10046C756 /* LandSquareCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LandSquareCell.swift; sourceTree = "<group>"; };
 		FA10723020E88AF70046C756 /* SectionHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionHeaderView.swift; sourceTree = "<group>"; };
 		FA10723320E8ACBE0046C756 /* InventoryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InventoryViewController.swift; sourceTree = "<group>"; };
+		FA1C3E5021170F5D0062FC05 /* LoreListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoreListViewController.swift; sourceTree = "<group>"; };
+		FA1C3E52211710DA0062FC05 /* lore.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = lore.json; sourceTree = "<group>"; };
 		FA3691F420EDFB7E003988D4 /* TextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCell.swift; sourceTree = "<group>"; };
 		FA3691F720EDFCEF003988D4 /* CreatePlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlayerViewController.swift; sourceTree = "<group>"; };
 		FA3691F920EEC1FE003988D4 /* CTAButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTAButtonCell.swift; sourceTree = "<group>"; };
@@ -405,6 +409,14 @@
 			path = item;
 			sourceTree = "<group>";
 		};
+		FA1C3E4F21170E470062FC05 /* lore */ = {
+			isa = PBXGroup;
+			children = (
+				FA1C3E5021170F5D0062FC05 /* LoreListViewController.swift */,
+			);
+			path = lore;
+			sourceTree = "<group>";
+		};
 		FA3691F620EDFC99003988D4 /* onboarding */ = {
 			isa = PBXGroup;
 			children = (
@@ -478,6 +490,7 @@
 		FA569C6D20E589C40094807F /* floatios */ = {
 			isa = PBXGroup;
 			children = (
+				FA1C3E4F21170E470062FC05 /* lore */,
 				FAE62915210885140031FE10 /* component-entity */,
 				FA83446F210314A9005BCF1A /* util */,
 				FAB4BD4E20FF3CE00081B5A6 /* resources */,
@@ -691,6 +704,7 @@
 				FAB4BD5820FFE5BA0081B5A6 /* Assets.xcassets */,
 				FAB4BD4F20FF3D0C0081B5A6 /* Tiles.sks */,
 				FAE6290F210859F00031FE10 /* monsters.json */,
+				FA1C3E52211710DA0062FC05 /* lore.json */,
 			);
 			path = resources;
 			sourceTree = "<group>";
@@ -940,6 +954,7 @@
 			files = (
 				FAB4BD5120FF3D0C0081B5A6 /* Tiles.sks in Resources */,
 				FA569C7920E589C70094807F /* LaunchScreen.storyboard in Resources */,
+				FA1C3E53211710DA0062FC05 /* lore.json in Resources */,
 				FAB4BD5920FFE5BA0081B5A6 /* Assets.xcassets in Resources */,
 				FAE62910210859F00031FE10 /* monsters.json in Resources */,
 			);
@@ -1002,7 +1017,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-floatiosTests/Pods-floatiosTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CCTextFieldEffects/CCTextFieldEffects.framework",
-				"${BUILT_PRODUCTS_DIR}/DateToolsSwift/DateToolsSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Down/Down.framework",
 				"${BUILT_PRODUCTS_DIR}/FontAwesomeKit/FontAwesomeKit.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SCNMathExtensions/SCNMathExtensions.framework",
@@ -1011,12 +1026,11 @@
 				"${BUILT_PRODUCTS_DIR}/SKSwiftLib/SKSwiftLib.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SpriteKit-Spring/SpriteKit_Spring.framework",
-				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CCTextFieldEffects.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DateToolsSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Down.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FontAwesomeKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCNMathExtensions.framework",
@@ -1025,7 +1039,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKSwiftLib.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SpriteKit_Spring.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1040,7 +1053,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-floatios/Pods-floatios-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CCTextFieldEffects/CCTextFieldEffects.framework",
-				"${BUILT_PRODUCTS_DIR}/DateToolsSwift/DateToolsSwift.framework",
+				"${BUILT_PRODUCTS_DIR}/Down/Down.framework",
 				"${BUILT_PRODUCTS_DIR}/FontAwesomeKit/FontAwesomeKit.framework",
 				"${BUILT_PRODUCTS_DIR}/PromiseKit/PromiseKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SCNMathExtensions/SCNMathExtensions.framework",
@@ -1049,12 +1062,11 @@
 				"${BUILT_PRODUCTS_DIR}/SKSwiftLib/SKSwiftLib.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/SpriteKit-Spring/SpriteKit_Spring.framework",
-				"${BUILT_PRODUCTS_DIR}/TextFieldEffects/TextFieldEffects.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CCTextFieldEffects.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/DateToolsSwift.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Down.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FontAwesomeKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/PromiseKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SCNMathExtensions.framework",
@@ -1063,7 +1075,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKSwiftLib.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SpriteKit_Spring.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/TextFieldEffects.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1155,6 +1166,7 @@
 				FAF78EA020F73A59005F7E88 /* SkillListViewController.swift in Sources */,
 				FA83446C2102F67F005BCF1A /* TileGenContext.swift in Sources */,
 				FAB7B7F520EA0956002B2C0B /* PlayerStatsViewController.swift in Sources */,
+				FA1C3E5121170F5D0062FC05 /* LoreListViewController.swift in Sources */,
 				FA73C6FE20F353E4006AEF0E /* AvatarEmojiCellCollectionViewCell.swift in Sources */,
 				FAF78EA220F73A97005F7E88 /* SkillProgressCell.swift in Sources */,
 				FAB4BD5720FF4CB80081B5A6 /* DungeonViewController.swift in Sources */,
