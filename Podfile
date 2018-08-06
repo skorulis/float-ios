@@ -15,12 +15,7 @@ def shared_pods
     pod 'SnapKit'
     pod 'SKSwiftLib', :path => '~/dev/ios/SKLibs/SKSwiftLib'
     pod 'FLGame', :path => '~/dev/floats/FLGame'
-end
-
-target 'FLScene' do
-    platform :ios, '10.0'
-    shared_pods
-    ios_pods
+    pod 'FLScene', :path => '~/dev/floats/FLScene'
 end
 
 target 'floatios' do
@@ -37,6 +32,5 @@ end
 
 target 'FloatMac' do
     platform :osx, '10.12'
-    pod 'SKSwiftLib', :path => '~/dev/ios/SKLibs/SKSwiftLib'
-    pod 'FLGame', :path => '~/dev/floats/FLGame'
+    shared_pods
 end
