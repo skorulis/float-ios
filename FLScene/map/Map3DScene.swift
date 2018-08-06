@@ -8,7 +8,6 @@
 
 import SceneKit
 import FLGame
-import SKComponents
 
 public class Map3DScene: SCNScene {
 
@@ -84,10 +83,8 @@ public class Map3DScene: SCNScene {
     
     private func buildWater() {
         let geom = SCNFloor()
-        geom.firstMaterial?.diffuse.contents = SKTheme.theme.color.belizeHole
-        geom.firstMaterial?.normal.contents = UIImage(named: "terrasses_water_normal")
-        geom.firstMaterial?.lightingModel = .physicallyBased
-        geom.firstMaterial?.diffuse.contentsTransform = SCNMatrix4MakeScale(256, 256, 0)
+        
+        geom.firstMaterial = MaterialProvider.floorMaterial()
         
         let floor = SCNNode(geometry: geom)
         floor.position = SCNVector3(0,floorY,0)

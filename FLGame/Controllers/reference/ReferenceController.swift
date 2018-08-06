@@ -10,8 +10,27 @@ import SKSwiftLib
 
 #if os(iOS)
 //import FontAwesomeKit
-import SKComponents
 #endif
+
+extension UIColor {
+    convenience init(hexString: String) {
+        let hex = hexString.trimmingCharacters(in: CharacterSet.alphanumerics.inverted)
+        var int = UInt32()
+        Scanner(string: hex).scanHexInt32(&int)
+        let a, r, g, b: UInt32
+        switch hex.count {
+        case 3: // RGB (12-bit)
+            (a, r, g, b) = (255, (int >> 8) * 17, (int >> 4 & 0xF) * 17, (int & 0xF) * 17)
+        case 6: // RGB (24-bit)
+            (a, r, g, b) = (255, int >> 16, int >> 8 & 0xFF, int & 0xFF)
+        case 8: // ARGB (32-bit)
+            (a, r, g, b) = (int >> 24, int >> 16 & 0xFF, int >> 8 & 0xFF, int & 0xFF)
+        default:
+            (a, r, g, b) = (255, 0, 0, 0)
+        }
+        self.init(red: CGFloat(r) / 255, green: CGFloat(g) / 255, blue: CGFloat(b) / 255, alpha: CGFloat(a) / 255)
+    }
+}
 
 public class ReferenceController {
 
@@ -30,7 +49,8 @@ public class ReferenceController {
         skills = ReferenceController.makeSkills().groupSingle { $0.name }
         actions = ReferenceController.makeActions().groupSingle { $0.type }
         dungeonTiles = ReferenceController.makeDungeonTiles().groupSingle { $0.type }
-        terrain = ReferenceController.makeTerrainTiles().groupSingle { $0.type }
+        
+        terrain = ReferenceController.readReferenceObjects(filename: "terrain").groupSingle { $0.type}
         monsters = ReferenceController.readReferenceObjects(filename: "monsters").groupSingle { $0.name}
     }
     
@@ -107,18 +127,6 @@ public class ReferenceController {
         return [wall,stairUp,stairDown]
     }
     
-    private static func makeTerrainTiles() -> [TerrainReferenceModel] {
-        let grass = TerrainReferenceModel(type: .grass,color: SKTheme.theme.color.nephritis)
-        let dirt = TerrainReferenceModel(type: .dirt,color: SKTheme.theme.color.pumpkin)
-        let floor = TerrainReferenceModel(type: .floor,color: SKTheme.theme.color.concrete)
-        let water = TerrainReferenceModel(type: .water,color: SKTheme.theme.color.belizeHole)
-        water.normalTexture = UIImage(named: "terrasses_water_normal")
-        let void = TerrainReferenceModel(type: .void,color: UIColor.black)
-        let redRock = TerrainReferenceModel(type: .redRock, color:UIColor.orange)
-        
-        return [grass,dirt,floor,water,void,redRock]
-    }
-    
     public func getItem(name:String) -> ItemReferenceModel {
         return items[name]!
     }
@@ -158,12 +166,12 @@ public class ReferenceController {
         return all[Int(index)]
     }
     
-    public class func readReferenceObjects(filename:String) -> [MonsterReferenceModel] {
+    public class func readReferenceObjects<T: Decodable>(filename:String) -> [T] {
         do {
             let path = Bundle.main.path(forResource: filename, ofType: "json")!
             let data = try Data(contentsOf: URL(fileURLWithPath: path))
             let decoder = JSONDecoder()
-            let objects = try decoder.decode([MonsterReferenceModel].self, from: data)
+            let objects = try decoder.decode([T].self, from: data)
             return objects
         } catch {
             

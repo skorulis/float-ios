@@ -8,7 +8,7 @@
 
 import UIKit
 
-public enum TerrainType: String {
+public enum TerrainType: String, Codable {
     case grass
     case dirt
     case floor
@@ -17,15 +17,14 @@ public enum TerrainType: String {
     case void
 }
 
-public class TerrainReferenceModel {
+public struct TerrainReferenceModel:Codable {
 
     public let type:TerrainType
-    public let baseColor:UIColor
-    public var normalTexture:UIImage?
+    public let colorHex:String
+    //public let baseColor:UIColor
     
-    public init(type:TerrainType,color:UIColor) {
-        self.type = type
-        self.baseColor = color
+    public var baseColor:UIColor {
+        return UIColor(hexString: colorHex)
     }
     
 }
