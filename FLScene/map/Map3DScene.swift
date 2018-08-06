@@ -8,7 +8,6 @@
 
 import SceneKit
 import FLGame
-import SCNMathExtensions
 import SKComponents
 
 public class Map3DScene: SCNScene {
