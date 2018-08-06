@@ -1,6 +1,8 @@
 PODS:
   - CCTextFieldEffects (0.1.3)
   - Down (0.5.2)
+  - FLGame (0.1.0):
+    - SKSwiftLib
   - FontAwesomeKit (2.2.1):
     - FontAwesomeKit/Core (= 2.2.1)
     - FontAwesomeKit/FontAwesome (= 2.2.1)
@@ -31,6 +33,7 @@ PODS:
 DEPENDENCIES:
   - CCTextFieldEffects
   - Down
+  - FLGame (from `~/dev/floats/FLGame`)
   - FontAwesomeKit (from `https://github.com/PrideChung/FontAwesomeKit`)
   - SKCollectionView (from `~/dev/ios/SKLibs/SKCollectionView`)
   - SKComponents (from `~/dev/ios/SKLibs/SKComponents`)
@@ -45,6 +48,8 @@ SPEC REPOS:
     - SnapKit
 
 EXTERNAL SOURCES:
+  FLGame:
+    :path: "~/dev/floats/FLGame"
   FontAwesomeKit:
     :git: https://github.com/PrideChung/FontAwesomeKit
   SKCollectionView:
@@ -67,6 +72,7 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   CCTextFieldEffects: e4203c0518bb7156b9d0e64acccc7580d75b0cd4
   Down: 587371ad58002b06023d9c602519216862c3acbc
+  FLGame: f43ca21779283557b181dc67220f07647ef0d27c
   FontAwesomeKit: 3614979b3dbb0ec3f7fac1bd760b91f66c31db67
   SKCollectionView: 11a22345ddb20efa172e61a1ba352c347b3a2035
   SKComponents: 6e9b9f396c378d8cdc9a8217bb2ac027979e0fce
@@ -74,6 +80,6 @@ SPEC CHECKSUMS:
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
   SpriteKit-Spring: 3586bde2cf5d41f5a6af023c4b5bb240eaa3d7b0
 
-PODFILE CHECKSUM: 8d5170d98a0d6d5afa5c0d51c1750146f1d4c0ab
+PODFILE CHECKSUM: 4fdfc3d69b8e98929df467916a828835cc7e5de2
 
 COCOAPODS: 1.5.0

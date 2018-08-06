@@ -14,12 +14,7 @@ def shared_pods
     use_frameworks!
     pod 'SnapKit'
     pod 'SKSwiftLib', :path => '~/dev/ios/SKLibs/SKSwiftLib'
-end
-
-target 'FLGame' do
-    platform :ios, '10.0'
-    shared_pods
-    pod 'SKComponents',:path => '~/dev/ios/SKLibs/SKComponents'
+    pod 'FLGame', :path => '~/dev/floats/FLGame'
 end
 
 target 'FLScene' do
@@ -42,5 +37,6 @@ end
 
 target 'FloatMac' do
     platform :osx, '10.12'
-    shared_pods
+    pod 'SKSwiftLib', :path => '~/dev/ios/SKLibs/SKSwiftLib'
+    pod 'FLGame', :path => '~/dev/floats/FLGame'
 end
