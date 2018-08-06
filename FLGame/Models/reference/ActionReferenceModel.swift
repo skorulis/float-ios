@@ -8,7 +8,7 @@
 
 import Foundation
 #if os(iOS)
-import FontAwesomeKit
+//import FontAwesomeKit
 #endif
 
 public enum ActionType: String, Codable {
@@ -58,7 +58,7 @@ public struct ActionReferenceModel {
     public let type:ActionType
     public let requirements:[RequirementModel]
     #if os(iOS)
-    public var icon:FAKIcon?
+    //public var icon:FAKIcon?
     #endif
     
     public init(type:ActionType, reqs:[RequirementModel] = []) {

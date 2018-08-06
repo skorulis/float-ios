@@ -19,7 +19,7 @@ end
 target 'FLGame' do
     platform :ios, '10.0'
     shared_pods
-    ios_pods
+    pod 'SKComponents',:path => '~/dev/ios/SKLibs/SKComponents'
 end
 
 target 'FLScene' do

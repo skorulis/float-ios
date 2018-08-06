@@ -9,7 +9,7 @@
 import SKSwiftLib
 
 #if os(iOS)
-import FontAwesomeKit
+//import FontAwesomeKit
 import SKComponents
 #endif
 
@@ -87,14 +87,14 @@ public class ReferenceController {
                                                  RequirementModel.satiation(value: 10)])
         
         #if os(iOS)
-        let iconSize = CGFloat(30)
+        /*let iconSize = CGFloat(30)
         sleep.icon = FAKFontAwesome.moonOIcon(withSize: iconSize)
         eat.icon = FAKFontAwesome.appleIcon(withSize: iconSize)
         explore.icon = FAKFontAwesome.binocularsIcon(withSize: iconSize)
         forage.icon = FAKFontAwesome.pawIcon(withSize: iconSize)
         mine.icon = FAKFontAwesome.wrenchIcon(withSize: iconSize)
         lumberjack.icon = FAKFontAwesome.treeIcon(withSize: iconSize)
-        dungeon.icon = FAKFontAwesome.fortAwesomeIcon(withSize: iconSize)
+        dungeon.icon = FAKFontAwesome.fortAwesomeIcon(withSize: iconSize)*/
         #endif
         
         return [sleep,eat,forage,mine,lumberjack,explore,dungeon]
