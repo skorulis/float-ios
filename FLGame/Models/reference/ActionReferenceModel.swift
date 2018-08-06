@@ -7,7 +7,9 @@
 //
 
 import Foundation
+#if os(iOS)
 import FontAwesomeKit
+#endif
 
 public enum ActionType: String, Codable {
     case forage //Find food
@@ -55,12 +57,13 @@ public struct ActionReferenceModel {
 
     public let type:ActionType
     public let requirements:[RequirementModel]
-    public let icon:FAKIcon
+    #if os(iOS)
+    public var icon:FAKIcon?
+    #endif
     
-    public init(type:ActionType, icon:FAKIcon, reqs:[RequirementModel] = []) {
+    public init(type:ActionType, reqs:[RequirementModel] = []) {
         self.type = type
         self.requirements = reqs
-        self.icon = icon
     }
     
 }

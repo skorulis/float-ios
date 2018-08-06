@@ -23,7 +23,7 @@ final class ActionCell: UICollectionViewCell, SimpleModelCell {
     var model: ActionReferenceModel? {
         didSet {
             if let m = model {
-                let att:NSMutableAttributedString = m.icon.attributedString().mutableCopy() as! NSMutableAttributedString
+                let att:NSMutableAttributedString = m.icon!.attributedString().mutableCopy() as! NSMutableAttributedString
                 let a2 = NSAttributedString(string: "\n\(m.type.rawValue)")
                 att.append(a2)
                 self.label.attributedText = att

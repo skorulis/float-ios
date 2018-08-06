@@ -29,7 +29,7 @@ public class HexTextureGenerator: ImageGen {
         ctx.setLineWidth(lineWidth)
         ctx.strokePath()
         
-        return finishContext()
+        return finishContext(context:ctx)
     }
     
     public func spikeySide(_ color:UIColor) -> UIImage {
@@ -61,7 +61,7 @@ public class HexTextureGenerator: ImageGen {
         ctx.setLineWidth(lineWidth)
         ctx.strokePath()
         
-        return finishContext()
+        return finishContext(context:ctx)
     }
     
     private func makeHexPath(ctx:CGContext) {

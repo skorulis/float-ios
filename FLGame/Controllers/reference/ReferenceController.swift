@@ -6,10 +6,12 @@
 //  Copyright © 2018 Skorulis. All rights reserved.
 //
 
-import UIKit
 import SKSwiftLib
+
+#if os(iOS)
 import FontAwesomeKit
 import SKComponents
+#endif
 
 public class ReferenceController {
 
@@ -54,34 +56,46 @@ public class ReferenceController {
     }
     
     static func makeActions() -> [ActionReferenceModel] {
-        let iconSize = CGFloat(30)
-        let sleep = ActionReferenceModel(type: .sleep, icon: FAKFontAwesome.moonOIcon(withSize: iconSize))
-        let eat = ActionReferenceModel(type: .eat,icon: FAKFontAwesome.appleIcon(withSize: iconSize),
+        
+        var sleep = ActionReferenceModel(type: .sleep)
+        
+        var eat = ActionReferenceModel(type: .eat,
                                        reqs:[RequirementModel.time(value: 5),
                                             RequirementModel.item(name: "Food", value: 1)])
         
-        let explore = ActionReferenceModel(type: .explore, icon: FAKFontAwesome.binocularsIcon(withSize: iconSize),
+        var explore = ActionReferenceModel(type: .explore,
                                            reqs:[RequirementModel.time(value: 30),
                                                  RequirementModel.satiation(value: 10)])
         
-        let forage = ActionReferenceModel(type: .forage, icon: FAKFontAwesome.pawIcon(withSize: iconSize),
+        var forage = ActionReferenceModel(type: .forage,
                                           reqs: [RequirementModel.skill(type: .foraging),
                                                  RequirementModel.time(value: 10),
                                                  RequirementModel.satiation(value: 5)])
         
-        let mine = ActionReferenceModel(type: .mine, icon: FAKFontAwesome.wrenchIcon(withSize: iconSize),
+        var mine = ActionReferenceModel(type: .mine,
                                         reqs: [RequirementModel.skill(type: .mining),
                                                RequirementModel.time(value: 20),
                                                RequirementModel.satiation(value: 10)])
         
-        let lumberjack = ActionReferenceModel(type: .lumberjack, icon: FAKFontAwesome.treeIcon(withSize: iconSize),
+        var lumberjack = ActionReferenceModel(type: .lumberjack,
                                               reqs:[RequirementModel.skill(type: .lumberjacking),
                                                     RequirementModel.time(value: 20),
                                                     RequirementModel.satiation(value: 10)])
         
-        let dungeon = ActionReferenceModel(type: .dungeon, icon: FAKFontAwesome.fortAwesomeIcon(withSize: iconSize),
+        var dungeon = ActionReferenceModel(type: .dungeon,
                                            reqs:[RequirementModel.time(value: 100),
                                                  RequirementModel.satiation(value: 10)])
+        
+        #if os(iOS)
+        let iconSize = CGFloat(30)
+        sleep.icon = FAKFontAwesome.moonOIcon(withSize: iconSize)
+        eat.icon = FAKFontAwesome.appleIcon(withSize: iconSize)
+        explore.icon = FAKFontAwesome.binocularsIcon(withSize: iconSize)
+        forage.icon = FAKFontAwesome.pawIcon(withSize: iconSize)
+        mine.icon = FAKFontAwesome.wrenchIcon(withSize: iconSize)
+        lumberjack.icon = FAKFontAwesome.treeIcon(withSize: iconSize)
+        dungeon.icon = FAKFontAwesome.fortAwesomeIcon(withSize: iconSize)
+        #endif
         
         return [sleep,eat,forage,mine,lumberjack,explore,dungeon]
     }
