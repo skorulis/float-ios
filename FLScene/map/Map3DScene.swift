@@ -57,6 +57,10 @@ public class Map3DScene: SCNScene {
         mapGrid = self.makeMap()
         self.rootNode.addChildNode(mapGrid)
         
+        let mapGrid2 = self.makeMap()
+        mapGrid2.position = SCNVector3(22,0,15)
+        self.rootNode.addChildNode(mapGrid2)
+        
         let act1 = SCNAction.moveBy(x: 0, y: -0.5, z: 0, duration: 5)
         let act2 = SCNAction.moveBy(x: 0, y: 0.5, z: 0, duration: 5)
         mapGrid.runAction(SCNAction.repeatForever(SCNAction.sequence([act1,act2])))
