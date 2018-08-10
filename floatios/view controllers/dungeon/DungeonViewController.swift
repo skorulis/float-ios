@@ -67,7 +67,7 @@ class DungeonViewController: UIViewController {
         let longPress = UILongPressGestureRecognizer(target: self, action: #selector(longPressed(recognizer:)))
         self.sceneView.addGestureRecognizer(longPress)
         
-        self.header.update(player: dungeon.player)
+        self.header.update(player: dungeon.player!)
     }
     
     func showActionAlert(actions:[DungeonAction]) {
@@ -89,7 +89,7 @@ class DungeonViewController: UIViewController {
             return
         }
         let mapPoint = getMapPoint(recognizer: recognizer)
-        let fromPoint = dungeon.playerNode.gridPosition.point
+        let fromPoint = dungeon.playerNode!.gridPosition.point
         let path = dungeon.path(to: mapPoint, from: fromPoint)
         var actions = [DungeonAction.examine]
         
@@ -112,8 +112,8 @@ class DungeonViewController: UIViewController {
         guard let node = self.dungeon.nodeAt(point: mapPoint) else { return }
         
         if let monster = node.beings.first {
-            game.battle.performAttack(from: dungeon.player.base, to: monster as! MonsterEntity)
-            self.header.update(player: dungeon.player)
+            game.battle.performAttack(from: dungeon.player!.base, to: monster as! MonsterEntity)
+            self.header.update(player: dungeon.player!)
             return
         }
         
@@ -121,7 +121,7 @@ class DungeonViewController: UIViewController {
         
         let map = self.scene.terrain
         
-        let fromPoint = dungeon.playerNode.gridPosition.point
+        let fromPoint = dungeon.playerNode!.gridPosition.point
         let path = dungeon.path(to: mapPoint, from: fromPoint)
         if path.count < 2 {
             return
@@ -129,7 +129,7 @@ class DungeonViewController: UIViewController {
         
         let first = path[1]
         
-        let spriteComponent = dungeon.playerNode .component(ofType: SpriteComponent.self)!
+        let spriteComponent = dungeon.playerNode!.component(ofType: SpriteComponent.self)!
         spriteComponent.moveTo(position: first.gridPosition)
         
         let centrePos = map.centreOfTile(at: first.gridPosition)

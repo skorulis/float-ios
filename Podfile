@@ -19,18 +19,18 @@ def shared_pods
 end
 
 target 'floatios' do
-    platform :ios, '10.0'
+    platform :ios, '11.0'
 	shared_pods
     ios_pods
 end
 
 target 'floatiosTests' do
-    platform :ios, '10.0'
+    platform :ios, '11.0'
     shared_pods
     ios_pods
 end
 
 target 'FloatMac' do
-    platform :osx, '10.12'
+    platform :osx, '10.13'
     shared_pods
 end

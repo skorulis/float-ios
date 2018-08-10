@@ -85,7 +85,7 @@ class BattleUIController {
     }
     
     func middlePoint() -> vector_int2 {
-        return dungeon.playerNode.gridPosition
+        return dungeon.playerNode!.gridPosition
     }
     
     func activeSquares() -> [vector_int2] {

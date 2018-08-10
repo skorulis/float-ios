@@ -40,7 +40,10 @@ class DungeonScene: SKScene {
         
         self.rebuildMaps()
         
-        _ = addSprite(entity: dungeon.playerNode,imageNamed:"tank")
+        if let playerNode = dungeon.playerNode {
+            _ = addSprite(entity: playerNode,imageNamed:"tank")
+        }
+        
         
         for m in dungeon.allMonsters() {
             let entity = m as! MonsterEntity
@@ -91,7 +94,7 @@ class DungeonScene: SKScene {
     }
     
     func playerCentre() -> CGPoint {
-        return self.dungeon.playerNode.component(ofType: SpriteComponent.self)!.sprite.position
+        return self.dungeon.playerNode!.component(ofType: SpriteComponent.self)!.sprite.position
     }
     
     required init?(coder aDecoder: NSCoder) {
