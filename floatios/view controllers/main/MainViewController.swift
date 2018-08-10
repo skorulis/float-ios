@@ -19,11 +19,10 @@ class MainViewController: UIViewController {
 
         let playerVC = PlayerViewController()
         let cityVC = CityViewController()
-        let dungeonVC = DungeonViewController()
         let mapVC = Map3DViewController()
         
         let tab = UITabBarController()
-        tab.viewControllers = [mapVC,playerVC,cityVC,dungeonVC].map { UINavigationController(rootViewController: $0) }
+        tab.viewControllers = [mapVC,playerVC,cityVC].map { UINavigationController(rootViewController: $0) }
         
         self.view.addSubview(tab.view)
         tab.view.snp.makeConstraints { (make) in

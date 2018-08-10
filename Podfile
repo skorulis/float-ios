@@ -2,8 +2,6 @@
 
 
 def ios_pods
-    pod 'Down'
-    pod 'SpriteKit-Spring', :git => 'https://github.com/ataugeron/SpriteKit-Spring/'
     pod 'SKCollectionView',:path => '~/dev/ios/SKLibs/SKCollectionView'
     pod "CCTextFieldEffects"
     pod "FontAwesomeKit", :git => 'https://github.com/PrideChung/FontAwesomeKit'

@@ -20,8 +20,6 @@ class Map3DViewController: UIViewController {
     var inputHandler:SceneInputHandler!
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        let generator = DungeonGenerator(size: 7,ref:game.reference,player:game.player.player)
-        let dungeon = generator.generateDungeon(type:.outdoors)
         self.scene = Map3DScene();
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.title = "Map"

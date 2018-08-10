@@ -47,7 +47,7 @@ class PlayerViewController: SKCVFlowLayoutCollectionViewController {
             game.player.performAction(action: cell.model!)
             self.sections.reloadData()
             if (cell.model!.type == .dungeon) {
-                self.openDungeon()
+                
             }
         }
         
@@ -98,10 +98,4 @@ class PlayerViewController: SKCVFlowLayoutCollectionViewController {
         
     }
     
-    func openDungeon() {
-        let vc = DungeonViewController()
-        self.present(vc, animated: true, completion: nil)
-    }
-    
-
 }

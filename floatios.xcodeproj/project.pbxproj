@@ -35,30 +35,17 @@
 		FA36929720F19E7D003988D4 /* StoryPieceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA36929620F19E7D003988D4 /* StoryPieceViewController.swift */; };
 		FA36929920F19ED2003988D4 /* StoryPieceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA36929820F19ED2003988D4 /* StoryPieceCell.swift */; };
 		FA3AACA22112F82600955109 /* Map3DViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3AACA12112F82600955109 /* Map3DViewController.swift */; };
-		FA4A5DF1210C367A001EE222 /* DungeonBattleNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4A5DF0210C367A001EE222 /* DungeonBattleNode.swift */; };
-		FA4A5DF3210C3702001EE222 /* BattleUIController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA4A5DF2210C3702001EE222 /* BattleUIController.swift */; };
 		FA569C6F20E589C40094807F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA569C6E20E589C40094807F /* AppDelegate.swift */; };
 		FA569C7920E589C70094807F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA569C7720E589C70094807F /* LaunchScreen.storyboard */; };
 		FA569C8420E589C70094807F /* floatiosTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA569C8320E589C70094807F /* floatiosTests.swift */; };
 		FA73C6FA20F35152006AEF0E /* AvatarSelectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73C6F920F35152006AEF0E /* AvatarSelectionViewController.swift */; };
 		FA73C6FE20F353E4006AEF0E /* AvatarEmojiCellCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73C6FD20F353E4006AEF0E /* AvatarEmojiCellCollectionViewCell.swift */; };
 		FA73C70020F4027A006AEF0E /* AvatarImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA73C6FF20F40279006AEF0E /* AvatarImageView.swift */; };
-		FA83446A2102F66E005BCF1A /* TileImageGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8344692102F66E005BCF1A /* TileImageGenerator.swift */; };
-		FA83446C2102F67F005BCF1A /* TileGenContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA83446B2102F67F005BCF1A /* TileGenContext.swift */; };
-		FA8344712103150C005BCF1A /* SKTileMapNode+Additions.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA8344702103150C005BCF1A /* SKTileMapNode+Additions.swift */; };
-		FA83447621034B5D005BCF1A /* DungeonHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA83447521034B5D005BCF1A /* DungeonHeaderView.swift */; };
-		FA83447821042BDA005BCF1A /* DungeonScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA83447721042BDA005BCF1A /* DungeonScene.swift */; };
 		FA9A5CCB20E97BE100C36110 /* ItemCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA9A5CCA20E97BE100C36110 /* ItemCell.swift */; };
-		FAB4BD5120FF3D0C0081B5A6 /* Tiles.sks in Resources */ = {isa = PBXBuildFile; fileRef = FAB4BD4F20FF3D0C0081B5A6 /* Tiles.sks */; };
-		FAB4BD5720FF4CB80081B5A6 /* DungeonViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB4BD5620FF4CB80081B5A6 /* DungeonViewController.swift */; };
-		FAB4BD5920FFE5BA0081B5A6 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FAB4BD5820FFE5BA0081B5A6 /* Assets.xcassets */; };
-		FAB4BDF1210139360081B5A6 /* TilesGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB4BDF0210139360081B5A6 /* TilesGenerator.swift */; };
 		FAB7B7F520EA0956002B2C0B /* PlayerStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7B7F420EA0956002B2C0B /* PlayerStatsViewController.swift */; };
 		FAB7B7F720EA09C4002B2C0B /* StatProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7B7F620EA09C4002B2C0B /* StatProgressCell.swift */; };
 		FAD07A3D20FAD21F007C20D1 /* NPCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD07A3C20FAD21F007C20D1 /* NPCViewController.swift */; };
 		FAD8518820F4985C00227AF2 /* SelectAvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD8518720F4985C00227AF2 /* SelectAvatarCell.swift */; };
-		FAE62919210887D50031FE10 /* SpriteComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE62918210887D50031FE10 /* SpriteComponent.swift */; };
-		FAE6291B210889220031FE10 /* ASSpriteNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAE6291A210889220031FE10 /* ASSpriteNode.swift */; };
 		FAF5263A20FC7B550062BC7C /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5263920FC7B550062BC7C /* ProgressBar.swift */; };
 		FAF78EA020F73A59005F7E88 /* SkillListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF78E9F20F73A59005F7E88 /* SkillListViewController.swift */; };
 		FAF78EA220F73A97005F7E88 /* SkillProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF78EA120F73A97005F7E88 /* SkillProgressCell.swift */; };
@@ -131,8 +118,6 @@
 		FA36929620F19E7D003988D4 /* StoryPieceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryPieceViewController.swift; sourceTree = "<group>"; };
 		FA36929820F19ED2003988D4 /* StoryPieceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryPieceCell.swift; sourceTree = "<group>"; };
 		FA3AACA12112F82600955109 /* Map3DViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map3DViewController.swift; sourceTree = "<group>"; };
-		FA4A5DF0210C367A001EE222 /* DungeonBattleNode.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DungeonBattleNode.swift; sourceTree = "<group>"; };
-		FA4A5DF2210C3702001EE222 /* BattleUIController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleUIController.swift; sourceTree = "<group>"; };
 		FA569C6B20E589C40094807F /* floatios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = floatios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA569C6E20E589C40094807F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		FA569C7820E589C70094807F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
@@ -143,22 +128,11 @@
 		FA73C6F920F35152006AEF0E /* AvatarSelectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarSelectionViewController.swift; sourceTree = "<group>"; };
 		FA73C6FD20F353E4006AEF0E /* AvatarEmojiCellCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarEmojiCellCollectionViewCell.swift; sourceTree = "<group>"; };
 		FA73C6FF20F40279006AEF0E /* AvatarImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AvatarImageView.swift; sourceTree = "<group>"; };
-		FA8344692102F66E005BCF1A /* TileImageGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileImageGenerator.swift; sourceTree = "<group>"; };
-		FA83446B2102F67F005BCF1A /* TileGenContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TileGenContext.swift; sourceTree = "<group>"; };
-		FA8344702103150C005BCF1A /* SKTileMapNode+Additions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SKTileMapNode+Additions.swift"; sourceTree = "<group>"; };
-		FA83447521034B5D005BCF1A /* DungeonHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonHeaderView.swift; sourceTree = "<group>"; };
-		FA83447721042BDA005BCF1A /* DungeonScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonScene.swift; sourceTree = "<group>"; };
 		FA9A5CCA20E97BE100C36110 /* ItemCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCell.swift; sourceTree = "<group>"; };
-		FAB4BD4F20FF3D0C0081B5A6 /* Tiles.sks */ = {isa = PBXFileReference; lastKnownFileType = file.sks; path = Tiles.sks; sourceTree = "<group>"; };
-		FAB4BD5620FF4CB80081B5A6 /* DungeonViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DungeonViewController.swift; sourceTree = "<group>"; };
-		FAB4BD5820FFE5BA0081B5A6 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		FAB4BDF0210139360081B5A6 /* TilesGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TilesGenerator.swift; sourceTree = "<group>"; };
 		FAB7B7F420EA0956002B2C0B /* PlayerStatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStatsViewController.swift; sourceTree = "<group>"; };
 		FAB7B7F620EA09C4002B2C0B /* StatProgressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatProgressCell.swift; sourceTree = "<group>"; };
 		FAD07A3C20FAD21F007C20D1 /* NPCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NPCViewController.swift; sourceTree = "<group>"; };
 		FAD8518720F4985C00227AF2 /* SelectAvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAvatarCell.swift; sourceTree = "<group>"; };
-		FAE62918210887D50031FE10 /* SpriteComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpriteComponent.swift; sourceTree = "<group>"; };
-		FAE6291A210889220031FE10 /* ASSpriteNode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ASSpriteNode.swift; sourceTree = "<group>"; };
 		FAF5263920FC7B550062BC7C /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		FAF78E9F20F73A59005F7E88 /* SkillListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillListViewController.swift; sourceTree = "<group>"; };
 		FAF78EA120F73A97005F7E88 /* SkillProgressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillProgressCell.swift; sourceTree = "<group>"; };
@@ -325,15 +299,6 @@
 			path = map;
 			sourceTree = "<group>";
 		};
-		FA4A5DEF210C367A001EE222 /* battle */ = {
-			isa = PBXGroup;
-			children = (
-				FA4A5DF0210C367A001EE222 /* DungeonBattleNode.swift */,
-				FA4A5DF2210C3702001EE222 /* BattleUIController.swift */,
-			);
-			path = battle;
-			sourceTree = "<group>";
-		};
 		FA569C6220E589C40094807F = {
 			isa = PBXGroup;
 			children = (
@@ -360,10 +325,7 @@
 			isa = PBXGroup;
 			children = (
 				FA1C3E4F21170E470062FC05 /* lore */,
-				FAE62915210885140031FE10 /* component-entity */,
 				FA83446F210314A9005BCF1A /* util */,
-				FAB4BD4E20FF3CE00081B5A6 /* resources */,
-				FAB4BDEF210139200081B5A6 /* tiles */,
 				FAE12DFD20E6143A00F9FA77 /* view controllers */,
 				FA569C9F20E58D960094807F /* logic */,
 				FA569C6E20E589C40094807F /* AppDelegate.swift */,
@@ -402,40 +364,9 @@
 		FA83446F210314A9005BCF1A /* util */ = {
 			isa = PBXGroup;
 			children = (
-				FA8344702103150C005BCF1A /* SKTileMapNode+Additions.swift */,
 				FAF986AE2105CFAB009C8F92 /* TypeConversions.swift */,
 			);
 			path = util;
-			sourceTree = "<group>";
-		};
-		FAB4BD4E20FF3CE00081B5A6 /* resources */ = {
-			isa = PBXGroup;
-			children = (
-				FAB4BD5820FFE5BA0081B5A6 /* Assets.xcassets */,
-				FAB4BD4F20FF3D0C0081B5A6 /* Tiles.sks */,
-			);
-			path = resources;
-			sourceTree = "<group>";
-		};
-		FAB4BD5520FF4CA90081B5A6 /* dungeon */ = {
-			isa = PBXGroup;
-			children = (
-				FA4A5DEF210C367A001EE222 /* battle */,
-				FAB4BD5620FF4CB80081B5A6 /* DungeonViewController.swift */,
-				FA83447521034B5D005BCF1A /* DungeonHeaderView.swift */,
-				FA83447721042BDA005BCF1A /* DungeonScene.swift */,
-			);
-			path = dungeon;
-			sourceTree = "<group>";
-		};
-		FAB4BDEF210139200081B5A6 /* tiles */ = {
-			isa = PBXGroup;
-			children = (
-				FAB4BDF0210139360081B5A6 /* TilesGenerator.swift */,
-				FA8344692102F66E005BCF1A /* TileImageGenerator.swift */,
-				FA83446B2102F67F005BCF1A /* TileGenContext.swift */,
-			);
-			path = tiles;
 			sourceTree = "<group>";
 		};
 		FAD07A3B20FAD1F5007C20D1 /* npc */ = {
@@ -450,7 +381,6 @@
 			isa = PBXGroup;
 			children = (
 				FA3AAC9E2112F03500955109 /* map */,
-				FAB4BD5520FF4CA90081B5A6 /* dungeon */,
 				FAD07A3B20FAD1F5007C20D1 /* npc */,
 				FAF78E9E20F73A42005F7E88 /* skills */,
 				FA73C6F820F3513B006AEF0E /* avatar */,
@@ -463,15 +393,6 @@
 				FA10720020E725030046C756 /* city */,
 			);
 			path = "view controllers";
-			sourceTree = "<group>";
-		};
-		FAE62915210885140031FE10 /* component-entity */ = {
-			isa = PBXGroup;
-			children = (
-				FAE62918210887D50031FE10 /* SpriteComponent.swift */,
-				FAE6291A210889220031FE10 /* ASSpriteNode.swift */,
-			);
-			path = "component-entity";
 			sourceTree = "<group>";
 		};
 		FAF78E9E20F73A42005F7E88 /* skills */ = {
@@ -602,9 +523,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAB4BD5120FF3D0C0081B5A6 /* Tiles.sks in Resources */,
 				FA569C7920E589C70094807F /* LaunchScreen.storyboard in Resources */,
-				FAB4BD5920FFE5BA0081B5A6 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -668,7 +587,6 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-floatiosTests/Pods-floatiosTests-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CCTextFieldEffects/CCTextFieldEffects.framework",
-				"${BUILT_PRODUCTS_DIR}/Down/Down.framework",
 				"${BUILT_PRODUCTS_DIR}/FLGame-iOS/FLGame.framework",
 				"${BUILT_PRODUCTS_DIR}/FLScene-iOS/FLScene.framework",
 				"${BUILT_PRODUCTS_DIR}/FontAwesomeKit/FontAwesomeKit.framework",
@@ -676,12 +594,10 @@
 				"${BUILT_PRODUCTS_DIR}/SKComponents/SKComponents.framework",
 				"${BUILT_PRODUCTS_DIR}/SKSwiftLib-iOS/SKSwiftLib.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit-iOS/SnapKit.framework",
-				"${BUILT_PRODUCTS_DIR}/SpriteKit-Spring/SpriteKit_Spring.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CCTextFieldEffects.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Down.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLGame.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLScene.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FontAwesomeKit.framework",
@@ -689,7 +605,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKComponents.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKSwiftLib.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SpriteKit_Spring.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -704,7 +619,6 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-floatios/Pods-floatios-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/CCTextFieldEffects/CCTextFieldEffects.framework",
-				"${BUILT_PRODUCTS_DIR}/Down/Down.framework",
 				"${BUILT_PRODUCTS_DIR}/FLGame-iOS/FLGame.framework",
 				"${BUILT_PRODUCTS_DIR}/FLScene-iOS/FLScene.framework",
 				"${BUILT_PRODUCTS_DIR}/FontAwesomeKit/FontAwesomeKit.framework",
@@ -712,12 +626,10 @@
 				"${BUILT_PRODUCTS_DIR}/SKComponents/SKComponents.framework",
 				"${BUILT_PRODUCTS_DIR}/SKSwiftLib-iOS/SKSwiftLib.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit-iOS/SnapKit.framework",
-				"${BUILT_PRODUCTS_DIR}/SpriteKit-Spring/SpriteKit_Spring.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/CCTextFieldEffects.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Down.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLGame.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FLScene.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/FontAwesomeKit.framework",
@@ -725,7 +637,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKComponents.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKSwiftLib.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SpriteKit_Spring.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -784,21 +695,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				FAE62919210887D50031FE10 /* SpriteComponent.swift in Sources */,
 				FAB7B7F720EA09C4002B2C0B /* StatProgressCell.swift in Sources */,
 				FAD8518820F4985C00227AF2 /* SelectAvatarCell.swift in Sources */,
-				FA83446A2102F66E005BCF1A /* TileImageGenerator.swift in Sources */,
 				FA36929220F18A4B003988D4 /* MainViewController.swift in Sources */,
-				FA4A5DF3210C3702001EE222 /* BattleUIController.swift in Sources */,
 				FA3691FA20EEC1FE003988D4 /* CTAButtonCell.swift in Sources */,
 				FA10721E20E75CBB0046C756 /* ActionCell.swift in Sources */,
 				FA10723420E8ACBE0046C756 /* InventoryViewController.swift in Sources */,
 				FAF986AF2105CFAB009C8F92 /* TypeConversions.swift in Sources */,
 				FA36928F20F083AB003988D4 /* FloatTheme.swift in Sources */,
-				FA83447821042BDA005BCF1A /* DungeonScene.swift in Sources */,
 				FA36929720F19E7D003988D4 /* StoryPieceViewController.swift in Sources */,
 				FA36929920F19ED2003988D4 /* StoryPieceCell.swift in Sources */,
-				FAB4BDF1210139360081B5A6 /* TilesGenerator.swift in Sources */,
 				FA3691F820EDFCEF003988D4 /* CreatePlayerViewController.swift in Sources */,
 				FAF5263A20FC7B550062BC7C /* ProgressBar.swift in Sources */,
 				FA10722120E75CC30046C756 /* ForwardNavigationCell.swift in Sources */,
@@ -806,14 +712,10 @@
 				FA10720220E725130046C756 /* CityViewController.swift in Sources */,
 				FA10723120E88AF70046C756 /* SectionHeaderView.swift in Sources */,
 				FAF78EA020F73A59005F7E88 /* SkillListViewController.swift in Sources */,
-				FA83446C2102F67F005BCF1A /* TileGenContext.swift in Sources */,
 				FAB7B7F520EA0956002B2C0B /* PlayerStatsViewController.swift in Sources */,
 				FA1C3E5121170F5D0062FC05 /* LoreListViewController.swift in Sources */,
 				FA73C6FE20F353E4006AEF0E /* AvatarEmojiCellCollectionViewCell.swift in Sources */,
 				FAF78EA220F73A97005F7E88 /* SkillProgressCell.swift in Sources */,
-				FAB4BD5720FF4CB80081B5A6 /* DungeonViewController.swift in Sources */,
-				FA8344712103150C005BCF1A /* SKTileMapNode+Additions.swift in Sources */,
-				FA4A5DF1210C367A001EE222 /* DungeonBattleNode.swift in Sources */,
 				FA10720E20E75A040046C756 /* CityLandController.swift in Sources */,
 				FA10720420E7256B0046C756 /* CityDetailsCell.swift in Sources */,
 				FA9A5CCB20E97BE100C36110 /* ItemCell.swift in Sources */,
@@ -826,8 +728,6 @@
 				FAD07A3D20FAD21F007C20D1 /* NPCViewController.swift in Sources */,
 				FA73C70020F4027A006AEF0E /* AvatarImageView.swift in Sources */,
 				FA73C6FA20F35152006AEF0E /* AvatarSelectionViewController.swift in Sources */,
-				FAE6291B210889220031FE10 /* ASSpriteNode.swift in Sources */,
-				FA83447621034B5D005BCF1A /* DungeonHeaderView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -880,10 +780,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = X4S6MUZL2D;
 				INFOPLIST_FILE = FloatMac/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.skorulis.FloatMac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -903,10 +800,7 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = X4S6MUZL2D;
 				INFOPLIST_FILE = FloatMac/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/../Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.skorulis.FloatMac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1037,10 +931,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X4S6MUZL2D;
 				INFOPLIST_FILE = floatios/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.skorulis.floatios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1056,10 +947,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X4S6MUZL2D;
 				INFOPLIST_FILE = floatios/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.skorulis.floatios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1076,11 +964,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X4S6MUZL2D;
 				INFOPLIST_FILE = floatiosTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.skorulis.floatiosTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -1098,11 +982,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X4S6MUZL2D;
 				INFOPLIST_FILE = floatiosTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@loader_path/Frameworks",
-				);
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.skorulis.floatiosTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

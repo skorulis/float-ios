@@ -26,7 +26,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         window?.backgroundColor = UIColor.white
         window?.makeKeyAndVisible()
         
-        TilesGenerator.generateAllTiles()
         HexTextureGenerator.generateAllImages()
         
         return true
