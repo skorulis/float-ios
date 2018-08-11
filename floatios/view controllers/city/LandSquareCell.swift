@@ -7,7 +7,7 @@
 //
 
 import SKCollectionView
-import FLGame
+import FLScene
 
 final class LandSquareCell: UICollectionViewCell, AutoSizeModelCell {
     var model: LandPlotModel? {

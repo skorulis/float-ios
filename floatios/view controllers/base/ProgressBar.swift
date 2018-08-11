@@ -9,7 +9,7 @@
 import UIKit
 import SnapKit
 import SKComponents
-import FLGame
+import FLScene
 
 class ProgressBar: UIView {
 

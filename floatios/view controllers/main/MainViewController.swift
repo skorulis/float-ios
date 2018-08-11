@@ -8,7 +8,7 @@
 
 import UIKit
 import SnapKit
-import FLGame
+import FLScene
 
 class MainViewController: UIViewController {
 

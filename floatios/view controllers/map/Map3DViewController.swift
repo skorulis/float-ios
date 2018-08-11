@@ -9,10 +9,9 @@
 import UIKit
 import SceneKit
 import SnapKit
-import FLGame
 import FLScene
 
-class Map3DViewController: UIViewController {
+class Map3DViewController: UIViewController, SceneInputHandlerDelegate {
 
     let scene:Map3DScene
     let game = GameController.instance
@@ -39,12 +38,17 @@ class Map3DViewController: UIViewController {
         }
         
         sceneView.scene = self.scene
-        //sceneView.allowsCameraControl = true
+        sceneView.allowsCameraControl = true
+        //sceneView.defaultCameraController.interactionMode = .fly
         sceneView.showsStatistics = true
         sceneView.backgroundColor = UIColor.black
         
         let cameraNode = SCNNode()
-        cameraNode.camera = SCNCamera()
+        
+        let camera = SCNCamera()
+        camera.motionBlurIntensity = 1.0
+        
+        cameraNode.camera = camera
         scene.rootNode.addChildNode(cameraNode)
         
         // place the camera
@@ -52,14 +56,45 @@ class Map3DViewController: UIViewController {
         cameraNode.look(at: SCNVector3())
         
         self.inputHandler = SceneInputHandler(sceneView:self.sceneView,scene:scene,cameraNode:cameraNode)
+        self.inputHandler.delegate = self
         
         let tapGesture = UITapGestureRecognizer(target: self, action: #selector(tapped(_:)))
         sceneView.addGestureRecognizer(tapGesture)
+        
+        let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(longPress(_:)))
+        sceneView.addGestureRecognizer(longPressGesture)
     }
     
     @objc func tapped(_ sender:UITapGestureRecognizer) {
         let point = sender.location(in: self.sceneView)
         self.inputHandler.tapped(point:point)
     }
+    
+    @objc func longPress(_ sender:UILongPressGestureRecognizer) {
+        if (sender.state != .began) {
+            return
+        }
+        let point = sender.location(in: self.sceneView)
+        self.inputHandler.longPress(point: point)
+    }
 
+    //MARK: SceneInputHandlerDelegate
+        
+    func showLandOptions(node:GKHexMapNode,actions:[DungeonAction]) {
+        if actions.count == 0 {
+            return //Ignore
+        }
+        let alert = UIAlertController(title: "Choose action", message: nil, preferredStyle: .actionSheet)
+        
+        for a in actions {
+            let button = UIAlertAction(title: a.rawValue, style: .default) { (aa) in
+                self.inputHandler.performAction(node: node, action:a)
+            }
+            alert.addAction(button)
+        }
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
 }

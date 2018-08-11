@@ -8,7 +8,7 @@
 
 import UIKit
 import SKCollectionView
-import FLGame
+import FLScene
 
 final class ItemCell: UICollectionViewCell, AutoSizeModelCell {
     var model: ItemModel? {

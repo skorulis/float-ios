@@ -9,7 +9,7 @@
 import UIKit
 import SKCollectionView
 import SKSwiftLib
-import FLGame
+import FLScene
 
 class SkillListViewController: SKCVFlowLayoutCollectionViewController {
 

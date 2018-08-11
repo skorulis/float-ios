@@ -9,7 +9,7 @@
 import UIKit
 import SKCollectionView
 import SnapKit
-import FLGame
+import FLScene
 
 final class ActionCell: UICollectionViewCell, SimpleModelCell {
     

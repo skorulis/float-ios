@@ -8,7 +8,7 @@
 
 import UIKit
 import SKCollectionView
-import FLGame
+import FLScene
 
 class PlayerStatsViewController: SKCVFlowLayoutCollectionViewController {
     

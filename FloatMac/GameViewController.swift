@@ -9,7 +9,6 @@
 import SceneKit
 import QuartzCore
 import FLScene
-import FLGame
 
 class GameViewController: NSViewController {
     
