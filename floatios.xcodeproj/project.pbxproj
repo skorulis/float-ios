@@ -45,6 +45,8 @@
 		FAB7B7F520EA0956002B2C0B /* PlayerStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7B7F420EA0956002B2C0B /* PlayerStatsViewController.swift */; };
 		FAB7B7F720EA09C4002B2C0B /* StatProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7B7F620EA09C4002B2C0B /* StatProgressCell.swift */; };
 		FAD07A3D20FAD21F007C20D1 /* NPCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD07A3C20FAD21F007C20D1 /* NPCViewController.swift */; };
+		FAD3F28521201A8F00D64A10 /* scene1.scn in Resources */ = {isa = PBXBuildFile; fileRef = FAD3F28421201A8F00D64A10 /* scene1.scn */; };
+		FAD3F28621201A8F00D64A10 /* scene1.scn in Resources */ = {isa = PBXBuildFile; fileRef = FAD3F28421201A8F00D64A10 /* scene1.scn */; };
 		FAD8518820F4985C00227AF2 /* SelectAvatarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD8518720F4985C00227AF2 /* SelectAvatarCell.swift */; };
 		FAF5263A20FC7B550062BC7C /* ProgressBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF5263920FC7B550062BC7C /* ProgressBar.swift */; };
 		FAF78EA020F73A59005F7E88 /* SkillListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF78E9F20F73A59005F7E88 /* SkillListViewController.swift */; };
@@ -132,6 +134,7 @@
 		FAB7B7F420EA0956002B2C0B /* PlayerStatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStatsViewController.swift; sourceTree = "<group>"; };
 		FAB7B7F620EA09C4002B2C0B /* StatProgressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatProgressCell.swift; sourceTree = "<group>"; };
 		FAD07A3C20FAD21F007C20D1 /* NPCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NPCViewController.swift; sourceTree = "<group>"; };
+		FAD3F28421201A8F00D64A10 /* scene1.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = scene1.scn; sourceTree = "<group>"; };
 		FAD8518720F4985C00227AF2 /* SelectAvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAvatarCell.swift; sourceTree = "<group>"; };
 		FAF5263920FC7B550062BC7C /* ProgressBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressBar.swift; sourceTree = "<group>"; };
 		FAF78E9F20F73A59005F7E88 /* SkillListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SkillListViewController.swift; sourceTree = "<group>"; };
@@ -327,10 +330,10 @@
 				FA1C3E4F21170E470062FC05 /* lore */,
 				FA83446F210314A9005BCF1A /* util */,
 				FAE12DFD20E6143A00F9FA77 /* view controllers */,
-				FA569C9F20E58D960094807F /* logic */,
 				FA569C6E20E589C40094807F /* AppDelegate.swift */,
 				FA569C7720E589C70094807F /* LaunchScreen.storyboard */,
 				FA569C7A20E589C70094807F /* Info.plist */,
+				FAD3F28421201A8F00D64A10 /* scene1.scn */,
 			);
 			path = floatios;
 			sourceTree = "<group>";
@@ -342,13 +345,6 @@
 				FA569C8520E589C70094807F /* Info.plist */,
 			);
 			path = floatiosTests;
-			sourceTree = "<group>";
-		};
-		FA569C9F20E58D960094807F /* logic */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = logic;
 			sourceTree = "<group>";
 		};
 		FA73C6F820F3513B006AEF0E /* avatar */ = {
@@ -516,6 +512,7 @@
 				FA1C3E682117D0D00062FC05 /* Main.storyboard in Resources */,
 				FA1C3E652117D0D00062FC05 /* Assets.xcassets in Resources */,
 				FA1C3E632117D0CE0062FC05 /* art.scnassets in Resources */,
+				FAD3F28621201A8F00D64A10 /* scene1.scn in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -524,6 +521,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA569C7920E589C70094807F /* LaunchScreen.storyboard in Resources */,
+				FAD3F28521201A8F00D64A10 /* scene1.scn in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -774,7 +772,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = X4S6MUZL2D;
 				INFOPLIST_FILE = FloatMac/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.skorulis.FloatMac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -794,7 +795,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEVELOPMENT_TEAM = X4S6MUZL2D;
 				INFOPLIST_FILE = FloatMac/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+				);
 				MACOSX_DEPLOYMENT_TARGET = 10.13;
 				PRODUCT_BUNDLE_IDENTIFIER = com.skorulis.FloatMac;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -925,7 +929,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X4S6MUZL2D;
 				INFOPLIST_FILE = floatios/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.skorulis.floatios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -941,7 +948,10 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X4S6MUZL2D;
 				INFOPLIST_FILE = floatios/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.skorulis.floatios;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -958,7 +968,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X4S6MUZL2D;
 				INFOPLIST_FILE = floatiosTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.skorulis.floatiosTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
@@ -976,7 +990,11 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = X4S6MUZL2D;
 				INFOPLIST_FILE = floatiosTests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.skorulis.floatiosTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;

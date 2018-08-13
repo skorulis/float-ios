@@ -38,7 +38,7 @@ class Map3DViewController: UIViewController, SceneInputHandlerDelegate {
         }
         
         sceneView.scene = self.scene
-        sceneView.allowsCameraControl = true
+        sceneView.allowsCameraControl = false
         //sceneView.defaultCameraController.interactionMode = .fly
         sceneView.showsStatistics = true
         sceneView.backgroundColor = UIColor.black
