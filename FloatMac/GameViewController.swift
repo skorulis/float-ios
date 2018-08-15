@@ -58,10 +58,18 @@ class GameViewController: NSViewController, SceneInputHandlerDelegate {
         sceneView.addGestureRecognizer(rightClickGesture)
         
         do {
-            let jsonModel = scene.overland.deflated()
-            let data = try JSONEncoder().encode(jsonModel)
-            let fileURL = URL(fileURLWithPath: "/Users/alex/dev/floats/mapTest.json")
+            let islandMeta = scene.overland.dungeons.map { $0.metaData()}
+            let jsonObj = ["islands":islandMeta]
+            let data = try JSONSerialization.data(withJSONObject: jsonObj, options: [])
+            let fileURL = URL(fileURLWithPath: "/Users/alex/dev/floats/overland.json")
             try data.write(to: fileURL)
+            
+            for island in scene.overland.dungeons {
+                let data = try JSONEncoder().encode(island)
+                let fileURL = URL(fileURLWithPath: "/Users/alex/dev/floats/\(island.name).json")
+                try data.write(to: fileURL)
+            }
+            
         } catch {
             print("Error saving maps \(error)")
         }
