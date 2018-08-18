@@ -57,23 +57,6 @@ class GameViewController: NSViewController, SceneInputHandlerDelegate {
         rightClickGesture.buttonMask = 2
         sceneView.addGestureRecognizer(rightClickGesture)
         
-        do {
-            let islandMeta = scene.overland.dungeons.map { $0.metaData()}
-            let jsonObj = ["islands":islandMeta]
-            let data = try JSONSerialization.data(withJSONObject: jsonObj, options: [])
-            let fileURL = URL(fileURLWithPath: "/Users/alex/dev/floats/overland.json")
-            try data.write(to: fileURL)
-            
-            for island in scene.overland.dungeons {
-                let data = try JSONEncoder().encode(island)
-                let fileURL = URL(fileURLWithPath: "/Users/alex/dev/floats/\(island.name).json")
-                try data.write(to: fileURL)
-            }
-            
-        } catch {
-            print("Error saving maps \(error)")
-        }
-        
     }
     
     @objc func tapped(sender:NSGestureRecognizer) {
@@ -93,5 +76,27 @@ class GameViewController: NSViewController, SceneInputHandlerDelegate {
             self.input.performAction(node: node, action: actions[0])
         }
     }
+    
+    func saveMap(sender:NSMenuItem?) {
+        do {
+            let rootDir = "/Users/alex/dev/floats/FLScene/FLScene/Resources/data/"
+            let islandMeta = scene.overland.dungeons.map { $0.metaData()}
+            let jsonObj = ["islands":islandMeta]
+            let data = try JSONSerialization.data(withJSONObject: jsonObj, options: [])
+            let fileURL = URL(fileURLWithPath: rootDir + "overland.json")
+            try data.write(to: fileURL)
+            
+            for island in scene.overland.dungeons {
+                let data = try JSONEncoder().encode(island)
+                let filePath = "\(rootDir)\(island.name).json"
+                let fileURL = URL(fileURLWithPath: filePath)
+                try data.write(to: fileURL)
+            }
+            
+        } catch {
+            print("Error saving maps \(error)")
+        }
+    }
+    
     
 }

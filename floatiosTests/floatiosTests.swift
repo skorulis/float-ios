@@ -7,30 +7,19 @@
 //
 
 import XCTest
+import FLScene
 @testable import floatios
 
 class floatiosTests: XCTestCase {
     
-    override func setUp() {
-        super.setUp()
-        // Put setup code here. This method is called before the invocation of each test method in the class.
+    func testParticleLoading() {
+        let b1 = Bundle.main
+        let b2 = Bundle(for: Map3DScene.self)
+        
+        let p1 = b1.path(forResource: "teleporter", ofType: "scnp", inDirectory: nil)
+        let p2 = b2.path(forResource: "teleporter", ofType: "scnp", inDirectory: "particles")
+        
+        XCTAssertNotNil(p1)
+        XCTAssertNotNil(p2)
     }
-    
-    override func tearDown() {
-        // Put teardown code here. This method is called after the invocation of each test method in the class.
-        super.tearDown()
-    }
-    
-    func testExample() {
-        // This is an example of a functional test case.
-        // Use XCTAssert and related functions to verify your tests produce the correct results.
-    }
-    
-    func testPerformanceExample() {
-        // This is an example of a performance test case.
-        self.measure {
-            // Put the code you want to measure the time of here.
-        }
-    }
-    
 }
