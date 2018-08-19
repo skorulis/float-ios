@@ -14,6 +14,7 @@ class BattleViewController: NSViewController {
 
     var sceneView:SCNView!
     var input:BattleInputHandler!
+    var sceneDelegate:BattleSceneDelegate!
     
     override init(nibName nibNameOrNil: NSNib.Name?, bundle nibBundleOrNil: Bundle?) {
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
@@ -33,9 +34,19 @@ class BattleViewController: NSViewController {
         let dungeon = dunGen.generateDungeon(type: .outdoors)
         
         let scene = BattleScene(island:dungeon)
-        input = BattleInputHandler(scene:scene)
+        input = BattleInputHandler(sceneView:sceneView, scene:scene)
         sceneView.scene = scene
         
+        let gesture = NSClickGestureRecognizer(target: self, action: #selector(tapped(sender:)))
+        gesture.buttonMask = 1
+        sceneView.addGestureRecognizer(gesture)
+        
+        sceneDelegate = BattleSceneDelegate(scene:scene)
+        
+        sceneView.delegate = sceneDelegate
+        scene.physicsWorld.contactDelegate = sceneDelegate
+        sceneView.isPlaying = true
+        sceneView.showsStatistics = true
     }
     
     override var acceptsFirstResponder: Bool {
@@ -43,11 +54,14 @@ class BattleViewController: NSViewController {
     }
     
     override func keyUp(with event: NSEvent) {
-        print("Key event \(event)")
         if let chars = event.characters {
             self.input.castSpell(name:chars)
         }
-        
+    }
+    
+    @objc func tapped(sender:NSGestureRecognizer) {
+        let location = sender.location(in: sceneView)
+        input.tapped(point: CGPoint(x: location.x, y: location.y))
     }
     
 }

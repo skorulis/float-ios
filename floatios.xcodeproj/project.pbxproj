@@ -46,6 +46,10 @@
 		FAB7B7F520EA0956002B2C0B /* PlayerStatsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7B7F420EA0956002B2C0B /* PlayerStatsViewController.swift */; };
 		FAB7B7F720EA09C4002B2C0B /* StatProgressCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAB7B7F620EA09C4002B2C0B /* StatProgressCell.swift */; };
 		FACE84712127E35300F536D4 /* BattleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FACE84702127E35300F536D4 /* BattleViewController.swift */; };
+		FACE8494212820D600F536D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FACE8491212820D600F536D4 /* Assets.xcassets */; };
+		FACE8495212820D600F536D4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FACE8491212820D600F536D4 /* Assets.xcassets */; };
+		FACE849A2128226400F536D4 /* trail.scnp in Resources */ = {isa = PBXBuildFile; fileRef = FACE84972128226400F536D4 /* trail.scnp */; };
+		FACE849B2128226400F536D4 /* trail.scnp in Resources */ = {isa = PBXBuildFile; fileRef = FACE84972128226400F536D4 /* trail.scnp */; };
 		FAD07A3D20FAD21F007C20D1 /* NPCViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAD07A3C20FAD21F007C20D1 /* NPCViewController.swift */; };
 		FAD3F28521201A8F00D64A10 /* scene1.scn in Resources */ = {isa = PBXBuildFile; fileRef = FAD3F28421201A8F00D64A10 /* scene1.scn */; };
 		FAD3F28621201A8F00D64A10 /* scene1.scn in Resources */ = {isa = PBXBuildFile; fileRef = FAD3F28421201A8F00D64A10 /* scene1.scn */; };
@@ -136,6 +140,8 @@
 		FAB7B7F420EA0956002B2C0B /* PlayerStatsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlayerStatsViewController.swift; sourceTree = "<group>"; };
 		FAB7B7F620EA09C4002B2C0B /* StatProgressCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatProgressCell.swift; sourceTree = "<group>"; };
 		FACE84702127E35300F536D4 /* BattleViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BattleViewController.swift; sourceTree = "<group>"; };
+		FACE8491212820D600F536D4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		FACE84972128226400F536D4 /* trail.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = trail.scnp; sourceTree = "<group>"; };
 		FAD07A3C20FAD21F007C20D1 /* NPCViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NPCViewController.swift; sourceTree = "<group>"; };
 		FAD3F28421201A8F00D64A10 /* scene1.scn */ = {isa = PBXFileReference; lastKnownFileType = file.bplist; path = scene1.scn; sourceTree = "<group>"; };
 		FAD8518720F4985C00227AF2 /* SelectAvatarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectAvatarCell.swift; sourceTree = "<group>"; };
@@ -337,7 +343,9 @@
 				FA569C7720E589C70094807F /* LaunchScreen.storyboard */,
 				FA569C7A20E589C70094807F /* Info.plist */,
 				FA511C832125683B00051E53 /* teleporter.scnp */,
+				FACE84972128226400F536D4 /* trail.scnp */,
 				FAD3F28421201A8F00D64A10 /* scene1.scn */,
+				FACE8491212820D600F536D4 /* Assets.xcassets */,
 			);
 			path = floatios;
 			sourceTree = "<group>";
@@ -513,10 +521,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FACE849B2128226400F536D4 /* trail.scnp in Resources */,
 				FA1C3E682117D0D00062FC05 /* Main.storyboard in Resources */,
 				FA1C3E652117D0D00062FC05 /* Assets.xcassets in Resources */,
 				FAD3F28621201A8F00D64A10 /* scene1.scn in Resources */,
 				FA511C852125683B00051E53 /* teleporter.scnp in Resources */,
+				FACE8495212820D600F536D4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -527,6 +537,8 @@
 				FA511C842125683B00051E53 /* teleporter.scnp in Resources */,
 				FA569C7920E589C70094807F /* LaunchScreen.storyboard in Resources */,
 				FAD3F28521201A8F00D64A10 /* scene1.scn in Resources */,
+				FACE849A2128226400F536D4 /* trail.scnp in Resources */,
+				FACE8494212820D600F536D4 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
