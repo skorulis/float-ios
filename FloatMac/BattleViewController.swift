@@ -55,7 +55,13 @@ class BattleViewController: NSViewController {
     
     override func keyUp(with event: NSEvent) {
         if let chars = event.characters {
-            self.input.castSpell(name:chars)
+            self.input.keyUp(name:chars)
+        }
+    }
+    
+    override func keyDown(with event: NSEvent) {
+        if let chars = event.characters {
+            self.input.keyDown(name:chars)
         }
     }
     
