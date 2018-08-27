@@ -20,6 +20,10 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         //HexTextureGenerator.generateAllImages()
+        let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
+        let window = NSApplication.shared.windows.first
+        let firstVC = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "GameScene")) as? NSViewController
+        window?.contentViewController = firstVC
     }
     
     @IBAction func saveMap(sender:NSMenuItem?) {

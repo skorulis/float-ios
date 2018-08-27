@@ -71,7 +71,7 @@ class GameViewController: NSViewController, SceneInputHandlerDelegate {
     
     //MARK: SceneInputHandlerDelegate
     
-    func showLandOptions(node:GKHexMapNode,actions:[DungeonAction]) {
+    func showLandOptions(node:MapHexModel,actions:[DungeonAction]) {
         if (actions.count == 1) {
             self.input.performAction(node: node, action: actions[0])
         }

@@ -30,7 +30,7 @@ class BattleViewController: NSViewController {
         sceneView = self.view as! SCNView
         sceneView.allowsCameraControl = true
         
-        let dunGen = DungeonGenerator(size: 3, name: "battle")
+        let dunGen = DungeonGenerator(size: 5, name: "battle")
         let dungeon = dunGen.generateDungeon(type: .outdoors)
         
         let scene = BattleScene(island:dungeon)

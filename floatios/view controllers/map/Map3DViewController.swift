@@ -86,7 +86,7 @@ class Map3DViewController: UIViewController, SceneInputHandlerDelegate {
 
     //MARK: SceneInputHandlerDelegate
         
-    func showLandOptions(node:GKHexMapNode,actions:[DungeonAction]) {
+    func showLandOptions(node:MapHexModel,actions:[DungeonAction]) {
         if actions.count == 0 {
             return //Ignore
         }
