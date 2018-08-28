@@ -14,13 +14,13 @@ import SKSwiftLib
 
 class Map3DViewController: UIViewController, SceneInputHandlerDelegate {
 
-    let scene:Map3DScene
+    let scene:OverlandScene
     let game = GameController.instance
     var sceneView:SCNView!
     var inputHandler:SceneInputHandler!
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
-        self.scene = Map3DScene();
+        self.scene = OverlandScene();
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
         self.title = "Map"
     }

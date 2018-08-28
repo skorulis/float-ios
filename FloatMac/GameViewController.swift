@@ -12,18 +12,19 @@ import FLScene
 
 class GameViewController: NSViewController, SceneInputHandlerDelegate {
     
-    let scene:Map3DScene
+    let scene:OverlandScene
     let game = GameController.instance
     var sceneView:SCNView!
     var input:SceneInputHandler!
+    var sceneDelegate:OverlandSceneDelegate!
     
     override init(nibName nibNameOrNil: NSNib.Name?, bundle nibBundleOrNil: Bundle?) {
-        self.scene = Map3DScene();
+        self.scene = OverlandScene()
         super.init(nibName: nibNameOrNil, bundle: nibBundleOrNil)
     }
     
     required init?(coder aDecoder: NSCoder) {
-        self.scene = Map3DScene();
+        self.scene = OverlandScene()
         super.init(coder: aDecoder)
     }
     
@@ -57,6 +58,8 @@ class GameViewController: NSViewController, SceneInputHandlerDelegate {
         rightClickGesture.buttonMask = 2
         sceneView.addGestureRecognizer(rightClickGesture)
         
+        self.sceneDelegate = OverlandSceneDelegate(scene:scene)
+        sceneView.delegate = self.sceneDelegate
     }
     
     @objc func tapped(sender:NSGestureRecognizer) {

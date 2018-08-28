@@ -203,7 +203,7 @@
                         </connections>
                     </window>
                     <connections>
-                        <segue destination="PXb-81-5jk" kind="relationship" relationship="window.shadowedContentViewController" id="ZUF-4a-Ag2"/>
+                        <segue destination="XfG-lQ-9wD" kind="relationship" relationship="window.shadowedContentViewController" id="rzZ-SY-ipv"/>
                     </connections>
                 </windowController>
                 <customObject id="Oky-zY-oP4" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
@@ -237,10 +237,7 @@
                 </viewController>
                 <customObject id="B8Y-6z-7Bc" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="692" y="260"/>
+            <point key="canvasLocation" x="761" y="817"/>
         </scene>
     </scenes>
-    <inferredMetricsTieBreakers>
-        <segue reference="LTf-qa-bKB"/>
-    </inferredMetricsTieBreakers>
 </document>

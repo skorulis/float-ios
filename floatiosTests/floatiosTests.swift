@@ -14,7 +14,7 @@ class floatiosTests: XCTestCase {
     
     func testParticleLoading() {
         let b1 = Bundle.main
-        let b2 = Bundle(for: Map3DScene.self)
+        let b2 = Bundle(for: OverlandScene.self)
         
         let p1 = b1.path(forResource: "teleporter", ofType: "scnp", inDirectory: nil)
         let p2 = b2.path(forResource: "teleporter", ofType: "scnp", inDirectory: "particles")
