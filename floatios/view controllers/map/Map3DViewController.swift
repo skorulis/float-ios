@@ -18,6 +18,7 @@ class Map3DViewController: UIViewController, SceneInputHandlerDelegate {
     let game = GameController.instance
     var sceneView:SCNView!
     var inputHandler:SceneInputHandler!
+    var sceneDelegate:OverlandSceneDelegate!
     
     override init(nibName nibNameOrNil: String?, bundle nibBundleOrNil: Bundle?) {
         self.scene = OverlandScene();
@@ -31,11 +32,6 @@ class Map3DViewController: UIViewController, SceneInputHandlerDelegate {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        let shareButton = UIBarButtonItem(title: "share", style: .plain, target: self, action: #selector(sharePressed(sender:)))
-        let editButton = UIBarButtonItem(title: "edit", style: .plain, target: self, action: #selector(editPressed(sender:)))
-
-        self.navigationItem.rightBarButtonItems = [shareButton,editButton]
         
         self.sceneView = SCNView(frame: self.view.bounds)
         self.view.addSubview(sceneView)
@@ -69,6 +65,9 @@ class Map3DViewController: UIViewController, SceneInputHandlerDelegate {
         
         let longPressGesture = UILongPressGestureRecognizer(target: self, action: #selector(longPress(_:)))
         sceneView.addGestureRecognizer(longPressGesture)
+        
+        self.sceneDelegate = OverlandSceneDelegate(scene:scene)
+        sceneView.delegate = self.sceneDelegate
     }
     
     @objc func tapped(_ sender:UITapGestureRecognizer) {
@@ -103,13 +102,4 @@ class Map3DViewController: UIViewController, SceneInputHandlerDelegate {
         self.present(alert, animated: true, completion: nil)
     }
     
-    //MARK: actions
-    
-    @objc func sharePressed(sender:UIBarButtonItem) {
-        
-    }
-    
-    @objc func editPressed(sender:Any) {
-        
-    }
 }
