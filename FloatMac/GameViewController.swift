@@ -84,7 +84,8 @@ class GameViewController: NSViewController, SceneInputHandlerDelegate {
         do {
             let rootDir = "/Users/alex/dev/floats/FLScene/FLScene/Resources/data/"
             let islandMeta = scene.overland.dungeons.map { $0.metaData()}
-            let jsonObj = ["islands":islandMeta]
+            let bridgeArray = try scene.overland.bridgeJSONArray()
+            let jsonObj = ["islands":islandMeta,"bridges":bridgeArray]
             let data = try JSONSerialization.data(withJSONObject: jsonObj, options: [])
             let fileURL = URL(fileURLWithPath: rootDir + "overland.json")
             try data.write(to: fileURL)
