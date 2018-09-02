@@ -17,7 +17,7 @@ final class SkillProgressCell: UICollectionViewCell, AutoSizeModelCell {
     var model: SkillModel? {
         didSet {
             if let m = model {
-                label.text = m.type.name.rawValue
+                label.text = m.ref.name.rawValue
                 level.text = "\(m.level)"
             }
             

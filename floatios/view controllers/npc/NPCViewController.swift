@@ -31,7 +31,7 @@ class NPCViewController: SKCVFlowLayoutCollectionViewController {
         
         self.sections.preReloadBlock = { [unowned self] in
             let learnableSkills = self.npc.skills.trainable(into: playerChar.skills)
-            let skillNames = learnableSkills.skills.map { $0.type.name.rawValue }
+            let skillNames = learnableSkills.skills.map { $0.ref.name.rawValue }
             ForwardNavigationCell.updateSection(section: trainingSection, items: skillNames, collectionView: self.collectionView!)
             trainingSection.didSelectItemAt = {[unowned self] (collectionView,indexPath) in
                 let skill = learnableSkills.skills[indexPath.row]

@@ -30,10 +30,18 @@ class BattleViewController: NSViewController {
         sceneView = self.view as! SCNView
         sceneView.allowsCameraControl = true
         
+        ReferenceController.instance.readNamedSpells()
+        
         let dunGen = DungeonGenerator(size: 5, name: "battle")
         let dungeon = dunGen.generateDungeon(type: .outdoors)
         
-        let scene = BattleScene(island:dungeon)
+        let arena:FullArenaModel = ReferenceController.readJSONFile(filename: "arena1")!
+        let battle = arena.battles[0]
+        
+        let player = CharacterModel()
+        player.skills = SkillListModel.defaultSkills()
+        
+        let scene = BattleScene(island:dungeon,battleModel:battle,playerCharacter:player)
         input = BattleInputHandler(sceneView:sceneView, scene:scene)
         sceneView.scene = scene
         

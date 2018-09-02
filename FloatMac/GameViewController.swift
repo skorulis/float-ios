@@ -44,7 +44,7 @@ class GameViewController: NSViewController, SceneInputHandlerDelegate {
         scene.rootNode.addChildNode(cameraNode)
         
         // place the camera
-        cameraNode.position = SCNVector3(x: 0, y: 4, z: 15)
+        cameraNode.position = SCNVector3(x: 0, y: 10, z: 15)
         cameraNode.look(at: SCNVector3())
         
         input = SceneInputHandler(sceneView: sceneView, scene: scene, cameraNode: cameraNode)
@@ -57,6 +57,7 @@ class GameViewController: NSViewController, SceneInputHandlerDelegate {
         let rightClickGesture = NSClickGestureRecognizer(target: self, action: #selector(rightClicked(sender:)))
         rightClickGesture.buttonMask = 2
         sceneView.addGestureRecognizer(rightClickGesture)
+        //sceneView.debugOptions = SCNDebugOptions.showBoundingBoxes
         
         self.sceneDelegate = OverlandSceneDelegate(scene:scene)
         sceneView.delegate = self.sceneDelegate
