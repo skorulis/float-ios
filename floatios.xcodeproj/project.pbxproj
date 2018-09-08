@@ -38,6 +38,10 @@
 		FA36929720F19E7D003988D4 /* StoryPieceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA36929620F19E7D003988D4 /* StoryPieceViewController.swift */; };
 		FA36929920F19ED2003988D4 /* StoryPieceCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA36929820F19ED2003988D4 /* StoryPieceCell.swift */; };
 		FA3AACA22112F82600955109 /* Map3DViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3AACA12112F82600955109 /* Map3DViewController.swift */; };
+		FA44C1532141093D00A9FDAC /* heal.scnp in Resources */ = {isa = PBXBuildFile; fileRef = FA44C1522141093D00A9FDAC /* heal.scnp */; };
+		FA44C1542141093D00A9FDAC /* heal.scnp in Resources */ = {isa = PBXBuildFile; fileRef = FA44C1522141093D00A9FDAC /* heal.scnp */; };
+		FA44C15621410A0F00A9FDAC /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = FA44C15521410A0F00A9FDAC /* plus.png */; };
+		FA44C15721410A0F00A9FDAC /* plus.png in Resources */ = {isa = PBXBuildFile; fileRef = FA44C15521410A0F00A9FDAC /* plus.png */; };
 		FA511C842125683B00051E53 /* teleporter.scnp in Resources */ = {isa = PBXBuildFile; fileRef = FA511C832125683B00051E53 /* teleporter.scnp */; };
 		FA511C852125683B00051E53 /* teleporter.scnp in Resources */ = {isa = PBXBuildFile; fileRef = FA511C832125683B00051E53 /* teleporter.scnp */; };
 		FA569C6F20E589C40094807F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA569C6E20E589C40094807F /* AppDelegate.swift */; };
@@ -131,6 +135,8 @@
 		FA36929620F19E7D003988D4 /* StoryPieceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryPieceViewController.swift; sourceTree = "<group>"; };
 		FA36929820F19ED2003988D4 /* StoryPieceCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StoryPieceCell.swift; sourceTree = "<group>"; };
 		FA3AACA12112F82600955109 /* Map3DViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Map3DViewController.swift; sourceTree = "<group>"; };
+		FA44C1522141093D00A9FDAC /* heal.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = heal.scnp; sourceTree = "<group>"; };
+		FA44C15521410A0F00A9FDAC /* plus.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = plus.png; sourceTree = "<group>"; };
 		FA511C832125683B00051E53 /* teleporter.scnp */ = {isa = PBXFileReference; lastKnownFileType = file.scp; path = teleporter.scnp; sourceTree = "<group>"; };
 		FA569C6B20E589C40094807F /* floatios.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = floatios.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		FA569C6E20E589C40094807F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -353,7 +359,9 @@
 				FAD3F28421201A8F00D64A10 /* scene1.scn */,
 				FACE8491212820D600F536D4 /* Assets.xcassets */,
 				FA12CF38212AABEB0033A461 /* spark.png */,
+				FA44C15521410A0F00A9FDAC /* plus.png */,
 				FA12CF39212AABEB0033A461 /* focus.scnp */,
+				FA44C1522141093D00A9FDAC /* heal.scnp */,
 			);
 			path = floatios;
 			sourceTree = "<group>";
@@ -530,6 +538,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				FACE849B2128226400F536D4 /* trail.scnp in Resources */,
+				FA44C15721410A0F00A9FDAC /* plus.png in Resources */,
 				FA1C3E682117D0D00062FC05 /* Main.storyboard in Resources */,
 				FA1C3E652117D0D00062FC05 /* Assets.xcassets in Resources */,
 				FA12CF3B212AABEB0033A461 /* spark.png in Resources */,
@@ -537,6 +546,7 @@
 				FAD3F28621201A8F00D64A10 /* scene1.scn in Resources */,
 				FA511C852125683B00051E53 /* teleporter.scnp in Resources */,
 				FACE8495212820D600F536D4 /* Assets.xcassets in Resources */,
+				FA44C1542141093D00A9FDAC /* heal.scnp in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -545,6 +555,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				FA511C842125683B00051E53 /* teleporter.scnp in Resources */,
+				FA44C1532141093D00A9FDAC /* heal.scnp in Resources */,
+				FA44C15621410A0F00A9FDAC /* plus.png in Resources */,
 				FA12CF3A212AABEB0033A461 /* spark.png in Resources */,
 				FA569C7920E589C70094807F /* LaunchScreen.storyboard in Resources */,
 				FAD3F28521201A8F00D64A10 /* scene1.scn in Resources */,
