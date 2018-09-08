@@ -10,9 +10,8 @@ import SceneKit
 import QuartzCore
 import FLScene
 
-class BattleViewController: NSViewController {
+class BattleViewController: BaseMacViewController {
 
-    var sceneView:SCNView!
     var input:BattleInputHandler!
     var sceneDelegate:BattleSceneDelegate!
     
@@ -27,7 +26,6 @@ class BattleViewController: NSViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        sceneView = self.view as! SCNView
         sceneView.allowsCameraControl = true
         
         let dunGen = DungeonGenerator(size: 5, name: "battle")
@@ -52,7 +50,6 @@ class BattleViewController: NSViewController {
         sceneView.delegate = sceneDelegate
         scene.physicsWorld.contactDelegate = sceneDelegate
         sceneView.isPlaying = true
-        sceneView.showsStatistics = true
     }
     
     override var acceptsFirstResponder: Bool {

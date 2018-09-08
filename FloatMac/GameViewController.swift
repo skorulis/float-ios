@@ -10,11 +10,10 @@ import SceneKit
 import QuartzCore
 import FLScene
 
-class GameViewController: NSViewController, SceneInputHandlerDelegate {
+class GameViewController: BaseMacViewController, SceneInputHandlerDelegate {
     
     let scene:OverlandScene
     let game = GameController.instance
-    var sceneView:SCNView!
     var input:SceneInputHandler!
     var sceneDelegate:OverlandSceneDelegate!
     
@@ -31,13 +30,8 @@ class GameViewController: NSViewController, SceneInputHandlerDelegate {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // retrieve the SCNView
-        sceneView = self.view as! SCNView
-        
         sceneView.scene = self.scene
         //sceneView.allowsCameraControl = true
-        sceneView.showsStatistics = true
-        sceneView.backgroundColor = NSColor.black
         
         let cameraNode = SCNNode()
         cameraNode.camera = SCNCamera()

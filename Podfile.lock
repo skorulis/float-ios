@@ -30,29 +30,29 @@ PODS:
 
 DEPENDENCIES:
   - CCTextFieldEffects
-  - FLScene (from `~/dev/floats/FLScene`)
+  - FLScene (from `~/dev/ios/FLScene`)
   - FontAwesomeKit (from `https://github.com/PrideChung/FontAwesomeKit`)
-  - SKCollectionView (from `~/dev/ios/SKLibs/SKCollectionView`)
-  - SKComponents (from `~/dev/ios/SKLibs/SKComponents`)
-  - SKSwiftLib (from `~/dev/ios/SKLibs/SKSwiftLib`)
+  - SKCollectionView (from `~/dev/ios/libs/ASCollectionView`)
+  - SKComponents (from `~/dev/ios/libs/SKComponents`)
+  - SKSwiftLib (from `~/dev/ios/libs/SKSwiftLib`)
   - SnapKit
 
 SPEC REPOS:
-  https://github.com/CocoaPods/Specs.git:
+  https://github.com/cocoapods/specs.git:
     - CCTextFieldEffects
     - SnapKit
 
 EXTERNAL SOURCES:
   FLScene:
-    :path: "~/dev/floats/FLScene"
+    :path: "~/dev/ios/FLScene"
   FontAwesomeKit:
     :git: https://github.com/PrideChung/FontAwesomeKit
   SKCollectionView:
-    :path: "~/dev/ios/SKLibs/SKCollectionView"
+    :path: "~/dev/ios/libs/ASCollectionView"
   SKComponents:
-    :path: "~/dev/ios/SKLibs/SKComponents"
+    :path: "~/dev/ios/libs/SKComponents"
   SKSwiftLib:
-    :path: "~/dev/ios/SKLibs/SKSwiftLib"
+    :path: "~/dev/ios/libs/SKSwiftLib"
 
 CHECKOUT OPTIONS:
   FontAwesomeKit:
@@ -68,6 +68,6 @@ SPEC CHECKSUMS:
   SKSwiftLib: f986f6eaac1d30faccc50509ec83d7358f4567e0
   SnapKit: a42d492c16e80209130a3379f73596c3454b7694
 
-PODFILE CHECKSUM: 5680ba6b2c4bc09a9e07f03aa65468e0b2ebea54
+PODFILE CHECKSUM: 569f7240d5fac1fd4c8372c490ed5bcfbe539ad2
 
-COCOAPODS: 1.5.0
+COCOAPODS: 1.5.3

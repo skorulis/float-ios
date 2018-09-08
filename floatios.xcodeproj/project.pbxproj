@@ -29,6 +29,8 @@
 		FA1C3E612117D0CE0062FC05 /* GameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA1C3E602117D0CE0062FC05 /* GameViewController.swift */; };
 		FA1C3E652117D0D00062FC05 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FA1C3E642117D0D00062FC05 /* Assets.xcassets */; };
 		FA1C3E682117D0D00062FC05 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FA1C3E662117D0D00062FC05 /* Main.storyboard */; };
+		FA2D7C90214374CA00B940B8 /* CharacterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2D7C8F214374CA00B940B8 /* CharacterViewController.swift */; };
+		FA2D7C92214375B400B940B8 /* BaseMacViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA2D7C91214375B400B940B8 /* BaseMacViewController.swift */; };
 		FA3691F520EDFB7E003988D4 /* TextFieldCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3691F420EDFB7E003988D4 /* TextFieldCell.swift */; };
 		FA3691F820EDFCEF003988D4 /* CreatePlayerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3691F720EDFCEF003988D4 /* CreatePlayerViewController.swift */; };
 		FA3691FA20EEC1FE003988D4 /* CTAButtonCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = FA3691F920EEC1FE003988D4 /* CTAButtonCell.swift */; };
@@ -126,6 +128,8 @@
 		FA1C3E672117D0D00062FC05 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		FA1C3E692117D0D00062FC05 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FA1C3E6A2117D0D00062FC05 /* FloatMac.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = FloatMac.entitlements; sourceTree = "<group>"; };
+		FA2D7C8F214374CA00B940B8 /* CharacterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CharacterViewController.swift; sourceTree = "<group>"; };
+		FA2D7C91214375B400B940B8 /* BaseMacViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseMacViewController.swift; sourceTree = "<group>"; };
 		FA3691F420EDFB7E003988D4 /* TextFieldCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextFieldCell.swift; sourceTree = "<group>"; };
 		FA3691F720EDFCEF003988D4 /* CreatePlayerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreatePlayerViewController.swift; sourceTree = "<group>"; };
 		FA3691F920EEC1FE003988D4 /* CTAButtonCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CTAButtonCell.swift; sourceTree = "<group>"; };
@@ -280,10 +284,12 @@
 				FA1C3E5E2117D0CE0062FC05 /* AppDelegate.swift */,
 				FA1C3E602117D0CE0062FC05 /* GameViewController.swift */,
 				FACE84702127E35300F536D4 /* BattleViewController.swift */,
+				FA2D7C8F214374CA00B940B8 /* CharacterViewController.swift */,
 				FA1C3E642117D0D00062FC05 /* Assets.xcassets */,
 				FA1C3E662117D0D00062FC05 /* Main.storyboard */,
 				FA1C3E692117D0D00062FC05 /* Info.plist */,
 				FA1C3E6A2117D0D00062FC05 /* FloatMac.entitlements */,
+				FA2D7C91214375B400B940B8 /* BaseMacViewController.swift */,
 			);
 			path = FloatMac;
 			sourceTree = "<group>";
@@ -719,8 +725,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				FA2D7C90214374CA00B940B8 /* CharacterViewController.swift in Sources */,
 				FACE84712127E35300F536D4 /* BattleViewController.swift in Sources */,
 				FA1C3E612117D0CE0062FC05 /* GameViewController.swift in Sources */,
+				FA2D7C92214375B400B940B8 /* BaseMacViewController.swift in Sources */,
 				FA1C3E5F2117D0CE0062FC05 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

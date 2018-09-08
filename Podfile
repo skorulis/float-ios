@@ -2,17 +2,17 @@
 
 
 def ios_pods
-    pod 'SKCollectionView',:path => '~/dev/ios/SKLibs/SKCollectionView'
+    pod 'SKCollectionView',:path => '~/dev/ios/libs/ASCollectionView'
     pod "CCTextFieldEffects"
     pod "FontAwesomeKit", :git => 'https://github.com/PrideChung/FontAwesomeKit'
-    pod 'SKComponents',:path => '~/dev/ios/SKLibs/SKComponents'
+    pod 'SKComponents',:path => '~/dev/ios/libs/SKComponents'
 end
 
 def shared_pods
     use_frameworks!
     pod 'SnapKit'
-    pod 'SKSwiftLib', :path => '~/dev/ios/SKLibs/SKSwiftLib'
-    pod 'FLScene', :path => '~/dev/floats/FLScene'
+    pod 'SKSwiftLib', :path => '~/dev/ios/libs/SKSwiftLib'
+    pod 'FLScene', :path => '~/dev/ios/FLScene'
 end
 
 target 'floatios' do
