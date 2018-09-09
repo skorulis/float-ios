@@ -15,7 +15,7 @@ class GameViewController: BaseMacViewController, SceneInputHandlerDelegate {
     let scene:OverlandScene
     let game = GameController.instance
     var input:SceneInputHandler!
-    var sceneDelegate:OverlandSceneDelegate!
+    var sceneDelegate:BattleSceneDelegate!
     
     override init(nibName nibNameOrNil: NSNib.Name?, bundle nibBundleOrNil: Bundle?) {
         self.scene = OverlandScene()
@@ -45,8 +45,11 @@ class GameViewController: BaseMacViewController, SceneInputHandlerDelegate {
         sceneView.addGestureRecognizer(rightClickGesture)
         //sceneView.debugOptions = SCNDebugOptions.showBoundingBoxes
         
-        self.sceneDelegate = OverlandSceneDelegate(scene:scene)
-        sceneView.delegate = self.sceneDelegate
+        sceneDelegate = BattleSceneDelegate(scene:scene)
+        sceneView.delegate = sceneDelegate
+        scene.physicsWorld.contactDelegate = sceneDelegate
+        
+        sceneView.isPlaying = true
     }
     
     @objc func tapped(sender:NSGestureRecognizer) {
