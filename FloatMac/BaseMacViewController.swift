@@ -17,7 +17,7 @@ class BaseMacViewController: NSViewController {
         super.viewDidLoad()
         
         // retrieve the SCNView
-        sceneView = self.view as! SCNView
+        sceneView = self.view as? SCNView
         sceneView.showsStatistics = true
         
     }
