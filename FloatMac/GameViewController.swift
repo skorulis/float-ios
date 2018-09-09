@@ -33,15 +33,7 @@ class GameViewController: BaseMacViewController, SceneInputHandlerDelegate {
         sceneView.scene = self.scene
         //sceneView.allowsCameraControl = true
         
-        let cameraNode = SCNNode()
-        cameraNode.camera = SCNCamera()
-        scene.rootNode.addChildNode(cameraNode)
-        
-        // place the camera
-        cameraNode.position = SCNVector3(x: 0, y: 10, z: 15)
-        cameraNode.look(at: SCNVector3())
-        
-        input = SceneInputHandler(sceneView: sceneView, scene: scene, cameraNode: cameraNode)
+        input = SceneInputHandler(sceneView: sceneView, scene: scene, cameraNode: scene.cameraNode  )
         input.delegate = self
         
         let gesture = NSClickGestureRecognizer(target: self, action: #selector(tapped(sender:)))
@@ -69,7 +61,7 @@ class GameViewController: BaseMacViewController, SceneInputHandlerDelegate {
     
     //MARK: SceneInputHandlerDelegate
     
-    func showLandOptions(node:MapHexModel,actions:[DungeonAction]) {
+    func showLandOptions(node:MapHexModel,actions:[ActionType]) {
         if (actions.count == 1) {
             self.input.performAction(node: node, action: actions[0])
         }

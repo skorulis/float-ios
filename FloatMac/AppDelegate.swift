@@ -21,12 +21,12 @@ class AppDelegate: NSObject, NSApplicationDelegate {
     func applicationDidFinishLaunching(_ aNotification: Notification) {
         ReferenceController.instance.readNamedSpells()
         
-        //HexTextureGenerator.generateAllImages()
+        HexTextureGenerator.generateAllImages()
         let storyboard = NSStoryboard(name: NSStoryboard.Name(rawValue: "Main"), bundle: nil)
         let window = NSApplication.shared.windows.first
-        //let firstVC = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "GameScene")) as? NSViewController
+        let firstVC = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "GameScene")) as? NSViewController
         //let firstVC = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "BattleScene")) as? NSViewController
-        let firstVC = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "CharacterScene")) as? NSViewController
+        //let firstVC = storyboard.instantiateController(withIdentifier: NSStoryboard.SceneIdentifier(rawValue: "CharacterScene")) as? NSViewController
         window?.contentViewController = firstVC
     }
     
